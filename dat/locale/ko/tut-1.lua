@@ -185,7 +185,7 @@ des.engraving({ coord = { 27,9 }, type = "engrave", text = "'" .. tut_key("takeo
 
 des.object({ class = "?", id = "remove curse", buc = "blessed", coord = {23,11} })
 des.engraving({ coord = { 22,11 }, type = "engrave", text = "같은 종류의 아이템도 판마다 설명이 달라질 수 있습니다", degrade = false });
-des.engraving({ coord = { 23,11 }, type = "engrave", text = "두루마리를 주워 '" .. tut_key("read") .. "'로 읽은 뒤 갑옷을 다시 벗어 보세요", degrade = false });
+des.engraving({ coord = { 23,11 }, type = "engrave", text = "스크롤을 주워 '" .. tut_key("read") .. "'로 읽은 뒤 갑옷을 다시 벗어 보세요", degrade = false });
 
 --
 
@@ -326,9 +326,9 @@ if (u.uenmax < 5) then
    -- TODO: ensure the first cast of this spell succeeds?
    des.engraving({ coord = { 59,2 }, type = "engrave", text = "주문을 시전할 마나가 부족합니다.", degrade = false });
 end
-des.engraving({ coord = { 57,2 }, type = "engrave", text = "'" .. tut_key("pickup") .. "'로 마법서를 주우세요", degrade = false });
+des.engraving({ coord = { 57,2 }, type = "engrave", text = "'" .. tut_key("pickup") .. "'로 마법책을 주우세요", degrade = false });
 des.object({ coord = { 57,2 }, id = "spellbook of light", buc = "blessed" });
-des.engraving({ coord = { 55,2 }, type = "engrave", text = "'" .. tut_key("read") .. "'로 마법서를 읽으세요", degrade = false });
+des.engraving({ coord = { 55,2 }, type = "engrave", text = "'" .. tut_key("read") .. "'로 마법책을 읽으세요", degrade = false });
 des.engraving({ coord = { 53,2 }, type = "engrave", text = "'" .. tut_key("cast") .. "'로 주문을 시전하세요", degrade = false });
 des.region(selection.area(53,01, 59, 3), "unlit");
 

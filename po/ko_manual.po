@@ -2053,7 +2053,7 @@ msgstr "위대한 푸바"
 #: ../src/objnam.c:873
 msgctxt "scroll_item"
 msgid "scroll labeled %s"
-msgstr "%s 두루마리"
+msgstr "%s 스크롤"
 
 # --- zap.c destroy_items (zap_destroy*): %1$s=물건명(yname), %2$s=동사구 ---
 #: ../src/zap.c:5909
@@ -2371,7 +2371,7 @@ msgstr "{이/가} 말하는 듯하다"
 # stone, gem are already defined elsewhere)
 #: ../src/obj_descr_i18n.c:527 ../src/objnam.c:872
 msgid " scroll"
-msgstr " 두루마리"
+msgstr " 스크롤"
 
 #: ../src/shk.c:3566
 msgid " scum;"
@@ -2444,7 +2444,7 @@ msgstr "어느 정도 %s"
 # 업스트림 머지: o_init.c discovery 메뉴 문자열
 #: ../src/o_init.c:733
 msgid " spellbook"
-msgstr " 마법서"
+msgstr " 마법책"
 
 # insight.c:1657 - Sprintf(buf, " stealthy%s", " if not mounted" 또는 "")
 # enl_msg(You_, "would be", "would have been", buf, "")
@@ -2879,7 +2879,7 @@ msgstr "\"삐걱, 삐걱\""
 
 #: ../src/zap.c:6172
 msgid "\"scroll labeled README\", \"elven mithril-coat\", or \"Grimtooth\""
-msgstr "\"README라고 적힌 두루마리\", \"엘프 미스릴 코트\", 또는 \"그림투스\""
+msgstr "\"README라고 적힌 스크롤\", \"엘프 미스릴 코트\", 또는 \"그림투스\""
 
 #: ../src/sounds.c:149
 msgid "#an animal carcass being offered in sacrifice."
@@ -3162,7 +3162,7 @@ msgstr "%s %s %s"
 # iactions.c:61 - 이름 짓기 / iactions.c:362 - 양초 켜기
 # %1$s=동작(Name/Rename/Light/Extinguish), %2$s=관사(the/this/these), %3$s=물건이름
 # 영어: "Name this specific scroll" / "Light these candles"
-# 한국어: "이 특정 두루마리를 명명" / "이 양초를 켜기"
+# 한국어: "이 특정 스크롤을 명명" / "이 양초를 켜기"
 #: ../src/iactions.c:61 ../src/iactions.c:362
 #, c-format
 msgctxt "action_item"
@@ -8691,7 +8691,7 @@ msgstr "%s{이/가} 당신의 %s %s에 코를 비볐다!"
 msgid "%s obj %s in container %s, not %s"
 msgstr "컨테이너 %s 안의 객체 %s가 %s가 아니라 %s이다"
 
-# [FIX] read.c:1895 — 바위 눈사태 (지구의 두루마리)
+# [FIX] read.c:1895 — 바위 눈사태 (지구의 스크롤)
 # %1$s = avalanche/avalanches 이름, %2$s = vtense("materialize"), %3$s =
 # "around"/"above"
 # 영어: "An avalanche of boulders materializes above you!"
@@ -9064,7 +9064,7 @@ msgstr "%s{이/가} 손을 뻗었고, 당신의 몸이 쪼그라든다."
 msgid "%s reaches towards your distorted image."
 msgstr "%s{이/가} 당신의 왜곡된 상에 손을 뻗었다."
 
-# read.c - 두루마리 읽기. "The monster reads a scroll!"
+# read.c - 스크롤 읽기. "The monster reads a scroll!"
 #: ../src/muse.c:253
 #, c-format
 msgid "%s reads %s!"
@@ -9833,7 +9833,7 @@ msgstr "%s{이/가} 말한다:"
 #: ../src/obj_descr_i18n.c:538 ../src/objnam.c:908
 #, c-format
 msgid "%s spellbook"
-msgstr "%s 마법서"
+msgstr "%s 마법책"
 
 #: ../src/read.c:819
 #, c-format
@@ -10827,7 +10827,7 @@ msgstr "따뜻하게 %s."
 msgid "%s warps strangely."
 msgstr "%s{이/가} 이상하게 일그러졌다."
 
-# write.c:334 - 두루마리 쓰기
+# write.c:334 - 스크롤 쓰기
 #: ../src/write.c:334
 #, c-format
 msgid "%s was here!"
@@ -11794,11 +11794,11 @@ msgstr "%s, %d레벨 %s%s"
 msgid "%s, price %ld %s%s%s"
 msgstr "%s, 가격 %ld %s%s%s"
 
-# [리뷰 완료] trap.c:4571 — Your+aobjnam+fade, 두루마리 바래짐 (플레이어)
-# C_("Tobjnam","fade") = "바랬다" (활용형) → aobjnam = "두루마리{이/가} 바랬다"
-# Your("%s.") → "당신의 두루마리가 바랬다." ✓ (활용형 전환으로 해결)
-# [리뷰 완료] trap.c:4574 — pline+s_suffix+aobjnam+fade, 두루마리 바래짐 (몬스터)
-# "%s %s." → "오크의 두루마리가 바랬다." ✓ (활용형 전환으로 해결)
+# [리뷰 완료] trap.c:4571 — Your+aobjnam+fade, 스크롤 바래짐 (플레이어)
+# C_("Tobjnam","fade") = "바랬다" (활용형) → aobjnam = "스크롤{이/가} 바랬다"
+# Your("%s.") → "당신의 스크롤이 바랬다." ✓ (활용형 전환으로 해결)
+# [리뷰 완료] trap.c:4574 — pline+s_suffix+aobjnam+fade, 스크롤 바래짐 (몬스터)
+# "%s %s." → "오크의 스크롤이 바랬다." ✓ (활용형 전환으로 해결)
 # [리뷰 완료] engrave.c:1201 — Tobjnam+glow + otense+fade, 조각 빛남→바래짐
 # %1$s = Tobjnam(de->otmp, C_("Tobjnam","glow")) = "지팡이{이/가}" (계사 억제)
 # %2$s = otense(de->otmp, _("fade")) = "바랬다" (활용형, %.0s 억제)
@@ -14070,7 +14070,7 @@ msgstr "손이 물러가자, 분수가 사라진다!"
 #: ../src/read.c:623
 #, c-format
 msgid "As you %s the formula on it, the scroll disappears."
-msgstr "그 위의 공식을 %s하자 두루마리가 사라졌다."
+msgstr "그 위의 공식을 %s하자 스크롤이 사라졌다."
 
 #: ../src/trap.c:4147
 msgid "As you fall, you"
@@ -14111,7 +14111,7 @@ msgstr "책을 읽는 순간, 책이 %2$s 앞에서 %1$s!"
 
 #: ../src/read.c:627
 msgid "As you read the scroll, it disappears."
-msgstr "두루마리를 읽자 사라졌다."
+msgstr "스크롤을 읽자 사라졌다."
 
 #: ../src/sit.c:347
 msgid "As you sit on the throne, your body and mind start to warp."
@@ -19493,7 +19493,7 @@ msgid "Nothing happens."
 msgstr "아무 일도 일어나지 않았다."
 
 # ============================================================
-# read.c - 친근함 두루마리
+# read.c - 친근함 스크롤
 # ============================================================
 # read.c:1658-1659 - 아무 일도 안 일어남
 #: ../src/read.c:1712
@@ -20500,13 +20500,13 @@ msgid "Read the slogan on the shirt"
 msgstr "셔츠의 슬로건을 읽다"
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 # 
 #: ../src/iactions.c:108
 #, c-format
 msgid "Read this scroll%s"
-msgstr "이 두루마리를 읽기%s"
+msgstr "이 스크롤을 읽기%s"
 
 #: ../src/read.c:592
 msgid "Reading mail will violate \"illiterate\" conduct.  Read anyway?"
@@ -20907,7 +20907,7 @@ msgstr "바닥에 낙서하기"
 
 #: ../src/invent.c:4816 ../src/obj_descr_i18n.c:1299
 msgid "Scrolls"
-msgstr "두루마리"
+msgstr "스크롤"
 
 #: ../src/dungeon.c:3391
 msgid "Sealed portal"
@@ -21569,7 +21569,7 @@ msgstr "주문 %s{은/는} 이미 알고 있다."
 
 #: ../src/invent.c:4816 ../src/obj_descr_i18n.c:1300
 msgid "Spellbooks"
-msgstr "마법서"
+msgstr "마법책"
 
 #: ../src/weapon.c:1223
 msgid "Spellcasting Skills"
@@ -22231,7 +22231,7 @@ msgstr "그건 %s 나쁜 생각이었다..."
 
 #: ../src/read.c:2187
 msgid "That was a scroll of mail?"
-msgstr "그것은 편지의 두루마리였나?"
+msgstr "그것은 편지의 스크롤이었나?"
 
 #: ../src/mhitu.c:2247
 msgid "That was a very educational experience."
@@ -22797,7 +22797,7 @@ msgstr "바위가 빛났다가 사라진다."
 
 #: ../src/read.c:3102
 msgid "The scroll crumbles with"
-msgstr "두루마리가 부서지며"
+msgstr "스크롤이 부서지며"
 
 #: ../src/uhitm.c:1685
 #, c-format
@@ -22866,14 +22866,14 @@ msgid "The wrapper reads: \"%s\"."
 msgstr "포장지에 적혀 있다: \"%s\"."
 
 # ============================================================
-# apply.c:4520 — 마법서 잉크 상태 (마침표 누락 수정)
+# apply.c:4520 — 마법책 잉크 상태 (마침표 누락 수정)
 # %1$s = " magical" 또는 "" — 마법 여부
 # %2$s = "fresh"/"slightly faded"/... — 잉크 상태
 # ============================================================
 #: ../src/apply.c:4531
 #, c-format
 msgid "The%s ink in this spellbook is %s."
-msgstr "이 마법서의%s 잉크는 %s."
+msgstr "이 마법책의%s 잉크는 %s."
 
 #: ../src/timeout.c:1121
 msgid "Their"
@@ -23173,7 +23173,7 @@ msgstr "이 %s{이/가} 입냄새를 나게 한다!"
 msgid "This %s has no %s."
 msgstr "이 %1$s에는 %2$s{이/가} 없다."
 
-# read.c:492 - 두루마리에 라벨 없음
+# read.c:492 - 스크롤에 라벨 없음
 #: ../src/read.c:493
 #, c-format
 msgid "This %s has no label."
@@ -23297,11 +23297,11 @@ msgstr "이것은 %s!"
 
 #: ../src/read.c:1819
 msgid "This is a charging scroll."
-msgstr "이것은 충전의 두루마리다."
+msgstr "이것은 충전의 스크롤이다."
 
 #: ../src/read.c:1898
 msgid "This is a scroll of fire!"
-msgstr "이것은 불의 두루마리다!"
+msgstr "이것은 불의 스크롤이다!"
 
 #: ../src/teleport.c:1059
 msgid "This is a vault teleport, usable once only."
@@ -23309,7 +23309,7 @@ msgstr "이것은 금고 순간이동이며, 한 번만 사용할 수 있다."
 
 #: ../src/read.c:2080
 msgid "This is an identify scroll."
-msgstr "이것은 감정 두루마리다."
+msgstr "이것은 감정 스크롤이다."
 
 # bones.c - 본즈 레벨 오류
 #: ../src/bones.c:696
@@ -23401,11 +23401,11 @@ msgstr ""
 #: ../src/read.c:2169
 #, c-format
 msgid "This scroll is marked \"%s\"."
-msgstr "이 두루마리에는 \"%s\"라고 적혀 있다."
+msgstr "이 스크롤에는 \"%s\"라고 적혀 있다."
 
 #: ../src/read.c:2013
 msgid "This scroll seems to be blank."
-msgstr "이 두루마리는 비어 있는 듯하다."
+msgstr "이 스크롤은 비어 있는 듯하다."
 
 #: ../src/read.c:2176
 #, c-format
@@ -23420,24 +23420,24 @@ msgstr "이 상점은 %s %s."
 #: ../src/apply.c:4513
 #, c-format
 msgid "This spellbook %s."
-msgstr "이 마법서는 %s."
+msgstr "이 마법책은 %s."
 
 #: ../src/spell.c:508
 msgid "This spellbook is all blank."
-msgstr "이 마법서는 완전히 비어있다."
+msgstr "이 마법책은 완전히 비어있다."
 
-# spell.c:592 - 마법서 읽기 확인. 어려운 마법서
+# spell.c:592 - 마법책 읽기 확인. 어려운 마법책
 #: ../src/spell.c:591
 msgid "This spellbook is difficult to comprehend.  Continue?"
-msgstr "이 마법서는 이해하기 어렵다. 계속하시겠습니까?"
+msgstr "이 마법책은 이해하기 어렵다. 계속하시겠습니까?"
 
 #: ../src/spell.c:403
 msgid "This spellbook is too faint to be read any more."
-msgstr "이 마법서는 더 이상 읽을 수 없을 정도로 희미하다."
+msgstr "이 마법책은 더 이상 읽을 수 없을 정도로 희미하다."
 
 #: ../src/spell.c:421
 msgid "This spellbook is too faint to read even once."
-msgstr "이 마법서는 한 번 읽기에도 너무 희미하다."
+msgstr "이 마법책은 한 번 읽기에도 너무 희미하다."
 
 #: ../src/potion.c:1299
 #, c-format
@@ -24129,7 +24129,7 @@ msgstr "알 수 없는 주문 숙련도, %d;"
 #: ../src/spell.c:557
 #, c-format
 msgid "Unknown spellbook level %d, book %d;"
-msgstr "알 수 없는 마법서 단계 %d, 책 %d;"
+msgstr "알 수 없는 마법책 단계 %d, 책 %d;"
 
 #: ../src/hack.c:1878
 #, c-format
@@ -25420,7 +25420,7 @@ msgstr "폭발 %s!"
 #: ../src/read.c:622
 #, c-format
 msgid "You %s the formula on the scroll."
-msgstr "두루마리의 공식을 %s."
+msgstr "스크롤의 공식을 %s."
 
 # ============================================================
 # 사망 메시지 (Death Messages)
@@ -25601,7 +25601,7 @@ msgstr "짐이 너무 많아 %s{을/를} 기울일 수 없다."
 
 #: ../src/write.c:55
 msgid "You can't write such a weird scroll!"
-msgstr "그런 기묘한 두루마리에는 쓸 수 없다!"
+msgstr "그런 기묘한 스크롤에는 쓸 수 없다!"
 
 #: ../src/do.c:682
 #, c-format
@@ -26078,12 +26078,12 @@ msgid "You reached the %d%s place on the top %d list."
 msgstr "상위 %3$d위 목록에서 %1$d%2$s위에 올랐다."
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 # 
 #: ../src/read.c:626
 msgid "You read the scroll."
-msgstr "두루마리를 읽었다."
+msgstr "스크롤을 읽었다."
 
 # ============================================================
 # dothrow.c - 자동 화살통 장전 메시지
@@ -27692,7 +27692,7 @@ msgstr "액세서리"
 
 #: ../src/spell.c:199
 msgid "accidentally tear the spellbook to pieces."
-msgstr "실수로 마법서를 갈기갈기 찢어버렸다."
+msgstr "실수로 마법책을 갈기갈기 찢어버렸다."
 
 # "lightning"은 이미 번역됨 (line 1074)
 # "poison gas"는 이미 번역됨 (line 7759)
@@ -28653,7 +28653,7 @@ msgid "are %s, and cannot go %s."
 msgstr "%s 상태라 %s{으로/로} 갈 수 없다."
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/do_wear.c:2833 ../src/hack.c:4209 ../src/invent.c:4577
 #: ../src/wield.c:178
@@ -28687,7 +28687,7 @@ msgid "are almost hit by %s."
 msgstr "%s에 거의 맞을 뻔했다."
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/apply.c:4263 ../src/wield.c:182
 #, c-format
@@ -28928,7 +28928,7 @@ msgid "are floating in the %s."
 msgstr "%s에 떠 있다."
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/mhitu.c:1648
 msgid "are freaked out"
@@ -29297,7 +29297,7 @@ msgid "are put to sleep!"
 msgstr "잠들어버렸다!"
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/zap.c:608
 #, c-format
@@ -31850,7 +31850,7 @@ msgstr "트림하다"
 
 # [리뷰 완료] trap.c:6789/6832 — Yobjnam2(obj, "burst"), 불꽃 발화
 # "burst" 2사용처 모두 Yobjnam2 → 계사 전환 안전
-# 런타임: "당신의 두루마리가 불길 속으로 타올랐다!" ✓
+# 런타임: "당신의 스크롤이 불길 속으로 타올랐다!" ✓
 #: ../src/trap.c:6875 ../src/trap.c:6918
 msgid "burst"
 msgstr "이다"
@@ -33155,7 +33155,7 @@ msgid "cloud"
 msgstr "구름"
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/lock.c:1151
 #, c-format
@@ -33256,7 +33256,7 @@ msgid "coil"
 msgstr "똬리"
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/sit.c:449
 #, c-format
@@ -33535,7 +33535,7 @@ msgstr "접촉"
 
 #: ../src/spell.c:167
 msgid "contact-poisoned spellbook"
-msgstr "접촉 독이 묻은 마법서"
+msgstr "접촉 독이 묻은 마법책"
 
 #: ../src/pickup.c:3609
 msgid "container"
@@ -35621,7 +35621,7 @@ msgstr "여기에 빚진 금화가 없다."
 
 #: ../src/read.c:2011
 msgid "don't remember there being any magic words on this scroll."
-msgstr "이 두루마리에 마법 단어가 있었던 듯하지 않다."
+msgstr "이 스크롤에 마법 단어가 있었던 듯하지 않다."
 
 #: ../src/do.c:604
 msgid "don't see anything happen to the sink."
@@ -37205,7 +37205,7 @@ msgstr "변신에 실패했다!"
 
 #: ../src/write.c:349
 msgid "fail to write the scroll correctly and it disappears."
-msgstr "두루마리를 올바르게 쓰지 못해 사라졌다."
+msgstr "스크롤을 올바르게 쓰지 못해 사라졌다."
 
 #: ../src/mkobj.c:3400
 msgid "failed sanity check: container holds its parent"
@@ -38419,7 +38419,7 @@ msgstr "갈라진 혀"
 # "Being blind, you cannot read the formula on the scroll."
 #: ../src/read.c:572
 msgid "formula on the scroll"
-msgstr "두루마리의 주문"
+msgstr "스크롤의 주문"
 
 #: ../src/obj_descr_i18n.c:361
 msgid "fortune cookie"
@@ -40493,11 +40493,11 @@ msgstr "주문을 기억하기 어렵다."
 
 #: ../src/read.c:1735
 msgid "have found a scroll of genocide!"
-msgstr "학살의 두루마리를 발견했다!"
+msgstr "학살의 스크롤을 발견했다!"
 
 #: ../src/read.c:2002
 msgid "have found a scroll of stinking cloud!"
-msgstr "악취 구름의 두루마리를 발견했다!"
+msgstr "악취 구름의 스크롤을 발견했다!"
 
 # ============================================================
 # [조합 메시지] insight.c - "You have gone/went without food"
@@ -41552,7 +41552,7 @@ msgstr "감정할"
 
 #: ../src/read.c:2078
 msgid "identify this as an identify scroll."
-msgstr "이것이 감정 두루마리임을 알았다."
+msgstr "이것이 감정 스크롤임을 알았다."
 
 #: ../src/weapon.c:1370
 msgid "if skill slots become available"
@@ -42342,7 +42342,7 @@ msgstr "거기에 거미줄이 있다!"
 #: ../src/mail.c:626
 #, c-format
 msgid "is a%s message on this scroll."
-msgstr "이 두루마리에 %s 메시지가 있다."
+msgstr "이 스크롤에 %s 메시지가 있다."
 
 #: ../src/mon.c:3188
 #, c-format
@@ -43780,7 +43780,7 @@ msgstr "빛"
 
 # ============================================================
 # 주문 이름 (objects.h SPELL definitions)
-# tr_spell_name()을 통해 마법서/주문 메뉴에서 사용
+# tr_spell_name()을 통해 마법책/주문 메뉴에서 사용
 # "spell" 컨텍스트: 동음이의어 충돌 해소 (light, knock)
 # ============================================================
 # "light" — 색상 형용사(가벼운)와 충돌 → spell 컨텍스트로 분리
@@ -43882,7 +43882,7 @@ msgid "like someone is helping you."
 msgstr "누군가가 당신을 돕고 있는 듯하다."
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/dig.c:1519
 #, c-format
@@ -48676,19 +48676,19 @@ msgid "read items or engraved %ld time%s"
 msgstr "읽거나 새긴 횟수 %1$ld회%2$.0s"
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 # 
 #: ../src/spell.c:503
 msgid "read the novel"
-msgstr "두루마리를 읽었다."
+msgstr "스크롤을 읽었다."
 
 #: ../src/read.c:523
 msgid "read:"
 msgstr "읽었다:"
 
 # ============================================================
-# 두루마리 읽기 (Scroll reading)
+# 스크롤 읽기 (Scroll reading)
 # ============================================================
 #: ../src/muse.c:279
 #, c-format
@@ -48699,11 +48699,11 @@ msgstr "%s 읽는 중"
 msgid "reading a book"
 msgstr "책을 읽는 중"
 
-# muse.c:279 - 몬스터 AI 동작. 몬스터가 두루마리를 읽는 중
+# muse.c:279 - 몬스터 AI 동작. 몬스터가 스크롤을 읽는 중
 # "You see/hear the kobold reading a scroll labeled XYZZY"
 #: ../src/muse.c:280
 msgid "reading a scroll labeled"
-msgstr "두루마리를 읽고 있다"
+msgstr "스크롤을 읽고 있다"
 
 #: ../src/pray.c:2078
 msgid "realize that the gods are not like you and I."
@@ -48951,7 +48951,7 @@ msgid "release %s!"
 msgstr "%s{을/를} 풀어줬다!"
 
 # ============================================================
-# 두루마리 (Scrolls)
+# 스크롤 (Scrolls)
 # ============================================================
 #: ../src/do.c:1124 ../src/end.c:750 ../src/hack.c:2670 ../src/zap.c:599
 #, c-format
@@ -50177,58 +50177,58 @@ msgstr "휘갈겨 쓴다"
 #: ../src/objnam.c:858 ../src/objnam.c:864 ../src/objnam.c:867
 #: ../src/write.c:106
 msgid "scroll"
-msgstr "두루마리"
+msgstr "스크롤"
 
 #: ../src/read.c:1887
 #, c-format
 msgid "scroll catches fire and you burn your %s."
-msgstr "두루마리에 불이 붙어 %s{을/를} 태웠다."
+msgstr "스크롤에 불이 붙어 %s{을/를} 태웠다."
 
 #: ../src/read.c:1507
 msgid "scroll disintegrates."
-msgstr "두루마리가 분해되었다."
+msgstr "스크롤이 분해되었다."
 
 #: ../src/muse.c:1970 ../src/read.c:1911
 msgid "scroll erupts in a tower of flame!"
-msgstr "두루마리가 화염 기둥으로 분출한다!"
+msgstr "스크롤이 화염 기둥으로 분출한다!"
 
 #: ../src/write.c:278
 msgid "scroll is now useless and disappears!"
-msgstr "두루마리가 이제 쓸모없어지고 사라진다!"
+msgstr "스크롤이 이제 쓸모없어지고 사라진다!"
 
 # scroll/potion format strings (Korean: effect name first, then type)
 #: ../src/obj_descr_i18n.c:592 ../src/objnam.c:862
 #, c-format
 msgid "scroll of %s"
-msgstr "%s 두루마리"
+msgstr "%s 스크롤"
 
 #: ../src/read.c:2340
 msgid "scroll of earth"
-msgstr "대지 두루마리"
+msgstr "대지 스크롤"
 
 #: ../src/muse.c:1984 ../src/read.c:1889
 msgid "scroll of fire"
-msgstr "화염 두루마리"
+msgstr "화염 스크롤"
 
 #: ../src/read.c:2817 ../src/read.c:2982
 msgid "scroll of genocide"
-msgstr "학살 두루마리"
+msgstr "학살 스크롤"
 
 # ===== pickup.c =====
-# pickup.c:1854 - 두루마리 먼지로 변함
+# pickup.c:1854 - 스크롤 먼지로 변함
 # %1$s=plur(), %2$s=turn(회전-오역)/turns, %3$s=raise(들어올리다)/pick(자물쇠따개-오역),
 # %4$s=it/them
 # "turn"→"회전", "pick"→"자물쇠 따개" 오역 때문에 %2$s, %3$s 억제 후 하드코딩
 # 영어 조합: "The scrolls turn to dust as you pick them up."
-# 한국어 조합: "줍자 두루마리가 먼지로 변했다."
+# 한국어 조합: "줍자 스크롤이 먼지로 변했다."
 #: ../src/pickup.c:1856
 #, c-format
 msgid "scroll%s %s to dust as you %s %s up."
-msgstr "줍자 두루마리가 먼지로 변했다.%1$.0s%2$.0s%3$.0s%4$.0s"
+msgstr "줍자 스크롤이 먼지로 변했다.%1$.0s%2$.0s%3$.0s%4$.0s"
 
 #: ../src/mthrowu.c:57
 msgid "scrolls"
-msgstr "두루마리"
+msgstr "스크롤"
 
 #: ../src/read.c:200
 msgid "sea turtle"
@@ -51418,9 +51418,9 @@ msgstr "하늘색"
 msgid "sky blue-pink"
 msgstr "하늘색-분홍"
 
-# [리뷰 완료] spell.c:348 — Tobjnam(book, "slam"), 마법서 세게 닫힘
+# [리뷰 완료] spell.c:348 — Tobjnam(book, "slam"), 마법책 세게 닫힘
 # "slam" 단일 사용처 → 계사 전환 안전
-# 런타임: "마법서가 닫혔다!" ✓
+# 런타임: "마법책이 닫혔다!" ✓
 #: ../src/spell.c:348
 msgid "slam"
 msgstr "이다"
@@ -52217,35 +52217,35 @@ msgstr "마법력"
 #: ../src/obj_descr_i18n.c:535 ../src/objnam.c:236 ../src/objnam.c:898
 #: ../src/objnam.c:906 ../src/write.c:105
 msgid "spellbook"
-msgstr "주문서"
+msgstr "마법책"
 
 #: ../src/spell.c:613
 msgid "spellbook crumbles to dust!"
-msgstr "마법서가 먼지로 부서진다!"
+msgstr "마법책이 먼지로 부서진다!"
 
 #: ../src/write.c:275
 msgid "spellbook is left unfinished and your writing fades."
-msgstr "마법서가 미완성으로 남고 글씨가 사라진다."
+msgstr "마법책이 미완성으로 남고 글씨가 사라진다."
 
 # 조합 패턴: "spellbook of [주문 이름]"
 #: ../src/obj_descr_i18n.c:536
 msgid "spellbook of "
-msgstr " 마법서"
+msgstr " 마법책"
 
 # ============================================================
-# objnam.c:897 — 마법서 이름 조합
+# objnam.c:897 — 마법책 이름 조합
 # %s = 주문 이름 (예: "protection" → "보호")
-# 결과: "보호 마법서"
+# 결과: "보호 마법책"
 # ============================================================
 #: ../src/obj_descr_i18n.c:537 ../src/objnam.c:901
 #, c-format
 msgid "spellbook of %s"
-msgstr "%s 마법서"
+msgstr "%s 마법책"
 
 #: ../src/write.c:361
 #, c-format
 msgid "spellbook warps strangely, then turns %s."
-msgstr "마법서가 이상하게 뒤틀리더니 %s{으로/로} 변했다."
+msgstr "마법책이 이상하게 뒤틀리더니 %s{으로/로} 변했다."
 
 #: ../src/obj_descr_i18n.c:299
 msgid "spetum"
@@ -54526,7 +54526,7 @@ msgid "thick"
 msgstr "두꺼운"
 
 # ============================================================
-# 마법서 두께/질감 (Book Thickness/Texture)
+# 마법책 두께/질감 (Book Thickness/Texture)
 # ============================================================
 #: ../src/obj_descr_i18n.c:1198 ../src/pager.c:621
 msgid "thin"
@@ -57832,7 +57832,7 @@ msgstr "주름진 상태"
 #: ../src/write.c:335
 #, c-format
 msgid "write \"%s\" and the scroll disappears."
-msgstr "\"%s\"{을/를} 쓰자 두루마리가 사라졌다."
+msgstr "\"%s\"{을/를} 쓰자 스크롤이 사라졌다."
 
 #: ../src/engrave.c:530
 msgid "write here."
@@ -60258,46 +60258,46 @@ msgid "says something but you can't hear it"
 msgstr "뭔가 말하지만 들리지 않는다"
 
 msgid "scroll of amnesia"
-msgstr "기억상실 두루마리"
+msgstr "기억상실 스크롤"
 
 msgid "scroll of charging"
-msgstr "충전 두루마리"
+msgstr "충전 스크롤"
 
 msgid "scroll of create monster"
-msgstr "몬스터 소환 두루마리"
+msgstr "몬스터 소환 스크롤"
 
 msgid "scroll of enchant armor"
-msgstr "갑옷 강화 두루마리"
+msgstr "갑옷 강화 스크롤"
 
 msgid "scroll of enchant weapon"
-msgstr "무기 강화 두루마리"
+msgstr "무기 강화 스크롤"
 
 msgid "scroll of identify"
-msgstr "감정 두루마리"
+msgstr "감정 스크롤"
 
 msgid "scroll of light"
-msgstr "빛의 두루마리"
+msgstr "빛의 스크롤"
 
 msgid "scroll of magic mapping"
-msgstr "지도 두루마리"
+msgstr "지도 스크롤"
 
 msgid "scroll of punishment"
-msgstr "형벌 두루마리"
+msgstr "형벌 스크롤"
 
 msgid "scroll of remove curse"
-msgstr "저주 해제 두루마리"
+msgstr "저주 해제 스크롤"
 
 msgid "scroll of scare monster"
-msgstr "몬스터 공포 두루마리"
+msgstr "몬스터 공포 스크롤"
 
 msgid "scroll of stinking cloud"
-msgstr "악취 구름 두루마리"
+msgstr "악취 구름 스크롤"
 
 msgid "scroll of taming"
-msgstr "길들이기 두루마리"
+msgstr "길들이기 스크롤"
 
 msgid "scroll of teleportation"
-msgstr "순간이동 두루마리"
+msgstr "순간이동 스크롤"
 
 msgid "set of iron bars"
 msgstr "철창"
@@ -60350,115 +60350,115 @@ msgid "speed monster"
 msgstr "몬스터 가속"
 
 msgid "spellbook of cancellation"
-msgstr "해제의 마법서"
+msgstr "해제의 마법책"
 
 msgid "spellbook of cause fear"
-msgstr "공포 유발의 마법서"
+msgstr "공포 유발의 마법책"
 
 msgid "spellbook of charm monster"
-msgstr "몬스터 매혹의 마법서"
+msgstr "몬스터 매혹의 마법책"
 
 msgid "spellbook of clairvoyance"
-msgstr "천리안의 마법서"
+msgstr "천리안의 마법책"
 
 msgid "spellbook of cone of cold"
-msgstr "냉기 원뿔의 마법서"
+msgstr "냉기 원뿔의 마법책"
 
 msgid "spellbook of confuse monster"
-msgstr "몬스터 혼란의 마법서"
+msgstr "몬스터 혼란의 마법책"
 
 msgid "spellbook of create familiar"
-msgstr "소환수 생성의 마법서"
+msgstr "소환수 생성의 마법책"
 
 msgid "spellbook of create monster"
-msgstr "몬스터 소환의 마법서"
+msgstr "몬스터 소환의 마법책"
 
 msgid "spellbook of cure blindness"
-msgstr "실명 치료의 마법서"
+msgstr "실명 치료의 마법책"
 
 msgid "spellbook of cure sickness"
-msgstr "질병 치료의 마법서"
+msgstr "질병 치료의 마법책"
 
 msgid "spellbook of detect food"
-msgstr "음식 탐지의 마법서"
+msgstr "음식 탐지의 마법책"
 
 msgid "spellbook of detect monsters"
-msgstr "몬스터 탐지의 마법서"
+msgstr "몬스터 탐지의 마법책"
 
 msgid "spellbook of detect treasure"
-msgstr "보물 탐지의 마법서"
+msgstr "보물 탐지의 마법책"
 
 msgid "spellbook of detect unseen"
-msgstr "보이지 않는 것 탐지의 마법서"
+msgstr "보이지 않는 것 탐지의 마법책"
 
 msgid "spellbook of drain life"
-msgstr "생명력 흡수의 마법서"
+msgstr "생명력 흡수의 마법책"
 
 msgid "spellbook of extra healing"
-msgstr "추가 치료의 마법서"
+msgstr "추가 치료의 마법책"
 
 msgid "spellbook of finger of death"
-msgstr "죽음의 손가락 마법서"
+msgstr "죽음의 손가락 마법책"
 
 msgid "spellbook of fireball"
-msgstr "화염구의 마법서"
+msgstr "화염구의 마법책"
 
 msgid "spellbook of force bolt"
-msgstr "힘의 화살 마법서"
+msgstr "힘의 화살 마법책"
 
 msgid "spellbook of haste self"
-msgstr "자기 가속의 마법서"
+msgstr "자기 가속의 마법책"
 
 msgid "spellbook of healing"
-msgstr "치료의 마법서"
+msgstr "치료의 마법책"
 
 msgid "spellbook of identify"
-msgstr "감정의 마법서"
+msgstr "감정의 마법책"
 
 msgid "spellbook of invisibility"
-msgstr "투명의 마법서"
+msgstr "투명의 마법책"
 
 msgid "spellbook of jumping"
-msgstr "점프의 마법서"
+msgstr "점프의 마법책"
 
 msgid "spellbook of knock"
-msgstr "열기의 마법서"
+msgstr "열기의 마법책"
 
 msgid "spellbook of levitation"
-msgstr "부유의 마법서"
+msgstr "부유의 마법책"
 
 msgid "spellbook of magic mapping"
-msgstr "마법 지도의 마법서"
+msgstr "마법 지도의 마법책"
 
 msgid "spellbook of magic missile"
-msgstr "마법 화살의 마법서"
+msgstr "마법 화살의 마법책"
 
 msgid "spellbook of polymorph"
-msgstr "변신의 마법서"
+msgstr "변신의 마법책"
 
 msgid "spellbook of protection"
-msgstr "보호의 마법서"
+msgstr "보호의 마법책"
 
 msgid "spellbook of remove curse"
-msgstr "저주 해제의 마법서"
+msgstr "저주 해제의 마법책"
 
 msgid "spellbook of restore ability"
-msgstr "능력 회복의 마법서"
+msgstr "능력 회복의 마법책"
 
 msgid "spellbook of slow monster"
-msgstr "몬스터 감속의 마법서"
+msgstr "몬스터 감속의 마법책"
 
 msgid "spellbook of stone to flesh"
-msgstr "돌을 살로의 마법서"
+msgstr "돌을 살로의 마법책"
 
 msgid "spellbook of teleport away"
-msgstr "순간이동의 마법서"
+msgstr "순간이동의 마법책"
 
 msgid "spellbook of turn undead"
-msgstr "언데드 퇴치의 마법서"
+msgstr "언데드 퇴치의 마법책"
 
 msgid "spellbook of wizard lock"
-msgstr "마법사 자물쇠의 마법서"
+msgstr "마법사 자물쇠의 마법책"
 
 msgid "spider"
 msgstr "거미"
@@ -61842,7 +61842,7 @@ msgstr "화살통에 장비"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "read a scroll or spellbook"
-msgstr "두루마리 또는 주문서 읽기"
+msgstr "스크롤 또는 마법책 읽기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
