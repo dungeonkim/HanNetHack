@@ -4,6 +4,7 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+#include "dknh.h" /* dknethack: sound hooks */
 #include "artifact.h"
 #include "i18n.h"
 
@@ -29,6 +30,7 @@ staticfn int passiveum(struct permonst *, struct monst *, struct attack *);
 void
 hitmsg(struct monst *mtmp, struct attack *mattk)
 {
+    dknh_event(DKNH_EV_M_HIT, mattk->aatyp, mtmp->data->msize); /* dknethack */
     int compat;
     const char *verb = 0, *again, *punct = "!";
     char *Monst_name = Monnam(mtmp);
@@ -86,6 +88,7 @@ hitmsg(struct monst *mtmp, struct attack *mattk)
 staticfn void
 missmu(struct monst *mtmp, boolean nearmiss, struct attack *mattk)
 {
+    dknh_event(DKNH_EV_M_MISS, mattk->aatyp, 0); /* dknethack */
     gh.hitmsg_mid = 0;
     gh.hitmsg_prev = NULL;
 

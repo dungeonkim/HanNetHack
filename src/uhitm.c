@@ -4,6 +4,7 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+#include "dknh.h" /* dknethack: sound hooks */
 #include "i18n.h"
 
 staticfn boolean mhitm_mgc_atk_negated(struct monst *, struct monst *,
@@ -1636,6 +1637,7 @@ hmon_hitmon_msg_hit(
     struct monst *mon,
     struct obj *obj)   /* obj can be NULL for hand_to_hand; otherwise not */
 {
+    dknh_event(DKNH_EV_U_HIT, dknh_weapon_kind(obj, hmd->thrown != 0), mon->data->msize); /* dknethack */
     if (!hmd->hittxt /*( thrown => obj exists )*/
         && (!hmd->destroyed
             || (hmd->thrown && gm.m_shot.n > 1
@@ -5196,6 +5198,7 @@ missum(
     struct attack *mattk,
     boolean wouldhavehit)
 {
+    dknh_event(DKNH_EV_U_MISS, 0, 0); /* dknethack */
     if (wouldhavehit) /* monk is missing due to penalty for wearing suit */
         Your(_("armor is rather cumbersome..."));
 

@@ -8,6 +8,7 @@
  */
 
 #include "hack.h"
+#include "dknh.h" /* dknethack: sound hooks */
 
 #define CONTAINED_SYM '>' /* from invent.c */
 
@@ -1974,6 +1975,7 @@ pickup_prinv(
     if (prefix)
         Sprintf(pbuf, "%s %s", prefix, verb);
 
+    dknh_event(DKNH_EV_GET, 0, 0); /* dknethack */
     prinv(pbuf, obj, count);
 }
 

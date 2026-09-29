@@ -3,6 +3,7 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+#include "dknh.h" /* dknethack: sound hooks */
 
 #define is_bigfoot(x) ((x) == &mons[PM_SASQUATCH])
 #define martial()                                 \
@@ -969,6 +970,7 @@ kick_door(coordxy x, coordxy y, int avrg_attrib)
         /* note: this used to be unconditional "WHAMMM!!!" but that has a
            fairly strong connotation of noise that a deaf hero shouldn't
            hear; we've kept the extra 'm's and one of the extra '!'s */
+        dknh_event(DKNH_EV_KICK_DOOR, 0, 0); /* dknethack */
         pline(_("%s!!"), (Deaf || !rn2(3)) ? _("Thwack") : _("Whammm"));
         if (in_town(x, y))
             (void) get_iter_mons_xy(watchman_door_damage, x, y);
