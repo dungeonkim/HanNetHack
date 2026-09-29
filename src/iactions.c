@@ -57,7 +57,10 @@ item_naming_classification(
         Recall[] = N_("Re-call or un-call");
 
     onamebuf[0] = ocallbuf[0] = '\0';
-    if (name_ok(obj) == GETOBJ_SUGGEST) {
+    if (name_ok(obj) == GETOBJ_SUGGEST && is_korean_locale()) {
+        /* the item is already on screen; Korean reads "이 물건에 이름 붙이기" */
+        Strcpy(onamebuf, (!has_oname(obj) || !*ONAME(obj)) ? _(Name) : _(Rename));
+    } else if (name_ok(obj) == GETOBJ_SUGGEST) {
         Sprintf(onamebuf, C_("action_item", "%s %s %s"),
                 (!has_oname(obj) || !*ONAME(obj)) ? _(Name) : _(Rename),
                 the_unique_obj(obj) ? _("the")

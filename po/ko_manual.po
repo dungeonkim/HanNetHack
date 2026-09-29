@@ -10271,7 +10271,7 @@ msgstr "전투 장비를 채비하는 달그락 소리가 들린다."
 #: ../src/iactions.c:76
 #, c-format
 msgid "%s the type for %s"
-msgstr "%2$s의 유형을 %1$s"
+msgstr "%2$s 종류에 %1$s"
 
 #: ../src/trap.c:5705
 #, c-format
@@ -14747,16 +14747,16 @@ msgstr "%ld개의 %s 무게를 계산?"
 # 사용 맥락: 메뉴에서 아이템에 이름 붙이기 옵션
 #: ../src/iactions.c:54
 msgid "Call"
-msgstr "이름 붙이기"
+msgstr "메모해두기"
 
 #: ../src/do_name.c:651
 msgid "Call "
-msgstr "부르기: "
+msgstr "메모해두기 - "
 
 #: ../src/do_name.c:648
 #, c-format
 msgid "Call a stream of %s fluid:"
-msgstr "%s 액체 흐름의 이름을 부여하기:"
+msgstr "%s 액체 흐름에 메모해두기:"
 
 #: ../src/pray.c:2462
 #, c-format
@@ -19148,7 +19148,7 @@ msgstr "날조크"
 
 #: ../src/cmd.c:4605 ../src/iactions.c:52 ../src/spell.c:2094
 msgid "Name"
-msgstr "이름 짓기"
+msgstr "이 물건에 이름 붙이기"
 
 #: ../src/spell.c:2099
 msgid "Name\tLevel\tCategory\tFail\tRetention"
@@ -20471,7 +20471,7 @@ msgstr "쥐고기: 또 다른 흰살 고기"
 
 #: ../src/iactions.c:57
 msgid "Re-call or un-call"
-msgstr "별명 바꾸기 또는 별명 지우기"
+msgstr "메모 바꾸기/지우기"
 
 # iactions.c:322 - 아이템 동작 메뉴. 가방에 손 넣기
 #: ../src/iactions.c:322
@@ -20645,7 +20645,7 @@ msgstr "이름 바꾸기"
 
 #: ../src/iactions.c:53
 msgid "Rename or un-name"
-msgstr "이름 바꾸기 또는 이름 지우기"
+msgstr "이름 바꾸기/지우기"
 
 #: ../src/spell.c:2025
 #, c-format
@@ -24816,7 +24816,7 @@ msgstr "%s에게 어떤 이름을 붙이겠습니까? "
 
 #: ../src/do_name.c:550
 msgid "What do you want to name?"
-msgstr "무엇에 이름을 붙이겠습니까?"
+msgstr "무엇에 이름을 붙이거나 메모해두겠습니까?"
 
 #: ../src/do_wear.c:3122
 msgid "What do you want to take off?"
@@ -27385,7 +27385,7 @@ msgstr "단조로운 진동."
 #: ../src/apply.c:3804 ../src/do_name.c:525 ../src/uhitm.c:6202
 #: ../src/wizcmds.c:261 ../src/wizcmds.c:505 ../src/wizcmds.c:903
 msgid "a monster"
-msgstr "몬스터"
+msgstr "몬스터에게 이름 붙이기"
 
 #: ../src/hack.c:467
 #, c-format
@@ -27428,7 +27428,7 @@ msgstr "평화주의자였다"
 
 #: ../src/do_name.c:531
 msgid "a particular object in inventory"
-msgstr "소지품 중 특정 물건"
+msgstr "소지품의 물건 하나에 이름 붙이기"
 
 #: ../src/eat.c:1195
 msgid "a pile of gold"
@@ -31966,7 +31966,7 @@ msgstr "당신을 꼬드긴다."
 
 #: ../src/do_name.c:572 ../src/obj_descr_i18n.c:419
 msgid "call"
-msgstr "부를"
+msgstr "메모해둘"
 
 #: ../src/pray.c:772
 msgid "call upon"
@@ -45627,7 +45627,7 @@ msgstr "날페슈니"
 
 #: ../src/do_name.c:567 ../src/obj_descr_i18n.c:418
 msgid "name"
-msgstr "이름 지을"
+msgstr "이름 붙일"
 
 # do_name.c:168 - 이름(명사)
 # "would rather keep its existing name." → "기존 이름을 유지한다"
@@ -48810,7 +48810,7 @@ msgstr "재구성되어"
 
 #: ../src/do_name.c:548
 msgid "record an annotation for the current level"
-msgstr "현재 층에 대한 메모 기록"
+msgstr "현재 층에 메모해두기"
 
 #: ../src/obj_descr_i18n.c:396 ../src/read.c:231
 msgid "red"
@@ -54425,16 +54425,16 @@ msgstr "당신이 묻어 둔 지뢰 방아쇠가"
 # do_name.c 관련
 #: ../src/do_name.c:535
 msgid "the type of an object in inventory"
-msgstr "소지품 중 물건의 종류"
+msgstr "소지품 물건의 종류에 메모해두기"
 
 #: ../src/do_name.c:544
 msgid "the type of an object on discoveries list"
-msgstr "발견 목록의 물건 종류"
+msgstr "발견 목록의 종류에 메모해두기"
 
 # pager.c - 메뉴 옵션. 단독
 #: ../src/do_name.c:540
 msgid "the type of an object upon the floor"
-msgstr "바닥 위 물체의 종류"
+msgstr "바닥 물건의 종류에 메모해두기"
 
 #: ../src/hack.c:4256
 msgid "the wailing of the Banshee..."
@@ -60742,12 +60742,12 @@ msgstr "?"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "adjust"
-msgstr "조정"
+msgstr "소지품 단축키 변경"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "annotate"
-msgstr "층 이름"
+msgstr "층 메모"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60757,7 +60757,7 @@ msgstr "사용"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "attributes"
-msgstr "속성"
+msgstr "내 상태 확인"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60772,22 +60772,22 @@ msgstr "버그 보고"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "call"
-msgstr "이름 짓기"
+msgstr "메모해두기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "cast"
-msgstr "주문"
+msgstr "주문 외우기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "chat"
-msgstr "대화"
+msgstr "말 걸기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "chronicle"
-msgstr "연대기"
+msgstr "모험 일지"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60797,7 +60797,7 @@ msgstr "닫기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "conduct"
-msgstr "행동 수칙"
+msgstr "도전 과제"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60832,12 +60832,12 @@ msgstr "먹기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "engrave"
-msgstr "새기기"
+msgstr "바닥에 글쓰기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "enhance"
-msgstr "숙련도"
+msgstr "숙련도 올리기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60902,12 +60902,12 @@ msgstr "발동"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "jump"
-msgstr "점프"
+msgstr "점프하기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "kick"
-msgstr "발차기"
+msgstr "발로 차기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60932,7 +60932,7 @@ msgstr "lightsources"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "look"
-msgstr "보기"
+msgstr "발밑 보기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60947,17 +60947,17 @@ msgstr "전리품 뒤지기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "monster"
-msgstr "몬스터 능력"
+msgstr "몬스터의 능력 사용"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "name"
-msgstr "이름 짓기"
+msgstr "이름 붙이기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "offer"
-msgstr "제물"
+msgstr "제물 바치기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60977,7 +60977,7 @@ msgstr "전체 옵션"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "overview"
-msgstr "던전 개요"
+msgstr "던전 정보 보기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60987,7 +60987,7 @@ msgstr "panic"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "pay"
-msgstr "계산"
+msgstr "지불하기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61002,7 +61002,7 @@ msgstr "변신"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "pray"
-msgstr "기도"
+msgstr "기도하기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61062,7 +61062,7 @@ msgstr "재이동"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "ride"
-msgstr "탑승"
+msgstr "타기/내리기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61097,7 +61097,7 @@ msgstr "주변 탐색"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "seeall"
-msgstr "장비 전체"
+msgstr "장착 장비 확인"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61202,7 +61202,7 @@ msgstr "timeout"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "tip"
-msgstr "기울이기"
+msgstr "내용물을 모두 버리기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61222,12 +61222,12 @@ msgstr "언데드 퇴치"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "twoweapon"
-msgstr "쌍수"
+msgstr "쌍수 전투"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "untrap"
-msgstr "함정 해제"
+msgstr "함정 해체 시도"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61552,12 +61552,12 @@ msgstr "모든 확장 명령 목록 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "adjust inventory letters"
-msgstr "소지품 글자 조정"
+msgstr "소지품 단축키 변경"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "name current level"
-msgstr "현재 층 이름 짓기"
+msgstr "현재 층에 메모해두기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61567,7 +61567,7 @@ msgstr "도구 사용 (곡괭이, 열쇠, 랜턴 등)"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show your attributes"
-msgstr "속성 보기"
+msgstr "내 상태 확인"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61582,22 +61582,22 @@ msgstr "버그 보고서 제출"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "name a monster, specific object, or type of object"
-msgstr "몬스터, 특정 물건, 또는 물건 종류 이름 짓기"
+msgstr "이름 붙이기 / 종류에 메모해두기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "zap (cast) a spell"
-msgstr "주문 시전"
+msgstr "주문 외우기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "talk to someone"
-msgstr "누군가와 대화"
+msgstr "말 걸기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show journal of major events"
-msgstr "주요 사건 일지 보기"
+msgstr "모험 일지 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61607,7 +61607,7 @@ msgstr "문 닫기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "list voluntary challenges you have maintained"
-msgstr "유지 중인 자발적 도전 목록"
+msgstr "지키고 있는 도전 과제 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61642,7 +61642,7 @@ msgstr "무언가 먹기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "engrave writing on the floor"
-msgstr "바닥에 글 새기기"
+msgstr "바닥에 글쓰기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61712,17 +61712,17 @@ msgstr "물건의 특수 능력 발동"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "jump to another location"
-msgstr "다른 위치로 점프"
+msgstr "다른 곳으로 점프하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "kick something"
-msgstr "무언가 발로 차기"
+msgstr "발로 차기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show what object types have been discovered"
-msgstr "발견한 물건 종류 보기"
+msgstr "알아낸 물건 종류 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61742,7 +61742,7 @@ msgstr "이동하는 광원 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "look at what is here"
-msgstr "여기 있는 것 보기"
+msgstr "발밑 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61757,12 +61757,12 @@ msgstr "전리품 뒤지기 (바닥의 상자 등)"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "use monster's special ability"
-msgstr "몬스터 특수 능력 사용"
+msgstr "변신한 몬스터의 능력 사용"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "same as call; name a monster or object or object type"
-msgstr "call과 같음; 몬스터·물건·물건 종류 이름 짓기"
+msgstr "이름 붙이기 / 종류에 메모해두기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61787,7 +61787,7 @@ msgstr "모든 옵션 설정 보기 및 변경"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show a summary of the explored dungeon"
-msgstr "탐험한 던전 요약 보기"
+msgstr "탐험한 던전 정보 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61797,7 +61797,7 @@ msgstr "패닉 루틴 테스트 (게임 종료)"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "pay your shopping bill"
-msgstr "쇼핑 대금 지불"
+msgstr "상점에 값 지불하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61812,7 +61812,7 @@ msgstr "자신 변신"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "pray to the gods for help"
-msgstr "신에게 도움 기도"
+msgstr "신에게 도움을 청하는 기도하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61872,7 +61872,7 @@ msgstr "이전에 선택한 이동 목적지로 이동"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "mount or dismount a saddled steed"
-msgstr "안장 있는 탈것에 올라타거나 내리기"
+msgstr "안장 얹은 탈것에 타기/내리기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61907,7 +61907,7 @@ msgstr "주변 탐색 (함정, 비밀문)"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show all equipment in use"
-msgstr "사용 중인 모든 장비 보기"
+msgstr "장착 장비 확인"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62012,7 +62012,7 @@ msgstr "타임아웃 대기열과 영웅의 시간 제한 고유 능력 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "empty a container"
-msgstr "용기 비우기"
+msgstr "용기의 내용물을 모두 버리기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62037,7 +62037,7 @@ msgstr "쌍수 전투 켜기/끄기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "untrap something"
-msgstr "함정 해제"
+msgstr "함정 해체 시도"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62632,3 +62632,21 @@ msgstr "화살통에 장비할"
 msgctxt "getobj"
 msgid "fire"
 msgstr "발사할"
+
+# dknethack: command names/descriptions that had no entry
+msgctxt "extcmd"
+msgid "pickup"
+msgstr "줍기"
+
+msgctxt "extcmd_desc"
+msgid "pick up things at the current location"
+msgstr "줍기"
+
+msgctxt "getobj"
+msgid "call"
+msgstr "메모해둘"
+
+msgctxt "getobj"
+msgid "name"
+msgstr "이름 붙일"
+

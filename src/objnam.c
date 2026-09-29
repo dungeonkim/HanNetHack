@@ -5,6 +5,7 @@
 
 #include "hack.h"
 #include "i18n.h"
+#include "ko_postpos.h"
 
 /* "an uncursed greased partly eaten guardian naga hatchling [corpse]" */
 #define PREFIX 80 /* (56) */
@@ -575,7 +576,10 @@ xcalled(
     if (pfxlen > bufsiz)
         panic(_("xcalled: not enough room for prefix (%d > %d)"),               pfxlen, bufsiz);
 
-    Sprintf(eos(buf), "%s%s%.*s", pfx, called_str, bufsiz - pfxlen, sfx);
+    if (is_korean_locale()) /* a type name is the player's note: "물약 (메모: 치료?)" */
+        Sprintf(eos(buf), "%s (메모: %.*s)", pfx, bufsiz - pfxlen - 12, sfx);
+    else
+        Sprintf(eos(buf), "%s%s%.*s", pfx, called_str, bufsiz - pfxlen, sfx);
 }
 
 char *
@@ -1006,7 +1010,18 @@ xname_flags(
         }
     }
 
-    if (has_oname(obj) && dknown) {
+    if (has_oname(obj) && dknown && is_korean_locale()) {
+        /* Korean puts a personal name first: "엑스칼리버"라는 이름의 장검 */
+        char kbuf[BUFSZ];
+
+        Snprintf(kbuf, sizeof kbuf, "\"%s\"%s 이름의 %s", ONAME(obj),
+                 (ko_check_batchim(ONAME(obj)) != KO_BATCHIM_NONE) ? "이라는"
+                                                                  : "라는",
+                 buf);
+        *buf = '\0';
+        ConcUpdate(buf);
+        Concat(buf, 0, kbuf);
+    } else if (has_oname(obj) && dknown) {
         Concat(buf, 0, _(" named "));
 
         /* jump directly here if obj passes the has-personal-name test */
