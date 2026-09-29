@@ -122,15 +122,63 @@ static struct ll_achieve_msg achieve_msg [] = {
 #define you_have_X(something) \
     enl_msg(You_, have, (const char *) "", (something), "")
 
+/* dknethack, Korean: tidy one enlightenment line.  The sentence pieces
+   leave zero-width spaces (verbs that translate to nothing) and stray " ."
+   behind; "당신은" is said once per block (a heading or a blank line starts
+   a block) and dropped after that, as a Korean speaker would; a line ends
+   with "." only when it ends in a verb (다); items are indented two spaces. */
+staticfn const char *
+ko_enlght_tidy(const char *in, char *out, size_t outsz)
+{
+    static boolean subject_said = FALSE;
+    static const char zwsp[] = "\xE2\x80\x8B", subj[] = "당신은 ";
+    char buf[BUFSZ], *p;
+    size_t n;
+
+    /* drop zero-width spaces */
+    for (*buf = '\0', p = (char *) in; *p; ) {
+        if (!strncmp(p, zwsp, sizeof zwsp - 1)) {
+            p += sizeof zwsp - 1;
+            continue;
+        }
+        n = strlen(buf);
+        if (n + 1 < sizeof buf)
+            buf[n] = *p, buf[n + 1] = '\0';
+        p++;
+    }
+    if (*buf != ' ') { /* heading or blank line: a new block */
+        subject_said = FALSE;
+        Strcpy(out, buf);
+        return out;
+    }
+    for (p = buf; *p == ' '; p++)
+        ;
+    if (!strncmp(p, subj, sizeof subj - 1)) {
+        if (subject_said)
+            p += sizeof subj - 1;
+        subject_said = TRUE;
+    }
+    while ((n = strlen(p)) > 0 && (p[n - 1] == ' ' || p[n - 1] == '.'))
+        p[n - 1] = '\0';
+    while (strstr(p, "  "))
+        (void) strsubst(p, "  ", " ");
+    n = strlen(p);
+    Snprintf(out, outsz, "  %s%s", p,
+             (n >= 3 && !strcmp(p + n - 3, "다")) ? "." : "");
+    return out;
+}
+
 staticfn void
 enlght_out(const char *buf)
 {
 #ifdef ENABLE_NLS
-    char processed[BUFSZ];
+    char processed[BUFSZ], tidied[BUFSZ];
     if (is_korean_locale() && strchr(buf, KO_PP_START)) {
         ko_process_string(processed, sizeof processed, buf);
         buf = processed;
     }
+    if (is_korean_locale())
+        buf = ko_enlght_tidy(buf, tidied, sizeof tidied);
 #endif
     if (ge.en_via_menu) {
         add_menu_str(ge.en_win, buf);
@@ -431,10 +479,16 @@ enlightenment(
     *tmpbuf = highc(*tmpbuf); /* same adjustment as bottom line */
     /* as in background_enlightenment, when poly'd we need to use the saved
        gender in u.mfemale rather than the current you-as-monster gender */
-    Snprintf(buf, sizeof(buf), _("%s the %s's attributes:"), tmpbuf,
-             ((Upolyd ? u.mfemale : flags.female) && gu.urole.name.f)
-                ? _(gu.urole.name.f)
-                : _(gu.urole.name.m));
+    if (is_korean_locale()) /* "수련생 Dk" */
+        Snprintf(buf, sizeof(buf), "%s %s",
+                 rank_of(u.ulevel, Role_switch,
+                         (Upolyd ? u.mfemale : flags.female) ? 1 : 0),
+                 tmpbuf);
+    else
+        Snprintf(buf, sizeof(buf), _("%s the %s's attributes:"), tmpbuf,
+                 ((Upolyd ? u.mfemale : flags.female) && gu.urole.name.f)
+                    ? _(gu.urole.name.f)
+                    : _(gu.urole.name.m));
 
     /* title */
     enlght_out(buf); /* "Conan the Archeologist's attributes:" */
@@ -459,6 +513,15 @@ enlightenment(
     }
 
     enlght_out(""); /* separator */
+    if (is_korean_locale() && !(wizard || discover || final)) {
+        /* nothing but the playing time to tell: "플레이 시간:" / "7분 51초" */
+        enlght_out("플레이 시간:");
+        (void) fmt_elapsed_time(buf, final);
+        (void) strsubst(buf, _(" and"), "");
+        while (strchr(buf, ','))
+            (void) strsubst(buf, ",", "");
+        enlght_out(buf);
+    } else {
     enlght_out(_("Miscellaneous:"));
     /* reminder to player and/or information for dumplog */
     if ((mode & BASICENLIGHTENMENT) != 0 && (wizard || discover || final)) {
@@ -483,6 +546,7 @@ enlightenment(
     }
     (void) fmt_elapsed_time(buf, final);
     enl_msg(_("Total elapsed playing time "), _("is"), _("was"), buf, "");
+    } /* !Korean in-game */
 
     if (!ge.en_via_menu) {
         display_nhwindow(ge.en_win, TRUE);
@@ -552,7 +616,15 @@ background_enlightenment(int unused_mode UNUSED, int final)
     buf[0] = '\0';
     if (Upolyd)
         Strcpy(buf, _("actually ")); /* "You are actually a ..." */
-    if (!strcmpi(rank_titl, role_titl)) {
+    if (is_korean_locale()) {
+        /* "초보자, 1레벨 인간 남성 순찰자" (no "당신은": the heading says whose) */
+        char kobuf[BUFSZ];
+
+        Snprintf(kobuf, sizeof kobuf, " %s%s, %d레벨 %s %s%s", buf, rank_titl,
+                 u.ulevel, _(gu.urace.adj), tmpbuf,
+                 strcmpi(rank_titl, role_titl) ? role_titl : "");
+        enlght_out(kobuf);
+    } else if (!strcmpi(rank_titl, role_titl)) {
         /* omit role when rank title matches it */
         Sprintf(eos(buf), _("%s, level %d %s%s"), an(rank_titl), u.ulevel,
                 tmpbuf, _(gu.urace.noun));
@@ -560,7 +632,25 @@ background_enlightenment(int unused_mode UNUSED, int final)
         Sprintf(eos(buf), _("%s, a level %d %s%s %s"), an(rank_titl), u.ulevel,
                 tmpbuf, _(gu.urace.adj), role_titl);
     }
-    you_are(buf, "");
+    if (!is_korean_locale())
+        you_are(buf, "");
+    if (is_korean_locale()) {
+        /* "혼돈 성향, 마르스를 위한 임무 중" / "반대세력은 메르쿠리우스(질서), 베누스(중립)" */
+        aligntyp a, others[2];
+        int k = 0;
+
+        Sprintf(buf, " %s 성향, %s{을/를} 위한 임무 중",
+                align_str(u.ualign.type), u_gname());
+        enlght_out(buf);
+        for (a = A_CHAOTIC; a <= A_LAWFUL; a++)
+            if (a != u.ualign.type && k < 2)
+                others[k++] = a;
+        Sprintf(buf, " 반대세력은 %s(%s), %s(%s)",
+                align_gname(others[1]), align_str(others[1]),
+                align_gname(others[0]), align_str(others[0]));
+        enlght_out(buf);
+        enlght_out(""); /* the rest of the background is a new block */
+    } else {
 
     /* report alignment (bypass you_are() in order to omit ending period);
        adverb is used to distinguish between temporary change (helm of opp.
@@ -602,6 +692,7 @@ background_enlightenment(int unused_mode UNUSED, int final)
                 align_str(A_CHAOTIC));
     Strcat(buf, "."); /* terminate sentence */
     enlght_out(buf);
+    } /* !is_korean_locale() */
 
     /* show original alignment,gender,race,role if any have been changed;
        giving separate message for temporary alignment change bypasses need
@@ -627,7 +718,8 @@ background_enlightenment(int unused_mode UNUSED, int final)
     /* "You are left-handed." won't work well if polymorphed into something
        without hands; use "You are normally left-handed." in that situation */
     Sprintf(buf, _("%s%s-handed"),
-            !strcmp(body_part(HANDED), "handed") ? "" : _("normally "),
+            (!strcmp(body_part(HANDED), "handed") || is_korean_locale())
+                ? "" : _("normally "),
             URIGHTY ? _("right") : _("left"));
     you_are(buf, "");
 
@@ -654,7 +746,7 @@ background_enlightenment(int unused_mode UNUSED, int final)
         Strcpy(dgnbuf, _(svd.dungeons[u.uz.dnum].dname));
         if (!strncmpi(dgnbuf, "The ", 4))
             *dgnbuf = lowc(*dgnbuf);
-        Sprintf(tmpbuf, _("level %d"),
+        Sprintf(tmpbuf, is_korean_locale() ? "%d층" : _("level %d"),
                 In_quest(&u.uz) ? dunlev(&u.uz) : depth(&u.uz));
         /* TODO? maybe extend this bit to include various other automatic
            annotations from the dungeon overview code */
@@ -769,6 +861,29 @@ basics_enlightenment(int mode UNUSED, int final)
 
     if (hp < 0)
         hp = 0;
+    if (is_korean_locale()) {
+        long umoney = money_cnt(gi.invent), hmoney = hidden_gold(final);
+
+        find_ac();
+        Sprintf(buf, " 당신은 체력 %d/%d, 마력 %d/%d, AC %d",
+                hp, hpmax, pw, pwmax, u.uac);
+        enlght_out(buf);
+        if (Upolyd) {
+            Sprintf(buf, " 변신한 몸의 레벨은 %d이다.",
+                    (int) mons[u.umonnum].mlevel);
+            enlght_out(buf);
+        }
+        if (umoney)
+            Sprintf(buf, " 금화 %ld개를 가지고 있다.", umoney);
+        else
+            Strcpy(buf, " 금화는 가지고 있지 않다.");
+        enlght_out(buf);
+        if (hmoney) {
+            Sprintf(buf, " 가방 속에 금화 %ld개가 더 있다.", hmoney);
+            enlght_out(buf);
+        }
+        return;
+    }
     /* "1 out of 1" rather than "all" if max is only 1; should never happen;
        i18n: C_() contexts let translators add verbs for SOV languages */
     if (hp == hpmax && hpmax > 1)
