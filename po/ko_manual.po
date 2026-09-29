@@ -63400,3 +63400,44 @@ msgctxt "spell_school"
 msgid "matter"
 msgstr "물질조종"
 
+
+# dknethack: a samurai's Japanese item names (objnam.c Japanese_item_name)
+msgid "wakizashi"
+msgstr "와키자시"
+
+msgid "ninja-to"
+msgstr "닌자도"
+
+msgid "nunchaku"
+msgstr "쌍절곤"
+
+msgid "naginata"
+msgstr "나기나타"
+
+msgid "osaku"
+msgstr "오사쿠"
+
+msgid "koto"
+msgstr "고토"
+
+msgid "magic koto"
+msgstr "마법 고토"
+
+msgid "shito"
+msgstr "시토"
+
+msgid "tanko"
+msgstr "단코"
+
+msgid "kabuto"
+msgstr "가부토"
+
+msgid "yugake"
+msgstr "유가케"
+
+msgid "gunyoki"
+msgstr "군요키"
+
+msgid "sake"
+msgstr "사케"
+

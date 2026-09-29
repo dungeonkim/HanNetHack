@@ -1424,7 +1424,11 @@ doname_base(
             else if (obj->blessed)
                 Strcat(prefix, _("blessed "));
         }
-        if (!ko_typeknown)
+        /* weapons and armor go without it: their appearance ("조잡한 단검",
+           "전투화") is never the name they have once known, so it already
+           says the type is unknown */
+        if (!ko_typeknown && obj->oclass != WEAPON_CLASS
+            && obj->oclass != ARMOR_CLASS)
             Strcat(prefix, "정체불명의 ");
     } else if (bknown && obj->oclass != COIN_CLASS
         && (obj->otyp != POT_WATER || !objects[POT_WATER].oc_name_known
@@ -5696,7 +5700,7 @@ Japanese_item_name(int i, const char *ordinaryname)
 
     while (j->item) {
         if (i == j->item)
-            return j->name;
+            return _(j->name);
         j++;
     }
     return ordinaryname;
