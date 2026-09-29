@@ -61582,7 +61582,7 @@ msgstr "버그 보고서 제출"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "name a monster, specific object, or type of object"
-msgstr "이름 붙이기 / 종류에 메모해두기"
+msgstr "이름 붙이기/메모하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61672,7 +61672,7 @@ msgstr "자물쇠 부수기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "list monsters that have been genocided or become extinct"
-msgstr "멸종시키거나 절멸한 몬스터 목록"
+msgstr "멸종된 몬스터 목록"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61692,7 +61692,7 @@ msgstr "여기서 할 수 있는 명령 메뉴 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show a summary of the game's development"
-msgstr "게임 개발 역사 요약 보기"
+msgstr "네트핵 개발 연표 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61712,7 +61712,7 @@ msgstr "물건의 특수 능력 발동"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "jump to another location"
-msgstr "다른 곳으로 점프하기"
+msgstr "점프하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61762,7 +61762,7 @@ msgstr "변신한 몬스터의 능력 사용"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "same as call; name a monster or object or object type"
-msgstr "이름 붙이기 / 종류에 메모해두기"
+msgstr "이름 붙이기/메모하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -63288,3 +63288,7 @@ msgstr "옌더의 목걸이"
 
 msgid "cheap plastic imitation of the Amulet of Yendor"
 msgstr "옌더의 목걸이 모조품"
+
+# dknethack here-menu (cmd.c there_cmd_menu_self): a box whose lock is known
+msgid "Force the lock of %s"
+msgstr "%s 자물쇠 부수기"

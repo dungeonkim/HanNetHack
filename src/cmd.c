@@ -4426,6 +4426,7 @@ enum menucmd {
 
     MCMD_THROW_OBJ,
     MCMD_TRAVEL,
+    MCMD_FORCE, /* dknethack: force the known lock of a box here */
 };
 
 staticfn void
@@ -4503,6 +4504,11 @@ there_cmd_menu_self(winid win, coordxy x, coordxy y, int *act UNUSED)
 
             Sprintf(buf, _("Tip %s"), doname(otmp));
             mcmd_addmenu(win, MCMD_TIP, buf), ++K;
+
+            if (otmp->olocked && otmp->lknown) {
+                Sprintf(buf, _("Force the lock of %s"), doname(otmp));
+                mcmd_addmenu(win, MCMD_FORCE, buf), ++K;
+            }
         }
         if (otmp->oclass == FOOD_CLASS) {
             Sprintf(buf, _("Eat %s"), doname(otmp));
@@ -4511,17 +4517,12 @@ there_cmd_menu_self(winid win, coordxy x, coordxy y, int *act UNUSED)
     }
 
 
-    if (gi.invent) {
-        mcmd_addmenu(win, MCMD_INVENTORY, _("Inventory")), ++K;
+    /* dknethack: its controls reach inventory, rest, search, look, prayer,
+       attributes and old messages elsewhere; this menu keeps what is done
+       on this very spot */
+    if (gi.invent)
         mcmd_addmenu(win, MCMD_DROP, _("Drop items")), ++K;
-    }
-    mcmd_addmenu(win, MCMD_REST, _("Rest one turn")), ++K;
-    mcmd_addmenu(win, MCMD_SEARCH, _("Search around you")), ++K;
-    mcmd_addmenu(win, MCMD_LOOK_HERE, _("Look at what is here")), ++K;
-    mcmd_addmenu(win, MCMD_PRAY, _("Pray here")), ++K;
     mcmd_addmenu(win, MCMD_ENGRAVE, _("Engrave here")), ++K;
-    mcmd_addmenu(win, MCMD_ATTRIBUTES, _("View attributes")), ++K;
-    mcmd_addmenu(win, MCMD_PREVIOUS_MESSAGES, _("Access memories")), ++K;
 
     if (num_spells() > 0)
         mcmd_addmenu(win, MCMD_CAST_SPELL, _("Cast a spell")), ++K;
@@ -4854,6 +4855,9 @@ act_on_act(
         cmdq_add_ec(CQ_CANNED, dountrap);
         cmdq_add_dir(CQ_CANNED, 0, 0, 1);
         break;
+    case MCMD_FORCE:
+        cmdq_add_ec(CQ_CANNED, doforce);
+        break;
     case MCMD_OFFER:
         cmdq_add_ec(CQ_CANNED, dosacrifice);
         cmdq_add_userinput(CQ_CANNED);
@@ -4912,7 +4916,8 @@ there_cmd_menu(coordxy x, coordxy y, int mod)
         act_on_act(act, dx, dy);
         return '\0';
     } else {
-        end_menu(win, _("What do you want to do?"));
+        end_menu(win, u_at(x, y) ? tr_defsym_explanation(glyph_to_cmap(back_to_glyph(x, y)))
+                                 : _("What do you want to do?"));
         npick = select_menu(win, PICK_ONE, &picks);
         ch = '\033';
     }
