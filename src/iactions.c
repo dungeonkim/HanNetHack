@@ -4,6 +4,7 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+#include "ko_postpos.h"
 
 staticfn boolean item_naming_classification(struct obj *, char *, char *);
 staticfn int item_reading_classification(struct obj *, char *);
@@ -35,6 +36,7 @@ enum item_action_actions {
     IA_INVOKE_OBJ,
     IA_WIELD_OBJ,
     IA_WEAR_OBJ,
+    IA_WEAR_SWAP, /* dknethack: take off what fills the slot, then wear this */
     IA_SWAPWEAPON,
     IA_TWOWEAPON,
     IA_ZAP_OBJ,
@@ -258,6 +260,18 @@ itemactions_pushkeys(struct obj *otmp, int act)
         cmdq_add_ec(CQ_CANNED, dowear);
         cmdq_add_key(CQ_CANNED, otmp->invlet);
         break;
+    case IA_WEAR_SWAP: {
+        struct obj *o = wearmask_to_obj(
+                          armcat_to_wornmask(objects[otmp->otyp].oc_armcat));
+
+        if (o) {
+            cmdq_add_ec(CQ_CANNED, ia_dotakeoff); /* #altdotakeoff */
+            cmdq_add_key(CQ_CANNED, o->invlet);
+        }
+        cmdq_add_ec(CQ_CANNED, dowear);
+        cmdq_add_key(CQ_CANNED, otmp->invlet);
+        break;
+    }
     case IA_SWAPWEAPON:
         cmdq_add_ec(CQ_CANNED, doswapweapon);
         break;
@@ -653,12 +667,26 @@ itemactions(struct obj *otmp)
             long Wmask = armcat_to_wornmask(objects[otmp->otyp].oc_armcat);
             struct obj *o = wearmask_to_obj(Wmask);
 
-            if (!o)
+            if (!o) {
                 Strcpy(buf, _("Wear this armor"));
-            else
-                Sprintf(buf, _("[already wearing %s]"), an(armor_simple_name(o)));
+                ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);
+            } else if (o->oclass == ARMOR_CLASS && !(o == uarm && uarmc)
+                       && !(o == uarmu && (uarm || uarmc))) {
+                /* dknethack: a slot in use becomes a swap, unless a cloak
+                   (or armor over a shirt) must come off first */
+                const char *wornname = simpleonames(o);
 
-            ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);
+                if (is_korean_locale())
+                    Sprintf(buf, "%s%s 벗고 입기", wornname,
+                            (ko_check_batchim(wornname) != KO_BATCHIM_NONE)
+                                ? "을" : "를");
+                else
+                    Sprintf(buf, "Take off %s and wear this", wornname);
+                ia_addmenu(win, IA_WEAR_SWAP, 'W', buf);
+            } else {
+                Sprintf(buf, _("[already wearing %s]"), an(armor_simple_name(o)));
+                ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);
+            }
         }
     }
 

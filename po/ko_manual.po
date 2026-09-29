@@ -53302,7 +53302,7 @@ msgstr "재활 치료를 권한다..."
 
 #: ../src/do_wear.c:11
 msgid "suit"
-msgstr "슈트"
+msgstr "갑옷"
 
 #: ../src/apply.c:1232
 #, c-format
