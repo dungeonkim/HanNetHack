@@ -63161,7 +63161,7 @@ msgstr "정지의 마법봉"
 
 msgctxt "objname"
 msgid "wand of nothing"
-msgstr "마법봉"
+msgstr "그냥 마법봉"
 
 msgctxt "objname"
 msgid "wand of striking"

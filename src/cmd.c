@@ -4664,15 +4664,10 @@ there_cmd_menu_common(
     int mod,
     int *act UNUSED)
 {
-    int K = 0;
-
-    if (mod == CLICK_1 || mod == CLICK_2) { /* ignore iflags.clicklook here */
-        /* for self, only include "look at map symbol" if it isn't the
-           ordinary hero symbol (steed, invisible w/o see invisible, ?) */
-        if (!u_at(x, y) || Upolyd || glyph_at(x, y) != hero_glyph)
-            mcmd_addmenu(win, MCMD_LOOK_AT, _("Look at map symbol")), ++K;
-    }
-    return K;
+    /* dknethack: no "Look at map symbol"; the menu title already names
+       what is shown there, from the same autodescribe text */
+    nhUse(win), nhUse(x), nhUse(y), nhUse(mod);
+    return 0;
 }
 
 /* queue up command(s) to perform #therecmdmenu action */
