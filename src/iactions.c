@@ -43,6 +43,20 @@ enum item_action_actions {
     IA_WHATIS_OBJ, /* '/' specify inventory object */
 };
 
+/* dknethack: what must come off before worn armor o can, outermost first
+   (a cloak over body armor; a cloak and body armor over a shirt) */
+staticfn int
+ia_armor_covers(struct obj *o, struct obj **covers)
+{
+    int n = 0;
+
+    if ((o == uarm || o == uarmu) && uarmc)
+        covers[n++] = uarmc;
+    if (o == uarmu && uarm)
+        covers[n++] = uarm;
+    return n;
+}
+
 /* construct text for the menu entries for IA_NAME_OBJ and IA_NAME_OTYP */
 staticfn boolean
 item_naming_classification(
@@ -261,15 +275,27 @@ itemactions_pushkeys(struct obj *otmp, int act)
         cmdq_add_key(CQ_CANNED, otmp->invlet);
         break;
     case IA_WEAR_SWAP: {
+        /* take off the layers on top and the worn piece, wear this, then
+           put the layers back on (innermost first) */
         struct obj *o = wearmask_to_obj(
-                          armcat_to_wornmask(objects[otmp->otyp].oc_armcat));
+                          armcat_to_wornmask(objects[otmp->otyp].oc_armcat)),
+                   *covers[2];
+        int i, n = o ? ia_armor_covers(o, covers) : 0;
 
-        if (o) {
+        for (i = 0; i < n; i++) {
             cmdq_add_ec(CQ_CANNED, ia_dotakeoff); /* #altdotakeoff */
+            cmdq_add_key(CQ_CANNED, covers[i]->invlet);
+        }
+        if (o) {
+            cmdq_add_ec(CQ_CANNED, ia_dotakeoff);
             cmdq_add_key(CQ_CANNED, o->invlet);
         }
         cmdq_add_ec(CQ_CANNED, dowear);
         cmdq_add_key(CQ_CANNED, otmp->invlet);
+        for (i = n - 1; i >= 0; i--) {
+            cmdq_add_ec(CQ_CANNED, dowear);
+            cmdq_add_key(CQ_CANNED, covers[i]->invlet);
+        }
         break;
     }
     case IA_SWAPWEAPON:
@@ -670,13 +696,17 @@ itemactions(struct obj *otmp)
             if (!o) {
                 Strcpy(buf, _("Wear this armor"));
                 ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);
-            } else if (o->oclass == ARMOR_CLASS && !(o == uarm && uarmc)
-                       && !(o == uarmu && (uarm || uarmc))) {
-                /* dknethack: a slot in use becomes a swap, unless a cloak
-                   (or armor over a shirt) must come off first */
+            } else if (o->oclass == ARMOR_CLASS) {
+                /* dknethack: a slot in use becomes a swap, through any
+                   layers on top ("입은 방어구를 모두 벗고 입기") */
+                struct obj *covers[2];
                 const char *wornname = simpleonames(o);
 
-                if (is_korean_locale())
+                if (ia_armor_covers(o, covers))
+                    Strcpy(buf, is_korean_locale()
+                                    ? "입은 방어구를 모두 벗고 입기"
+                                    : "Take off what is over it too and wear this");
+                else if (is_korean_locale())
                     Sprintf(buf, "%s%s 벗고 입기", wornname,
                             (ko_check_batchim(wornname) != KO_BATCHIM_NONE)
                                 ? "을" : "를");
