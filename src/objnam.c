@@ -877,6 +877,10 @@ xname_flags(
                 /* i18n: use Sprintf for Korean word order reordering */
                 if (typ == POT_WATER && bknown
                     && (obj->blessed || obj->cursed)) {
+                    if (is_korean_locale()) /* 성수, 저주받은 물: no 물약 */
+                        Strcat(buf, obj->blessed ? _("holy water")
+                                                 : _("unholy water"));
+                    else
                     Sprintf(eos(buf), _("potion of %s"),
                             obj->blessed ? _("holy water")
                                          : _("unholy water"));
