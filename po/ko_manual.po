@@ -63336,11 +63336,11 @@ msgstr "치료 주문"
 
 msgctxt "skill"
 msgid "divination spells"
-msgstr "예언 주문"
+msgstr "탐지 주문"
 
 msgctxt "skill"
 msgid "enchantment spells"
-msgstr "강화 주문"
+msgstr "상태이상 주문"
 
 msgctxt "skill"
 msgid "clerical spells"
@@ -63352,7 +63352,7 @@ msgstr "이동 주문"
 
 msgctxt "skill"
 msgid "matter spells"
-msgstr "물질 주문"
+msgstr "물질조종 주문"
 
 msgctxt "skill"
 msgid "bare handed combat"
@@ -63382,11 +63382,11 @@ msgstr "치료"
 
 msgctxt "spell_school"
 msgid "divination"
-msgstr "예언"
+msgstr "탐지"
 
 msgctxt "spell_school"
 msgid "enchantment"
-msgstr "강화"
+msgstr "상태이상"
 
 msgctxt "spell_school"
 msgid "clerical"
@@ -63398,5 +63398,5 @@ msgstr "이동"
 
 msgctxt "spell_school"
 msgid "matter"
-msgstr "물질"
+msgstr "물질조종"
 
