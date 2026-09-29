@@ -14527,7 +14527,7 @@ msgstr "키 '%s'를 \"%s\"에 바인딩했다."
 # 방어구 - 갑옷
 #: ../src/iactions.c:400
 msgid "Break this wand"
-msgstr "이 지팡이 부러뜨리기"
+msgstr "마법봉 부러뜨리기"
 
 #: ../src/mthrowu.c:1162
 #, c-format
@@ -20372,20 +20372,20 @@ msgstr "누군가 다치기 전에 그 무기를 치워!"
 
 #: ../src/iactions.c:518
 msgid "Put these lenses on"
-msgstr "이 렌즈 착용하기"
+msgstr "렌즈 착용"
 
 #: ../src/iactions.c:505
 msgid "Put this amulet on"
-msgstr "이 부적 착용하기"
+msgstr "부적 착용"
 
 #: ../src/iactions.c:520
 #, c-format
 msgid "Put this on%s"
-msgstr "이것 착용하기%s"
+msgstr "착용%s"
 
 #: ../src/iactions.c:509
 msgid "Put this ring on"
-msgstr "이 반지 끼기"
+msgstr "반지 착용"
 
 # vault.c:476 - 경비원이 돌아서 떠남
 #: ../src/vault.c:475
@@ -20428,7 +20428,7 @@ msgstr "화살통에 넣을"
 #: ../src/iactions.c:537
 #, c-format
 msgid "Quiver this %s for easy %s with 'f'ire"
-msgstr "'f'ire로 쉽게 %s하기 위해 이 %s{을/를} 화살통에 넣기"
+msgstr "화살통에 장비%.0s%.0s"
 
 #: ../src/role.c:78
 msgid "Raider"
@@ -20518,7 +20518,7 @@ msgstr "대신 전부 준비하시겠습니까?"
 
 #: ../src/iactions.c:657
 msgid "Ready this as an alternate weapon"
-msgstr "이것을 보조 무기로 준비"
+msgstr "보조 무기로 두기"
 
 #: ../src/read.c:164
 msgid "Real men are valkyries"
@@ -20628,7 +20628,7 @@ msgstr "선택한 하이라이트 제거"
 #: ../src/iactions.c:549
 #, c-format
 msgid "Remove this %s"
-msgstr "이 %s 벗기"
+msgstr "장신구 벗기%.0s"
 
 # invent.c - 장비 메뉴 제목. "Remove which item?"
 #: ../src/options.c:6420 ../src/options.c:6516 ../src/options.c:6588
@@ -21959,11 +21959,11 @@ msgstr "%s{과/와} 자리 바꾸기"
 
 #: ../src/iactions.c:654
 msgid "Swap this with your alternate weapon"
-msgstr "보조 무기는"
+msgstr "보조 무기로 바꾸기"
 
 #: ../src/iactions.c:660
 msgid "Swap this with your main weapon"
-msgstr "주무기로 전환한다."
+msgstr "주무기로 바꾸기"
 
 #: ../src/invent.c:5253
 msgid "Swapping:"
@@ -22027,7 +22027,7 @@ msgstr "사진 찍기"
 
 #: ../src/iactions.c:591
 msgid "Take off this armor"
-msgstr "이 갑옷 벗기"
+msgstr "갑옷 벗기"
 
 #: ../src/do_wear.c:3001
 #, c-format
@@ -23749,7 +23749,7 @@ msgstr "'autopickup'을 켜면 이것들을 자동으로 줍다."
 #: ../src/iactions.c:680
 #, c-format
 msgid "Toggle two-weapon combat %s"
-msgstr "쌍수 전투 전환 %s"
+msgstr "쌍수 전투 %s"
 
 # eat.c:1990 - 괜찮은 맛 (채식용)
 #: ../src/eat.c:1993
@@ -24661,7 +24661,7 @@ msgstr "무기가 사람을 죽이는 게 아니라, 내가 죽인다"
 # do_wear.c - 갑옷 입기. "Wear this plate mail"
 #: ../src/iactions.c:643
 msgid "Wear this armor"
-msgstr "이 갑옷을 입다"
+msgstr "갑옷 입기"
 
 #: ../src/polyself.c:1607
 #, c-format
@@ -25049,18 +25049,18 @@ msgstr "대신 전부 장비하시겠습니까?"
 
 #: ../src/iactions.c:617
 msgid "Wield the tin opener to easily open tins"
-msgstr "깡통따개로 쉽게 깡통 열기"
+msgstr "깡통따개 들기 (깡통을 쉽게 연다)"
 
 # wield.c - 무기 장비. "Wield this sword as your weapon"
 #: ../src/iactions.c:612
 #, c-format
 msgid "Wield this %s as your weapon"
-msgstr "이 %s{을/를} 무기로 장비하다"
+msgstr "무기 들기%.0s"
 
 #: ../src/iactions.c:622
 #, c-format
 msgid "Wield this %s in your %s"
-msgstr "맨%s{으로/로} %s{을/를} 휘두른다."
+msgstr "손에 들기%.0s%.0s"
 
 #: ../src/invent.c:65
 msgid "Wielded/Readied Weapons"
@@ -26798,7 +26798,7 @@ msgstr "냠%c"
 
 #: ../src/iactions.c:689
 msgid "Zap this wand to release its magic"
-msgstr "이 지팡이를 휘둘러 마법을 발동"
+msgstr "마법봉 사용"
 
 #: ../src/shk.c:3639
 msgid "Zero quantity on bill??"
@@ -29816,7 +29816,7 @@ msgstr "근처에"
 
 #: ../src/objnam.c:1652
 msgid "at the ready"
-msgstr "투척 준비"
+msgstr "투척 준비됨"
 
 #: ../src/mcastu.c:79
 msgid "at you, then curses"
@@ -41733,11 +41733,11 @@ msgstr "제자리에서 굴렀다."
 # 발사체 준비 상태
 #: ../src/objnam.c:1650
 msgid "in quiver"
-msgstr "화살통"
+msgstr "화살통에 장비"
 
 #: ../src/objnam.c:1651
 msgid "in quiver pouch"
-msgstr "주머니"
+msgstr "주머니에 장비"
 
 #: ../src/options.c:6336
 msgid "in same area"
@@ -60857,7 +60857,7 @@ msgstr "발사"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "force"
-msgstr "강제 열기"
+msgstr "자물쇠 부수기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -60942,7 +60942,7 @@ msgstr "주변 보기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "loot"
-msgstr "수색"
+msgstr "전리품 뒤지기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61012,7 +61012,7 @@ msgstr "최근 메시지"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "puton"
-msgstr "착용"
+msgstr "장신구 착용"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61027,7 +61027,7 @@ msgstr "종료"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "quiver"
-msgstr "화살통"
+msgstr "화살통에 장비"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61042,7 +61042,7 @@ msgstr "화면 갱신"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "remove"
-msgstr "벗기"
+msgstr "장신구 벗기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61092,7 +61092,7 @@ msgstr "설정 저장"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "search"
-msgstr "함정 탐색"
+msgstr "주변 탐색"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61162,17 +61162,17 @@ msgstr "일시 정지"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "swap"
-msgstr "무기 교환"
+msgstr "보조 무기로 바꾸기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "takeoff"
-msgstr "벗기"
+msgstr "갑옷 벗기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "takeoffall"
-msgstr "갑옷 전부 벗기"
+msgstr "갑옷 모두 벗기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61262,7 +61262,7 @@ msgstr "대기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "wear"
-msgstr "입기"
+msgstr "갑옷 입기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61277,7 +61277,7 @@ msgstr "심볼 정보"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "wield"
-msgstr "장착"
+msgstr "무기 들기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61417,7 +61417,7 @@ msgstr "wmode"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "zap"
-msgstr "지팡이"
+msgstr "마법봉 사용"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61667,7 +61667,7 @@ msgstr "화살통에서 탄약 발사"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "force a lock"
-msgstr "자물쇠 강제로 열기"
+msgstr "자물쇠 부수기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61752,7 +61752,7 @@ msgstr "볼 수 있는 것 설명"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "loot a box on the floor"
-msgstr "바닥의 상자 수색"
+msgstr "전리품 뒤지기 (바닥의 상자 등)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61822,7 +61822,7 @@ msgstr "최근 게임 메시지 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "put on an accessory (ring, amulet, etc)"
-msgstr "장신구 착용 (반지, 목걸이 등)"
+msgstr "장신구 착용 (반지, 부적 등)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61837,7 +61837,7 @@ msgstr "저장하지 않고 종료"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "select ammunition for quiver"
-msgstr "화살통에 넣을 탄약 선택"
+msgstr "화살통에 장비"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61852,7 +61852,7 @@ msgstr "화면 다시 그리기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "remove an accessory (ring, amulet, etc)"
-msgstr "장신구 벗기 (반지, 목걸이 등)"
+msgstr "장신구 벗기 (반지, 부적 등)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61902,7 +61902,7 @@ msgstr "게임 설정 저장"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "search for traps and secret doors"
-msgstr "함정과 비밀문 탐색"
+msgstr "주변 탐색 (함정, 비밀문)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61972,17 +61972,17 @@ msgstr "게임을 백그라운드로 보내기 ('fg'로 복귀)"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "swap wielded and secondary weapons"
-msgstr "주무기와 보조 무기 교환"
+msgstr "보조 무기로 바꾸기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "take off one piece of armor"
-msgstr "갑옷 한 벌 벗기"
+msgstr "갑옷 벗기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "remove all armor"
-msgstr "모든 갑옷 벗기"
+msgstr "갑옷 모두 벗기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62072,7 +62072,7 @@ msgstr "아무것도 하지 않고 한 턴 쉬기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "wear a piece of armor"
-msgstr "갑옷 한 벌 입기"
+msgstr "갑옷 입기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62087,7 +62087,7 @@ msgstr "심볼이 무엇을 나타내는지 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "wield (put in use) a weapon"
-msgstr "무기 장착 (사용)"
+msgstr "무기 들기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62227,7 +62227,7 @@ msgstr "벽 모드 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "zap a wand"
-msgstr "지팡이 사용"
+msgstr "마법봉 사용"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62610,3 +62610,25 @@ msgstr "매력적인"
 msgctxt "attr_max"
 msgid "repulsive"
 msgstr "매력 없는"
+
+# dknethack: getobj verbs that had no context entry
+msgctxt "getobj"
+msgid "wield"
+msgstr "들"
+
+msgctxt "getobj"
+msgid "zap"
+msgstr "사용할"
+
+msgctxt "getobj"
+msgid "put on"
+msgstr "착용할"
+
+
+msgctxt "getobj"
+msgid "ready"
+msgstr "화살통에 장비할"
+
+msgctxt "getobj"
+msgid "fire"
+msgstr "발사할"

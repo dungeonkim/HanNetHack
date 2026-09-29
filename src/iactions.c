@@ -300,9 +300,12 @@ itemactions(struct obj *otmp)
          * TODO: if uwep is ammo, tell player that to shoot instead of toss,
          *       the corresponding launcher must be wielded;
          */
-        Sprintf(buf, _("%s '%c' to %s %s %s"),
-                verb, HANDS_SYM, action, which,
-                is_plural(otmp) ? makeplural(what) : what);
+        if (is_korean_locale())
+            Strcpy(buf, (otmp == uquiver) ? "화살통에서 빼기" : "무기 내려놓기");
+        else
+            Sprintf(buf, _("%s '%c' to %s %s %s"),
+                    verb, HANDS_SYM, action, which,
+                    is_plural(otmp) ? makeplural(what) : what);
         ia_addmenu(win, IA_UNWIELD, '-', buf);
     }
 

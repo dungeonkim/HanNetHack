@@ -1698,7 +1698,7 @@ doname_base(
     }
     if (obj->owornmask & W_SWAPWEP) {
         if (is_korean_locale())
-            Concat(bp, 0, !u.twoweap ? " (예비 무기)"
+            Concat(bp, 0, !u.twoweap ? " (보조 무기)"
                           : URIGHTY ? " (왼손 장착)" : " (오른손 장착)");
         else if (u.twoweap)
             ConcatF2(bp, 0, _(" (wielded in %s %s)"),
