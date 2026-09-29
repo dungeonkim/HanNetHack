@@ -304,7 +304,7 @@ itemactions(struct obj *otmp)
          *       the corresponding launcher must be wielded;
          */
         if (is_korean_locale())
-            Strcpy(buf, (otmp == uquiver) ? "화살통에서 빼기" : "무기 넣기");
+            Strcpy(buf, (otmp == uquiver) ? "화살통에서 빼기" : "무기 장착 해제");
         else
             Sprintf(buf, _("%s '%c' to %s %s %s"),
                     verb, HANDS_SYM, action, which,
@@ -691,7 +691,10 @@ itemactions(struct obj *otmp)
             || (could_twoweap(gy.youmonst.data) && !uarms
                 && uwep && MAYBETWOWEAPON(uwep)
                 && uswapwep && MAYBETWOWEAPON(uswapwep)))) {
-        Sprintf(buf, _("Toggle two-weapon combat %s"), u.twoweap ? C_("toggle", "off") : C_("toggle", "on"));
+        if (is_korean_locale())
+            Strcpy(buf, u.twoweap ? "쌍수 전투 그만두기" : "쌍수 전투 시작하기");
+        else
+            Sprintf(buf, _("Toggle two-weapon combat %s"), u.twoweap ? C_("toggle", "off") : C_("toggle", "on"));
         ia_addmenu(win, IA_TWOWEAPON, 'X', buf);
     }
 

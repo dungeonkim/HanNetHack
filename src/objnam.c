@@ -1573,8 +1573,8 @@ doname_base(
  ring:  /* normal rings reach here 'naturally'; meat ring jumps here */
         if (is_korean_locale()) {
             if (obj->owornmask & W_RING)
-                Concat(bp, 0, (obj->owornmask & W_RINGR) ? " (오른손 장착)"
-                                                         : " (왼손 장착)");
+                Concat(bp, 0, (obj->owornmask & W_RINGR) ? " (오른손 장착중)"
+                                                         : " (왼손 장착중)");
         } else {
             if (obj->owornmask & W_RINGR)
                 Concat(bp, 0, _(" (on right "));
@@ -1685,9 +1685,9 @@ doname_base(
             if (is_korean_locale())
                 /* Korean says 장착 for anything worn or wielded; only
                    two-weapon combat names the hand */
-                Concat(bp, 0, tethered ? " (장착, 줄 연결)"
-                              : !twoweap_primary ? " (장착)"
-                                : URIGHTY ? " (오른손 장착)" : " (왼손 장착)");
+                Concat(bp, 0, tethered ? " (장착중, 줄 연결)"
+                              : !twoweap_primary ? " (장착중)"
+                                : URIGHTY ? " (오른손 장착중)" : " (왼손 장착중)");
             else
                 ConcatF2(bp, 0, _(" (%s %s)"),
                          tethered ? _("tethered to")
@@ -1714,7 +1714,7 @@ doname_base(
     if (obj->owornmask & W_SWAPWEP) {
         if (is_korean_locale())
             Concat(bp, 0, !u.twoweap ? " (보조 무기)"
-                          : URIGHTY ? " (왼손 장착)" : " (오른손 장착)");
+                          : URIGHTY ? " (왼손 장착중)" : " (오른손 장착중)");
         else if (u.twoweap)
             ConcatF2(bp, 0, _(" (wielded in %s %s)"),
                      URIGHTY ? _("left") : _("right"), body_part(HAND));

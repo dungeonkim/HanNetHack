@@ -576,15 +576,15 @@ msgstr " (%s에 연결됨)"
 
 #: ../src/objnam.c:1403
 msgid " (being doffed)"
-msgstr " (해제 중)"
+msgstr " (해제하는 중)"
 
 #: ../src/objnam.c:1404
 msgid " (being donned)"
-msgstr " (장착 중)"
+msgstr " (장착하는 중)"
 
 #: ../src/objnam.c:1394 ../src/objnam.c:1405 ../src/objnam.c:1437
 msgid " (being worn)"
-msgstr " (장착)"
+msgstr " (장착중)"
 
 #: ../src/pager.c:402
 msgid " (buried)"
@@ -677,7 +677,7 @@ msgstr " (%s %s에 장착)"
 
 #: ../src/invent.c:1730 ../src/objnam.c:1583
 msgid " (wielded)"
-msgstr " (장착)"
+msgstr " (장착중)"
 
 #: ../src/end.c:1413
 msgid " (with a fake Amulet)"
@@ -1414,7 +1414,7 @@ msgstr " 상당히"
 #: ../src/objnam.c:1388
 #, c-format
 msgid " containing %ld item%s"
-msgstr " %1$ld개 아이템 포함%2$.0s"
+msgstr " %1$ld개 물건 포함%2$.0s"
 
 #: ../src/objnam.c:1909
 msgid " corpse"
@@ -14179,7 +14179,7 @@ msgstr "%s 공격하기"
 
 #: ../src/cmd.c:4516 ../src/cmd.c:4571
 msgid "Attempt to disarm trap"
-msgstr "함정 해제 시도"
+msgstr "함정 해체 시도"
 
 #: ../src/timeout.c:2271
 #, c-format
@@ -14204,11 +14204,11 @@ msgstr "​"
 
 #: ../src/pickup.c:1325
 msgid "Auto-select every item being worn or wielded"
-msgstr "착용 또는 장비 중인 모든 물품 자동 선택"
+msgstr "착용 또는 장비 중인 모든 물건 자동 선택"
 
 #: ../src/pickup.c:1326
 msgid "Auto-select every relevant item"
-msgstr "관련된 모든 물품 자동 선택"
+msgstr "관련된 모든 물건 자동 선택"
 
 #: ../src/getpos.c:964
 #, c-format
@@ -14780,7 +14780,7 @@ msgstr "%s{을/를} 압축할 수 없다."
 #: ../src/shk.c:2340
 #, c-format
 msgid "Can't find contained item on shop bill (#%d)."
-msgstr "상점 청구서에서 담긴 물품을 찾을 수 없다 (#%d)."
+msgstr "상점 청구서에서 담긴 물건을 찾을 수 없다 (#%d)."
 
 #: ../src/getpos.c:1114
 #, c-format
@@ -14968,7 +14968,7 @@ msgstr "카르페 유굴룸"
 
 #: ../src/cmd.c:4511
 msgid "Cast a spell"
-msgstr "마법 시전하기"
+msgstr "주문 외우기"
 
 #: ../src/spell.c:805
 msgid "Cast which spell?"
@@ -15646,7 +15646,7 @@ msgstr "%s{을/를} %s에서 발견함"
 
 #: ../src/o_init.c:862
 msgid "Discovered items"
-msgstr "발견한 물품"
+msgstr "발견한 물건"
 
 #: ../src/o_init.c:785
 #, c-format
@@ -15895,7 +15895,7 @@ msgstr "금화를 다 버려라, 악당!"
 
 #: ../src/cmd.c:4504
 msgid "Drop items"
-msgstr "물품 버리기"
+msgstr "물건 버리기"
 
 #: ../src/do.c:959
 #, c-format
@@ -15909,7 +15909,7 @@ msgstr "나머지도 떨어뜨리고 따라와."
 #: ../src/iactions.c:414
 #, c-format
 msgid "Drop this %s"
-msgstr "이 %s 버리기"
+msgstr "이 물건 버리기%.0s"
 
 # do.c - 버리기 질문
 #: ../src/do.c:996
@@ -18130,23 +18130,23 @@ msgstr "물건 %s"
 
 #: ../src/pickup.c:1412
 msgid "Items known to be Blessed"
-msgstr "축복받은 것으로 알려진 물품"
+msgstr "축복받은 것으로 알려진 물건"
 
 #: ../src/pickup.c:1419
 msgid "Items known to be Cursed"
-msgstr "저주받은 것으로 알려진 물품"
+msgstr "저주받은 것으로 알려진 물건"
 
 #: ../src/pickup.c:1426
 msgid "Items known to be Uncursed"
-msgstr "저주받지 않은 것으로 알려진 물품"
+msgstr "저주받지 않은 것으로 알려진 물건"
 
 #: ../src/pickup.c:1433
 msgid "Items of unknown Bless/Curse status"
-msgstr "축복/저주 상태를 알 수 없는 물품"
+msgstr "축복/저주 상태를 알 수 없는 물건"
 
 #: ../src/pickup.c:1443
 msgid "Items you just picked up"
-msgstr "방금 주운 아이템"
+msgstr "방금 주운 물건"
 
 # ============================================================
 # eat.c - 맛 설명. 첫 글자가 플래그 (I=is, T=tastes)
@@ -18631,15 +18631,15 @@ msgstr "여기서 기도하기"
 
 #: ../src/cmd.c:4516
 msgid "Engrave here"
-msgstr "여기에 각인하기"
+msgstr "바닥에 글쓰기"
 
 #: ../src/cmd.c:4517
 msgid "View attributes"
-msgstr "능력치 보기"
+msgstr "내 상태 확인"
 
 #: ../src/cmd.c:4518
 msgid "Access memories"
-msgstr "이전 메시지 보기"
+msgstr "지나간 메시지 보기"
 
 #: ../src/pickup.c:3420
 #, c-format
@@ -20107,7 +20107,7 @@ msgstr "속성 선택"
 
 #: ../src/o_init.c:1182
 msgid "Pick an object type to name"
-msgstr "이름 붙일 물품 종류를 선택하세요"
+msgstr "이름 붙일 물건 종류를 선택하세요"
 
 # 위자드 모드
 #: ../src/wizcmds.c:249
@@ -20820,7 +20820,7 @@ msgstr "S"
 
 #: ../src/cmd.c:4455
 msgid "Sacrifice something on the altar"
-msgstr "제단에 제물을 바치기"
+msgstr "제단에 제물 바치기"
 
 #: ../src/steed.c:52
 msgid "Saddle yourself?  Very funny..."
@@ -23677,7 +23677,7 @@ msgstr "작은 불빛들이 잠시 공중에서 반짝였다."
 #: ../src/cmd.c:4492
 #, c-format
 msgid "Tip %s"
-msgstr "%s 기울이기"
+msgstr "%s 내용물을 모두 버리기"
 
 #: ../src/iactions.c:595
 msgid "Tip all the contents out of this container"
@@ -24085,7 +24085,7 @@ msgstr "불행히도, 목소리가 떨린다."
 # 업스트림 머지: o_init.c "Unique items" → "Unique items or Relics"
 #: ../src/o_init.c:804
 msgid "Unique items or Relics"
-msgstr "고유 물품"
+msgstr "고유 물건"
 
 #: ../src/weapon.c:1119
 msgid "Unknown"
@@ -24109,7 +24109,7 @@ msgstr "알 수 없는 발동 능력 %d."
 #: ../src/iactions.c:144
 #, c-format
 msgid "Unknown item action %d"
-msgstr "알 수 없는 아이템 동작 %d"
+msgstr "알 수 없는 물건 동작 %d"
 
 #: ../src/sp_lev.c:4012
 #, c-format
@@ -24174,22 +24174,22 @@ msgstr "미지불"
 
 #: ../src/shk.c:4226
 msgid "Unpaid articles already used up:"
-msgstr "이미 사용한 미지불 물품:"
+msgstr "이미 사용한 미지불 물건:"
 
 # 미지불 물품 헤더
 # %s="s"/""
 #: ../src/shk.c:1706
 #, c-format
 msgid "Unpaid item%s:"
-msgstr "미지불 아이템:%.0s"
+msgstr "미지불 물건:%.0s"
 
 #: ../src/pickup.c:1393
 msgid "Unpaid items"
-msgstr "미지불 물품"
+msgstr "미지불 물건"
 
 #: ../src/pickup.c:1401
 msgid "Unpaid items already used up"
-msgstr "이미 사용한 미지불 물품:"
+msgstr "이미 사용한 미지불 물건:"
 
 #: ../src/selvar.c:591
 msgid "Unrecognized gradient type! Defaulting to radial..."
@@ -24315,7 +24315,7 @@ msgstr "'%s' 명령으로 %s %s%s."
 # iactions.c:327 - 아이템 동작 메뉴. 기름 캔으로 기름칠
 #: ../src/iactions.c:327
 msgid "Use the can to grease an item"
-msgstr "이 캔으로 아이템에 기름칠하기"
+msgstr "이 캔으로 물건에 기름칠하기"
 
 #: ../src/polyself.c:1059
 msgid "Use the command #monster to emit a mental blast."
@@ -24393,7 +24393,7 @@ msgstr "이 유니콘 뿔 사용하기"
 #: ../src/shk.c:1697
 #, c-format
 msgid "Used up item%s:"
-msgstr "소모한 물품:%.0s"
+msgstr "소모한 물건:%.0s"
 
 #: ../src/getpos.c:992
 msgid "Using"
@@ -24473,7 +24473,7 @@ msgstr "파일 \"%s\"의 버전이 일치하지 않는다."
 
 #: ../src/o_init.c:891
 msgid "View discoveries for which sort of objects?"
-msgstr "어떤 종류의 물품 발견 목록을 볼까요?"
+msgstr "어떤 종류의 물건 발견 목록을 볼까요?"
 
 #: ../src/spell.c:1992
 msgid "View known spells list sorted"
@@ -25055,7 +25055,7 @@ msgstr "깡통따개 들기 (깡통을 쉽게 연다)"
 #: ../src/iactions.c:612
 #, c-format
 msgid "Wield this %s as your weapon"
-msgstr "무기 들기%.0s"
+msgstr "무기 장착하기%.0s"
 
 #: ../src/iactions.c:622
 #, c-format
@@ -26001,7 +26001,7 @@ msgstr "다른 층에 나타났다!"
 
 #: ../src/zap.c:6179
 msgid "You may also specify various prefix values which might be used to"
-msgstr "아이템을 수정하는 데 사용할 수 있는 다양한 접두사 값도"
+msgstr "물건을 수정하는 데 사용할 수 있는 다양한 접두사 값도"
 
 #: ../src/zap.c:6183
 msgid "You may specify 'nothing' to explicitly decline this wish."
@@ -26622,7 +26622,7 @@ msgstr "서투른 시도가 "
 # 공백 및 조사 추가
 #: ../src/insight.c:1533
 msgid "Your items "
-msgstr "당신의 아이템은 "
+msgstr "당신의 물건은 "
 
 #: ../src/dokick.c:990
 msgid "Your kick uncovers"
@@ -27449,7 +27449,7 @@ msgstr "기도"
 
 #: ../src/zap.c:6189
 msgid "a randomly chosen item will be granted."
-msgstr "무작위로 선택된 아이템이 주어진다."
+msgstr "무작위로 선택된 물건이 주어진다."
 
 #: ../src/fountain.c:819
 msgid "a ring shining in its midst."
@@ -42560,7 +42560,7 @@ msgstr "가려웠다"
 #: ../src/iactions.c:298 ../src/iactions.c:414 ../src/iactions.c:492
 #: ../src/iactions.c:538 ../src/iactions.c:613 ../src/iactions.c:623
 msgid "item"
-msgstr "아이템"
+msgstr "물건"
 
 #: ../src/shknam.c:369
 #, c-format
@@ -42569,7 +42569,7 @@ msgstr "item probabilities total to %d for %s shops!"
 
 #: ../src/cmd.c:4485 ../src/o_init.c:990
 msgid "items"
-msgstr "아이템들"
+msgstr "물건들"
 
 #: ../src/do_name.c:167 ../src/role.c:692
 msgid "its"
@@ -51957,7 +51957,7 @@ msgstr "%1$s{을/를} 금화 %2$ld개%3$.0s에 팔았다.%4$s"
 #: ../src/shk.c:4181
 #, c-format
 msgid "sold some items inside %s for %ld gold piece%s.%s"
-msgstr "%1$s 안의 일부 물품을 금화 %2$ld개%3$.0s에 팔았다.%4$s"
+msgstr "%1$s 안의 일부 물건을 금화 %2$ld개%3$.0s에 팔았다.%4$s"
 
 #: ../src/monster_i18n.c:290 ../src/obj_descr_i18n.c:1062
 msgid "soldier"
@@ -53205,7 +53205,7 @@ msgstr "숭고한"
 
 #: ../src/options.c:239
 msgid "subset: items currently in use"
-msgstr "하위 집합: 현재 사용 중인 물품"
+msgstr "하위 집합: 현재 사용 중인 물건"
 
 #: ../src/lock.c:141
 #, c-format
@@ -55890,7 +55890,7 @@ msgstr "unique creature '%d: %s' genocided?"
 
 #: ../src/o_init.c:893
 msgid "unique items or relics"
-msgstr "고유 물품"
+msgstr "고유 물건"
 
 #: ../src/insight.c:249 ../src/insight.c:3270 ../src/obj_descr_i18n.c:1143
 #: ../src/options.c:4136 ../src/options.c:9091 ../src/pager.c:734
@@ -58221,11 +58221,11 @@ msgstr "당신의 말"
 
 #: ../src/shk.c:4137
 msgid "your item in "
-msgstr "발견한 물품"
+msgstr "발견한 물건"
 
 #: ../src/shk.c:4137
 msgid "your items in "
-msgstr "발견한 물품"
+msgstr "발견한 물건"
 
 #: ../src/obj_descr_i18n.c:450
 msgid "your kitten"
@@ -58955,7 +58955,7 @@ msgid "This tastes terrible!"
 msgstr "맛이 끔찍하다!"
 
 msgid "Unique items"
-msgstr "고유 물품"
+msgstr "고유 물건"
 
 msgid "Use the command #monster to change shape."
 msgstr "변신하려면 #monster 명령을 사용하세요."
@@ -60932,7 +60932,7 @@ msgstr "lightsources"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "look"
-msgstr "발밑 보기"
+msgstr "여기에 있는 것 보기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61007,7 +61007,7 @@ msgstr "기도하기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "prevmsg"
-msgstr "최근 메시지"
+msgstr "지나간 메시지"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61062,7 +61062,7 @@ msgstr "재이동"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "ride"
-msgstr "타기/내리기"
+msgstr "탈것에 타기/내리기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61277,7 +61277,7 @@ msgstr "심볼 정보"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "wield"
-msgstr "무기 들기"
+msgstr "무기 장착하기"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61742,7 +61742,7 @@ msgstr "이동하는 광원 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "look at what is here"
-msgstr "발밑 보기"
+msgstr "여기에 있는 것 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61817,7 +61817,7 @@ msgstr "신에게 도움을 청하는 기도하기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "view recent game messages"
-msgstr "최근 게임 메시지 보기"
+msgstr "지나간 메시지 보기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62087,7 +62087,7 @@ msgstr "심볼이 무엇을 나타내는지 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "wield (put in use) a weapon"
-msgstr "무기 들기"
+msgstr "무기 장착하기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62614,7 +62614,7 @@ msgstr "매력 없는"
 # dknethack: getobj verbs that had no context entry
 msgctxt "getobj"
 msgid "wield"
-msgstr "들"
+msgstr "장착할"
 
 msgctxt "getobj"
 msgid "zap"
