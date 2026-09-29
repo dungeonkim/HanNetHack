@@ -2053,7 +2053,7 @@ msgstr "위대한 푸바"
 #: ../src/objnam.c:873
 msgctxt "scroll_item"
 msgid "scroll labeled %s"
-msgstr "라벨이 %s인 두루마리"
+msgstr "%s 두루마리"
 
 # --- zap.c destroy_items (zap_destroy*): %1$s=물건명(yname), %2$s=동사구 ---
 #: ../src/zap.c:5909

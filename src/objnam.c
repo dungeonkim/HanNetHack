@@ -1241,7 +1241,7 @@ doname_base(
             vague_quan = (doname_flags & DONAME_VAGUE_QUAN) != 0,
             for_menu = (doname_flags & DONAME_FOR_MENU) != 0,
             with_corpse_genders = (doname_flags & DONAME_FORCE_GENDER) != 0;
-    boolean known, dknown, cknown, bknown, lknown,
+    boolean known, dknown, cknown, bknown, lknown, ko_typeknown,
             fake_arti, force_the;
     char prefix[PREFIX];
     char tmpbuf[PREFIX + 1]; /* for when we have to add something at
@@ -1273,6 +1273,9 @@ doname_base(
         bknown = obj->bknown;
         lknown = obj->lknown;
     }
+    /* types without a random appearance are known from the start */
+    ko_typeknown = (iflags.override_ID || !OBJ_DESCR(objects[obj->otyp])
+                    || objects[obj->otyp].oc_name_known);
 
     /* When using xname, we want "poisoned arrow", and when using
      * doname, we want "poisoned +0 arrow".  This kludge is about the only
@@ -1314,6 +1317,26 @@ doname_base(
             Strcpy(prefix, _("a "));
     }
 
+    /* Korean puts the enchantment first, right after the "+N " count
+       marker, so good items stand out; a known +0 is left out and an
+       unknown one is "+?" (rings only once the type is known, or "+?"
+       would give it away) */
+    if (is_korean_locale()
+        && (obj->oclass == WEAPON_CLASS || obj->oclass == ARMOR_CLASS
+            || is_weptool(obj)
+            || (obj->oclass == RING_CLASS && objects[obj->otyp].oc_charged
+                && ko_typeknown))
+        && (!known || obj->spe)) {
+        /* "the " is " " in Korean; without a count marker in front, the
+           enchantment itself would be read as the count */
+        if (prefix[0] != '+' && (!prefix[0] || !strcmp(prefix, " ")))
+            Strcpy(prefix, "+1 ");
+        if (!known)
+            Strcat(prefix, "+? ");
+        else
+            Sprintf(eos(prefix), "%+d ", obj->spe);
+    }
+
     /* "empty" goes at the beginning, but item count goes at the end */
     if (cknown
         /* bag of tricks: include "empty" prefix if it's known to
@@ -1331,7 +1354,23 @@ doname_base(
                 && !Has_contents(obj))))
         Strcat(prefix, _("empty "));
 
-    if (bknown && obj->oclass != COIN_CLASS
+    if (is_korean_locale()) {
+        /* Korean leaves out what is known and at its default and marks
+           what is unknown instead: a known "uncursed" is dropped, an
+           unknown curse status reads "미감정", an unknown type "정체불명의" */
+        if (!bknown) {
+            if (obj->oclass != COIN_CLASS && obj->oclass != ROCK_CLASS)
+                Strcat(prefix, "미감정 ");
+        } else if (obj->otyp != POT_WATER
+                   || !objects[POT_WATER].oc_name_known) {
+            if (obj->cursed)
+                Strcat(prefix, _("cursed "));
+            else if (obj->blessed)
+                Strcat(prefix, _("blessed "));
+        }
+        if (!ko_typeknown)
+            Strcat(prefix, "정체불명의 ");
+    } else if (bknown && obj->oclass != COIN_CLASS
         && (obj->otyp != POT_WATER || !objects[POT_WATER].oc_name_known
             || (!obj->cursed && !obj->blessed))) {
         /* allow 'blessed clear potion' if we don't know it's holy water;
@@ -1435,7 +1474,7 @@ doname_base(
         if (ispoisoned)
             Strcat(prefix, _("poisoned "));
         add_erosion_words(obj, prefix);
-        if (known) {
+        if (known && !is_korean_locale()) {
             Sprintf(eos(prefix), "%+d ", obj->spe); /* sitoa(obj->spe)+" " */
         }
         break;
@@ -1496,8 +1535,20 @@ doname_base(
         break;
     case WAND_CLASS:
  charges:
-        if (known)
-            ConcatF2(bp, 0, _(" (%d:%d)"), (int) obj->recharged, obj->spe);
+        if (!is_korean_locale()) {
+            if (known)
+                ConcatF2(bp, 0, _(" (%d:%d)"), (int) obj->recharged, obj->spe);
+        } else if (known) {
+            if (obj->recharged)
+                ConcatF2(bp, 0, " (%d회, 재충전 %d)", obj->spe,
+                         (int) obj->recharged);
+            else
+                ConcatF1(bp, 0, " (%d회)", obj->spe);
+        } else if (obj->oclass == WAND_CLASS || ko_typeknown) {
+            /* every wand has charges; a tool only shows it has them
+               once its type is known */
+            Concat(bp, 0, " (?회)");
+        }
         break;
     case POTION_CLASS:
         if (obj->otyp == POT_OIL && obj->lamplit)
@@ -1511,7 +1562,7 @@ doname_base(
             Concat(bp, 0, _(" (on left "));
         if (obj->owornmask & W_RING) /* either left or right */
             ConcatF1(bp, 0, _("%s)"), body_part(HAND));
-        if (known && objects[obj->otyp].oc_charged) {
+        if (known && objects[obj->otyp].oc_charged && !is_korean_locale()) {
             Sprintf(eos(prefix), "%+d ", obj->spe); /* sitoa(obj->spe)+" " */
         }
         break;
