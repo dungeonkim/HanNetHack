@@ -12389,12 +12389,12 @@ msgstr "('whatis_coord' 옵션을 설정하여 '%s' 텍스트에 좌표 포함.)
 #: ../src/weapon.c:1375
 #, c-format
 msgid "(Skill%s flagged by \"#\" cannot be enhanced any further.)"
-msgstr "(\"#\" 표시된 기술%s 더 이상 향상시킬 수 없다.)"
+msgstr "(\"#\" 표시된 스킬%s 더 이상 향상시킬 수 없다.)"
 
 #: ../src/weapon.c:1366
 #, c-format
 msgid "(Skill%s flagged by \"*\" may be enhanced %s.)"
-msgstr "(\"*\" 표시된 기술%s %s 향상시킬 수 있다.)"
+msgstr "(\"*\" 표시된 스킬%s %s 향상시킬 수 있다.)"
 
 #: ../src/zap.c:6191
 msgid "(Suppress this assistance with !cmdassist in your config file.)"
@@ -12420,7 +12420,7 @@ msgstr "(팁: 정말 들어가시려면 이동 키 앞에 '%s'를 붙이면 한 
 
 #: ../src/hack.c:1865
 msgid "(Tip: use the #enhance command to advance them.)"
-msgstr "(팁: 숙련도를 올리시려면 #enhance 명령을 쓰세요.)"
+msgstr "(팁: 행동 메뉴의 정보 > 스킬에서 올릴 수 있다.)"
 
 #: ../src/invent.c:3248
 msgid "(all items are permanently identified already)"
@@ -13643,7 +13643,7 @@ msgstr "아드리"
 
 #: ../src/weapon.c:1342
 msgid "Advance skills without practice?"
-msgstr "연습 없이 기술을 향상시키겠습니까?"
+msgstr "연습 없이 스킬을 향상시키겠습니까?"
 
 #: ../src/options.c:115
 msgid "Advanced"
@@ -15468,7 +15468,7 @@ msgstr "현재 메모리 통계:"
 
 #: ../src/weapon.c:1386
 msgid "Current skills:"
-msgstr "현재 기술:"
+msgstr "스킬"
 
 #: ../src/timeout.c:2054
 #, c-format
@@ -16398,7 +16398,7 @@ msgstr "전사"
 
 #: ../src/weapon.c:1221
 msgid "Fighting Skills"
-msgstr "전투 기술"
+msgstr "전투 스킬"
 
 #: ../src/role.c:326
 msgid "Filcher"
@@ -19355,7 +19355,7 @@ msgstr "관련 항목이 선택되지 않았다."
 
 #: ../src/u_init.c:1085
 msgid "No skills found for role"
-msgstr "직업에 대한 기술을 찾지 못했다"
+msgstr "직업에 대한 스킬을 찾지 못했다"
 
 #: ../src/insight.c:3195
 msgid "No species were genocided or became extinct."
@@ -20090,7 +20090,7 @@ msgstr "역할 선택"
 
 #: ../src/weapon.c:1385
 msgid "Pick a skill to advance:"
-msgstr "향상시킬 기술을 선택하세요:"
+msgstr "스킬"
 
 #: ../src/role.c:2793
 #, c-format
@@ -21228,7 +21228,7 @@ msgstr "숙련"
 
 #: ../src/weapon.c:1313
 msgid "Skills:"
-msgstr "기술:"
+msgstr "스킬:"
 
 #: ../src/role.c:496
 msgid "Skirmisher"
@@ -21573,7 +21573,7 @@ msgstr "마법책"
 
 #: ../src/weapon.c:1223
 msgid "Spellcasting Skills"
-msgstr "주문시전 기술"
+msgstr "주문시전 스킬"
 
 #: ../src/spell.c:2055
 msgid "Spells:"
@@ -24647,7 +24647,7 @@ msgstr "허약    "
 
 #: ../src/weapon.c:1222
 msgid "Weapon Skills"
-msgstr "무기 기술"
+msgstr "무기 스킬"
 
 #: ../src/invent.c:4814 ../src/obj_descr_i18n.c:1292
 msgid "Weapons"
@@ -26714,7 +26714,7 @@ msgstr "은이 %s{을/를} 지진다!"
 #: ../src/insight.c:1408 ../src/insight.c:1441
 #, c-format
 msgid "Your skill in %s "
-msgstr "%s의 숙련도 "
+msgstr "%s 스킬 "
 
 # ============================================================
 # 상태 메시지 (Status Messages)
@@ -26756,7 +26756,7 @@ msgstr "당신의 위산이 얼음을 녹여버립니다!"
 # 쌍수 무기 기술 메시지
 #: ../src/insight.c:1413 ../src/insight.c:1446
 msgid "Your two weapon skill "
-msgstr "쌍수 무기 기술이"
+msgstr "쌍수 무기 스킬이"
 
 #: ../src/invent.c:4543
 #, c-format
@@ -31924,15 +31924,15 @@ msgstr "각 종류 내에서 발견 순서"
 
 #: ../src/spell.c:1849
 msgid "by skill group, alphabetized within each group"
-msgstr "기술 그룹별, 각 그룹 내 알파벳순"
+msgstr "스킬 그룹별, 각 그룹 내 알파벳순"
 
 #: ../src/spell.c:1851
 msgid "by skill group, high to low level within group"
-msgstr "기술 그룹별, 그룹 내 높은 레벨부터 낮은 레벨 순"
+msgstr "스킬 그룹별, 그룹 내 높은 레벨부터 낮은 레벨 순"
 
 #: ../src/spell.c:1850
 msgid "by skill group, low to high level within group"
-msgstr "기술 그룹별, 그룹 내 낮은 레벨부터 높은 레벨 순"
+msgstr "스킬 그룹별, 그룹 내 낮은 레벨부터 높은 레벨 순"
 
 # Calvin Klein (cK) 광고 패러디
 #: ../src/read.c:124
@@ -34691,11 +34691,11 @@ msgstr "파괴할"
 
 # mon.c:3502 - you_kill 패턴용 "destroy" (전투 과거형)
 # read.c의 "destroy"→"파괴할"(관형사)과 구별하기 위해 you_kill 컨텍스트 사용
-# you_kill 조합: "좀비를 파괴했다!"
+# you_kill 조합: "좀비를 처치했다!"
 #: ../src/mon.c:3481
 msgctxt "you_kill"
 msgid "destroy"
-msgstr "파괴했다"
+msgstr "처치했다"
 
 #: ../src/dig.c:419
 #, c-format
@@ -41556,7 +41556,7 @@ msgstr "이것이 감정 스크롤임을 알았다."
 
 #: ../src/weapon.c:1370
 msgid "if skill slots become available"
-msgstr "기술 슬롯이 생기면"
+msgstr "스킬 슬롯이 생기면"
 
 #: ../src/apply.c:1444
 msgid "ignite"
@@ -45333,7 +45333,7 @@ msgstr "이전보다 더 폐쇄공포증적이다."
 #: ../src/weapon.c:79
 #, c-format
 msgid "more confident in your %sskills."
-msgstr "%s기술에 더 자신감이 생겼다."
+msgstr "%s스킬에 더 자신감이 생겼다."
 
 #: ../src/exper.c:315
 msgid "more experienced."
@@ -51367,7 +51367,7 @@ msgstr "만능 열쇠"
 
 #: ../src/insight.c:1365 ../src/insight.c:1460
 msgid "skill with"
-msgstr "기술"
+msgstr "스킬"
 
 #: ../src/weapon.c:1800
 #, c-format
@@ -60837,7 +60837,7 @@ msgstr "바닥에 글쓰기"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "enhance"
-msgstr "숙련도 올리기"
+msgstr "스킬"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61647,7 +61647,7 @@ msgstr "바닥에 글쓰기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "advance or check weapon and spell skills"
-msgstr "무기·주문 숙련도 올리기 또는 확인"
+msgstr "스킬 보기와 올리기"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -63292,3 +63292,73 @@ msgstr "옌더의 목걸이 모조품"
 # dknethack here-menu (cmd.c there_cmd_menu_self): a box whose lock is known
 msgid "Force the lock of %s"
 msgstr "%s 자물쇠 부수기"
+
+# dknethack: skill names (weapon.c P_NAME); plain msgids like "riding" and "escape spells" are taken by other meanings
+msgctxt "skill"
+msgid "no skill"
+msgstr "없음"
+
+msgctxt "skill"
+msgid "bare hands"
+msgstr "맨손"
+
+msgctxt "skill"
+msgid "two weapon combat"
+msgstr "쌍수 전투"
+
+msgctxt "skill"
+msgid "riding"
+msgstr "승마"
+
+msgctxt "skill"
+msgid "polearms"
+msgstr "장창류"
+
+msgctxt "skill"
+msgid "saber"
+msgstr "세이버"
+
+msgctxt "skill"
+msgid "hammer"
+msgstr "망치"
+
+msgctxt "skill"
+msgid "whip"
+msgstr "채찍"
+
+msgctxt "skill"
+msgid "attack spells"
+msgstr "공격 주문"
+
+msgctxt "skill"
+msgid "healing spells"
+msgstr "치료 주문"
+
+msgctxt "skill"
+msgid "divination spells"
+msgstr "예언 주문"
+
+msgctxt "skill"
+msgid "enchantment spells"
+msgstr "강화 주문"
+
+msgctxt "skill"
+msgid "clerical spells"
+msgstr "성직 주문"
+
+msgctxt "skill"
+msgid "escape spells"
+msgstr "탈출 주문"
+
+msgctxt "skill"
+msgid "matter spells"
+msgstr "물질 주문"
+
+msgctxt "skill"
+msgid "bare handed combat"
+msgstr "맨손 전투"
+
+msgctxt "skill"
+msgid "martial arts"
+msgstr "무술"
+

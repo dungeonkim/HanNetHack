@@ -118,7 +118,7 @@ M-A   annotate  현재 던전 레벨에 한 줄 메모 추가 (M-O 참조)
 M-c   chat      누군가와 대화
 M-C   conduct   선택적 도전 보기
 M-d   dip       물건을 무언가에 담그기
-M-e   enhance   무기와 마법 기술 보기, 자격이 되면 향상 가능
+M-e   enhance   무기와 마법 스킬 보기, 자격이 되면 올리기 가능
 M-f   force     자물쇠 부수기
 M-g   genocided 학살 및 멸종된 괴물 종류 목록 (있는 경우)
 M-i   invoke    물건의 특수 능력 발동

@@ -63,10 +63,10 @@ static NEARDATA const char *const barehands_or_martial[] = {
 
 #define P_NAME(type)                                    \
     ((skill_names_indices[type] > 0)                    \
-         ? OBJ_NAME(objects[skill_names_indices[type]]) \
+         ? tr_obj_name(OBJ_NAME(objects[skill_names_indices[type]])) \
          : (type == P_BARE_HANDED_COMBAT)               \
-               ? _(barehands_or_martial[martial_bonus()])  \
-               : _(odd_skill_names[-skill_names_indices[type]]))
+               ? C_("skill", barehands_or_martial[martial_bonus()])  \
+               : C_("skill", odd_skill_names[-skill_names_indices[type]]))
 
 /* targets that provide attacker with small to-hit bonus when using a spear */
 static NEARDATA const char kebabable[] = {
@@ -1296,6 +1296,9 @@ add_skills_to_menu(winid win, boolean selectable, boolean speedy)
                     Snprintf(buf, sizeof buf,
                              " %s%s\t[%s]", prefix, P_NAME(i),
                              sklnambuf);
+                /* dknethack: <#rrggbb>..</> is its menus' colour tag */
+                if (is_korean_locale() && selectable && can_advance(i, speedy))
+                    Strcat(buf, " <#ffd23c>[숙련 가능]</>");
             }
             any.a_int = selectable && can_advance(i, speedy) ? i + 1 : 0;
             add_menu(win, &nul_glyphinfo, &any, 0, 0,
