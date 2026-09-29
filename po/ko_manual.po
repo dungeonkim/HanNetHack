@@ -5855,7 +5855,7 @@ msgstr "%s{이/가} %s%s에 의해"
 #: ../src/do_name.c:970
 #, c-format
 msgid "%s called %s"
-msgstr "%s{이/가} %s(이)라고 불림"
+msgstr "%s %s"
 
 #: ../src/shk.c:1433
 #, c-format
@@ -18615,7 +18615,7 @@ msgstr "게임 옵션에 대한 자세한 설명."
 
 #: ../src/cmd.c:4650
 msgid "Look at map symbol"
-msgstr "지도 기호 보기"
+msgstr "지도 표기 확인"
 
 #: ../src/iactions.c:98
 msgid "Look at the pattern on the shirt"
@@ -61272,7 +61272,7 @@ msgstr "명령 설명"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "whatis"
-msgstr "심볼 정보"
+msgstr "지도 표기 확인"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61677,7 +61677,7 @@ msgstr "멸종시키거나 절멸한 몬스터 목록"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "show what type of thing a map symbol corresponds to"
-msgstr "지도 심볼이 무엇을 나타내는지 보기"
+msgstr "지도 표기 확인"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62845,7 +62845,7 @@ msgstr "우편 스크롤"
 
 msgctxt "objname"
 msgid "scroll of blank paper"
-msgstr "백지 스크롤"
+msgstr "빈 스크롤"
 
 msgctxt "objname"
 msgid "spellbook of dig"
@@ -63021,7 +63021,7 @@ msgstr "냉기 구체 마법책"
 
 msgctxt "objname"
 msgid "spellbook of blank paper"
-msgstr "백지 마법책"
+msgstr "빈 마법책"
 
 msgctxt "objname"
 msgid "ring of adornment"
@@ -63161,7 +63161,7 @@ msgstr "정지의 마법봉"
 
 msgctxt "objname"
 msgid "wand of nothing"
-msgstr "무(無)의 마법봉"
+msgstr "마법봉"
 
 msgctxt "objname"
 msgid "wand of striking"

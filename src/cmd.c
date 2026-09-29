@@ -4620,9 +4620,13 @@ there_cmd_menu_next2u(
         Sprintf(buf, _("Swap places with %s"), mon_nam(mtmp));
         mcmd_addmenu(win, MCMD_MOVE_DIR, buf), ++K;
 
-        Sprintf(buf, _("%s %s"),
-                !has_mgivenname(mtmp) ? _("Name") : _("Rename"),
-                mon_nam(mtmp));
+        if (is_korean_locale()) /* "길들인 작은 개 하치의 이름 바꾸기" */
+            Sprintf(buf, "%s의 %s", mon_nam(mtmp),
+                    !has_mgivenname(mtmp) ? "이름 붙이기" : "이름 바꾸기");
+        else
+            Sprintf(buf, _("%s %s"),
+                    !has_mgivenname(mtmp) ? _("Name") : _("Rename"),
+                    mon_nam(mtmp));
         mcmd_addmenu(win, MCMD_NAME, buf), ++K;
     }
 
