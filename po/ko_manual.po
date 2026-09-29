@@ -60852,7 +60852,7 @@ msgstr "fight"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "fire"
-msgstr "발사"
+msgstr "원거리 공격"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61662,7 +61662,7 @@ msgstr "접두: 몬스터가 보이지 않아도 강제 전투"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "fire ammunition from quiver"
-msgstr "화살통에서 탄약 발사"
+msgstr "원거리 공격 (화살통에 장비한 것을 쏘거나 던지기)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62631,7 +62631,7 @@ msgstr "화살통에 장비할"
 
 msgctxt "getobj"
 msgid "fire"
-msgstr "발사할"
+msgstr "원거리 공격에 쓸"
 
 # dknethack: command names/descriptions that had no entry
 msgctxt "extcmd"
