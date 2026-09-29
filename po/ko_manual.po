@@ -743,7 +743,7 @@ msgstr " 캐릭터 재굴리기가 활성화되지 않았다."
 #: ../src/obj_descr_i18n.c:463
 #, c-format
 msgid " Co:%s"
-msgstr " 체력:%s"
+msgstr " 건강:%s"
 
 #: ../src/botl.c:210 ../src/windows.c:1010
 msgid " Conf"
@@ -756,7 +756,7 @@ msgstr " 청각"
 #: ../src/obj_descr_i18n.c:462
 #, c-format
 msgid " Dx:%s"
-msgstr " 민첩:%s"
+msgstr " 솜씨:%s"
 
 #: ../src/botl.c:217 ../src/windows.c:1016
 msgid " Fly"
@@ -833,7 +833,7 @@ msgstr " 점액"
 #: ../src/obj_descr_i18n.c:461
 #, c-format
 msgid " St:%s"
-msgstr " 근력:%s"
+msgstr " 힘:%s"
 
 # botl.c, windows.c - 상태줄 약어
 #: ../src/botl.c:188 ../src/windows.c:994
@@ -21642,7 +21642,7 @@ msgstr "찌걱!"
 #: ../src/botl.c:101 ../src/invent.c:2605
 #, c-format
 msgid "St:%s Dx:%d Co:%d In:%d Wi:%d Ch:%d"
-msgstr "힘:%s 민:%d 건:%d 지:%d 지:%d 매:%d"
+msgstr "힘:%s 솜씨:%d 건강:%d 지능:%d 지혜:%d 매력:%d"
 
 # mondata.c:1369 - 대문자 버전
 #: ../src/mondata.c:1369
@@ -26280,7 +26280,7 @@ msgstr "이 악명 높은 모욕을 후회하게 될 것이다!"
 #: ../src/attrib.c:178
 #, c-format
 msgid "You're %s as %s as you can get."
-msgstr "당신은 최대한 %s %s 상태다."
+msgstr "당신은 %s 최대한 %s 상태다."
 
 #: ../src/uhitm.c:2561
 #, c-format
@@ -27953,7 +27953,7 @@ msgstr "%s에게 화났다."
 
 #: ../src/attrib.c:12
 msgid "agile"
-msgstr "민첩한"
+msgstr "솜씨 좋은"
 
 #: ../src/do.c:611 ../src/dungeon.c:1760 ../src/spell.c:1162
 #: ../src/timeout.c:374
@@ -33504,7 +33504,7 @@ msgstr "원뿔 모자"
 
 #: ../src/attrib.c:21 ../src/obj_descr_i18n.c:1237
 msgid "constitution"
-msgstr "체력"
+msgstr "건강"
 
 #: ../src/insight.c:91
 msgid "consulted the Oracle"
@@ -34811,7 +34811,7 @@ msgstr "독실하게"
 
 #: ../src/attrib.c:21 ../src/obj_descr_i18n.c:1236
 msgid "dexterity"
-msgstr "민첩"
+msgstr "솜씨"
 
 #: ../src/dungeon.c:1881
 #, c-format
@@ -38990,7 +38990,7 @@ msgstr "위산"
 
 #: ../src/obj_descr_i18n.c:200
 msgid "gauntlets of dexterity"
-msgstr "민첩의 건틀릿"
+msgstr "솜씨의 건틀릿"
 
 #: ../src/obj_descr_i18n.c:198
 msgid "gauntlets of fumbling"
@@ -49137,7 +49137,7 @@ msgstr "타락한 자"
 
 #: ../src/attrib.c:15
 msgid "repulsive"
-msgstr "역겨운"
+msgstr "매력 없는"
 
 #: ../src/invent.c:2586
 msgid "reroll another character"
@@ -51721,7 +51721,7 @@ msgstr "소형 방패"
 
 #: ../src/attrib.c:11
 msgid "smart"
-msgstr "영리한"
+msgstr "똑똑한"
 
 #: ../src/dbridge.c:822
 msgid "smashing and crushing."
@@ -53049,7 +53049,7 @@ msgstr "방황했다"
 # ============================================================
 #: ../src/attrib.c:20 ../src/obj_descr_i18n.c:1235
 msgid "strength"
-msgstr "근력"
+msgstr "힘"
 
 #: ../src/options.c:214
 msgid "stressed"
@@ -53189,7 +53189,7 @@ msgstr "멍해진"
 
 #: ../src/attrib.c:13
 msgid "stupid"
-msgstr "우둔한"
+msgstr "멍청한"
 
 #: ../src/pager.c:618
 msgid "sturdy"
@@ -55105,7 +55105,7 @@ msgstr "시금석"
 # attrib.c:12 - 건강 능력치 형용사. "기침을 했다!"가 아님
 #: ../src/attrib.c:12
 msgid "tough"
-msgstr "강인한"
+msgstr "건강한"
 
 #: ../src/monster_i18n.c:352 ../src/obj_descr_i18n.c:1077
 msgid "tourist"
@@ -58890,7 +58890,7 @@ msgstr "괴물이"
 # do_statusline1() - 능력치 표시
 #, c-format
 msgid "St:%s Dx:%-1d Co:%-1d In:%-1d Wi:%-1d Ch:%-1d"
-msgstr "근력:%s 민첩:%-1d 체력:%-1d 지능:%-1d 지혜:%-1d 매력:%-1d"
+msgstr "힘:%s 솜씨:%-1d 건강:%-1d 지능:%-1d 지혜:%-1d 매력:%-1d"
 
 msgid "THARR"
 msgstr "THARR"
@@ -62483,3 +62483,130 @@ msgstr "Amiga hack.font 선 문자 및 효과 문자"
 msgctxt "status_field"
 msgid "hunger"
 msgstr "허기"
+
+# attrib.c adjattrib: "You feel %s%s!" - a full sentence, since the Korean You_feel adds no predicate
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "very "
+msgstr "훨씬 "
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "strong"
+msgstr "힘이 세졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "weak"
+msgstr "힘이 약해졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "smart"
+msgstr "똑똑해졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "stupid"
+msgstr "멍청해졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "wise"
+msgstr "현명해졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "foolish"
+msgstr "어리석어졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "agile"
+msgstr "솜씨가 좋아졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "clumsy"
+msgstr "솜씨가 서툴러졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "tough"
+msgstr "건강해졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "fragile"
+msgstr "허약해졌다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "charismatic"
+msgstr "매력적으로 변했다"
+
+#: ../src/attrib.c:195
+msgctxt "attr_change"
+msgid "repulsive"
+msgstr "매력이 떨어졌다"
+
+# attrib.c adjattrib: "You're %s as %s as you can get." - adjective before 상태
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "strong"
+msgstr "힘이 센"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "weak"
+msgstr "힘이 약한"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "smart"
+msgstr "똑똑한"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "stupid"
+msgstr "멍청한"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "wise"
+msgstr "현명한"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "foolish"
+msgstr "어리석은"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "agile"
+msgstr "솜씨 좋은"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "clumsy"
+msgstr "서투른"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "tough"
+msgstr "건강한"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "fragile"
+msgstr "허약한"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "charismatic"
+msgstr "매력적인"
+
+#: ../src/attrib.c:179
+msgctxt "attr_max"
+msgid "repulsive"
+msgstr "매력 없는"
