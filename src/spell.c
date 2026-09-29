@@ -832,19 +832,19 @@ spelltypemnemonic(int skill)
 {
     switch (skill) {
     case P_ATTACK_SPELL:
-        return _("attack");
+        return C_("spell_school", "attack");
     case P_HEALING_SPELL:
-        return _("healing");
+        return C_("spell_school", "healing");
     case P_DIVINATION_SPELL:
-        return _("divination");
+        return C_("spell_school", "divination");
     case P_ENCHANTMENT_SPELL:
-        return _("enchantment");
+        return C_("spell_school", "enchantment");
     case P_CLERIC_SPELL:
-        return _("clerical");
+        return C_("spell_school", "clerical");
     case P_ESCAPE_SPELL:
-        return _("escape");
+        return C_("spell_school", "escape");
     case P_MATTER_SPELL:
-        return _("matter");
+        return C_("spell_school", "matter");
     default:
         impossible(_("Unknown spell skill, %d;"), skill);
         return "";

@@ -48358,7 +48358,7 @@ msgstr "양자 역학자"
 
 #: ../src/obj_descr_i18n.c:286
 msgid "quarterstaff"
-msgstr "육척봉"
+msgstr "스태프"
 
 #: ../src/monster_i18n.c:73 ../src/obj_descr_i18n.c:1028
 msgid "quasit"
@@ -63348,7 +63348,7 @@ msgstr "성직 주문"
 
 msgctxt "skill"
 msgid "escape spells"
-msgstr "탈출 주문"
+msgstr "이동 주문"
 
 msgctxt "skill"
 msgid "matter spells"
@@ -63370,4 +63370,33 @@ msgstr "숏소드"
 msgctxt "skill"
 msgid "quarterstaff"
 msgstr "스태프"
+
+# dknethack: spell list category column (spell.c spelltypemnemonic), the skill names without 주문
+msgctxt "spell_school"
+msgid "attack"
+msgstr "공격"
+
+msgctxt "spell_school"
+msgid "healing"
+msgstr "치료"
+
+msgctxt "spell_school"
+msgid "divination"
+msgstr "예언"
+
+msgctxt "spell_school"
+msgid "enchantment"
+msgstr "강화"
+
+msgctxt "spell_school"
+msgid "clerical"
+msgstr "성직"
+
+msgctxt "spell_school"
+msgid "escape"
+msgstr "이동"
+
+msgctxt "spell_school"
+msgid "matter"
+msgstr "물질"
 
