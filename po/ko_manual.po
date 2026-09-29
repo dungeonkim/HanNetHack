@@ -16844,7 +16844,7 @@ msgstr "야호 나는 도롱뇽이 좋아"
 
 #: ../src/monster_i18n.c:362 ../src/obj_descr_i18n.c:808 ../src/weapon.c:1116
 msgid "Grand Master"
-msgstr "대종사"
+msgstr "대가"
 
 # iactions.c:319 - 아이템 동작 메뉴. 갈고리로 무언가 잡기
 #: ../src/iactions.c:319
@@ -18838,7 +18838,7 @@ msgstr "가면무도회"
 
 #: ../src/role.c:244 ../src/weapon.c:1113
 msgid "Master"
-msgstr "스승"
+msgstr "달인"
 
 #: ../src/monster_i18n.c:379 ../src/obj_descr_i18n.c:821
 msgid "Master Assassin"
@@ -21573,7 +21573,7 @@ msgstr "마법책"
 
 #: ../src/weapon.c:1223
 msgid "Spellcasting Skills"
-msgstr "주문시전 스킬"
+msgstr "마법 스킬"
 
 #: ../src/spell.c:2055
 msgid "Spells:"
@@ -42885,7 +42885,7 @@ msgstr "찼다"
 # you_kill 조합: "여우{을/를} 죽였다!"
 #: ../src/mon.c:3481 ../src/wizcmds.c:314
 msgid "kill"
-msgstr "죽였다"
+msgstr "처치했다"
 
 # ============================================================
 # C_() 문맥 구분 - 동음이의어 충돌 해결
@@ -63312,11 +63312,11 @@ msgstr "승마"
 
 msgctxt "skill"
 msgid "polearms"
-msgstr "장창류"
+msgstr "폴암"
 
 msgctxt "skill"
 msgid "saber"
-msgstr "세이버"
+msgstr "곡도"
 
 msgctxt "skill"
 msgid "hammer"
@@ -63361,4 +63361,13 @@ msgstr "맨손 전투"
 msgctxt "skill"
 msgid "martial arts"
 msgstr "무술"
+
+# dknethack: weapon skill categories named apart from the item (weapon.c skill_objname)
+msgctxt "skill"
+msgid "short sword"
+msgstr "숏소드"
+
+msgctxt "skill"
+msgid "quarterstaff"
+msgstr "스태프"
 

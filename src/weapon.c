@@ -61,9 +61,19 @@ static NEARDATA const char *const barehands_or_martial[] = {
     N_("bare handed combat"), N_("martial arts")
 };
 
+/* a weapon skill is named after one weapon; msgctxt "skill" can name the
+   category differently from the item ("short sword": 숏소드, the item 소검) */
+staticfn const char *
+skill_objname(const char *name)
+{
+    const char *tr = C_("skill", name);
+
+    return strcmp(tr, name) ? tr : tr_obj_name(name);
+}
+
 #define P_NAME(type)                                    \
     ((skill_names_indices[type] > 0)                    \
-         ? tr_obj_name(OBJ_NAME(objects[skill_names_indices[type]])) \
+         ? skill_objname(OBJ_NAME(objects[skill_names_indices[type]])) \
          : (type == P_BARE_HANDED_COMBAT)               \
                ? C_("skill", barehands_or_martial[martial_bonus()])  \
                : C_("skill", odd_skill_names[-skill_names_indices[type]]))
