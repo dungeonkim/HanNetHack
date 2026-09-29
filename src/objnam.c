@@ -38,6 +38,7 @@ staticfn char *strprepend(char *, const char *) NONNULL NONNULLARG1;
 staticfn char *nextobuf(void) NONNULL;
 staticfn void releaseobuf(char *) NONNULLARG1;
 staticfn void xcalled(char *, int, const char *, const char *);
+staticfn const char *ko_objname(int);
 staticfn char *xname_flags(struct obj *, unsigned);
 staticfn char *minimal_xname(struct obj *);
 staticfn void add_erosion_words(struct obj *, char *);
@@ -244,7 +245,9 @@ obj_typename(int otyp)
         Strcpy(buf, _("ring"));
         break;
     case AMULET_CLASS:
-        if (nn)
+        if (nn && ko_objname(otyp))
+            Strcpy(buf, ko_objname(otyp));
+        else if (nn)
             Strcpy(buf, _(actualn));
         else
             Strcpy(buf, _("amulet"));
@@ -281,7 +284,9 @@ obj_typename(int otyp)
         return buf;
     }
     /* here for ring/scroll/potion/wand */
-    if (nn) {
+    if (nn && ko_objname(otyp)) {
+        Strcpy(buf, ko_objname(otyp));
+    } else if (nn) {
         if (ocl->oc_unique)
             Strcpy(buf, _(actualn)); /* avoid spellbook of Book of the Dead */
         else {
@@ -559,6 +564,32 @@ reorder_fruit(boolean forward)
             gf.ffruit = allfr[j];
         }
     }
+}
+
+/* Korean: the one full name of a known potion, scroll, spellbook, ring, wand or amulet, so the
+   inventory (xname) and the discoveries list (obj_typename) agree and each name can decide for
+   itself whether it takes 의; msgctxt "objname", keyed by the English full name ("potion of
+   confusion", "amulet of ESP").  Null when not Korean or when the catalog has no entry. */
+staticfn const char *
+ko_objname(int otyp)
+{
+    const char *n = OBJ_NAME(objects[otyp]), *tr, *fmt;
+    char key[BUFSZ];
+
+    if (!is_korean_locale() || !n)
+        return (const char *) 0;
+    switch (objects[otyp].oc_class) {
+    case POTION_CLASS: fmt = "potion of %s"; break;
+    case SCROLL_CLASS: fmt = "scroll of %s"; break;
+    case SPBOOK_CLASS: fmt = objects[otyp].oc_unique ? "%s" : "spellbook of %s"; break;
+    case RING_CLASS: fmt = "ring of %s"; break;
+    case WAND_CLASS: fmt = "wand of %s"; break;
+    case AMULET_CLASS: fmt = "%s"; break;
+    default: return (const char *) 0;
+    }
+    Snprintf(key, sizeof key, fmt, n);
+    tr = C_("objname", key);
+    return strcmp(tr, key) ? tr : (const char *) 0;
 }
 
 /* add "<pfx> called <sfx>" to end of buf, truncating if necessary */
@@ -1008,6 +1039,16 @@ xname_flags(
         default:
             break;
         }
+    }
+
+    /* Korean: a known type's one full name replaces what the class code built; holy and unholy
+       water keep theirs, and the Amulet of Yendor and its imitation go by 'known' instead */
+    if (nn && dknown && ko_objname(typ)
+        && !(typ == POT_WATER && bknown && (obj->blessed || obj->cursed))
+        && typ != AMULET_OF_YENDOR && typ != FAKE_AMULET_OF_YENDOR) {
+        *buf = '\0';
+        ConcUpdate(buf);
+        Concat(buf, 0, ko_objname(typ));
     }
 
     if (has_oname(obj) && dknown && is_korean_locale()) {

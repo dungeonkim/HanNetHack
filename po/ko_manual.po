@@ -2501,7 +2501,7 @@ msgstr " "
 # suffix - 앞 공백 제거, 뒤 공백 추가
 #: ../src/insight.c:2434
 msgid " the Amulet of Yendor"
-msgstr "옌더의 부적을 "
+msgstr "옌더의 목걸이를 "
 
 # insight.c:2351-2358 - 업적: 아이템 소유/획득
 # enl_msg(You_, "have"/"have handled", "had"/"handled", suffix, "")
@@ -5158,7 +5158,7 @@ msgstr "%s 제단."
 #: ../src/objnam.c:684
 #, c-format
 msgid "%s amulet"
-msgstr "%s 부적"
+msgstr "%s 목걸이"
 
 #: ../src/sit.c:391
 #, c-format
@@ -11406,7 +11406,7 @@ msgstr "%1$s %5$s의 %4$s{을/를} 막았다!%2$.0s%3$.0s"
 #: ../src/do_wear.c:2457
 #, c-format
 msgid "%s%s are full, and you're already wearing an amulet and %s."
-msgstr "%s%s{이/가} 가득 차 있고, 이미 부적과 %s{을/를} 착용하고 있다."
+msgstr "%s%s{이/가} 가득 차 있고, 이미 목걸이와 %s{을/를} 착용하고 있다."
 
 #: ../src/do_wear.c:134
 #, c-format
@@ -13803,11 +13803,11 @@ msgstr "현재 더미에서 분리할 양은"
 
 #: ../src/invent.c:2141
 msgid "Amulet doesn't like being called names."
-msgstr "부적은 이름으로 불리는 것을 좋아하지 않는다."
+msgstr "목걸이는 이름으로 불리는 것을 좋아하지 않는다."
 
 #: ../src/invent.c:4815 ../src/obj_descr_i18n.c:1297
 msgid "Amulets"
-msgstr "부적"
+msgstr "목걸이"
 
 # 단수 항목을 나타냄
 #: ../src/trap.c:6931
@@ -19584,7 +19584,7 @@ msgstr "오딘"
 
 #: ../src/iactions.c:482
 msgid "Offer this amulet as a sacrifice at this altar"
-msgstr "이 부적을 이 제단에 제물로 바치기"
+msgstr "이 목걸이를 이 제단에 제물로 바치기"
 
 #: ../src/iactions.c:478
 msgid "Offer this corpse as a sacrifice at this altar"
@@ -20376,7 +20376,7 @@ msgstr "렌즈 착용"
 
 #: ../src/iactions.c:505
 msgid "Put this amulet on"
-msgstr "부적 착용"
+msgstr "목걸이 착용"
 
 #: ../src/iactions.c:520
 #, c-format
@@ -20606,7 +20606,7 @@ msgstr "진정해요, 하나도 안 아플 거예요."
 #: ../src/wizard.c:855
 #, c-format
 msgid "Relinquish the amulet, %s!"
-msgstr "부적을 내놓아라, %s!"
+msgstr "목걸이를 내놓아라, %s!"
 
 #: ../src/were.c:224
 msgid "Remain in beast form?"
@@ -20740,7 +20740,7 @@ msgstr "종 울리기"
 
 #: ../src/invent.c:4696 ../src/invent.c:4814 ../src/obj_descr_i18n.c:1296
 msgid "Rings"
-msgstr "쏘았다"
+msgstr "반지"
 
 #: ../src/do_name.c:1557
 msgid "Road-Runnerus Digestus"
@@ -21510,7 +21510,7 @@ msgstr "여마법사"
 
 #: ../src/quest.c:244
 msgid "Sorry to say, this is a mere imitation of the true Amulet of Yendor."
-msgstr "옌더 부적의 싸구려 플라스틱 모조품"
+msgstr "옌더 목걸이의 싸구려 플라스틱 모조품"
 
 #: ../src/apply.c:1812 ../src/apply.c:4429
 msgid "Sorry, I don't know how to use that."
@@ -24581,7 +24581,7 @@ msgstr "방랑자"
 
 #: ../src/invent.c:4817 ../src/obj_descr_i18n.c:1298
 msgid "Wands"
-msgstr "완드"
+msgstr "마법봉"
 
 #: ../src/files.c:470
 msgid "Warning - Unclosed fieldlevel file being reinitialized"
@@ -26829,7 +26829,7 @@ msgstr "[이미 %s{을/를} 입고 있다]"
 
 #: ../src/iactions.c:506
 msgid "[already wearing an amulet]"
-msgstr "[이미 부적을 착용 중]"
+msgstr "[이미 목걸이를 착용 중]"
 
 #: ../src/iactions.c:516
 msgid "[already wearing eyewear]"
@@ -27740,7 +27740,7 @@ msgstr "종자"
 
 #: ../src/insight.c:72
 msgid "acquired The Amulet of Yendor"
-msgstr "옌더의 부적을 획득했다"
+msgstr "옌더의 목걸이를 획득했다"
 
 # ============================================================
 # insight.c 업적 관련 메시지 수정
@@ -28126,7 +28126,7 @@ msgstr "이미"
 
 #: ../src/invent.c:967
 msgid "already have amulet?"
-msgstr "부적을 이미 가지고 있는가?"
+msgstr "목걸이를 이미 가지고 있는가?"
 
 #: ../src/invent.c:972
 msgid "already have candelabrum?"
@@ -28240,19 +28240,19 @@ msgstr "앰플"
 #: ../src/obj_descr_i18n.c:115 ../src/obj_descr_i18n.c:717 ../src/objnam.c:249
 #: ../src/objnam.c:675 ../src/objnam.c:682
 msgid "amulet"
-msgstr "부적"
+msgstr "목걸이"
 
 #: ../src/do_wear.c:1032
 msgid "amulet disintegrates!"
-msgstr "부적이 분해되었다!"
+msgstr "목걸이가 분해되었다!"
 
 #: ../src/zap.c:3193
 msgid "amulet grows hot for a moment, then cools."
-msgstr "부적이 잠시 뜨거워졌다가, 식는다."
+msgstr "목걸이가 잠시 뜨거워졌다가, 식는다."
 
 #: ../src/pray.c:393 ../src/timeout.c:899
 msgid "amulet vanishes!"
-msgstr "부적이 사라졌다!"
+msgstr "목걸이가 사라졌다!"
 
 # 지팡이
 # --- 지팡이 (Wands) ---
@@ -28284,7 +28284,7 @@ msgstr "공기 방울"
 # --- 부적 (Amulets) ---
 #: ../src/do_wear.c:2317
 msgid "an amulet"
-msgstr "부적"
+msgstr "목걸이"
 
 #: ../src/sounds.c:76
 msgid "an angry drone."
@@ -29203,7 +29203,7 @@ msgstr "눈가리개를 하고 있지 않다."
 
 #: ../src/invent.c:2333 ../src/invent.c:4706
 msgid "are not wearing an amulet."
-msgstr "부적을 걸고 있지 않다."
+msgstr "목걸이를 걸고 있지 않다."
 
 #: ../src/invent.c:4605
 msgid "are not wearing any armor."
@@ -35489,7 +35489,7 @@ msgstr "정상적인 형태에서는 특수 능력이 없다!"
 
 #: ../src/invent.c:1364
 msgid "don't have amulet?"
-msgstr "부적이 없는가?"
+msgstr "목걸이가 없는가?"
 
 #: ../src/invent.c:2354
 #, c-format
@@ -46396,7 +46396,7 @@ msgstr "바칠"
 #: ../src/pray.c:1546
 #, c-format
 msgid "offer the Amulet of Yendor to %s..."
-msgstr "%s에게 옌더의 부적을 바친다..."
+msgstr "%s에게 옌더의 목걸이를 바친다..."
 
 #: ../src/monster_i18n.c:222 ../src/obj_descr_i18n.c:1012
 msgid "ogre"
@@ -54187,7 +54187,7 @@ msgstr "제단"
 
 #: ../src/spell.c:1290
 msgid "the amulet draining your energy away."
-msgstr "부적이 에너지를 빼앗아 가고 있다."
+msgstr "목걸이가 에너지를 빼앗아 가고 있다."
 
 #: ../src/pray.c:1203
 #, c-format
@@ -58404,47 +58404,47 @@ msgstr "{영웅 이름}"
 # AMULET 이름: 런타임은 include/objects.h, 추출은 src/obj_descr_i18n.c 의 N_()
 #: src/obj_descr_i18n.c
 msgid "amulet of ESP"
-msgstr "투시의 부적"
+msgstr "투시의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of change"
-msgstr "변화의 부적"
+msgstr "변화의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of flying"
-msgstr "비행의 부적"
+msgstr "비행의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of guarding"
-msgstr "수호의 부적"
+msgstr "수호의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of life saving"
-msgstr "생명 구원의 부적"
+msgstr "생명 구원의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of reflection"
-msgstr "반사의 부적"
+msgstr "반사의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of magical breathing"
-msgstr "마법 호흡의 부적"
+msgstr "마법 호흡의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of restful sleep"
-msgstr "안식의 수면 부적"
+msgstr "안식의 수면 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of strangulation"
-msgstr "질식의 부적"
+msgstr "질식의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet of unchanging"
-msgstr "불변의 부적"
+msgstr "불변의 목걸이"
 
 #: src/obj_descr_i18n.c
 msgid "amulet versus poison"
-msgstr "독 방호의 부적"
+msgstr "독 방호의 목걸이"
 
 msgid ""
 "\n"
@@ -61822,7 +61822,7 @@ msgstr "지나간 메시지 보기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "put on an accessory (ring, amulet, etc)"
-msgstr "장신구 착용 (반지, 부적 등)"
+msgstr "장신구 착용 (반지, 목걸이 등)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -61852,7 +61852,7 @@ msgstr "화면 다시 그리기"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "remove an accessory (ring, amulet, etc)"
-msgstr "장신구 벗기 (반지, 부적 등)"
+msgstr "장신구 벗기 (반지, 목걸이 등)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62650,3 +62650,641 @@ msgctxt "getobj"
 msgid "name"
 msgstr "이름 붙일"
 
+# dknethack: one full name per known object type (objnam.c ko_objname); each decides on 의 by ear
+msgctxt "objname"
+msgid "potion of gain ability"
+msgstr "능력 상승 물약"
+
+msgctxt "objname"
+msgid "potion of restore ability"
+msgstr "능력 회복 물약"
+
+msgctxt "objname"
+msgid "potion of confusion"
+msgstr "혼란의 물약"
+
+msgctxt "objname"
+msgid "potion of blindness"
+msgstr "실명 물약"
+
+msgctxt "objname"
+msgid "potion of paralysis"
+msgstr "마비 물약"
+
+msgctxt "objname"
+msgid "potion of speed"
+msgstr "신속 물약"
+
+msgctxt "objname"
+msgid "potion of levitation"
+msgstr "공중 부양 물약"
+
+msgctxt "objname"
+msgid "potion of hallucination"
+msgstr "환각 물약"
+
+msgctxt "objname"
+msgid "potion of invisibility"
+msgstr "투명화 물약"
+
+msgctxt "objname"
+msgid "potion of see invisible"
+msgstr "투명 감지 물약"
+
+msgctxt "objname"
+msgid "potion of healing"
+msgstr "치료 물약"
+
+msgctxt "objname"
+msgid "potion of extra healing"
+msgstr "고급 치료 물약"
+
+msgctxt "objname"
+msgid "potion of gain level"
+msgstr "레벨 상승 물약"
+
+msgctxt "objname"
+msgid "potion of enlightenment"
+msgstr "깨달음의 물약"
+
+msgctxt "objname"
+msgid "potion of monster detection"
+msgstr "몬스터 탐지 물약"
+
+msgctxt "objname"
+msgid "potion of object detection"
+msgstr "물체 탐지 물약"
+
+msgctxt "objname"
+msgid "potion of gain energy"
+msgstr "마력 상승 물약"
+
+msgctxt "objname"
+msgid "potion of sleeping"
+msgstr "수면 물약"
+
+msgctxt "objname"
+msgid "potion of full healing"
+msgstr "완전 치료 물약"
+
+msgctxt "objname"
+msgid "potion of polymorph"
+msgstr "변신 물약"
+
+msgctxt "objname"
+msgid "potion of booze"
+msgstr "술"
+
+msgctxt "objname"
+msgid "potion of sickness"
+msgstr "질병 물약"
+
+msgctxt "objname"
+msgid "potion of fruit juice"
+msgstr "과일 주스"
+
+msgctxt "objname"
+msgid "potion of acid"
+msgstr "산성 물약"
+
+msgctxt "objname"
+msgid "potion of oil"
+msgstr "기름"
+
+msgctxt "objname"
+msgid "potion of water"
+msgstr "물"
+
+msgctxt "objname"
+msgid "scroll of enchant armor"
+msgstr "갑옷 강화 스크롤"
+
+msgctxt "objname"
+msgid "scroll of destroy armor"
+msgstr "갑옷 파괴 스크롤"
+
+msgctxt "objname"
+msgid "scroll of confuse monster"
+msgstr "몬스터 혼란 스크롤"
+
+msgctxt "objname"
+msgid "scroll of scare monster"
+msgstr "몬스터 공포 스크롤"
+
+msgctxt "objname"
+msgid "scroll of remove curse"
+msgstr "저주 해제 스크롤"
+
+msgctxt "objname"
+msgid "scroll of enchant weapon"
+msgstr "무기 강화 스크롤"
+
+msgctxt "objname"
+msgid "scroll of create monster"
+msgstr "몬스터 소환 스크롤"
+
+msgctxt "objname"
+msgid "scroll of taming"
+msgstr "길들이기 스크롤"
+
+msgctxt "objname"
+msgid "scroll of genocide"
+msgstr "학살 스크롤"
+
+msgctxt "objname"
+msgid "scroll of light"
+msgstr "빛 스크롤"
+
+msgctxt "objname"
+msgid "scroll of teleportation"
+msgstr "순간이동 스크롤"
+
+msgctxt "objname"
+msgid "scroll of gold detection"
+msgstr "금 탐지 스크롤"
+
+msgctxt "objname"
+msgid "scroll of food detection"
+msgstr "음식 탐지 스크롤"
+
+msgctxt "objname"
+msgid "scroll of identify"
+msgstr "감정 스크롤"
+
+msgctxt "objname"
+msgid "scroll of magic mapping"
+msgstr "마법 지도 스크롤"
+
+msgctxt "objname"
+msgid "scroll of amnesia"
+msgstr "망각 스크롤"
+
+msgctxt "objname"
+msgid "scroll of fire"
+msgstr "화염 스크롤"
+
+msgctxt "objname"
+msgid "scroll of earth"
+msgstr "대지 스크롤"
+
+msgctxt "objname"
+msgid "scroll of punishment"
+msgstr "형벌 스크롤"
+
+msgctxt "objname"
+msgid "scroll of charging"
+msgstr "충전 스크롤"
+
+msgctxt "objname"
+msgid "scroll of stinking cloud"
+msgstr "악취 구름 스크롤"
+
+msgctxt "objname"
+msgid "scroll of mail"
+msgstr "우편 스크롤"
+
+msgctxt "objname"
+msgid "scroll of blank paper"
+msgstr "백지 스크롤"
+
+msgctxt "objname"
+msgid "spellbook of dig"
+msgstr "굴착 마법책"
+
+msgctxt "objname"
+msgid "spellbook of magic missile"
+msgstr "마법 화살 마법책"
+
+msgctxt "objname"
+msgid "spellbook of fireball"
+msgstr "화염구 마법책"
+
+msgctxt "objname"
+msgid "spellbook of cone of cold"
+msgstr "냉기 원뿔 마법책"
+
+msgctxt "objname"
+msgid "spellbook of sleep"
+msgstr "수면 마법책"
+
+msgctxt "objname"
+msgid "spellbook of finger of death"
+msgstr "죽음의 손가락 마법책"
+
+msgctxt "objname"
+msgid "spellbook of light"
+msgstr "빛 마법책"
+
+msgctxt "objname"
+msgid "spellbook of detect monsters"
+msgstr "몬스터 탐지 마법책"
+
+msgctxt "objname"
+msgid "spellbook of healing"
+msgstr "치료 마법책"
+
+msgctxt "objname"
+msgid "spellbook of knock"
+msgstr "개방 마법책"
+
+msgctxt "objname"
+msgid "spellbook of force bolt"
+msgstr "힘의 화살 마법책"
+
+msgctxt "objname"
+msgid "spellbook of confuse monster"
+msgstr "몬스터 혼란 마법책"
+
+msgctxt "objname"
+msgid "spellbook of cure blindness"
+msgstr "실명 치료 마법책"
+
+msgctxt "objname"
+msgid "spellbook of drain life"
+msgstr "생명력 흡수 마법책"
+
+msgctxt "objname"
+msgid "spellbook of slow monster"
+msgstr "몬스터 감속 마법책"
+
+msgctxt "objname"
+msgid "spellbook of wizard lock"
+msgstr "마법 잠금 마법책"
+
+msgctxt "objname"
+msgid "spellbook of create monster"
+msgstr "몬스터 소환 마법책"
+
+msgctxt "objname"
+msgid "spellbook of detect food"
+msgstr "음식 탐지 마법책"
+
+msgctxt "objname"
+msgid "spellbook of cause fear"
+msgstr "공포 유발 마법책"
+
+msgctxt "objname"
+msgid "spellbook of clairvoyance"
+msgstr "천리안 마법책"
+
+msgctxt "objname"
+msgid "spellbook of cure sickness"
+msgstr "질병 치료 마법책"
+
+msgctxt "objname"
+msgid "spellbook of charm monster"
+msgstr "몬스터 매혹 마법책"
+
+msgctxt "objname"
+msgid "spellbook of haste self"
+msgstr "자기 가속 마법책"
+
+msgctxt "objname"
+msgid "spellbook of detect unseen"
+msgstr "투명 탐지 마법책"
+
+msgctxt "objname"
+msgid "spellbook of levitation"
+msgstr "공중 부양 마법책"
+
+msgctxt "objname"
+msgid "spellbook of extra healing"
+msgstr "고급 치료 마법책"
+
+msgctxt "objname"
+msgid "spellbook of restore ability"
+msgstr "능력 회복 마법책"
+
+msgctxt "objname"
+msgid "spellbook of invisibility"
+msgstr "투명화 마법책"
+
+msgctxt "objname"
+msgid "spellbook of detect treasure"
+msgstr "보물 탐지 마법책"
+
+msgctxt "objname"
+msgid "spellbook of remove curse"
+msgstr "저주 해제 마법책"
+
+msgctxt "objname"
+msgid "spellbook of magic mapping"
+msgstr "마법 지도 마법책"
+
+msgctxt "objname"
+msgid "spellbook of identify"
+msgstr "감정 마법책"
+
+msgctxt "objname"
+msgid "spellbook of turn undead"
+msgstr "언데드 퇴치 마법책"
+
+msgctxt "objname"
+msgid "spellbook of polymorph"
+msgstr "변신 마법책"
+
+msgctxt "objname"
+msgid "spellbook of teleport away"
+msgstr "순간이동 마법책"
+
+msgctxt "objname"
+msgid "spellbook of create familiar"
+msgstr "사역마 소환 마법책"
+
+msgctxt "objname"
+msgid "spellbook of cancellation"
+msgstr "마법 해제 마법책"
+
+msgctxt "objname"
+msgid "spellbook of protection"
+msgstr "보호 마법책"
+
+msgctxt "objname"
+msgid "spellbook of jumping"
+msgstr "점프 마법책"
+
+msgctxt "objname"
+msgid "spellbook of stone to flesh"
+msgstr "석화 해제 마법책"
+
+msgctxt "objname"
+msgid "spellbook of chain lightning"
+msgstr "연쇄 번개 마법책"
+
+msgctxt "objname"
+msgid "spellbook of flame sphere"
+msgstr "화염 구체 마법책"
+
+msgctxt "objname"
+msgid "spellbook of freeze sphere"
+msgstr "냉기 구체 마법책"
+
+msgctxt "objname"
+msgid "spellbook of blank paper"
+msgstr "백지 마법책"
+
+msgctxt "objname"
+msgid "ring of adornment"
+msgstr "장식의 반지"
+
+msgctxt "objname"
+msgid "ring of gain strength"
+msgstr "힘 증가의 반지"
+
+msgctxt "objname"
+msgid "ring of gain constitution"
+msgstr "건강 증가의 반지"
+
+msgctxt "objname"
+msgid "ring of increase accuracy"
+msgstr "명중 증가의 반지"
+
+msgctxt "objname"
+msgid "ring of increase damage"
+msgstr "공격력 증가의 반지"
+
+msgctxt "objname"
+msgid "ring of protection"
+msgstr "보호의 반지"
+
+msgctxt "objname"
+msgid "ring of regeneration"
+msgstr "재생의 반지"
+
+msgctxt "objname"
+msgid "ring of searching"
+msgstr "탐색의 반지"
+
+msgctxt "objname"
+msgid "ring of stealth"
+msgstr "은신의 반지"
+
+msgctxt "objname"
+msgid "ring of sustain ability"
+msgstr "능력 유지의 반지"
+
+msgctxt "objname"
+msgid "ring of levitation"
+msgstr "공중 부양의 반지"
+
+msgctxt "objname"
+msgid "ring of hunger"
+msgstr "허기의 반지"
+
+msgctxt "objname"
+msgid "ring of aggravate monster"
+msgstr "몬스터 자극의 반지"
+
+msgctxt "objname"
+msgid "ring of conflict"
+msgstr "갈등의 반지"
+
+msgctxt "objname"
+msgid "ring of warning"
+msgstr "경고의 반지"
+
+msgctxt "objname"
+msgid "ring of poison resistance"
+msgstr "독 저항의 반지"
+
+msgctxt "objname"
+msgid "ring of fire resistance"
+msgstr "화염 저항의 반지"
+
+msgctxt "objname"
+msgid "ring of cold resistance"
+msgstr "냉기 저항의 반지"
+
+msgctxt "objname"
+msgid "ring of shock resistance"
+msgstr "전기 저항의 반지"
+
+msgctxt "objname"
+msgid "ring of free action"
+msgstr "자유 행동의 반지"
+
+msgctxt "objname"
+msgid "ring of slow digestion"
+msgstr "느린 소화의 반지"
+
+msgctxt "objname"
+msgid "ring of teleportation"
+msgstr "순간이동의 반지"
+
+msgctxt "objname"
+msgid "ring of teleport control"
+msgstr "순간이동 제어의 반지"
+
+msgctxt "objname"
+msgid "ring of polymorph"
+msgstr "변신의 반지"
+
+msgctxt "objname"
+msgid "ring of polymorph control"
+msgstr "변신 제어의 반지"
+
+msgctxt "objname"
+msgid "ring of invisibility"
+msgstr "투명화의 반지"
+
+msgctxt "objname"
+msgid "ring of see invisible"
+msgstr "투명 감지의 반지"
+
+msgctxt "objname"
+msgid "ring of protection from shape changers"
+msgstr "변신 방지의 반지"
+
+msgctxt "objname"
+msgid "wand of light"
+msgstr "빛의 마법봉"
+
+msgctxt "objname"
+msgid "wand of secret door detection"
+msgstr "비밀문 탐지의 마법봉"
+
+msgctxt "objname"
+msgid "wand of enlightenment"
+msgstr "깨달음의 마법봉"
+
+msgctxt "objname"
+msgid "wand of create monster"
+msgstr "몬스터 소환의 마법봉"
+
+msgctxt "objname"
+msgid "wand of wishing"
+msgstr "소원의 마법봉"
+
+msgctxt "objname"
+msgid "wand of stasis"
+msgstr "정지의 마법봉"
+
+msgctxt "objname"
+msgid "wand of nothing"
+msgstr "무(無)의 마법봉"
+
+msgctxt "objname"
+msgid "wand of striking"
+msgstr "강타의 마법봉"
+
+msgctxt "objname"
+msgid "wand of make invisible"
+msgstr "투명화의 마법봉"
+
+msgctxt "objname"
+msgid "wand of slow monster"
+msgstr "몬스터 감속의 마법봉"
+
+msgctxt "objname"
+msgid "wand of speed monster"
+msgstr "몬스터 가속의 마법봉"
+
+msgctxt "objname"
+msgid "wand of undead turning"
+msgstr "언데드 퇴치의 마법봉"
+
+msgctxt "objname"
+msgid "wand of polymorph"
+msgstr "변신의 마법봉"
+
+msgctxt "objname"
+msgid "wand of cancellation"
+msgstr "마법 해제의 마법봉"
+
+msgctxt "objname"
+msgid "wand of teleportation"
+msgstr "순간이동의 마법봉"
+
+msgctxt "objname"
+msgid "wand of opening"
+msgstr "개방의 마법봉"
+
+msgctxt "objname"
+msgid "wand of locking"
+msgstr "잠금의 마법봉"
+
+msgctxt "objname"
+msgid "wand of probing"
+msgstr "훔쳐보기의 마법봉"
+
+msgctxt "objname"
+msgid "wand of digging"
+msgstr "굴착의 마법봉"
+
+msgctxt "objname"
+msgid "wand of magic missile"
+msgstr "마법 화살의 마법봉"
+
+msgctxt "objname"
+msgid "wand of fire"
+msgstr "화염의 마법봉"
+
+msgctxt "objname"
+msgid "wand of cold"
+msgstr "냉기의 마법봉"
+
+msgctxt "objname"
+msgid "wand of sleep"
+msgstr "수면의 마법봉"
+
+msgctxt "objname"
+msgid "wand of death"
+msgstr "죽음의 마법봉"
+
+msgctxt "objname"
+msgid "wand of lightning"
+msgstr "번개의 마법봉"
+
+msgctxt "objname"
+msgid "amulet of ESP"
+msgstr "텔레파시의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of life saving"
+msgstr "생명 구원의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of strangulation"
+msgstr "질식의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of restful sleep"
+msgstr "숙면의 목걸이"
+
+msgctxt "objname"
+msgid "amulet versus poison"
+msgstr "독 방호의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of change"
+msgstr "변화의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of unchanging"
+msgstr "불변의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of reflection"
+msgstr "반사의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of magical breathing"
+msgstr "마법 호흡의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of guarding"
+msgstr "수호의 목걸이"
+
+msgctxt "objname"
+msgid "amulet of flying"
+msgstr "비행의 목걸이"
+
+msgctxt "objname"
+msgid "Book of the Dead"
+msgstr "사자의 서"
+
+msgid "Amulet of Yendor"
+msgstr "옌더의 목걸이"
+
+msgid "cheap plastic imitation of the Amulet of Yendor"
+msgstr "옌더의 목걸이 모조품"
