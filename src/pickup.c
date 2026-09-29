@@ -701,8 +701,12 @@ pickup(int what) /* should be a long */
     if (!u.uswallow) {
         struct trap *t;
 
-        /* no auto-pick if no-pick move, nothing there, or in a pool */
-        if (autopickup && (svc.context.nopick || !OBJ_AT(u.ux, u.uy)
+        /* no auto-pick if no-pick move, nothing there, or in a pool;
+           dknethack: travel sets nopick too, but still picks up here
+           unless it was started with the m prefix */
+        if (autopickup && ((svc.context.nopick
+                            && (!svc.context.travel || iflags.menu_requested))
+                           || !OBJ_AT(u.ux, u.uy)
                            || (is_pool(u.ux, u.uy) && !Underwater)
                            || is_lava(u.ux, u.uy))) {
             if (flags.mention_decor)
