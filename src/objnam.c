@@ -1556,12 +1556,18 @@ doname_base(
         break;
     case RING_CLASS:
  ring:  /* normal rings reach here 'naturally'; meat ring jumps here */
-        if (obj->owornmask & W_RINGR)
-            Concat(bp, 0, _(" (on right "));
-        if (obj->owornmask & W_RINGL)
-            Concat(bp, 0, _(" (on left "));
-        if (obj->owornmask & W_RING) /* either left or right */
-            ConcatF1(bp, 0, _("%s)"), body_part(HAND));
+        if (is_korean_locale()) {
+            if (obj->owornmask & W_RING)
+                Concat(bp, 0, (obj->owornmask & W_RINGR) ? " (오른손 장착)"
+                                                         : " (왼손 장착)");
+        } else {
+            if (obj->owornmask & W_RINGR)
+                Concat(bp, 0, _(" (on right "));
+            if (obj->owornmask & W_RINGL)
+                Concat(bp, 0, _(" (on left "));
+            if (obj->owornmask & W_RING) /* either left or right */
+                ConcatF1(bp, 0, _("%s)"), body_part(HAND));
+        }
         if (known && objects[obj->otyp].oc_charged && !is_korean_locale()) {
             Sprintf(eos(prefix), "%+d ", obj->spe); /* sitoa(obj->spe)+" " */
         }
@@ -1641,7 +1647,7 @@ doname_base(
            except when those are being actively dual-wielded where the
            regular phrasing will list them as "in right hand" to
            contrast with secondary weapon's "in left hand" */
-        if ((obj->quan != 1L
+        if (!is_korean_locale() && (obj->quan != 1L
              || ((obj->oclass == WEAPON_CLASS)
                  ? (is_ammo(obj) || is_missile(obj))
                  : !is_weptool(obj)))
@@ -1661,11 +1667,18 @@ doname_base(
             }
             /* note: Sting's glow message, if added, will insert text
                in front of "(weapon in hand)"'s closing paren */
-            ConcatF2(bp, 0, _(" (%s %s)"),
-                     tethered ? _("tethered to")
-                     : twoweap_primary ? _("wielded in")
-                       : _("weapon in"),
-                     hand_s);
+            if (is_korean_locale())
+                /* Korean says 장착 for anything worn or wielded; only
+                   two-weapon combat names the hand */
+                Concat(bp, 0, tethered ? " (장착, 줄 연결)"
+                              : !twoweap_primary ? " (장착)"
+                                : URIGHTY ? " (오른손 장착)" : " (왼손 장착)");
+            else
+                ConcatF2(bp, 0, _(" (%s %s)"),
+                         tethered ? _("tethered to")
+                         : twoweap_primary ? _("wielded in")
+                           : _("weapon in"),
+                         hand_s);
 
             /* we just added a parenthesized phrase, but the right paren
                might be absent if the appended string got truncated */
@@ -1684,7 +1697,10 @@ doname_base(
         }
     }
     if (obj->owornmask & W_SWAPWEP) {
-        if (u.twoweap)
+        if (is_korean_locale())
+            Concat(bp, 0, !u.twoweap ? " (예비 무기)"
+                          : URIGHTY ? " (왼손 장착)" : " (오른손 장착)");
+        else if (u.twoweap)
             ConcatF2(bp, 0, _(" (wielded in %s %s)"),
                      URIGHTY ? _("left") : _("right"), body_part(HAND));
         else

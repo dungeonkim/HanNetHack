@@ -576,15 +576,15 @@ msgstr " (%s에 연결됨)"
 
 #: ../src/objnam.c:1403
 msgid " (being doffed)"
-msgstr " (벗는 중)"
+msgstr " (해제 중)"
 
 #: ../src/objnam.c:1404
 msgid " (being donned)"
-msgstr " (입는 중)"
+msgstr " (장착 중)"
 
 #: ../src/objnam.c:1394 ../src/objnam.c:1405 ../src/objnam.c:1437
 msgid " (being worn)"
-msgstr " (착용 중)"
+msgstr " (장착)"
 
 #: ../src/pager.c:402
 msgid " (buried)"
@@ -677,7 +677,7 @@ msgstr " (%s %s에 장착)"
 
 #: ../src/invent.c:1730 ../src/objnam.c:1583
 msgid " (wielded)"
-msgstr " (장비됨)"
+msgstr " (장착)"
 
 #: ../src/end.c:1413
 msgid " (with a fake Amulet)"
@@ -693,7 +693,7 @@ msgstr " (아뮬렛을 가지고)"
 #: ../src/invent.c:3243
 #, c-format
 msgid " -- unidentified or partially identified item%s"
-msgstr " -- 미확인 또는 부분 확인 물품%.0s"
+msgstr " -- 미감정이거나 일부만 감정된 물건%.0s"
 
 #: ../src/pickup.c:2916
 msgid " : -- Look: examine contents"
@@ -12424,7 +12424,7 @@ msgstr "(팁: 숙련도를 올리시려면 #enhance 명령을 쓰세요.)"
 
 #: ../src/invent.c:3248
 msgid "(all items are permanently identified already)"
-msgstr "(모든 물품이 이미 영구적으로 확인됨)"
+msgstr "(모든 물건이 이미 감정됨)"
 
 #: ../src/cmd.c:2911
 msgid "(also commands with no key assignment)"
@@ -15517,7 +15517,7 @@ msgstr "죽음"
 
 #: ../src/invent.c:3240
 msgid "Debug Identify"
-msgstr "감정할"
+msgstr "디버그 감정"
 
 #: ../src/cmd.c:3005
 msgid "Debug mode commands:"
@@ -15774,7 +15774,7 @@ msgstr "함정을 해제해 보시겠습니까?"
 
 #: ../src/end.c:633
 msgid "Do you want your possessions identified?"
-msgstr "소지품을 식별하시겠습니까?"
+msgstr "소지품을 감정하시겠습니까?"
 
 #: ../src/sounds.c:1164 ../src/uhitm.c:4370
 msgid "Doc, I can't help you unless you cooperate."
@@ -23309,7 +23309,7 @@ msgstr "이것은 금고 순간이동이며, 한 번만 사용할 수 있다."
 
 #: ../src/read.c:2080
 msgid "This is an identify scroll."
-msgstr "이것은 감정의 두루마리다."
+msgstr "이것은 감정 두루마리다."
 
 # bones.c - 본즈 레벨 오류
 #: ../src/bones.c:696
@@ -24883,7 +24883,7 @@ msgstr "무엇을 버리겠습니까?"
 #: ../src/invent.c:2681
 #, c-format
 msgid "What would you like to identify %s?"
-msgstr "%s 무엇을 확인하시겠습니까?"
+msgstr "%s 무엇을 감정하시겠습니까?"
 
 # engrave.c:509 - 새기기 메시지
 #: ../src/engrave.c:509
@@ -29816,7 +29816,7 @@ msgstr "근처에"
 
 #: ../src/objnam.c:1652
 msgid "at the ready"
-msgstr "준비됨"
+msgstr "투척 준비"
 
 #: ../src/mcastu.c:79
 msgid "at you, then curses"
@@ -37880,7 +37880,7 @@ msgstr "화염구"
 
 #: ../src/obj_descr_i18n.c:501 ../src/objnam.c:1193
 msgid "fireproof "
-msgstr "내화성 "
+msgstr "불 방지 "
 
 #: ../src/invent.c:2682 ../src/spell.c:205
 msgid "first"
@@ -37924,7 +37924,7 @@ msgstr "fix_worst_trouble: couldn't cure hands."
 # Erodeproof types
 #: ../src/obj_descr_i18n.c:498 ../src/objnam.c:1190
 msgid "fixed "
-msgstr "고정된 "
+msgstr "손상 방지 "
 
 # insight.c - "You have fixed abilities"
 # 기존: "고정된 능력치" → "당신은 고정된 능력치" (불완전)
@@ -38338,7 +38338,7 @@ msgstr "줍은 금화와 상품 사용분이다."
 
 #: ../src/objnam.c:1680
 msgid "for sale"
-msgstr "판매용"
+msgstr "판매 중"
 
 #: ../src/shk.c:3577
 msgid "for the contents of this"
@@ -40441,7 +40441,7 @@ msgstr "이미 가능한 한 %s까지 갔다."
 #: ../src/invent.c:2732
 #, c-format
 msgid "have already identified %s of your possessions."
-msgstr "이미 소지품 중 %s{을/를} 확인했다."
+msgstr "이미 소지품 중 %s{을/를} 감정했다."
 
 #: ../src/priest.c:507
 msgid "have an eerie feeling..."
@@ -41552,7 +41552,7 @@ msgstr "감정할"
 
 #: ../src/read.c:2078
 msgid "identify this as an identify scroll."
-msgstr "이것이 감정의 두루마리임을 알았다."
+msgstr "이것이 감정 두루마리임을 알았다."
 
 #: ../src/weapon.c:1370
 msgid "if skill slots become available"
@@ -41733,11 +41733,11 @@ msgstr "제자리에서 굴렀다."
 # 발사체 준비 상태
 #: ../src/objnam.c:1650
 msgid "in quiver"
-msgstr "화살통에"
+msgstr "화살통"
 
 #: ../src/objnam.c:1651
 msgid "in quiver pouch"
-msgstr "화살통 주머니에"
+msgstr "주머니"
 
 #: ../src/options.c:6336
 msgid "in same area"
@@ -47078,7 +47078,7 @@ msgstr "파르티잔"
 
 #: ../src/objnam.c:782 ../src/objnam.c:1513
 msgid "partly eaten "
-msgstr "일부 먹은 "
+msgstr "조금 먹은 "
 
 #: ../src/insight.c:1837
 msgid "partly offsetting"
@@ -47086,7 +47086,7 @@ msgstr "부분적으로 상쇄한다"
 
 #: ../src/objnam.c:1481
 msgid "partly used "
-msgstr "일부 사용된 "
+msgstr "조금 사용된 "
 
 #: ../src/mkobj.c:3823
 msgid "parts of the floor melting!"
@@ -47883,11 +47883,11 @@ msgstr "산성 물약"
 
 #: ../src/potion.c:736
 msgid "potion of holy water"
-msgstr "성수 물약"
+msgstr "성수"
 
 #: ../src/potion.c:757
 msgid "potion of unholy water"
-msgstr "불경한 물 물약"
+msgstr "저주받은 물"
 
 #: ../src/potion.c:2650
 #, c-format
@@ -49821,7 +49821,7 @@ msgstr "바스락거리는"
 
 #: ../src/obj_descr_i18n.c:499 ../src/objnam.c:1191
 msgid "rustproof "
-msgstr "녹슬지 않는 "
+msgstr "녹 방지 "
 
 #: ../src/potion.c:2673 ../src/steed.c:336
 msgid "rusty"
@@ -50548,7 +50548,7 @@ msgstr "sel_set_feature(%i,%i,%i) !isok"
 #: ../src/invent.c:3252
 #, c-format
 msgid "select %s to permanently identify"
-msgstr "%s{을/를} 선택하여 영구적으로 확인"
+msgstr "감정할 %s{을/를} 선택"
 
 #: ../src/do_wear.c:2814
 #, c-format
@@ -55871,7 +55871,7 @@ msgstr "불경한 "
 
 #: ../src/obj_descr_i18n.c:645 ../src/objnam.c:840
 msgid "unholy water"
-msgstr "사수"
+msgstr "저주받은 물"
 
 # pager.c monster health descriptions
 #: ../src/pager.c:145
@@ -55979,7 +55979,7 @@ msgstr "문 잠금 해제 중"
 
 #: ../src/objnam.c:1668
 msgid "unpaid"
-msgstr "미지불"
+msgstr "계산 전"
 
 #: ../src/mkobj.c:2701
 #, c-format
@@ -62137,7 +62137,7 @@ msgstr "몬스터 생성"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "identify all items in inventory"
-msgstr "소지품의 모든 물건 식별"
+msgstr "소지품의 모든 물건 감정"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
