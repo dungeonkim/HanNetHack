@@ -43714,7 +43714,7 @@ msgstr "리치"
 
 #: ../src/monster_i18n.c:178 ../src/obj_descr_i18n.c:988
 msgid "lichen"
-msgstr "이끼"
+msgstr "이끼괴물"
 
 #: ../src/dokick.c:670
 msgid "lid slams open, then falls shut."
