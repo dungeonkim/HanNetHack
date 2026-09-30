@@ -3406,6 +3406,10 @@ menu_loot(int retry, boolean put_in)
     return n_looted ? ECMD_TIME : ECMD_OK;
 }
 
+/* dknethack: its "숙련자용 메뉴 추가" setting; off keeps menus to what a
+   newcomer needs (the loot menu drops "take out, then put in" and the like) */
+int dknh_expert_menus = 0;
+
 staticfn char
 in_or_out_menu(
     const char *prompt,
@@ -3429,10 +3433,7 @@ in_or_out_menu(
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);
 
-    any.a_int = 1; /* ':' */
-    Sprintf(buf, _("Look inside %s"), thesimpleoname(obj));
-    add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
-             ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
+    /* dknethack: no "look inside" (taking out lists the contents too) */
     if (outokay) {
         any.a_int = 2; /* 'o' */
         Sprintf(buf, _("take %s out"), something);
@@ -3445,23 +3446,20 @@ in_or_out_menu(
         add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     }
-    if (outokay) {
+    if (outokay && dknh_expert_menus) {
         any.a_int = 4; /* 'b' */
         Sprintf(buf, _("%stake out, then put in"), inokay ? _("both; ") : "");
         add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     }
-    if (inokay) {
+    if (inokay && dknh_expert_menus) {
         any.a_int = 5; /* 'r' */
         Sprintf(buf, _("%sput in, then take out"),
                 outokay ? _("both reversed; ") : "");
         add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
-        any.a_int = 6; /* 's' */
-        Sprintf(buf, _("stash one item into %s"), thesimpleoname(obj));
-        add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
-                 ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     }
+    /* dknethack: no "stash one item" (putting in picks one just as well) */
     add_menu_str(win, "");
     if (more_containers) {
         any.a_int = 7; /* 'n' */

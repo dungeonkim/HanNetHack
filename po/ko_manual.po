@@ -12175,7 +12175,7 @@ msgstr "정말 %s 팬픽션을 %s썼다."
 #: ../src/pickup.c:3443
 #, c-format
 msgid "%sput in, then take out"
-msgstr "%s넣은 후 꺼내기"
+msgstr "%.0s넣고 꺼내기 (1턴)"
 
 #: ../src/pager.c:2200
 #, c-format
@@ -12200,7 +12200,7 @@ msgstr "%s더 강하다."
 #: ../src/pickup.c:3437
 #, c-format
 msgid "%stake out, then put in"
-msgstr "%s꺼낸 후 넣기"
+msgstr "%.0s꺼내고 넣기 (1턴)"
 
 #: ../src/lock.c:412
 #, c-format
