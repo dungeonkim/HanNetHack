@@ -18965,7 +18965,7 @@ msgstr "광산마을 자경단"
 
 #: ../src/monster_i18n.c:370 ../src/obj_descr_i18n.c:825
 msgid "Minion of Huhetotl"
-msgstr "후헤토틀의 하수인"
+msgstr "후에토틀의 하수인"
 
 #: ../src/invent.c:64 ../src/invent.c:3269
 msgid "Miscellaneous"
@@ -26904,7 +26904,7 @@ msgstr "_이슈타르"
 
 #: ../src/role.c:464
 msgid "_The Lady"
-msgstr "_여신"
+msgstr "_레이디"
 
 #: ../src/role.c:383
 msgid "_Venus"
@@ -54197,7 +54197,7 @@ msgstr "에피다우로스 신전"
 
 #: ../src/role.c:289
 msgid "the Temple of Nalzok"
-msgstr "날족 신전"
+msgstr "날조크 신전"
 
 # Rogue quest locations
 #: ../src/role.c:331 ../src/role.c:467
