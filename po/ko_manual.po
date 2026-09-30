@@ -13909,21 +13909,21 @@ msgstr "안후르 주립대학교 - 투지 넘치는 불개미들의 본거지!"
 # Tourist quest locations
 #: ../src/role.c:466
 msgid "Ankh-Morpork"
-msgstr "앙크-모르포크"
+msgstr "앙크모포크"
 
 # Discworld 참조
 #: ../src/invent.c:1524
 msgid "Ankh-Morpork Dollar"
-msgstr "앙크-모르포크 달러"
+msgstr "앙크모포크 달러"
 
 # Discworld 참조
 #: ../src/read.c:457
 msgid "Ankh-Morpork Merchant's Guild Barter Card"
-msgstr "앙크-모르포크 상인 길드 물물교환 카드"
+msgstr "앙크모포크 상인 길드 물물교환 카드"
 
 #: ../src/read.c:458
 msgid "Ankh-Morpork Thieves' Guild Unlimited Transaction Card"
-msgstr "앙크-모르포크 도둑 길드 무제한 거래 카드"
+msgstr "앙크모포크 도둑 길드 무제한 거래 카드"
 
 # trap.c: "%s item%s in your inventory %s been destroyed."
 # burncount > burnmesgcount일 때: "Another"(추가 1개) vs "Other"(추가 여러개)
@@ -23947,7 +23947,7 @@ msgstr "괴물 유형의 이름을 입력하거나 'none' 입력"
 # 발키리 (노르웨이)
 #: ../src/role.c:504
 msgid "Tyr"
-msgstr "튀르"
+msgstr "티르"
 
 #: ../src/eat.c:2110
 msgid "Ugh.  Rotten egg."
@@ -26896,7 +26896,7 @@ msgstr "_아테나"
 
 #: ../src/role.c:205
 msgid "_Brigit"
-msgstr "_브리깃"
+msgstr "_브리짓"
 
 #: ../src/role.c:124
 msgid "_Ishtar"
@@ -53996,7 +53996,7 @@ msgid "that %s %s ignoring you."
 msgstr "%s{이/가} %s 당신을 무시한다."
 
 # %1$s=신 이름, %2$s=C_("god_mood") 서술어
-# 조합: "튀르가 흡족해하고 있다."
+# 조합: "티르가 흡족해하고 있다."
 #: ../src/pray.c:733 ../src/pray.c:1082
 #, c-format
 msgid "that %s is %s."
