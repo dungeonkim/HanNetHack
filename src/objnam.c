@@ -267,7 +267,8 @@ obj_typename(int otyp)
     default:
         if (nn) {
             Strcat(buf, _(actualn));
-            if (GemStone(otyp))
+            /* Korean names already say stone (부싯돌, 시금석, 행운의 돌) */
+            if (GemStone(otyp) && !is_korean_locale())
                 Strcat(buf, _(" stone"));
             if (un) /* 3: length of " (" + ")" which will enclose 'dn' */
                 xcalled(buf, BUFSZ - (dn ? (int) strlen(dn) + 3 : 0), "", un);
@@ -973,7 +974,8 @@ xname_flags(
                 Sprintf(buf, _("%s %s"), _(dn), rock);
         } else {
             Strcpy(buf, _(actualn));
-            if (GemStone(typ))
+            /* Korean names already say stone (부싯돌, 시금석, 행운의 돌) */
+            if (GemStone(typ) && !is_korean_locale())
                 Strcat(buf, _(" stone"));
         }
         break;

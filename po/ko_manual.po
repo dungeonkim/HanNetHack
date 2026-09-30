@@ -2816,7 +2816,7 @@ msgstr "\"%s, 당신은 도둑이다!\""
 
 #: ../src/read.c:524
 msgid "\"1 Zorkmid.  857 GUE.  In Frobs We Trust.\""
-msgstr "\"1 조크미드. 857 GUE. 프롭스를 믿으라.\""
+msgstr "\"1 금화. 857 GUE. 프롭스를 믿으라.\""
 
 #: ../src/shk.c:3564
 msgid "\"For you,"
@@ -11621,7 +11621,7 @@ msgstr "%s%s그것을 비우는 데 %ld %s{이/가} 들 것이다."
 
 # === Category 9: 하드코딩 조사 오류 수정 ===
 # shk.c:5646 - 옌도리안 연료세
-# %4$s = currency(): "조크미드" 자음종성 → 가→{이/가}
+# %4$s = currency(): "금화" → 가→{이/가}
 #: ../src/shk.c:5707
 #, c-format
 msgid "%s%sThat will cost you %ld %s (Yendorian Fuel Tax)."
@@ -12481,7 +12481,7 @@ msgstr "새겨진 글씨"
 # 발사체 준비 상태
 #: ../src/obj_descr_i18n.c:1282
 msgid "(in quiver)"
-msgstr "(원거리 공격 준비)"
+msgstr "(원거리 공격용)"
 
 #: ../src/obj_descr_i18n.c:1286
 msgid "(lit)"
@@ -29840,7 +29840,7 @@ msgstr "근처에"
 
 #: ../src/objnam.c:1652
 msgid "at the ready"
-msgstr "원거리 공격 준비"
+msgstr "원거리 공격용"
 
 #: ../src/mcastu.c:79
 msgid "at you, then curses"
@@ -41757,11 +41757,11 @@ msgstr "제자리에서 굴렀다."
 # 발사체 준비 상태
 #: ../src/objnam.c:1650
 msgid "in quiver"
-msgstr "원거리 공격 준비"
+msgstr "원거리 공격용"
 
 #: ../src/objnam.c:1651
 msgid "in quiver pouch"
-msgstr "원거리 공격 준비"
+msgstr "원거리 공격용"
 
 #: ../src/options.c:6336
 msgid "in same area"
@@ -49075,7 +49075,7 @@ msgstr "relink_timers: no monster timer implemented"
 #: ../src/shk.c:4067
 #, c-format
 msgid "relinquish %s and acquire %ld zorkmid%s in %scredit."
-msgstr "%s{을/를} 포기하고 %ld 조크미드%s{을/를} %s외상으로 얻다."
+msgstr "%s{을/를} 포기하고 %ld 금화%s{을/를} %s외상으로 얻다."
 
 # shk.c:4122 — 보상으로 금화 수령
 #: ../src/shk.c:4183
@@ -55213,7 +55213,7 @@ msgstr "tport_spell: spellbook full"
 #: ../src/shk.c:4066
 #, c-format
 msgid "traded %s for %ld zorkmid%s in %scredit."
-msgstr "%s{을/를} %ld 조크미드의 %s신용으로 교환함%s."
+msgstr "%s{을/를} %ld 금화의 %s신용으로 교환함%s."
 
 #: ../src/music.c:495
 msgid "train"
@@ -58431,11 +58431,11 @@ msgstr "좀비"
 
 #: ../src/invent.c:1543 ../src/invent.c:1551 ../src/minion.c:355
 msgid "zorkmid"
-msgstr "조크미드"
+msgstr "금화"
 
 #: ../src/minion.c:355 ../src/mthrowu.c:64
 msgid "zorkmids"
-msgstr "조크미드"
+msgstr "금화"
 
 #: ../src/monster_i18n.c:138 ../src/obj_descr_i18n.c:1114
 msgid "zruty"
