@@ -18414,7 +18414,7 @@ msgstr "기사"
 
 #: ../src/role.c:420
 msgid "Kokushu"
-msgstr "코쿠슈"
+msgstr "고쿠슈"
 
 #: ../src/role.c:2167
 msgid "Konnichi wa"
