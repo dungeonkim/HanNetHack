@@ -1050,7 +1050,7 @@ read_rumors_file(
         perror(infile);
         return 0L;
     }
-    set_fgetline_context(infile, TRUE, FALSE);
+    set_fgetline_context(infile, FALSE, FALSE); /* UTF-8 ok (Korean rumors) */
 
     /* copy the rumors */
     while ((line = fgetline(ifp)) != 0) {
@@ -1479,7 +1479,7 @@ do_oracles(void)
     Fprintf(ofp, "%05lx\n", offset); /* start pos of first oracle */
     in_oracle = FALSE;
 
-    set_fgetline_context(infile, TRUE, FALSE);
+    set_fgetline_context(infile, FALSE, FALSE); /* UTF-8 ok (Korean epitaphs etc.) */
     while ((line = fgetline(ifp)) != 0) {
         SpinCursor(3);
 
@@ -1922,7 +1922,7 @@ get_gitinfo(char *githash, char *gitbranch)
         /* perror(infile); */
         return FALSE;
     }
-    set_fgetline_context(infile, TRUE, TRUE);
+    set_fgetline_context(infile, FALSE, TRUE); /* UTF-8 ok (Korean oracles) */
 
     /* read the gitinfo file */
     while ((line = fgetline(gifp)) != 0) {
