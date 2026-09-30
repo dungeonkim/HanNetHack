@@ -2805,9 +2805,34 @@ reset_role_filtering(void)
     int i, n;
     char filterprompt[QBUFSZ];
     menu_item *selected = 0;
+    boolean ko = is_korean_locale();
+
+    /* dknethack: the entry reads 필터 초기화 while a filter is set, and does
+       just that */
+    if (ko && gotrolefilter()) {
+        clearrolefilter(RS_filter);
+        ROLE = RACE = GEND = ALGN = ROLE_NONE;
+        return TRUE;
+    }
 
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);
+
+    if (ko) { /* 필터 설정: "고르지 않을 직업" and so on as headings */
+        add_menu_heading(win, "고르지 않을 직업");
+        setup_rolemenu(win, FALSE, ROLE_NONE, ROLE_NONE, ROLE_NONE);
+        add_menu_str(win, "");
+        add_menu_heading(win, "고르지 않을 종족");
+        setup_racemenu(win, FALSE, ROLE_NONE, ROLE_NONE, ROLE_NONE);
+        add_menu_str(win, "");
+        add_menu_heading(win, "고르지 않을 성별");
+        setup_gendmenu(win, FALSE, ROLE_NONE, ROLE_NONE, ROLE_NONE);
+        add_menu_str(win, "");
+        add_menu_heading(win, "고르지 않을 성향");
+        setup_algnmenu(win, FALSE, ROLE_NONE, ROLE_NONE, ROLE_NONE);
+        end_menu(win, "필터 설정");
+        goto pick;
+    }
 
     /* no extra blank line preceding this entry; end_menu supplies one */
     add_menu_str(win, _("Unacceptable roles"));
@@ -2828,6 +2853,7 @@ reset_role_filtering(void)
     Sprintf(filterprompt, _("Pick all that apply%s"),
             gotrolefilter() ? _(" and/or unpick any that no longer apply") : "");
     end_menu(win, filterprompt);
+ pick:
     n = select_menu(win, PICK_ANY, &selected);
 
     if (n >= 0) { /* n==0: clear current filters and don't set new ones */
