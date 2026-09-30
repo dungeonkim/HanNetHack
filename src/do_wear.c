@@ -69,7 +69,9 @@ void
 off_msg(struct obj *otmp)
 {
     if (flags.verbose)
-        You(_("were wearing %s."), doname(otmp));
+        /* msgctxt "shield": a shield is held, not worn (Korean 들다) */
+        You(is_shield(otmp) ? C_("shield", "were wearing %s.")
+                            : _("were wearing %s."), doname(otmp));
 }
 
 /* for items that involve no delay */
@@ -94,7 +96,8 @@ on_msg(struct obj *otmp)
         how[0] = '\0';
         if (otmp->otyp == TOWEL)
             Sprintf(how, _(" around your %s"), body_part(HEAD));
-        You(_("are now wearing %s%s."),
+        You(is_shield(otmp) ? C_("shield", "are now wearing %s%s.")
+                            : _("are now wearing %s%s."),
             obj_is_pname(otmp) ? the(otmp_name) : an(otmp_name), how);
     }
 }

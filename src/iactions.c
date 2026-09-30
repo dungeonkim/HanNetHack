@@ -327,6 +327,8 @@ itemactions(struct obj *otmp)
     struct monst *mtmp;
     const char *light = otmp->lamplit ? _("Extinguish") : _("Light");
     boolean already_worn = (otmp->owornmask & (W_ARMOR | W_ACCESSORY)) != 0;
+    /* dknethack: in Korean a shield is held, not worn (see 'W' and 'w') */
+    boolean korean = is_korean_locale();
     extern struct obj *dknh_ia_obj; /* pager.c: dknethack shows its lore */
 
     dknh_ia_obj = otmp;
@@ -645,7 +647,10 @@ itemactions(struct obj *otmp)
 
     /* T: take off armor, tip carried container */
     if (otmp->owornmask & W_ARMOR)
-        ia_addmenu(win, IA_TAKEOFF_OBJ, 'T', _("Take off this armor"));
+        ia_addmenu(win, IA_TAKEOFF_OBJ, 'T',
+                   /* dknethack: a shield is held, so it is put down */
+                   (korean && is_shield(otmp)) ? "손에서 내려놓기"
+                                               : _("Take off this armor"));
     if ((Is_container(otmp) && (Has_contents(otmp) || !otmp->cknown))
         || (otmp->otyp == HORN_OF_PLENTY && (otmp->spe > 0 || !otmp->known)))
         ia_addmenu(win, IA_TIP_CONTAINER, 'T',
@@ -672,6 +677,8 @@ itemactions(struct obj *otmp)
     } else if (otmp->otyp == TIN_OPENER) {
         ia_addmenu(win, IA_WIELD_OBJ, 'w',
                    _("Wield the tin opener to easily open tins"));
+    } else if (korean && is_shield(otmp)) {
+        ; /* dknethack: added after 'W' as "무기로 사용하기" */
     } else if (!already_worn) {
         /* originally this was using "hold this item in your hands" but
            there's no concept of "holding an item", plus it unwields
@@ -697,7 +704,10 @@ itemactions(struct obj *otmp)
             struct obj *o = wearmask_to_obj(Wmask);
 
             if (!o) {
-                Strcpy(buf, _("Wear this armor"));
+                /* dknethack: wearing a shield is holding it in a hand;
+                   common sense says "손에 들기" means this, not 'w' */
+                Strcpy(buf, (korean && is_shield(otmp)) ? "손에 들기"
+                                                        : _("Wear this armor"));
                 ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);
             } else if (o->oclass == ARMOR_CLASS) {
                 /* dknethack: a slot in use becomes a swap, through any
@@ -709,6 +719,10 @@ itemactions(struct obj *otmp)
                     Strcpy(buf, is_korean_locale()
                                     ? "입은 방어구를 모두 벗고 입기"
                                     : "Take off what is over it too and wear this");
+                else if (korean && is_shield(otmp))
+                    Sprintf(buf, "%s%s 내려놓고 들기", wornname,
+                            (ko_check_batchim(wornname) != KO_BATCHIM_NONE)
+                                ? "을" : "를");
                 else if (is_korean_locale())
                     Sprintf(buf, "%s%s 벗고 입기", wornname,
                             (ko_check_batchim(wornname) != KO_BATCHIM_NONE)
@@ -722,6 +736,10 @@ itemactions(struct obj *otmp)
             }
         }
     }
+
+    if (korean && is_shield(otmp) && !already_worn && otmp != uwep
+        && !cantwield(gy.youmonst.data))
+        ia_addmenu(win, IA_WIELD_OBJ, 'w', "무기로 사용하기");
 
     /* x: Swap main and readied weapon */
     if (otmp == uwep && uswapwep)

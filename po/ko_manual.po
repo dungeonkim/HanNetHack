@@ -29276,6 +29276,19 @@ msgstr "이제 점수가 기록되지 않는 탐험 모드에 있다."
 msgid "are now wearing %s%s."
 msgstr "이제 %s%s{을/를} 입고 있다."
 
+# 방패는 입지 않고 손에 든다
+#: ../src/do_wear.c:97
+#, c-format
+msgctxt "shield"
+msgid "are now wearing %s%s."
+msgstr "이제 %s%s{을/를} 들고 있다."
+
+#: ../src/do_wear.c:72
+#, c-format
+msgctxt "shield"
+msgid "were wearing %s."
+msgstr "%s{을/를} 손에서 내려놓았다."
+
 #: ../src/engrave.c:1451
 #, c-format
 msgid "are only able to write \"%s\"."
