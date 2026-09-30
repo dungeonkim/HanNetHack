@@ -1811,9 +1811,12 @@ doname_base(
         long quotedprice = unpaid_cost(obj, COST_CONTENTS);
 
         /* separately formatted suffix avoids need for ConcatF3() */
-        Sprintf(pricebuf, "%ld %s", quotedprice, currency(quotedprice));
-        ConcatF2(bp, 0, _(" (%s, %s)"),
-                 obj->unpaid ? _("unpaid") : _("contents"), pricebuf);
+        /* the price and each tag get their own msgid so a translation
+           can reorder them: Korean "(450골드에 판매 중)" */
+        Sprintf(pricebuf, C_("price", "%ld %s"), quotedprice,
+                currency(quotedprice));
+        ConcatF1(bp, 0, obj->unpaid ? _(" (unpaid, %s)") : _(" (contents, %s)"),
+                 pricebuf);
 
         record_price_quote(obj->otyp, quotedprice / obj->quan, TRUE);
     } else if (with_price) { /* on floor or in container on floor */
@@ -1823,9 +1826,9 @@ doname_base(
         if (price > 0L) {
             char pricebuf[40];
 
-            Sprintf(pricebuf, "%ld %s", price, currency(price));
-            ConcatF2(bp, 0, _(" (%s, %s)"),
-                     nochrg ? _("contents") : _("for sale"), pricebuf);
+            Sprintf(pricebuf, C_("price", "%ld %s"), price, currency(price));
+            ConcatF1(bp, 0, nochrg ? _(" (contents, %s)") : _(" (for sale, %s)"),
+                     pricebuf);
         } else if (nochrg > 0) {
             Concat(bp, 0, _(" (no charge)"));
         } else if (iflags.pricequotes && !objects[obj->otyp].oc_name_known) {

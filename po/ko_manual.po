@@ -558,6 +558,28 @@ msgstr " (%s)"
 msgid " (%s, %s)"
 msgstr " (%s, %s)"
 
+# 상점 가격 (objnam.c): 금액은 숫자에 붙이고, 판매 중은 "N골드에 판매 중"
+#: ../src/objnam.c:1814 ../src/objnam.c:1826
+#, c-format
+msgctxt "price"
+msgid "%ld %s"
+msgstr "%ld%s"
+
+#: ../src/objnam.c:1816
+#, c-format
+msgid " (unpaid, %s)"
+msgstr " (계산 전, %s)"
+
+#: ../src/objnam.c:1816 ../src/objnam.c:1828
+#, c-format
+msgid " (contents, %s)"
+msgstr " (내용물, %s)"
+
+#: ../src/objnam.c:1828
+#, c-format
+msgid " (for sale, %s)"
+msgstr " (%s에 판매 중)"
+
 #: ../src/invent.c:5169
 msgid " (? see used letters)"
 msgstr " (?로 사용된 글자 보기)"
@@ -605,7 +627,7 @@ msgstr " (도움말은 'help' 입력)"
 
 #: ../src/pickup.c:1754
 msgid " (except gold)"
-msgstr " (금화 제외)"
+msgstr " (골드 제외)"
 
 # insight.c:3112,3124 - 멸종 상태
 #: ../src/insight.c:3170
@@ -923,7 +945,7 @@ msgstr " 지갑이 비어 있%.0s다"
 #: ../src/insight.c:826
 #, c-format
 msgid " Your wallet contain%s %ld %s"
-msgstr " 당신의 지갑에는 %2$ld %3$s{이/가} 들어 있다%1$.0s"
+msgstr " 당신의 지갑에는 %2$ld%3$s{이/가} 들어 있다%1$.0s"
 
 #: ../src/insight.c:2461
 #, c-format
@@ -1499,7 +1521,7 @@ msgstr " 식중독"
 #: ../src/shk.c:2267
 #, c-format
 msgid " for %ld %s.  Pay?"
-msgstr " %ld %s에. 지불하시겠습니까?"
+msgstr " %ld%s에. 지불하시겠습니까?"
 
 #: ../src/shk.c:3848
 #, c-format
@@ -2816,7 +2838,7 @@ msgstr "\"%s, 당신은 도둑이다!\""
 
 #: ../src/read.c:524
 msgid "\"1 Zorkmid.  857 GUE.  In Frobs We Trust.\""
-msgstr "\"1 금화. 857 GUE. 프롭스를 믿으라.\""
+msgstr "\"1골드. 857 GUE. 프롭스를 믿으라.\""
 
 #: ../src/shk.c:3564
 msgid "\"For you,"
@@ -2912,7 +2934,7 @@ msgstr "%8.8s%s"
 #: ../src/end.c:1508
 #, c-format
 msgid "%8ld %s (worth %ld %s),"
-msgstr "%8ld개의 %s (%ld %s 가치),"
+msgstr "%8ld개의 %s (%ld%s 가치),"
 
 #: ../src/end.c:1513
 #, c-format
@@ -3025,7 +3047,7 @@ msgstr "%d마리의%s 보이지 않는 괴물"
 #: ../src/shk.c:3902
 #, c-format
 msgid "%ld %s added%s to your credit; total is now %ld %s."
-msgstr "%ld %s{이/가} 신용에 추가됐다%s; 총액은 이제 %ld %s다."
+msgstr "%ld%s{이/가} 신용에 추가됐다%s; 총액은 이제 %ld%s다."
 
 #: ../src/zap.c:4646
 #, c-format
@@ -3035,7 +3057,7 @@ msgstr "%ld %s{이/가} 탄다."
 #: ../src/vault.c:1217
 #, c-format
 msgid "%ld %s goes into the Magic Memory Vault."
-msgstr "%ld %s{이/가} 마법 기억 금고로 들어간다."
+msgstr "%ld%s{이/가} 마법 기억 금고로 들어간다."
 
 #: ../src/dokick.c:1168
 #, c-format
@@ -3053,7 +3075,7 @@ msgstr "%ld %s{이/가} 가방에 숨겨져 있다"
 #: ../src/shk.c:5435
 #, c-format
 msgid "%ld %s%s"
-msgstr "%ld %s%s"
+msgstr "%ld%s%s"
 
 #: ../src/options.c:4082
 #, c-format
@@ -3123,7 +3145,7 @@ msgstr "%s %d;"
 #: ../src/shk.c:3574
 #, c-format
 msgid "%s %ld %s %s %s%s.\""
-msgstr "%s %ld %s %s %s%s.\""
+msgstr "%s %ld%s %s %s%s.\""
 
 #: ../src/wield.c:606
 #, c-format
@@ -4272,17 +4294,17 @@ msgstr "%s{이/가} 나가기 전에 계산해야 한다고 %s%s"
 #: ../src/shk.c:5567
 #, c-format
 msgid "%s %s that you owe %s %ld %s."
-msgstr "%1$s{이/가} %3$s에게 %4$ld %5$s{을/를} 빚졌다고 %2$s."
+msgstr "%1$s{이/가} %3$s에게 %4$ld%5$s{을/를} 빚졌다고 %2$s."
 
 #: ../src/shk.c:5562
 #, c-format
 msgid "%s %s that your bill comes to %ld %s."
-msgstr "%1$s{이/가} 청구서가 %3$ld %4$s라고 %2$s."
+msgstr "%1$s{이/가} 청구서가 %3$ld%4$s라고 %2$s."
 
 #: ../src/shk.c:2653
 #, c-format
 msgid "%s %s the %ld %s %sowed %s."
-msgstr "%1$s{이/가} %2$s밀린 외상 %3$ld %4$s{을/를} 가져간다.%5$.0s%6$.0s"
+msgstr "%1$s{이/가} %2$s밀린 외상 %3$ld%4$s{을/를} 가져간다.%5$.0s%6$.0s"
 
 # [FIX] dothrow.c:1285 — 천장에 맞고 떨어짐
 # %1$s = Doname2(obj), %2$s = "hits"/"almost hits" (맞혔다/거의 맞을 뻔했다)
@@ -4982,7 +5004,7 @@ msgstr "%s %s제단"
 #: ../src/dokick.c:325
 #, c-format
 msgid "%s %scatches the gold."
-msgstr "%s{이/가} 금화를 %s 잡았다."
+msgstr "%s{이/가} 골드를 %s 잡았다."
 
 #: ../src/dig.c:916 ../src/dig.c:973
 #, c-format
@@ -5132,7 +5154,7 @@ msgstr "%s{이/가} %s 머리가 %s아픈 것처럼 행동한다."
 #: ../src/shk.c:6061
 #, c-format
 msgid "%s added %ld %s %s %ld %s."
-msgstr "%s{이/가} %ld %s{을/를} 추가했다 %s %ld %s."
+msgstr "%s{이/가} %ld%s{을/를} 추가했다 %s %ld%s."
 
 #: ../src/dokick.c:1608 ../src/dokick.c:1611
 #, c-format
@@ -5840,7 +5862,7 @@ msgstr "%s{이/가} %s{을/를} 들이받았다."
 #: ../src/shk.c:659
 #, c-format
 msgid "%s by %ld %s."
-msgstr "%s{이/가} %ld %s."
+msgstr "%s{이/가} %ld%s."
 
 #: ../src/insight.c:1148 ../src/uhitm.c:3394
 #, c-format
@@ -6226,7 +6248,7 @@ msgstr "%1$s{이/가} 의도적으로 %3$s 위로 %2$s!"
 #: ../src/minion.c:330
 #, c-format
 msgid "%s demands %ld %s for safe passage."
-msgstr "%s{이/가} 안전한 통행을 위해 %ld %s{을/를} 요구한다."
+msgstr "%s{이/가} 안전한 통행을 위해 %ld%s{을/를} 요구한다."
 
 #: ../src/mhitu.c:2265
 #, c-format
@@ -6545,7 +6567,7 @@ msgstr "%s{이/가} 유형 %d의 이상한 함정을 만났다."
 #: ../src/shk.c:5572
 #, c-format
 msgid "%s encourages you to use your %ld %s of credit."
-msgstr "%s{이/가} %ld %s 신용을 사용하도록 권한다."
+msgstr "%s{이/가} %ld%s 신용을 사용하도록 권한다."
 
 #: ../src/mon.c:1581
 #, c-format
@@ -6601,7 +6623,7 @@ msgstr "%s{이/가} 위층으로 도망쳤다!"
 #: ../src/shk.c:6057
 #, c-format
 msgid "%s established %ld %s credit."
-msgstr "%s{이/가} %ld %s 신용을 확립했다."
+msgstr "%s{이/가} %ld%s 신용을 확립했다."
 
 #: ../src/trap.c:1561
 #, c-format
@@ -7090,7 +7112,7 @@ msgstr "%s{이/가} 쓱싹 베었다!"
 #: ../src/steal.c:883
 #, c-format
 msgid "%s gold %s."
-msgstr "%1$s의 금화가 %2$s."
+msgstr "%1$s의 골드가 %2$s."
 
 #: ../src/uhitm.c:4027
 #, c-format
@@ -7588,12 +7610,12 @@ msgstr "%s{이/가} 섬광에 영향받았다!"
 #: ../src/shk.c:1906
 #, c-format
 msgid "%s is after blood, not gold!"
-msgstr "%s{은/는} 금화가 아닌 피를 원한다!"
+msgstr "%s{은/는} 골드가 아닌 피를 원한다!"
 
 #: ../src/shk.c:1924
 #, c-format
 msgid "%s is after your hide, not your gold!"
-msgstr "%s{은/는} 금화가 아닌 당신의 가죽을 원한다!"
+msgstr "%s{은/는} 골드가 아닌 당신의 가죽을 원한다!"
 
 #: ../src/trap.c:6747
 #, c-format
@@ -8721,7 +8743,7 @@ msgstr "%s{이/가} %s에서 벗겨졌다."
 #: ../src/shk.c:4133
 #, c-format
 msgid "%s offers%s %ld gold piece%s for %s%s "
-msgstr "%1$s{이/가}%2$s %5$s%6$s에 대해 금화 %3$ld개%4$.0s{을/를} 제안한다 "
+msgstr "%1$s{이/가}%2$s %5$s%6$s에 대해 %3$ld골드%4$.0s{을/를} 제안한다 "
 
 # 하와이안 셔츠 패턴 설명
 # 예: "flamingos on blue background"
@@ -8885,7 +8907,7 @@ msgstr "%s{이/가} %s{을/를} 통과한다!"
 #: ../src/shk.c:196
 #, c-format
 msgid "%s paying without %s gold?"
-msgstr "%1$s{이/가} %2$s 금화도 없이 지급?"
+msgstr "%1$s{이/가} %2$s 골드도 없이 지급?"
 
 #: ../src/shk.c:163
 #, c-format
@@ -8911,7 +8933,7 @@ msgstr "%s{이/가} %s{을/를} 집었다."
 #: ../src/vault.c:1195
 #, c-format
 msgid "%s picks up some gold."
-msgstr "%s{이/가} 금화를 주웠다."
+msgstr "%s{이/가} 골드를 주웠다."
 
 #: ../src/trap.c:1871
 #, c-format
@@ -9027,7 +9049,7 @@ msgstr "%s{이/가} 타오르는 %s{을/를} 마신다"
 #: ../src/steal.c:92
 #, c-format
 msgid "%s quickly snatches some gold from %s %s %s!"
-msgstr "%s{이/가} %s %s %s에서 금화를 재빨리 낚아챘다!"
+msgstr "%s{이/가} %s %s %s에서 골드를 재빨리 낚아챘다!"
 
 #: ../src/uhitm.c:1711
 #, c-format
@@ -9128,7 +9150,7 @@ msgstr "%s{이/가} 얽힌 채로 남아 있다."
 #: ../src/vault.c:1227
 #, c-format
 msgid "%s remits your gold to the vault."
-msgstr "%s{이/가} 당신의 금화를 금고로 보낸다."
+msgstr "%s{이/가} 당신의 골드를 금고로 보낸다."
 
 # 장비 변경 메시지
 #: ../src/worn.c:957
@@ -9943,7 +9965,7 @@ msgstr "%s{이/가} %s{을/를} 훔쳤다!"
 #: ../src/uhitm.c:2839
 #, c-format
 msgid "%s steals some gold from %s."
-msgstr "%s{이/가} %s에게서 금화를 훔쳤다."
+msgstr "%s{이/가} %s에게서 골드를 훔쳤다."
 
 #: ../src/region.c:1113
 #, c-format
@@ -10141,7 +10163,7 @@ msgstr "%s 꼬리"
 #: ../src/mhitu.c:2293
 #, c-format
 msgid "%s takes %ld %s for services rendered!"
-msgstr "%s{이/가} 서비스 비용으로 %ld %s{을/를} 받았다!"
+msgstr "%s{이/가} 서비스 비용으로 %ld%s{을/를} 받았다!"
 
 #: ../src/muse.c:1944
 #, c-format
@@ -10533,7 +10555,7 @@ msgstr "%s{이/가} 당신의 %s %s{을/를} 잡으려 한다!"
 #: ../src/steal.c:394
 #, c-format
 msgid "%s tries to rob you, but isn't interested in gold."
-msgstr "%s{이/가} 훔치려 하지만, 금화에는 관심이 없다."
+msgstr "%s{이/가} 훔치려 하지만, 골드에는 관심이 없다."
 
 #: ../src/steal.c:397
 #, c-format
@@ -10544,7 +10566,7 @@ msgstr "%s{이/가} 훔치려 하지만, 훔칠 것이 없다!"
 #: ../src/mhitu.c:2268
 #, c-format
 msgid "%s tries to take your gold, but fails..."
-msgstr "%s{이/가} 당신의 금화를 훔치려 했지만 실패했다..."
+msgstr "%s{이/가} 당신의 골드를 훔치려 했지만 실패했다..."
 
 #: ../src/mhitu.c:216
 #, c-format
@@ -10930,7 +10952,7 @@ msgstr "%s{이/가} %s{을/를} 휘두른다%c"
 #: ../src/shk.c:3559
 #, c-format
 msgid "%s will cost you %ld %s%s."
-msgstr "%s{은/는} %ld %s%s{이/가} 들 것이다."
+msgstr "%s{은/는} %ld%s%s{이/가} 들 것이다."
 
 #: ../src/do_name.c:278
 #, c-format
@@ -11476,7 +11498,7 @@ msgstr "%s%s{이/가} 열렸다."
 #: ../src/vault.c:816
 #, c-format
 msgid "%s%s picks up the gold%s."
-msgstr "%s%s{이/가} 금화%s{을/를} 주웠다."
+msgstr "%s%s{이/가} 골드%s{을/를} 주웠다."
 
 #: ../src/insight.c:3140
 #, c-format
@@ -11617,7 +11639,7 @@ msgstr "%s%s..."
 #: ../src/shk.c:5710
 #, c-format
 msgid "%s%sEmptying that will cost you %ld %s."
-msgstr "%s%s그것을 비우는 데 %ld %s{이/가} 들 것이다."
+msgstr "%s%s그것을 비우는 데 %ld%s{이/가} 들 것이다."
 
 # === Category 9: 하드코딩 조사 오류 수정 ===
 # shk.c:5646 - 옌도리안 연료세
@@ -11625,12 +11647,12 @@ msgstr "%s%s그것을 비우는 데 %ld %s{이/가} 들 것이다."
 #: ../src/shk.c:5707
 #, c-format
 msgid "%s%sThat will cost you %ld %s (Yendorian Fuel Tax)."
-msgstr "%s%s그것은 %ld %s{이/가} 들 것이다 (옌도리안 연료세)."
+msgstr "%s%s그것은 %ld%s{이/가} 들 것이다 (옌도리안 연료세)."
 
 #: ../src/shk.c:5716
 #, c-format
 msgid "%s%sUsage fee, %ld %s."
-msgstr "%s%s사용료, %ld %s."
+msgstr "%s%s사용료, %ld%s."
 
 # --- 촛불 관련 영어 문법(소유격/동사 일치) 한국어 노출 수정 ---
 # 영어 소유격("s'"/"'s"), 동사 일치("s are"/" is"), 복수 접미사("s"/"")가
@@ -11792,7 +11814,7 @@ msgstr "%s, %d레벨 %s%s"
 #: ../src/shk.c:5455
 #, c-format
 msgid "%s, price %ld %s%s%s"
-msgstr "%s, 가격 %ld %s%s%s"
+msgstr "%s, 가격 %ld%s%s%s"
 
 # [리뷰 완료] trap.c:4571 — Your+aobjnam+fade, 스크롤 바래짐 (플레이어)
 # C_("Tobjnam","fade") = "바랬다" (활용형) → aobjnam = "스크롤{이/가} 바랬다"
@@ -11989,7 +12011,7 @@ msgstr "%s죽음의 계곡."
 #: ../src/shk.c:5300
 #, c-format
 msgid "%sYou did %ld %s worth of damage!%s  Pay?"
-msgstr "%s당신은 %ld %s 가치의 피해를 입혔다!%s  지불하시겠습니까?"
+msgstr "%s당신은 %ld%s 가치의 피해를 입혔다!%s  지불하시겠습니까?"
 
 # ============================================================
 # 전투 메시지 추가 (Additional Combat Messages)
@@ -11997,7 +12019,7 @@ msgstr "%s당신은 %ld %s 가치의 피해를 입혔다!%s  지불하시겠습�
 #: ../src/shk.c:5702
 #, c-format
 msgid "%sYou owe%s %ld %s."
-msgstr "%s당신은%s %ld %s{을/를} 빚지고 있어요."
+msgstr "%s당신은%s %ld%s{을/를} 빚지고 있어요."
 
 #: ../src/trap.c:2683
 #, c-format
@@ -12088,12 +12110,12 @@ msgstr "%s틈에 강제로 끼었다."
 #: ../src/shk.c:2464
 #, c-format
 msgid "%shave no gold or credit left."
-msgstr "%s금화나 신용이 남아있지 않다."
+msgstr "%s골드나 신용이 남아있지 않다."
 
 #: ../src/shk.c:2062
 #, c-format
 msgid "%shave no gold or credit%s."
-msgstr "%s금화나 신용이%s 없다."
+msgstr "%s골드나 신용이%s 없다."
 
 # ============================================================
 # 아이템 메시지 (Item Messages)
@@ -12101,7 +12123,7 @@ msgstr "%s금화나 신용이%s 없다."
 #: ../src/shk.c:1874
 #, c-format
 msgid "%shave no gold."
-msgstr "%s금화가 없다."
+msgstr "%s골드가 없다."
 
 #: ../src/getpos.c:1007
 #, c-format
@@ -12144,7 +12166,7 @@ msgstr "%s%s{이/가} 부러졌다!"
 #: ../src/shk.c:3841
 #, c-format
 msgid "%sowe %s %ld %s"
-msgstr "%s%s에게 %ld %s 빚짐"
+msgstr "%s%s에게 %ld%s 빚짐"
 
 #: ../src/insight.c:960
 #, c-format
@@ -13348,7 +13370,7 @@ msgstr "신비로운 힘이 잠시 주변을 감싼다..."
 
 #: ../src/vault.c:726
 msgid "A mysterious force moves the gold into the vault."
-msgstr "신비로운 힘이 금화를 금고로 옮긴다."
+msgstr "신비로운 힘이 골드를 금고로 옮긴다."
 
 #: ../src/teleport.c:1955
 #, c-format
@@ -14680,11 +14702,11 @@ msgstr "그러나 %1$s보유 자금%2$s이 충분하지 않다."
 # 
 #: ../src/shk.c:1887
 msgid "But you have hidden gold!"
-msgstr "하지만 숨긴 금화가 있다!"
+msgstr "하지만 숨긴 골드가 있다!"
 
 #: ../src/shk.c:1876
 msgid "But you have some gold stashed away."
-msgstr "하지만 숨겨둔 금화가 있다."
+msgstr "하지만 숨겨둔 골드가 있다."
 
 #: ../src/mcastu.c:258 ../src/mcastu.c:272
 msgid "But you resist the effects."
@@ -15218,7 +15240,7 @@ msgstr "재고 조사로 휴업 중"
 
 #: ../src/invent.c:4817 ../src/obj_descr_i18n.c:1303
 msgid "Coins"
-msgstr "금화"
+msgstr "골드"
 
 #: ../src/invent.c:5208
 msgid "Collecting:"
@@ -15891,7 +15913,7 @@ msgstr "주변의 물을 마시겠습니까?"
 
 #: ../src/vault.c:1031
 msgid "Drop all your gold, scoundrel!"
-msgstr "금화를 다 버려라, 악당!"
+msgstr "골드를 다 버려라, 악당!"
 
 #: ../src/cmd.c:4504
 msgid "Drop items"
@@ -17141,7 +17163,7 @@ msgstr "감히 내 %s{을/를} %s하다니?"
 #: ../src/vault.c:935
 #, c-format
 msgid "How dare you %s that gold, scoundrel!"
-msgstr "감히 금화를 %s하다니, 악당!"
+msgstr "감히 골드를 %s하다니, 악당!"
 
 #: ../src/pray.c:2663
 msgid "How darest thou desecrate my altar!"
@@ -18882,7 +18904,7 @@ msgstr "아닐지도..."
 
 #: ../src/shk.c:2078
 msgid "Maybe you have some gold stashed away?"
-msgstr "어딘가 숨겨둔 금화가 있을지도?"
+msgstr "어딘가 숨겨둔 골드가 있을지도?"
 
 #: ../src/steed.c:214
 msgid "Maybe you should find a designated driver."
@@ -19057,7 +19079,7 @@ msgstr "\"에 대한 추가 정보"
 #: ../src/shk.c:1492 ../src/shk.c:1904
 #, c-format
 msgid "Moreover, you%s have no gold."
-msgstr "게다가, %1$s금화가 없다."
+msgstr "게다가, %1$s골드가 없다."
 
 #: ../src/pray.c:2572
 msgid "Morgoth"
@@ -19078,7 +19100,7 @@ msgstr "인간이여, 네가 잘 해냈도다!"
 # vault.c - 금 도난. 단독 문장
 #: ../src/vault.c:579
 msgid "Most likely all your gold was stolen from this vault."
-msgstr "아마도 모든 금화가 이 금고에서 도난당했다."
+msgstr "아마도 모든 골드가 이 금고에서 도난당했다."
 
 #: ../src/zap.c:6181
 msgid "Most modifiers shown when viewing your inventory can be specified."
@@ -19725,12 +19747,12 @@ msgstr "아미가만이 가능하게 한다."
 
 #: ../src/invent.c:3081
 msgid "Only carrying gold"
-msgstr "금화만 들고 있음"
+msgstr "골드만 들고 있음"
 
 #: ../src/invent.c:5191
 #, c-format
 msgid "Only gold coins may be moved into the '%c' slot."
-msgstr "'%c' 슬롯에는 금화만 넣을 수 있다."
+msgstr "'%c' 슬롯에는 골드만 넣을 수 있다."
 
 #: ../src/potion.c:772
 #, c-format
@@ -19974,7 +19996,7 @@ msgstr "누구에게 지불?"
 #: ../src/shk.c:167
 #, c-format
 msgid "Paying without %s gold?"
-msgstr "%s 금화 없이 지불?"
+msgstr "%s 골드 없이 지불?"
 
 #: ../src/iactions.c:382
 msgid "Peer into this crystal ball"
@@ -20209,7 +20231,7 @@ msgstr "이전 편지는 무시해 주세요."
 
 #: ../src/sounds.c:1173 ../src/vault.c:581
 msgid "Please drop that gold and follow me."
-msgstr "그 금화를 내려놓고 따라와라."
+msgstr "그 골드를 내려놓고 따라와라."
 
 #: ../src/mail.c:501
 msgid "Please find enclosed a small token to represent your Owlbear"
@@ -22172,7 +22194,7 @@ msgstr "그 %s{은/는} 함정에 걸리지 않았다."
 #: ../src/dogmove.c:337
 #, c-format
 msgid "That %s will cost you %ld %s."
-msgstr "그 %s{은/는} %ld %s{이다/다}."
+msgstr "그 %s{은/는} %ld%s{이다/다}."
 
 #: ../src/sounds.c:1496
 #, c-format
@@ -22471,7 +22493,7 @@ msgstr "신탁자가 잠시 명상하더니 읊조린다:"
 
 #: ../src/rumors.c:674
 msgid "The Oracle scornfully takes all your gold and says:"
-msgstr "신탁자가 경멸하며 금화를 모두 가져가고 말한다:"
+msgstr "신탁자가 경멸하며 골드를 모두 가져가고 말한다:"
 
 #: ../src/obj_descr_i18n.c:1166
 msgid "The Quest"
@@ -22941,7 +22963,7 @@ msgstr "여기 %1$s{과/와} %2$s{이/가} 있다.  %3$s %4$s?"
 #: ../src/eat.c:3662
 #, c-format
 msgid "There are %ld gold pieces here; eat them?"
-msgstr "여기에 금화 %ld닢이 있다; 먹겠습니까?"
+msgstr "여기에 %ld골드가 있다; 먹겠습니까?"
 
 #: ../src/eat.c:3638
 msgid "There are iron bars here"
@@ -22971,7 +22993,7 @@ msgstr "여기에 %s{이/가} 있다."
 
 #: ../src/eat.c:3660
 msgid "There is 1 gold piece here; eat it?"
-msgstr "여기에 금화 1개가 있다; 먹겠습니까?"
+msgstr "여기에 1골드가 있다; 먹겠습니까?"
 
 #: ../src/eat.c:3611
 #, c-format
@@ -25084,7 +25106,7 @@ msgstr "꿈틀거린다"
 #: ../src/shk.c:4051
 #, c-format
 msgid "Will you accept %ld %s in credit for "
-msgstr "%ld %s 크레딧이 있다."
+msgstr "%ld%s 크레딧이 있다."
 
 # shk.c:840-841 - 물건 밖에 두라
 #: ../src/shk.c:899
@@ -25911,7 +25933,7 @@ msgstr "극도로 힘들게"
 # 
 #: ../src/vault.c:567
 msgid "You have hidden gold."
-msgstr "금화를 숨겼군."
+msgstr "골드를 숨겼군."
 
 #: ../src/pickup.c:69
 msgid "You have much trouble"
@@ -26069,7 +26091,7 @@ msgstr "곰 덫을 %s."
 #: ../src/shk.c:1958
 #, c-format
 msgid "You owe %s %ld %s "
-msgstr "%s에게 %ld %s{을/를} 빚졌다. "
+msgstr "%s에게 %ld%s{을/를} 빚졌다. "
 
 # [조합] shk.c:6082 — verbalize(상점 주인). %4$s·%5$s 는 아래 조각과 이어 붙음
 # 시뮬(화남): 네가 내 potion을 감히 섞어 놓고, 네 악취 나는 뭉텅이와 섞었군 — 100 zm은 갚아!
@@ -26077,7 +26099,7 @@ msgstr "%s에게 %ld %s{을/를} 빚졌다. "
 #: ../src/shk.c:6082
 #, c-format
 msgid "You owe me %ld %s for my %s that you %s with your%s"
-msgstr "네가 내 %3$s{을/를} %4$s네 %5$s— %1$ld %2$s{은/는} 갚아!"
+msgstr "네가 내 %3$s{을/를} %4$s네 %5$s— %1$ld%2$s{은/는} 갚아!"
 
 #: ../src/dig.c:1220
 msgid "You pull free."
@@ -26210,7 +26232,7 @@ msgstr "훔쳤다: "
 # 
 #: ../src/dokick.c:366
 msgid "You still have hidden gold.  Drop it now."
-msgstr "아직 숨긴 금화가 있군. 지금 당장 떨어뜨려."
+msgstr "아직 숨긴 골드가 있군. 지금 당장 떨어뜨려."
 
 #: ../src/eat.c:3483
 msgid "You still have the munchies."
@@ -26772,7 +26794,7 @@ msgstr "쌍수 무기 스킬이"
 #: ../src/invent.c:4543
 #, c-format
 msgid "Your wallet contains %ld %s"
-msgstr "지갑에 %ld %s{이/가} 있다"
+msgstr "지갑에 %ld%s{이/가} 있다"
 
 # invent.c:4521 - 지갑이 비었다. "병이 심각하다"가 아님!!
 #: ../src/invent.c:4541
@@ -28072,7 +28094,7 @@ msgstr "주위를 둘러보고 저주한다"
 
 #: ../src/options.c:232
 msgid "all except gold, plus unused letters"
-msgstr "금화 제외 전부, 미사용 문자 포함"
+msgstr "골드 제외 전부, 미사용 문자 포함"
 
 #: ../src/engrave.c:778
 msgid "all frosty"
@@ -28080,7 +28102,7 @@ msgstr "서리"
 
 #: ../src/options.c:227
 msgid "all inventory except for gold"
-msgstr "금화 제외 모든 인벤토리"
+msgstr "골드 제외 모든 인벤토리"
 
 #: ../src/pager.c:1765
 msgid "all monsters shown on map"
@@ -28411,7 +28433,7 @@ msgstr "그리고 "
 #: ../src/end.c:1556
 #, c-format
 msgid "and %1$ld piece%2$s of gold, after %3$ld move%4$s."
-msgstr "%3$ld턴%4$.0s 후 금화 %1$ld개%2$.0s."
+msgstr "%3$ld턴%4$.0s 후 %1$ld골드%2$.0s."
 
 # insight.c:957 - "and %s " (youtoo에 추가)
 #: ../src/insight.c:1018
@@ -28814,7 +28836,7 @@ msgstr "바삭하게 타고 있다!"
 #: ../src/invent.c:4556
 #, c-format
 msgid "are carrying a total of %ld %s."
-msgstr "총 %ld %s{을/를} 가지고 있다."
+msgstr "총 %ld%s{을/를} 가지고 있다."
 
 #: ../src/pickup.c:1733
 #, c-format
@@ -31188,7 +31210,7 @@ msgstr "바닥 없는 구덩이"
 #: ../src/shk.c:2292 ../src/shk.c:2401
 #, c-format
 msgid "bought %s for %ld gold piece%s.%s"
-msgstr "%1$s{을/를} 금화 %2$ld개%3$.0s에 샀다.%4$s"
+msgstr "%1$s{을/를} %2$ld골드%3$.0s에 샀다.%4$s"
 
 #: ../src/do_name.c:1518
 msgid "bouillon"
@@ -32189,7 +32211,7 @@ msgstr "can't read 'data' file"
 
 #: ../src/wield.c:552
 msgid "can't ready only part of your gold."
-msgstr "금화의 일부만 준비할 수 없다."
+msgstr "골드의 일부만 준비할 수 없다."
 
 #: ../src/potion.c:475
 msgid "can't see yourself"
@@ -32289,7 +32311,7 @@ msgstr "방패를 착용한 채 양손 %s{을/를} %s할 수 없다."
 #: ../src/invent.c:2025
 #, c-format
 msgid "cannot %s gold."
-msgstr "금화를 %s 수 없다."
+msgstr "골드를 %s 수 없다."
 
 #: ../src/wield.c:562
 #, c-format
@@ -32470,7 +32492,7 @@ msgstr "자신에게 물건을 던질 수 없다."
 
 #: ../src/dothrow.c:2668
 msgid "cannot throw gold at yourself."
-msgstr "자신에게 금화를 던질 수 없다."
+msgstr "자신에게 골드를 던질 수 없다."
 
 #: ../src/apply.c:2202
 #, c-format
@@ -32657,7 +32679,7 @@ msgstr "공포 유발"
 #: ../src/dokick.c:482 ../src/trap.c:6419
 #, c-format
 msgid "caused %ld %s worth of damage!"
-msgstr "%ld %s 가치의 피해를 입혔다!"
+msgstr "%ld%s 가치의 피해를 입혔다!"
 
 #: ../src/monster_i18n.c:440
 msgid "cave dweller"
@@ -34040,12 +34062,12 @@ msgstr "신용이 지워졌다."
 #: ../src/shk.c:5763
 #, c-format
 msgid "credit is reduced by %ld %s."
-msgstr "신용이 %ld %s 줄었다."
+msgstr "신용이 %ld%s 줄었다."
 
 #: ../src/shk.c:697
 #, c-format
 msgid "credit of %ld %s is used to cover your shopping bill."
-msgstr "%ld %s의 크레딧이 쇼핑 비용으로 사용되었다."
+msgstr "%ld%s의 크레딧이 쇼핑 비용으로 사용되었다."
 
 #: ../src/do_name.c:1529
 msgid "creosote"
@@ -34512,7 +34534,7 @@ msgstr "빚이 늘었다"
 #: ../src/shk.c:5774
 #, c-format
 msgid "debt increases by %ld %s."
-msgstr "빚이 %ld %s 늘었다."
+msgstr "빚이 %ld%s 늘었다."
 
 #: ../src/shk.c:3888
 #, c-format
@@ -35460,7 +35482,7 @@ msgstr "여기에 주울 만한 것이 없는 듯하다%.0s."
 
 #: ../src/rumors.c:725
 msgid "don't even have enough gold for that!"
-msgstr "그것을 살 금화조차 없다!"
+msgstr "그것을 살 골드조차 없다!"
 
 #: ../src/music.c:306 ../src/trap.c:1873
 msgid "don't fall in!"
@@ -35556,7 +35578,7 @@ msgstr "알을 낳을 에너지가 부족하다."
 #: ../src/shk.c:2074
 #, c-format
 msgid "don't have enough gold to buy%s the item%s %s."
-msgstr "%3$s%1$s 물건을 살 금화가 충분하지 않다.%2$.0s"
+msgstr "%3$s%1$s 물건을 살 골드가 충분하지 않다.%2$.0s"
 
 #: ../src/hack.c:423
 #, c-format
@@ -35641,7 +35663,7 @@ msgstr "아직 비석은 필요 없다."
 
 #: ../src/shk.c:1034
 msgid "don't owe any gold here."
-msgstr "여기에 빚진 금화가 없다."
+msgstr "여기에 빚진 골드가 없다."
 
 #: ../src/read.c:2011
 msgid "don't remember there being any magic words on this scroll."
@@ -35951,7 +35973,7 @@ msgstr "%s{을/를} 떨어뜨렸다."
 
 #: ../src/vault.c:952
 msgid "drop that gold and "
-msgstr "금화를 떨어뜨리고 따라오세요."
+msgstr "골드를 떨어뜨리고 따라오세요."
 
 # ============================================================
 # 아이템 메시지 (Item Messages)
@@ -35959,7 +35981,7 @@ msgstr "금화를 떨어뜨리고 따라오세요."
 # 
 #: ../src/vault.c:951
 msgid "drop that hidden gold and "
-msgstr "하지만 숨긴 금화가 있다!"
+msgstr "하지만 숨긴 골드가 있다!"
 
 #: ../src/do.c:1210
 #, c-format
@@ -38358,7 +38380,7 @@ msgstr "순간이동 주문을 위해"
 # [조합 조각] shk.c:1965 — You owe %s %ld… Strcat
 #: ../src/shk.c:1965
 msgid "for gold picked up and the use of merchandise."
-msgstr "줍은 금화와 상품 사용분이다."
+msgstr "줍은 골드와 상품 사용분이다."
 
 #: ../src/objnam.c:1680
 msgid "for sale"
@@ -38864,7 +38886,7 @@ msgstr "완전 치료"
 
 #: ../src/options.c:228
 msgid "full inventory including gold"
-msgstr "금화 포함 전체 인벤토리"
+msgstr "골드 포함 전체 인벤토리"
 
 #: ../src/options.c:233
 msgid "full inventory, plus unused letters"
@@ -39366,23 +39388,23 @@ msgstr "아가미"
 #: ../src/minion.c:383
 #, c-format
 msgid "give %s %ld %s."
-msgstr "%s에게 %ld %s{을/를} 주었다."
+msgstr "%s에게 %ld%s{을/를} 주었다."
 
 #: ../src/minion.c:380
 #, c-format
 msgid "give %s all your gold."
-msgstr "%s에게 모든 금화를 준다."
+msgstr "%s에게 모든 골드를 준다."
 
 #: ../src/shk.c:1883
 #, c-format
 msgid "give %s all your%s gold."
-msgstr "%s에게 모든 %s금화를 준다."
+msgstr "%s에게 모든 %s골드를 준다."
 
 # shk.c:1821 — 상점주인에게 금화 지불
 #: ../src/shk.c:1879
 #, c-format
 msgid "give %s the %ld gold piece%s %s asked for."
-msgstr "%1$s에게 %4$s{이/가} 요청한 금화 %2$ld개%3$.0s{을/를} 주었다."
+msgstr "%1$s에게 %4$s{이/가} 요청한 %2$ld골드%3$.0s{을/를} 주었다."
 
 #: ../src/apply.c:1087
 msgid "give the fish a chance to fix their makeup"
@@ -39673,7 +39695,7 @@ msgstr "금 탐지"
 #: ../src/dothrow.c:2683
 #, c-format
 msgid "gold disappears into %s."
-msgstr "금화가 %s 속으로 사라졌다."
+msgstr "골드가 %s 속으로 사라졌다."
 
 #: ../src/monster_i18n.c:163 ../src/obj_descr_i18n.c:942
 msgid "gold dragon"
@@ -39695,12 +39717,12 @@ msgstr "금 골렘"
 #: ../src/dothrow.c:2691
 #, c-format
 msgid "gold hits the %s, then falls back on top of your %s."
-msgstr "금화가 %s에 맞고 %s 위로 떨어졌다."
+msgstr "골드가 %s에 맞고 %s 위로 떨어졌다."
 
 #: ../src/dothrow.c:2730
 #, c-format
 msgid "gold hits the %s."
-msgstr "금화가 %s{을/를} 맞췄다."
+msgstr "골드가 %s{을/를} 맞췄다."
 
 # ============================================================
 # 아이템 이름 (Item Names)
@@ -39709,11 +39731,11 @@ msgstr "금화가 %s{을/를} 맞췄다."
 # --- 기타 (Miscellaneous) ---
 #: ../src/obj_descr_i18n.c:439
 msgid "gold piece"
-msgstr "금화"
+msgstr "골드"
 
 #: ../src/obj_descr_i18n.c:440
 msgid "gold pieces"
-msgstr "금화"
+msgstr "골드"
 
 #: ../src/obj_descr_i18n.c:39
 msgid "golden"
@@ -39772,7 +39794,7 @@ msgstr "%s{을/를} 잡았다!"
 #: ../src/uhitm.c:2804
 #, c-format
 msgid "grab %s's gold, but find no room in your knapsack."
-msgstr "%s의 금화를 집었지만, 배낭에 공간이 없다."
+msgstr "%s의 골드를 집었지만, 배낭에 공간이 없다."
 
 #: ../src/trap.c:5750
 #, c-format
@@ -40363,22 +40385,22 @@ msgstr "​"
 #: ../src/shk.c:1026
 #, c-format
 msgid "have %ld %s credit at %s %s."
-msgstr "%3$s %4$s에서 %1$ld %2$s 크레딧이 있다."
+msgstr "%3$s %4$s에서 %1$ld%2$s 크레딧이 있다."
 
 #: ../src/shk.c:3832
 #, c-format
 msgid "have %ld %s credit remaining."
-msgstr "%ld %s 신용이 남아있다."
+msgstr "%ld%s 신용이 남아있다."
 
 #: ../src/dokick.c:345
 #, c-format
 msgid "have %ld %s in credit."
-msgstr "%ld %s 크레딧이 있다."
+msgstr "%ld%s 크레딧이 있다."
 
 #: ../src/shk.c:3899
 #, c-format
 msgid "have %sestablished %ld %s credit."
-msgstr "%2$ld %3$s 신용을 %1$s확립했다."
+msgstr "%2$ld%3$s 신용을 %1$s확립했다."
 
 # brief_feeling messages
 #: ../src/mhitm.c:240 ../src/mhitm.c:1004 ../src/mhitm.c:1051
@@ -40602,7 +40624,7 @@ msgstr "자유로운 %s{이/가} 없다."
 # 
 #: ../src/rumors.c:713
 msgid "have no gold."
-msgstr "금화가 없다."
+msgstr "골드가 없다."
 
 #: ../src/apply.c:329 ../src/pickup.c:2199 ../src/pickup.c:2946
 msgid "have no hands!"
@@ -40627,7 +40649,7 @@ msgstr "돈이 없다."
 
 #: ../src/shk.c:207
 msgid "have no room for the gold!"
-msgstr "금화를 넣을 공간이 없다!"
+msgstr "골드를 넣을 공간이 없다!"
 
 #: ../src/wield.c:490
 msgid "have no secondary weapon readied."
@@ -43993,7 +44015,7 @@ msgstr "혀 짧은 소리를 내다"
 #: ../src/shk.c:3586
 #, c-format
 msgid "list price of %s%s%s is %ld %s%s."
-msgstr "%s%s%s의 정가는 %ld %s%s다."
+msgstr "%s%s%s의 정가는 %ld%s%s다."
 
 #: ../src/zap.c:1581
 msgid "lithic "
@@ -44211,7 +44233,7 @@ msgstr "잃는"
 
 #: ../src/fountain.c:524
 msgid "lost some of your gold in the fountain!"
-msgstr "분수에서 금화 일부를 잃어버렸다!"
+msgstr "분수에서 골드 일부를 잃어버렸다!"
 
 #: ../src/do.c:534
 msgid "loud noises coming from the drain."
@@ -46231,7 +46253,7 @@ msgstr "매력적인 냄새를 알아챘다."
 #: ../src/detect.c:411
 #, c-format
 msgid "notice some gold between your %s."
-msgstr "%s 사이에 금화가 있는 것을 발견했다."
+msgstr "%s 사이에 골드가 있는 것을 발견했다."
 
 # ============================================================
 # 아이템 메시지 (Item Messages)
@@ -46239,7 +46261,7 @@ msgstr "%s 사이에 금화가 있는 것을 발견했다."
 # 
 #: ../src/sit.c:30
 msgid "notice you have no gold!"
-msgstr "금화가 없다는 것을 알아챘다!"
+msgstr "골드가 없다는 것을 알아챘다!"
 
 #: ../src/obj_descr_i18n.c:533 ../src/objnam.c:238 ../src/objnam.c:892
 msgid "novel"
@@ -46956,35 +46978,35 @@ msgstr "순수한 에너지에 압도되었다"
 #: ../src/pickup.c:3033 ../src/pickup.c:3831
 #, c-format
 msgid "owe %ld %s for lost merchandise."
-msgstr "잃어버린 상품에 대해 %ld %s{을/를} 빚진다."
+msgstr "잃어버린 상품에 대해 %ld%s{을/를} 빚진다."
 
 #: ../src/lock.c:212 ../src/trap.c:6416
 #, c-format
 msgid "owe %ld %s for objects destroyed."
-msgstr "파괴된 물건에 대해 %ld %s{을/를} 빚졌다."
+msgstr "파괴된 물건에 대해 %ld%s{을/를} 빚졌다."
 
 #: ../src/dig.c:2077
 #, c-format
 msgid "owe %s %ld %s for burying merchandise."
-msgstr "상품을 묻은 대가로 %s에게 %ld %s{을/를} 빚진다."
+msgstr "상품을 묻은 대가로 %s에게 %ld%s{을/를} 빚진다."
 
 #: ../src/dokick.c:1634
 #, c-format
 msgid "owe %s %ld %s for goods lost."
-msgstr "%s에게 잃어버린 물건에 대해 %ld %s{을/를} 빚졌다."
+msgstr "%s에게 잃어버린 물건에 대해 %ld%s{을/를} 빚졌다."
 
 # dokick.c:485 - 파괴된 물건 빚
 # %1$s = shkname(), %3$s = currency()
 #: ../src/dokick.c:485
 #, c-format
 msgid "owe %s %ld %s for objects destroyed."
-msgstr "파괴된 물건에 대해 %s에게 %ld %s{을/를} 빚졌다."
+msgstr "파괴된 물건에 대해 %s에게 %ld%s{을/를} 빚졌다."
 
 # shk.c:973,5715 - 상점주인에게 빚
 #: ../src/shk.c:1032 ../src/shk.c:5776
 #, c-format
 msgid "owe %s %ld %s."
-msgstr "%s에게 %ld %s{을/를} 빚졌다."
+msgstr "%s에게 %ld%s{을/를} 빚졌다."
 
 #: ../src/monster_i18n.c:252 ../src/obj_descr_i18n.c:1015
 msgid "owlbear"
@@ -47032,7 +47054,7 @@ msgstr "시동"
 #: ../src/shk.c:2291
 #, c-format
 msgid "paid for %s at a cost of %ld gold piece%s.%s"
-msgstr "%1$s{을/를} 금화 %2$ld개%3$.0s에 지불했다.%4$s"
+msgstr "%1$s{을/를} %2$ld골드%3$.0s에 지불했다.%4$s"
 
 #: ../src/mthrowu.c:51
 msgid "paint"
@@ -49075,13 +49097,13 @@ msgstr "relink_timers: no monster timer implemented"
 #: ../src/shk.c:4067
 #, c-format
 msgid "relinquish %s and acquire %ld zorkmid%s in %scredit."
-msgstr "%s{을/를} 포기하고 %ld 금화%s{을/를} %s외상으로 얻다."
+msgstr "%s{을/를} 포기하고 %ld골드%s{을/를} %s외상으로 얻다."
 
 # shk.c:4122 — 보상으로 금화 수령
 #: ../src/shk.c:4183
 #, c-format
 msgid "relinquish %s and receive %ld gold piece%s in compensation.%s"
-msgstr "%1$s{을/를} 포기하고 보상으로 금화 %2$ld개%3$.0s{을/를} 받았다.%4$s"
+msgstr "%1$s{을/를} 포기하고 보상으로 %2$ld골드%3$.0s{을/를} 받았다.%4$s"
 
 #: ../src/mon.c:2559
 msgid "relmon: mon not in list."
@@ -49150,7 +49172,7 @@ msgstr "remove_object: obj where=%d, not on floor"
 #: ../src/dokick.c:1618
 #, c-format
 msgid "removed %ld %s worth of goods!"
-msgstr "%ld %s 가치의 물건을 치웠다!"
+msgstr "%ld%s 가치의 물건을 치웠다!"
 
 #: ../src/steal.c:327
 msgid "removes"
@@ -52016,13 +52038,13 @@ msgstr "솔라리"
 #: ../src/shk.c:4182
 #, c-format
 msgid "sold %s for %ld gold piece%s.%s"
-msgstr "%1$s{을/를} 금화 %2$ld개%3$.0s에 팔았다.%4$s"
+msgstr "%1$s{을/를} %2$ld골드%3$.0s에 팔았다.%4$s"
 
 # shk.c:4120 — 내부 물품 판매
 #: ../src/shk.c:4181
 #, c-format
 msgid "sold some items inside %s for %ld gold piece%s.%s"
-msgstr "%1$s 안의 일부 물건을 금화 %2$ld개%3$.0s에 팔았다.%4$s"
+msgstr "%1$s 안의 일부 물건을 %2$ld골드%3$.0s에 팔았다.%4$s"
 
 #: ../src/monster_i18n.c:290 ../src/obj_descr_i18n.c:1062
 msgid "soldier"
@@ -52107,7 +52129,7 @@ msgstr "누군가 볼링하는 소리가 들린다."
 # detect.c - 금 세는 소리. 효과음
 #: ../src/sounds.c:258
 msgid "someone counting gold coins."
-msgstr "누군가 금화를 세는 소리가 들린다."
+msgstr "누군가 골드를 세는 소리가 들린다."
 
 # detect.c - 상점 저주. 효과음
 #: ../src/sounds.c:323
@@ -52887,7 +52909,7 @@ msgstr "악취 구름"
 #: ../src/shk.c:710
 #, c-format
 msgid "stole %ld %s worth of merchandise."
-msgstr "%ld %s 가치의 물건을 훔쳤다."
+msgstr "%ld%s 가치의 물건을 훔쳤다."
 
 #: ../src/polyself.c:1981 ../src/polyself.c:1988 ../src/polyself.c:1995
 #: ../src/polyself.c:2000 ../src/polyself.c:2007 ../src/polyself.c:2033
@@ -53302,7 +53324,7 @@ msgstr "서큐버스"
 
 #: ../src/zap.c:6176
 msgid "such as \"potions of healing\", or specify a count, such as \"1000 gold"
-msgstr "\"치유의 물약들\"처럼, 또는 \"1000 금화"
+msgstr "\"치유의 물약들\"처럼, 또는 \"1000골드"
 
 #: ../src/uhitm.c:3194
 msgid "suck in some slime and don't feel very well."
@@ -55213,7 +55235,7 @@ msgstr "tport_spell: spellbook full"
 #: ../src/shk.c:4066
 #, c-format
 msgid "traded %s for %ld zorkmid%s in %scredit."
-msgstr "%s{을/를} %ld 금화의 %s신용으로 교환함%s."
+msgstr "%s{을/를} %ld골드의 %s신용으로 교환함%s."
 
 #: ../src/music.c:495
 msgid "train"
@@ -55443,7 +55465,7 @@ msgstr "시도"
 #: ../src/shk.c:1932
 #, c-format
 msgid "try to appease %s by giving %s 1000 gold pieces."
-msgstr "%1$s에게 1000금화를 주어 %2$s{을/를} 달래려 한다."
+msgstr "%1$s에게 1000골드를 주어 %2$s{을/를} 달래려 한다."
 
 #: ../src/trap.c:5173
 #, c-format
@@ -58431,11 +58453,11 @@ msgstr "좀비"
 
 #: ../src/invent.c:1543 ../src/invent.c:1551 ../src/minion.c:355
 msgid "zorkmid"
-msgstr "금화"
+msgstr "골드"
 
 #: ../src/minion.c:355 ../src/mthrowu.c:64
 msgid "zorkmids"
-msgstr "금화"
+msgstr "골드"
 
 #: ../src/monster_i18n.c:138 ../src/obj_descr_i18n.c:1114
 msgid "zruty"
