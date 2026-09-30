@@ -2014,6 +2014,8 @@ role_menu_extra(int which, winid where, boolean preselect)
                  ATR_NONE, clr, _("Random"),
                  preselect ? MENU_ITEMFLAGS_SELECTED : MENU_ITEMFLAGS_NONE);
     } else if (which == ROLE_NONE) {
+        if (is_korean_locale()) /* dknethack: no quit entry (Esc still cancels) */
+            return;
         any.a_int = ROLE_NONE;
         add_menu(where, &nul_glyphinfo, &any, 'q', 0,
                  ATR_NONE, clr, _("Quit"),
