@@ -17532,7 +17532,7 @@ msgstr "동물을 먹으면 안 됐으면 왜 고기로 만들어졌겠어?"
 
 #: ../src/read.c:140
 msgid "If you can read this, I can hit you with my polearm"
-msgstr "이걸 읽을 수 있다면, 내 장창으로 때릴 수 있다는 뜻이야"
+msgstr "이걸 읽을 수 있다면, 내 폴암으로 때릴 수 있다는 뜻이야"
 
 #: ../src/eat.c:2825
 msgid "If you can't breathe air, how can you consume solids?"
@@ -47811,7 +47811,7 @@ msgstr "극성"
 
 #: ../src/weapon.c:55
 msgid "polearms"
-msgstr "장창류"
+msgstr "폴암"
 
 #: ../src/obj_descr_i18n.c:234
 msgid "polished silver shield"
@@ -59448,7 +59448,7 @@ msgid "angel"
 msgstr "천사"
 
 msgid "angled poleaxe"
-msgstr "꺾인 장창도끼"
+msgstr "꺾인 폴액스"
 
 msgid "aquamarine"
 msgstr "아쿠아마린"
@@ -59492,7 +59492,7 @@ msgid "bash"
 msgstr "강타하다"
 
 msgid "beaked polearm"
-msgstr "부리형 장창"
+msgstr "부리형 폴암"
 
 msgid "being held"
 msgstr "붙잡힌 상태"
@@ -59781,7 +59781,7 @@ msgid "heat"
 msgstr "열"
 
 msgid "hilted polearm"
-msgstr "손잡이형 장창"
+msgstr "손잡이형 폴암"
 
 msgid "hisses"
 msgstr "쉿 소리를 낸다"
@@ -59793,7 +59793,7 @@ msgid "holding that creature"
 msgstr "여기에 있는 것들:"
 
 msgid "hooked polearm"
-msgstr "갈고리형 장창"
+msgstr "갈고리형 폴암"
 
 msgid "horizontal wall"
 msgstr "수평 벽"
@@ -60064,7 +60064,7 @@ msgid "long bow"
 msgstr "장궁"
 
 msgid "long poleaxe"
-msgstr "긴 장창도끼"
+msgstr "긴 폴액스"
 
 msgid "looking glass"
 msgstr "거울"
@@ -60251,7 +60251,7 @@ msgid "probing"
 msgstr "탐색"
 
 msgid "pronged polearm"
-msgstr "갈래형 장창"
+msgstr "갈래형 폴암"
 
 msgid "protected by the layer of grease!"
 msgstr "기름 층 덕분에 무사했다!"
@@ -60428,7 +60428,7 @@ msgid "silver wand"
 msgstr "은 마법봉"
 
 msgid "single-edged polearm"
-msgstr "외날 장창"
+msgstr "외날 폴암"
 
 msgid "sling"
 msgstr "투석기"
@@ -60657,7 +60657,7 @@ msgid "vertical wall"
 msgstr "수직 벽"
 
 msgid "vulgar polearm"
-msgstr "일반 장창"
+msgstr "일반 폴암"
 
 msgid "wakes"
 msgstr "깨어난다"
@@ -63563,7 +63563,7 @@ msgstr "사케"
 
 # dknethack: object names and looks that had no translation
 msgid "forked polearm"
-msgstr "갈래진 장창"
+msgstr "갈래진 폴암"
 
 msgid "pole sickle"
 msgstr "장대 낫"
