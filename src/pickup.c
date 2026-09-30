@@ -3408,7 +3408,8 @@ menu_loot(int retry, boolean put_in)
             mflags |= JUSTPICKED;
         if (!put_in)
             gc.current_container->cknown = 1;
-        Sprintf(buf, _("%s what?"), action);
+        /* one msgid per action so a translation can inflect the verb */
+        Strcpy(buf, put_in ? _("Put in what?") : _("Take out what?"));
         n = query_objlist(buf,
                           put_in ? &gi.invent : &(gc.current_container->cobj),
                           mflags, &pick_list, PICK_ANY,

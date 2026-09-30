@@ -10924,6 +10924,14 @@ msgstr "%s 어떤 종류의 물건을?"
 msgid "%s what?"
 msgstr "무엇을 %s?"
 
+#: ../src/pickup.c
+msgid "Put in what?"
+msgstr "무엇을 넣을까요?"
+
+#: ../src/pickup.c
+msgid "Take out what?"
+msgstr "무엇을 꺼낼까요?"
+
 #: ../src/shk.c:4563
 #, c-format
 msgid "%s whispers %s."
