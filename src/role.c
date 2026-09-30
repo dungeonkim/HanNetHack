@@ -1602,6 +1602,21 @@ build_plselection_prompt(
         int need_align = (flags.initalign == ROLE_NONE);
         int count = need_race + need_role + need_gend + need_align;
 
+        /* dknethack: "역할, 종족, 성별, 성향을 무작위로 골라 시작할까요?" */
+        if (count > 0) {
+            *buf = '\0';
+            if (need_role)
+                Strcat(buf, "역할, ");
+            if (need_race)
+                Strcat(buf, "종족, ");
+            if (need_gend)
+                Strcat(buf, "성별, ");
+            if (need_align)
+                Strcat(buf, "성향, ");
+            buf[strlen(buf) - 2] = '\0';
+            Strcat(buf, "을 무작위로 골라 시작할까요? [ynaq] ");
+            return buf;
+        }
         if (count == 0) {
             Strcpy(buf, _("Shall I pick a character for you? [ynaq] "));
         } else {
@@ -1972,15 +1987,25 @@ role_menu_extra(int which, winid where, boolean preselect)
         add_menu_str(where, buf);
     } else if (what) {
         any.a_int = RS_menu_arg(which);
-        Sprintf(buf, _("Pick%s %s first"), (f >= 0) ? _(" another") : "", what);
+        if (is_korean_locale())
+            Sprintf(buf, "%s 먼저 선택",
+                    !strcmp(what, "race") ? "종족"
+                    : !strcmp(what, "gender") ? "성별"
+                      : !strcmp(what, "alignment") ? "성향"
+                        : !strcmp(what, "role") ? "역할" : "이름");
+        else
+            Sprintf(buf, _("Pick%s %s first"), (f >= 0) ? _(" another") : "", what);
         add_menu(where, &nul_glyphinfo, &any, RS_menu_let[which], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     } else if (which == RS_filter) {
         char setfiltering[40];
 
         any.a_int = RS_menu_arg(RS_filter);
-        Sprintf(setfiltering, "%s %s",
-                gotrolefilter() ? _("Reset") : _("Set"), _("role/race/&c filtering"));
+        if (is_korean_locale())
+            Strcpy(setfiltering, gotrolefilter() ? "필터 초기화" : "필터 설정");
+        else
+            Sprintf(setfiltering, "%s %s",
+                    gotrolefilter() ? _("Reset") : _("Set"), _("role/race/&c filtering"));
         add_menu(where, &nul_glyphinfo, &any, '~', 0, ATR_NONE,
                  clr, setfiltering, MENU_ITEMFLAGS_NONE);
     } else if (which == ROLE_RANDOM) {
@@ -2857,6 +2882,13 @@ plsel_startmenu(int ttyrows, int aspect)
                  : roles[ROLE].name.m;
     if (!svp.plname[0] || ROLE < 0 || RACE < 0 || GEND < 0 || ALGN < 0) {
         /* "<role> <race.noun> <gender> <alignment>" */
+        if (is_korean_locale())
+            Sprintf(qbuf, "%.40s %.40s %.40s %.40s",
+                    (ALGN < 0) ? "<성향>" : _(aligns[ALGN].adj),
+                    (GEND < 0) ? "<성별>" : _(genders[GEND].adj),
+                    (RACE < 0) ? "<종족>" : _(races[RACE].noun),
+                    (ROLE < 0) ? "<역할>" : _(rolename));
+        else
         Sprintf(qbuf, "%.20s %.20s %.20s %.20s",
                 rolename,
                 (RACE < 0) ? "<race>" : races[RACE].noun,
@@ -2924,8 +2956,9 @@ setup_rolemenu(
             if (gend == 1) {
                 /* female already chosen; replace male name */
                 Strcpy(rolenamebuf, _(roles[i].name.f));
-            } else if (gend < 0) {
-                /* not chosen yet; append slash+female name */
+            } else if (gend < 0 && strcmp(rolenamebuf, _(roles[i].name.f))) {
+                /* not chosen yet; append slash+female name (unless the
+                   translation has one name for both) */
                 Strcat(rolenamebuf, "/");
                 Strcat(rolenamebuf, _(roles[i].name.f));
             }
