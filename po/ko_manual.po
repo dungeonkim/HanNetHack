@@ -63560,3 +63560,71 @@ msgstr "군요키"
 msgid "sake"
 msgstr "사케"
 
+
+# dknethack: object names and looks that had no translation
+msgid "forked polearm"
+msgstr "갈래진 장창"
+
+msgid "pole sickle"
+msgstr "장대 낫"
+
+msgid "crude bow"
+msgstr "조잡한 활"
+
+msgid "leather hat"
+msgstr "가죽 모자"
+
+msgid "iron skull cap"
+msgstr "철모"
+
+msgid "crystal helmet"
+msgstr "수정 투구"
+
+msgid "piece of cloth"
+msgstr "천 조각"
+
+msgid "candelabrum"
+msgstr "촛대"
+
+msgid "silver bell"
+msgstr "은종"
+
+msgid "paperback"
+msgstr "문고본"
+
+msgid "papyrus"
+msgstr "파피루스"
+
+msgid "redwood"
+msgstr "레드우드"
+
+msgid "Candelabrum of Invocation"
+msgstr "소환의 촛대"
+
+msgid "Bell of Opening"
+msgstr "개방의 종"
+
+msgid "shield of drain resistance"
+msgstr "흡수 저항 방패"
+
+msgid "shield of shock resistance"
+msgstr "전기 저항 방패"
+
+msgid "glob of gray ooze"
+msgstr "회색 점액 덩어리"
+
+msgid "glob of brown pudding"
+msgstr "갈색 푸딩 덩어리"
+
+msgid "glob of green slime"
+msgstr "녹색 슬라임 덩어리"
+
+msgid "glob of black pudding"
+msgstr "검은 푸딩 덩어리"
+
+msgid "splash of blinding venom"
+msgstr "눈멀게 하는 독액"
+
+msgid "splash of acid venom"
+msgstr "산성 독액"
+
