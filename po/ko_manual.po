@@ -28012,7 +28012,7 @@ msgstr "충실하다"
 
 #: ../src/monster_i18n.c:431
 msgid "aligned cleric"
-msgstr "성향 성직자"
+msgstr "신전 사제"
 
 #: ../src/role.c:1625 ../src/role.c:1690
 msgid "alignment"
@@ -35161,7 +35161,7 @@ msgstr "허상이 %s{을/를} 속이지 못했다!"
 
 #: ../src/monster_i18n.c:60 ../src/obj_descr_i18n.c:899
 msgid "displacer beast"
-msgstr "전이수"
+msgstr "환영수"
 
 #: ../src/display.c:535
 #, c-format

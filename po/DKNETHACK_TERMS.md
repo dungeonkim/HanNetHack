@@ -93,5 +93,6 @@
 - were-X는 **X인간**: 늑대인간, 자칼인간, 쥐인간.
 - 같은 이름을 두 몬스터가 쓰지 않는다: elven monarch 엘프 통치자, guard 경비병 / watchman 감시자, high priest 고위 사제 / Arch Priest 대사제.
 - lord / lady는 **귀족 / 여귀족** (드워프·코볼트·노움·오거·뱀파이어·엘프). 성별 없는 형태(leader)는 지도자, elf-noble은 엘프 귀족.
+- displacer beast는 환영수 (허상 때문에 공격이 빗나감), aligned cleric은 신전 사제 (제단을 지키는 사제).
 - newt는 도롱뇽 (작고 약한 첫 몬스터; lizard 도마뱀과 구분).
 - 붙여 쓰는 굳은 말은 붙인다: 살인벌, 여왕벌. 설명이 필요한 짧은 원어는 풀어 쓴다: 게코도마뱀, 비명 버섯(F 곰팡이류).
