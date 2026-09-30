@@ -3086,7 +3086,11 @@ use_container(
      */
     for (;;) { /* repeats iff '?' or ':' gets chosen */
         outmaybe = (outokay || !gc.current_container->cknown);
-        if (!outmaybe)
+        if (is_korean_locale()) /* the menu's title: "큰 상자 뒤지기" */
+            Snprintf(qbuf, sizeof qbuf, "%s 뒤지기%s",
+                     simpleonames(gc.current_container),
+                     outmaybe ? "" : " (비어 있음)");
+        else if (!outmaybe)
             (void) safe_qbuf(qbuf, (char *) 0, " is empty.  Do what with it?",
                              gc.current_container, Yname2, Ysimple_name2,
                              "This");
