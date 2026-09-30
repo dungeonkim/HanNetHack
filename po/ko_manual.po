@@ -14232,6 +14232,30 @@ msgstr "착용 또는 장비 중인 모든 물건 자동 선택"
 msgid "Auto-select every relevant item"
 msgstr "관련된 모든 물건 자동 선택"
 
+# dknethack: 종류 고르기 창의 'A' (맨 아래, 행동 이름으로) — pickup.c dknh_choose_all_ctx
+#: ../src/pickup.c
+msgctxt "take_out"
+msgid "Auto-select every relevant item"
+msgstr "묻지 않고 전부 꺼내기"
+
+#: ../src/pickup.c
+msgctxt "put_in"
+msgid "Auto-select every relevant item"
+msgstr "묻지 않고 전부 넣기"
+
+#: ../src/do.c
+msgctxt "drop"
+msgid "Auto-select every relevant item"
+msgstr "묻지 않고 전부 버리기"
+
+#: ../src/pickup.c
+msgid "Take out what type of objects?"
+msgstr "꺼낼 물건의 종류는?"
+
+#: ../src/pickup.c
+msgid "Put in what type of objects?"
+msgstr "넣을 물건의 종류는?"
+
 #: ../src/getpos.c:964
 #, c-format
 msgid "Automatic description %sis %s."
@@ -15936,7 +15960,7 @@ msgstr "이 물건 버리기%.0s"
 # do.c - 버리기 질문
 #: ../src/do.c:996
 msgid "Drop what type of items?"
-msgstr "어떤 종류의 물건을 버리시겠습니까?"
+msgstr "버릴 물건의 종류는?"
 
 #: ../src/dig.c:1068
 msgid "Dude!  The living dead"
@@ -18164,7 +18188,7 @@ msgstr "저주받지 않은 것으로 알려진 물건"
 
 #: ../src/pickup.c:1433
 msgid "Items of unknown Bless/Curse status"
-msgstr "축복/저주 상태를 알 수 없는 물건"
+msgstr "축복/저주 상태를 모르는 물건"
 
 #: ../src/pickup.c:1443
 msgid "Items you just picked up"

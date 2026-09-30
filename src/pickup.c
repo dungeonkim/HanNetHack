@@ -1226,6 +1226,11 @@ query_objlist(const char *qstr,        /* query string */
     return n;
 }
 
+extern int dknh_expert_menus;
+/* dknethack: msgctxt of the 'A' entry's label ("take_out", "put_in", "drop")
+   so a translation can name the action; set by the caller around the call */
+const char *dknh_choose_all_ctx = 0;
+
 /*
  * For menustyle:Full.
  *
@@ -1315,6 +1320,15 @@ query_category(
         return n;
     }
 
+    /* dknethack: without expert menus, all types are picked and the item
+       menu comes next */
+    if (!dknh_expert_menus && (qflags & ALL_TYPES) != 0 && how == PICK_ANY) {
+        *pick_list = (menu_item *) alloc(sizeof(menu_item));
+        (*pick_list)->item.a_int = ALL_TYPES_SELECTED;
+        (*pick_list)->count = -1L;
+        return 1;
+    }
+
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);
 
@@ -1324,7 +1338,8 @@ query_category(
 
     show_a = ((qflags & ALL_TYPES) != 0 && ccount > 1);
 
-    if ((qflags & CHOOSE_ALL) != 0) {
+    /* dknethack: Korean shows 'A' last, as "묻지 않고 전부 <action>" */
+    if ((qflags & CHOOSE_ALL) != 0 && !is_korean_locale()) {
         invlet = 'A';
         any = cg.zeroany;
         any.a_int = 'A';
@@ -1354,7 +1369,9 @@ query_category(
         any.a_int = ALL_TYPES_SELECTED;
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
                  do_worn ? _("All worn and wielded types") : _("All types"),
-                 MENU_ITEMFLAGS_SKIPINVERT);
+                 /* dknethack: all types is the usual choice */
+                 MENU_ITEMFLAGS_SKIPINVERT
+                     | (is_korean_locale() ? MENU_ITEMFLAGS_SELECTED : 0));
         ++invlet; /* invlet = 'b'; */
     }
 
@@ -1455,6 +1472,18 @@ query_category(
         any.a_int = 'P';
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
                  tmpbuf, MENU_ITEMFLAGS_SKIPINVERT);
+    }
+    if ((qflags & CHOOSE_ALL) != 0 && is_korean_locale()) {
+        add_menu_str(win, "");
+        any = cg.zeroany;
+        any.a_int = 'A';
+        add_menu(win, &nul_glyphinfo, &any, 'A', 0, ATR_NONE, clr,
+                 do_worn ? _("Auto-select every item being worn or wielded")
+                 : dknh_choose_all_ctx
+                     ? C_(dknh_choose_all_ctx, "Auto-select every relevant item")
+                     : _("Auto-select every relevant item"),
+                 MENU_ITEMFLAGS_SKIPINVERT);
+        verify_All = (how == PICK_ANY) && ParanoidAutoAll;
     }
     end_menu(win, qstr);
     n = select_menu(win, how, pick_list);
@@ -3297,12 +3326,16 @@ menu_loot(int retry, boolean put_in)
         all_categories = (retry == -2);
     } else if (flags.menu_style == MENU_FULL) {
         all_categories = FALSE;
-        Sprintf(buf, _("%s what type of objects?"), action);
+        /* one msgid per action so a translation can inflect the verb */
+        Strcpy(buf, put_in ? _("Put in what type of objects?")
+                           : _("Take out what type of objects?"));
         mflags = (ALL_TYPES | UNPAID_TYPES | BUCX_TYPES | CHOOSE_ALL
                   | JUSTPICKED );
+        dknh_choose_all_ctx = put_in ? "put_in" : "take_out";
         n = query_category(buf,
                            put_in ? gi.invent : gc.current_container->cobj,
                            mflags, &pick_list, PICK_ANY);
+        dknh_choose_all_ctx = 0;
             /* when paranoid_confirm:A is set, 'A' by itself implies
                'A'+'a' which will be followed by a confirmation prompt;
                when that option isn't set, 'A' by itself is rejected
