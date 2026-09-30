@@ -20151,7 +20151,7 @@ msgstr "종족 선택"
 
 #: ../src/role.c:2362
 msgid "Pick a role or profession"
-msgstr "역할 선택"
+msgstr "직업 선택"
 
 #: ../src/weapon.c:1385
 msgid "Pick a skill to advance:"
@@ -49686,7 +49686,7 @@ msgstr "로그 레벨 "
 
 #: ../src/role.c:1615 ../src/role.c:1682
 msgid "role"
-msgstr "역할"
+msgstr "직업"
 
 #: ../src/role.c:1983
 msgid "role/race/&c filtering"
@@ -49694,7 +49694,7 @@ msgstr "역할/종족/등 필터"
 
 #: ../src/role.c:1814
 msgid "role:"
-msgstr "역할:"
+msgstr "직업:"
 
 #: ../src/role.c:1997
 #, c-format

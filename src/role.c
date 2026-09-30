@@ -1606,7 +1606,7 @@ build_plselection_prompt(
         if (count > 0) {
             *buf = '\0';
             if (need_role)
-                Strcat(buf, "역할, ");
+                Strcat(buf, "직업, ");
             if (need_race)
                 Strcat(buf, "종족, ");
             if (need_gend)
@@ -1992,7 +1992,7 @@ role_menu_extra(int which, winid where, boolean preselect)
                     !strcmp(what, "race") ? "종족"
                     : !strcmp(what, "gender") ? "성별"
                       : !strcmp(what, "alignment") ? "성향"
-                        : !strcmp(what, "role") ? "역할" : "이름");
+                        : !strcmp(what, "role") ? "직업" : "이름");
         else
             Sprintf(buf, _("Pick%s %s first"), (f >= 0) ? _(" another") : "", what);
         add_menu(where, &nul_glyphinfo, &any, RS_menu_let[which], 0,
@@ -2720,21 +2720,29 @@ genl_player_setup(int screenheight)
         any = cg.zeroany; /* zero out all bits */
         /* [ynaq] menu choices */
         any.a_int = 1;
-        add_menu(win, &nul_glyphinfo, &any, 'y', 0,
-                 ATR_NONE, clr, _("Yes; start game"), MENU_ITEMFLAGS_SELECTED);
+        add_menu(win, &nul_glyphinfo, &any, 'y', 0, ATR_NONE, clr,
+                 is_korean_locale() ? "게임 시작" : _("Yes; start game"),
+                 MENU_ITEMFLAGS_SELECTED);
         any.a_int = 2;
-        add_menu(win, &nul_glyphinfo, &any, 'n', 0,
-                 ATR_NONE, clr, _("No; choose role again"), MENU_ITEMFLAGS_NONE);
+        add_menu(win, &nul_glyphinfo, &any, 'n', 0, ATR_NONE, clr,
+                 is_korean_locale() ? "다시 선택" : _("No; choose role again"),
+                 MENU_ITEMFLAGS_NONE);
         if (iflags.renameallowed) {
             any.a_int = 3;
             add_menu(win, &nul_glyphinfo, &any, 'a', 0, ATR_NONE,
                      clr, _("Not yet; choose another name"),
                      MENU_ITEMFLAGS_NONE);
         }
-        any.a_int = -1;
-        add_menu(win, &nul_glyphinfo, &any, 'q', 0,
-                 ATR_NONE, clr, _("Quit"), MENU_ITEMFLAGS_NONE);
-        Sprintf(pbuf, _("Is this ok? [yn%sq]"), iflags.renameallowed ? "a" : "");
+        /* dknethack: no quit here (Esc still cancels) */
+        if (!is_korean_locale()) {
+            any.a_int = -1;
+            add_menu(win, &nul_glyphinfo, &any, 'q', 0,
+                     ATR_NONE, clr, _("Quit"), MENU_ITEMFLAGS_NONE);
+        }
+        if (is_korean_locale())
+            Strcpy(pbuf, "이대로 시작할까요?");
+        else
+            Sprintf(pbuf, _("Is this ok? [yn%sq]"), iflags.renameallowed ? "a" : "");
         end_menu(win, pbuf);
         n = select_menu(win, PICK_ONE, &selected);
         /* [pick-one menus with a preselected entry behave oddly...] */
@@ -2884,16 +2892,20 @@ plsel_startmenu(int ttyrows, int aspect)
         /* "<role> <race.noun> <gender> <alignment>" */
         if (is_korean_locale())
             Sprintf(qbuf, "%.40s %.40s %.40s %.40s",
-                    (ALGN < 0) ? "<성향>" : _(aligns[ALGN].adj),
-                    (GEND < 0) ? "<성별>" : _(genders[GEND].adj),
+                    (ROLE < 0) ? "<직업>" : _(rolename),
                     (RACE < 0) ? "<종족>" : _(races[RACE].noun),
-                    (ROLE < 0) ? "<역할>" : _(rolename));
+                    (GEND < 0) ? "<성별>" : _(genders[GEND].adj),
+                    (ALGN < 0) ? "<성향>" : _(aligns[ALGN].adj));
         else
         Sprintf(qbuf, "%.20s %.20s %.20s %.20s",
                 rolename,
                 (RACE < 0) ? "<race>" : races[RACE].noun,
                 (GEND < 0) ? "<gender>" : _(genders[GEND].adj),
                 (ALGN < 0) ? "<alignment>" : _(aligns[ALGN].adj));
+    } else if (is_korean_locale()) {
+        Sprintf(qbuf, "%.40s %.40s, %.40s 성향의 %.40s %.40s", _(rolename),
+                svp.plname, _(aligns[ALGN].adj), _(races[RACE].noun),
+                _(genders[GEND].adj));
     } else {
         /* "<name> the <alignment> <gender> <race.adjective> <role>" */
         Sprintf(qbuf, "%.20s the %.20s %.20s %.20s %.20s",
