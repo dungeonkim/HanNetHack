@@ -12481,7 +12481,7 @@ msgstr "새겨진 글씨"
 # 발사체 준비 상태
 #: ../src/obj_descr_i18n.c:1282
 msgid "(in quiver)"
-msgstr "(화살통에)"
+msgstr "(원거리 공격 준비)"
 
 #: ../src/obj_descr_i18n.c:1286
 msgid "(lit)"
@@ -20423,7 +20423,7 @@ msgstr "종료"
 
 #: ../src/iactions.c:294
 msgid "Quiver"
-msgstr "화살통에 넣을"
+msgstr "원거리 공격에 준비할"
 
 #: ../src/iactions.c:537
 #, c-format
@@ -29816,7 +29816,7 @@ msgstr "근처에"
 
 #: ../src/objnam.c:1652
 msgid "at the ready"
-msgstr "투척 준비됨"
+msgstr "원거리 공격 준비"
 
 #: ../src/mcastu.c:79
 msgid "at you, then curses"
@@ -36079,7 +36079,7 @@ msgstr "드워프 왕"
 
 #: ../src/monster_i18n.c:400
 msgid "dwarf lady"
-msgstr "드워프 귀부인"
+msgstr "드워프 여귀족"
 
 #: ../src/monster_i18n.c:401
 msgid "dwarf leader"
@@ -36087,7 +36087,7 @@ msgstr "드워프 지도자"
 
 #: ../src/monster_i18n.c:399 ../src/obj_descr_i18n.c:761
 msgid "dwarf lord"
-msgstr "드워프 군주"
+msgstr "드워프 귀족"
 
 #: ../src/monster_i18n.c:209 ../src/obj_descr_i18n.c:903
 msgid "dwarf mummy"
@@ -36322,11 +36322,11 @@ msgstr "엘프 좀비"
 
 #: ../src/monster_i18n.c:424
 msgid "elf-lady"
-msgstr "엘프 귀부인"
+msgstr "엘프 여귀족"
 
 #: ../src/monster_i18n.c:423 ../src/obj_descr_i18n.c:758
 msgid "elf-lord"
-msgstr "엘프 군주"
+msgstr "엘프 귀족"
 
 #: ../src/monster_i18n.c:425
 msgid "elf-noble"
@@ -36424,7 +36424,7 @@ msgstr "빈 "
 #: ../src/invent.c:1732
 #, c-format
 msgid "empty quiver%s"
-msgstr "빈 화살통%s"
+msgstr "준비 해제%s"
 
 #: ../src/eat.c:1439
 msgid "empty tin"
@@ -39541,7 +39541,7 @@ msgstr "노움 왕"
 
 #: ../src/monster_i18n.c:409
 msgid "gnome lady"
-msgstr "노움 귀부인"
+msgstr "노움 여귀족"
 
 #: ../src/monster_i18n.c:410
 msgid "gnome leader"
@@ -39549,7 +39549,7 @@ msgstr "노움 지도자"
 
 #: ../src/monster_i18n.c:408 ../src/obj_descr_i18n.c:764
 msgid "gnome lord"
-msgstr "노움 군주"
+msgstr "노움 귀족"
 
 #: ../src/monster_i18n.c:207 ../src/obj_descr_i18n.c:941
 msgid "gnome mummy"
@@ -40627,7 +40627,7 @@ msgstr "소원을 빌지 않았다"
 
 #: ../src/dothrow.c:539
 msgid "have nothing appropriate for your quiver."
-msgstr "화살통에 적합한 것이 없다."
+msgstr "원거리 공격에 준비할 만한 것이 없다."
 
 #: ../src/invent.c:2229
 #, c-format
@@ -41040,11 +41040,11 @@ msgstr "고위 성직자"
 
 #: ../src/do_name.c:1202 ../src/monster_i18n.c:432
 msgid "high priest"
-msgstr "대사제"
+msgstr "고위 사제"
 
 #: ../src/do_name.c:1202 ../src/monster_i18n.c:433
 msgid "high priestess"
-msgstr "대여사제"
+msgstr "고위 여사제"
 
 #: ../src/obj_descr_i18n.c:245
 msgid "hiking boots"
@@ -41733,11 +41733,11 @@ msgstr "제자리에서 굴렀다."
 # 발사체 준비 상태
 #: ../src/objnam.c:1650
 msgid "in quiver"
-msgstr "화살통에 장비"
+msgstr "원거리 공격 준비"
 
 #: ../src/objnam.c:1651
 msgid "in quiver pouch"
-msgstr "주머니에 장비"
+msgstr "원거리 공격 준비"
 
 #: ../src/options.c:6336
 msgid "in same area"
@@ -43037,7 +43037,7 @@ msgstr "코볼트"
 
 #: ../src/monster_i18n.c:406
 msgid "kobold lady"
-msgstr "코볼트 귀부인"
+msgstr "코볼트 여귀족"
 
 #: ../src/monster_i18n.c:407
 msgid "kobold leader"
@@ -43045,7 +43045,7 @@ msgstr "코볼트 지도자"
 
 #: ../src/monster_i18n.c:405 ../src/obj_descr_i18n.c:769
 msgid "kobold lord"
-msgstr "코볼트 군주"
+msgstr "코볼트 귀족"
 
 #: ../src/monster_i18n.c:206 ../src/obj_descr_i18n.c:980
 msgid "kobold mummy"
@@ -46449,7 +46449,7 @@ msgstr "오거 왕"
 
 #: ../src/monster_i18n.c:415
 msgid "ogre lady"
-msgstr "오거 귀부인"
+msgstr "오거 여귀족"
 
 #: ../src/monster_i18n.c:416
 msgid "ogre leader"
@@ -46457,7 +46457,7 @@ msgstr "오거 지도자"
 
 #: ../src/monster_i18n.c:414
 msgid "ogre lord"
-msgstr "오거 군주"
+msgstr "오거 귀족"
 
 #: ../src/monster_i18n.c:418
 msgid "ogre queen"
@@ -56224,7 +56224,7 @@ msgstr "흡혈 박쥐"
 
 #: ../src/monster_i18n.c:421
 msgid "vampire lady"
-msgstr "뱀파이어 귀부인"
+msgstr "뱀파이어 여귀족"
 
 #: ../src/monster_i18n.c:422
 msgid "vampire leader"
@@ -56232,7 +56232,7 @@ msgstr "뱀파이어 지도자"
 
 #: ../src/monster_i18n.c:420
 msgid "vampire lord"
-msgstr "뱀파이어 군주"
+msgstr "뱀파이어 귀족"
 
 #: ../src/monster_i18n.c:244 ../src/obj_descr_i18n.c:1083
 msgid "vampire mage"
@@ -56925,7 +56925,7 @@ msgstr "건강을 관리하지 않았다"
 
 #: ../src/monster_i18n.c:295 ../src/obj_descr_i18n.c:1089
 msgid "watchman"
-msgstr "경비대원"
+msgstr "감시자"
 
 #: ../src/dig.c:865 ../src/dig.c:924 ../src/dig.c:1321 ../src/dokick.c:1453
 #: ../src/dungeon.c:3622 ../src/hack.c:2502 ../src/insight.c:1036
@@ -61703,7 +61703,7 @@ msgstr "접두: 몬스터가 보이지 않아도 강제 전투"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "fire ammunition from quiver"
-msgstr "원거리 공격 (화살통에 장비한 것을 쏘거나 던지기)"
+msgstr "원거리 공격 (준비해 둔 것을 쏘거나 던지기)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
@@ -62668,7 +62668,7 @@ msgstr "착용할"
 
 msgctxt "getobj"
 msgid "ready"
-msgstr "화살통에 장비할"
+msgstr "원거리 공격에 준비할"
 
 msgctxt "getobj"
 msgid "fire"

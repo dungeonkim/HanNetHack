@@ -347,7 +347,7 @@ itemactions(struct obj *otmp)
          *       the corresponding launcher must be wielded;
          */
         if (is_korean_locale())
-            Strcpy(buf, (otmp == uquiver) ? "화살통에서 빼기" : "무기 장착 해제");
+            Strcpy(buf, (otmp == uquiver) ? "원거리 공격 준비 해제" : "무기 장착 해제");
         else
             Sprintf(buf, _("%s '%c' to %s %s %s"),
                     verb, HANDS_SYM, action, which,

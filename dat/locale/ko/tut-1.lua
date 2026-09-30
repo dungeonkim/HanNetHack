@@ -226,7 +226,7 @@ des.object({ coord = { 37,3 }, id = "sling", buc = "not-cursed", spe = 9 });
 des.engraving({ coord = { 37,3 }, type = "engrave", text = "새총을 장착하세요", degrade = false });
 des.engraving({ coord = { 36,1 }, type = "engrave", text = "'" .. tut_key("fire") .. "'로 장착한 발사기에서 발사하세요", degrade = false });
 
-des.engraving({ coord = { 35,4 }, type = "engrave", text = "발사할 탄은 화살통에 둡니다. '" .. tut_key("quiver") .. "'로 넣으세요", degrade = false });
+des.engraving({ coord = { 35,4 }, type = "engrave", text = "쏠 탄은 원거리 공격으로 준비합니다. '" .. tut_key("quiver") .. "'로 준비하세요", degrade = false });
 
 des.engraving({ coord = { 33,4 }, type = "engrave", text = "'" .. tut_key("wait") .. "'로 한 턴 대기하세요", degrade = false });
 
