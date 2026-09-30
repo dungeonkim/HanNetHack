@@ -17089,7 +17089,7 @@ msgstr "대신전"
 
 #: ../src/monster_i18n.c:386 ../src/obj_descr_i18n.c:809
 msgid "High-elf"
-msgstr "상위 엘프"
+msgstr "하이 엘프"
 
 #: ../src/botl.c:3819
 #, c-format
@@ -20428,7 +20428,7 @@ msgstr "화살통에 넣을"
 #: ../src/iactions.c:537
 #, c-format
 msgid "Quiver this %s for easy %s with 'f'ire"
-msgstr "화살통에 장비%.0s%.0s"
+msgstr "원거리 공격을 준비%.0s%.0s"
 
 #: ../src/role.c:78
 msgid "Raider"
@@ -24493,7 +24493,7 @@ msgstr "보이는 영역"
 
 #: ../src/monster_i18n.c:245 ../src/obj_descr_i18n.c:840
 msgid "Vlad the Impaler"
-msgstr "꼬챙이 블라드"
+msgstr "가시공 블라드"
 
 #: ../src/obj_descr_i18n.c:1170
 msgid "Vlad's Tower"
@@ -36373,7 +36373,7 @@ msgstr "엘프 미스릴 갑옷"
 
 #: ../src/monster_i18n.c:428
 msgid "elven monarch"
-msgstr "엘프 군주"
+msgstr "엘프 통치자"
 
 #: ../src/obj_descr_i18n.c:190
 msgid "elven shield"
@@ -39044,7 +39044,7 @@ msgstr "기어가 돌아가고 사슬이 덜컥거린다."
 
 #: ../src/monster_i18n.c:336 ../src/obj_descr_i18n.c:736
 msgid "gecko"
-msgstr "게코"
+msgstr "게코도마뱀"
 
 #: ../src/mthrowu.c:39
 msgid "gelatin"
@@ -42945,7 +42945,7 @@ msgstr "생물 형태에 갇힌 채 사망"
 
 #: ../src/monster_i18n.c:20 ../src/obj_descr_i18n.c:978
 msgid "killer bee"
-msgstr "킬러 벌"
+msgstr "살인벌"
 
 #: ../src/music.c:415
 #, c-format
@@ -43788,6 +43788,47 @@ msgstr "빛"
 msgctxt "spell"
 msgid "light"
 msgstr "빛"
+
+# "dig" — 동사(파다)와 충돌; 마법책 이름(굴착 마법책)과 맞춤
+#: ../src/obj_descr_i18n.c:557
+msgctxt "spell"
+msgid "dig"
+msgstr "굴착"
+
+# "identify" — 일반 번역(감정할)은 문장용
+#: ../src/obj_descr_i18n.c:557
+msgctxt "spell"
+msgid "identify"
+msgstr "감정"
+
+# 마법책 이름(점프 마법책)과 맞춤
+#: ../src/obj_descr_i18n.c:557
+msgctxt "spell"
+msgid "jumping"
+msgstr "점프"
+
+# 마법책 이름(천리안 마법책)과 맞춤
+#: ../src/obj_descr_i18n.c:557
+msgctxt "spell"
+msgid "clairvoyance"
+msgstr "천리안"
+
+# 마법책 이름(고급 치료 마법책)과 맞춤
+#: ../src/obj_descr_i18n.c:557
+msgctxt "spell"
+msgid "extra healing"
+msgstr "고급 치료"
+
+# 마법책 이름(자기 가속 마법책)과 맞춤
+#: ../src/obj_descr_i18n.c:557
+msgctxt "spell"
+msgid "haste self"
+msgstr "자기 가속"
+
+#: ../src/spell.c:392
+#, c-format
+msgid "the \"%s\" spell"
+msgstr "\"%s\" 주문"
 
 #: ../src/apply.c:1748
 #, c-format
@@ -48379,7 +48420,7 @@ msgstr "울렁거리는 판"
 
 #: ../src/monster_i18n.c:24 ../src/obj_descr_i18n.c:1029
 msgid "queen bee"
-msgstr "여왕 벌"
+msgstr "여왕벌"
 
 #: ../src/pickup.c:1375
 msgid "query_category: too many categories"
@@ -48460,7 +48501,7 @@ msgstr "떨리는 점액괴물"
 
 #: ../src/monster_i18n.c:108 ../src/obj_descr_i18n.c:1031
 msgid "rabid rat"
-msgstr "광견 쥐"
+msgstr "광견병 쥐"
 
 #: ../src/role.c:1610 ../src/role.c:1678
 msgid "race"
@@ -51057,7 +51098,7 @@ msgstr "비명을 질렀다."
 
 #: ../src/monster_i18n.c:183 ../src/obj_descr_i18n.c:1057
 msgid "shrieker"
-msgstr "비명자"
+msgstr "비명 버섯"
 
 #: ../src/potion.c:1834 ../src/potion.c:1871
 msgid "shrieks"
@@ -56884,7 +56925,7 @@ msgstr "건강을 관리하지 않았다"
 
 #: ../src/monster_i18n.c:295 ../src/obj_descr_i18n.c:1089
 msgid "watchman"
-msgstr "경비병"
+msgstr "경비대원"
 
 #: ../src/dig.c:865 ../src/dig.c:924 ../src/dig.c:1321 ../src/dokick.c:1453
 #: ../src/dungeon.c:3622 ../src/hack.c:2502 ../src/insight.c:1036
@@ -57163,12 +57204,12 @@ msgstr "%s{을/를} 입고 있었다."
 #: ../src/monster_i18n.c:34 ../src/monster_i18n.c:279
 #: ../src/obj_descr_i18n.c:1095
 msgid "werejackal"
-msgstr "늑대자칼"
+msgstr "자칼인간"
 
 #: ../src/monster_i18n.c:109 ../src/monster_i18n.c:278
 #: ../src/obj_descr_i18n.c:1096
 msgid "wererat"
-msgstr "늑대쥐"
+msgstr "쥐인간"
 
 #: ../src/monster_i18n.c:40 ../src/monster_i18n.c:280
 #: ../src/obj_descr_i18n.c:1097
@@ -57433,7 +57474,7 @@ msgstr "날개 달린"
 
 #: ../src/monster_i18n.c:63 ../src/obj_descr_i18n.c:1100
 msgid "winged gargoyle"
-msgstr "날개 가고일"
+msgstr "날개 달린 가고일"
 
 #: ../src/apply.c:1007
 msgid "winsome"
@@ -61027,7 +61068,7 @@ msgstr "종료"
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
 msgid "quiver"
-msgstr "화살통에 장비"
+msgstr "원거리 공격을 준비"
 
 #. # Extended command menu (cmd.c doextlist)
 msgctxt "extcmd"
@@ -61837,7 +61878,7 @@ msgstr "저장하지 않고 종료"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "select ammunition for quiver"
-msgstr "화살통에 장비"
+msgstr "원거리 공격을 준비 (쏘거나 던질 것 고르기)"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"

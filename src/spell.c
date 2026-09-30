@@ -389,8 +389,9 @@ learn(void)
     }
 
     Sprintf(splname,
-            objects[booktype].oc_name_known ? "\"%s\"" : "the \"%s\" spell",
-            OBJ_NAME(objects[booktype]));
+            objects[booktype].oc_name_known ? _("\"%s\"")
+                                            : _("the \"%s\" spell"),
+            tr_spell_name(OBJ_NAME(objects[booktype])));
     for (i = 0; i < MAXSPELL; i++)
         if (spellid(i) == booktype || spellid(i) == NO_SPELL)
             break;
@@ -564,7 +565,7 @@ study_book(struct obj *spellbook)
                 break;
         if (spellid(i) == booktype && spellknow(i) > KEEN / 10) {
             You(_("know \"%s\" quite well already."),
-                OBJ_NAME(objects[booktype]));
+                tr_spell_name(OBJ_NAME(objects[booktype])));
             /* hero has just been told what spell this book is for; it may
                have been undiscovered if spell was learned via divine gift */
             makeknown(booktype);
