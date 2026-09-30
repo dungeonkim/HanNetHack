@@ -13596,7 +13596,7 @@ msgstr "업적:%.0s"
 
 #: ../src/role.c:278
 msgid "Acolyte"
-msgstr "시종"
+msgstr "수련사제"
 
 #: ../src/options.c:6025
 msgid "Actions requiring extra confirmation:"
@@ -13973,7 +13973,7 @@ msgstr "아폴로"
 
 #: ../src/role.c:379
 msgid "Arbalester"
-msgstr "석궁수"
+msgstr "쇠뇌 사수"
 
 #: ../src/monster_i18n.c:363 ../src/obj_descr_i18n.c:789
 msgid "Arch Priest"
@@ -14253,7 +14253,7 @@ msgstr "바알제붑"
 
 #: ../src/role.c:198
 msgid "Bachelor"
-msgstr "젊은 기사"
+msgstr "견습 기사"
 
 #: ../src/trap.c:5018
 msgid "Back"
@@ -14323,7 +14323,7 @@ msgstr "조크 은행 - 프로보즈 매직 카드"
 
 #: ../src/role.c:201
 msgid "Banneret"
-msgstr "기수"
+msgstr "기사대장"
 
 #: ../src/obj_descr_i18n.c:1207 ../src/role.c:73
 msgid "Barbarian"
@@ -14461,7 +14461,7 @@ msgstr "웩! %s %s!"
 # 관광객 (디스크월드)
 #: ../src/role.c:464
 msgid "Blind Io"
-msgstr "장님 이오"
+msgstr "눈먼 이오"
 
 #: ../src/do_wear.c:1504
 msgid "Blindf_off without eyewear?"
@@ -14569,7 +14569,7 @@ msgstr "짐"
 
 #: ../src/role.c:325
 msgid "Burglar"
-msgstr "도둑"
+msgstr "빈집털이"
 
 #: ../src/uhitm.c:4530
 msgid "Burrrrp!"
@@ -14927,7 +14927,7 @@ msgstr "참사회원"
 
 #: ../src/role.c:282
 msgid "Canoness"
-msgstr "여참사회원"
+msgstr "참사회원"
 
 # %s = The(aobjnam(obj, materialize)) = "name{이/가}" (wish_fall 계사 억제)
 # 조합: "조심하세요! 코카트리스 시체가 바닥에 나타났다!"
@@ -14995,11 +14995,11 @@ msgstr "동굴 거주자"
 
 #: ../src/obj_descr_i18n.c:1209 ../src/role.c:114
 msgid "Caveman"
-msgstr "혈거인"
+msgstr "원시인"
 
 #: ../src/obj_descr_i18n.c:1210 ../src/role.c:114
 msgid "Cavewoman"
-msgstr "혈거인"
+msgstr "원시인"
 
 #: ../src/monster_i18n.c:46 ../src/obj_descr_i18n.c:794
 msgid "Cerberus"
@@ -15255,7 +15255,7 @@ msgstr "혼란한 신!"
 
 #: ../src/role.c:536
 msgid "Conjurer"
-msgstr "주술사"
+msgstr "소환사"
 
 # dungeon.c:2241 - 던전 분기 유형. "물약"이 아님!
 #: ../src/dungeon.c:2244 ../src/dungeon.c:3393
@@ -15455,7 +15455,7 @@ msgstr "보좌 사제"
 
 #: ../src/role.c:41
 msgid "Curator"
-msgstr "관리인"
+msgstr "학예관"
 
 #: ../src/botl.c:4470
 #, c-format
@@ -15477,7 +15477,7 @@ msgstr "현재 시간 = %ld."
 
 #: ../src/role.c:321
 msgid "Cutpurse"
-msgstr "소도둑"
+msgstr "소매치기"
 
 #: ../src/monster_i18n.c:374 ../src/obj_descr_i18n.c:798
 msgid "Cyclops"
@@ -15869,7 +15869,7 @@ msgstr "산 자들을 타도하라!"
 
 #: ../src/role.c:159
 msgid "Dresser"
-msgstr "치료사"
+msgstr "간호인"
 
 #: ../src/cmd.c:4446
 #, c-format
@@ -16052,15 +16052,15 @@ msgstr "에밀"
 
 #: ../src/role.c:157
 msgid "Empiric"
-msgstr "경험의"
+msgstr "민간 의원"
 
 #: ../src/role.c:539
 msgid "Enchanter"
-msgstr "마법사"
+msgstr "마법 부여사"
 
 #: ../src/role.c:539
 msgid "Enchantress"
-msgstr "여마법사"
+msgstr "마법 부여사"
 
 # ============================================================
 # teleport.c - 순간이동 관련 메시지
@@ -16192,7 +16192,7 @@ msgstr "갑자기 모든 것이 어두워졌다."
 # ============================================================
 #: ../src/role.c:535
 msgid "Evoker"
-msgstr "소환사"
+msgstr "견습 마법사"
 
 #: ../src/fountain.c:697
 msgid "Ew, what a stench!"
@@ -16225,7 +16225,7 @@ msgstr "실례한다."
 
 #: ../src/role.c:36
 msgid "Exhumer"
-msgstr "발굴사"
+msgstr "도굴꾼"
 
 #: ../src/weapon.c:1109
 msgid "Expert"
@@ -16484,7 +16484,7 @@ msgstr "비행"
 # ============================================================
 #: ../src/role.c:320
 msgid "Footpad"
-msgstr "소매치기"
+msgstr "노상 도둑"
 
 #: ../src/objnam.c:5485
 #, c-format
@@ -16676,7 +16676,7 @@ msgstr "으웩... 하수구 맛이다! 토했다."
 # Knight ranks
 #: ../src/role.c:196
 msgid "Gallant"
-msgstr "용감한 자"
+msgstr "기사 지망생"
 
 #: ../src/end.c:565
 #, c-format
@@ -17018,7 +17018,7 @@ msgstr "영웅"
 
 #: ../src/role.c:501
 msgid "Heroine"
-msgstr "여영웅"
+msgstr "영웅"
 
 #: ../src/do_name.c:764
 msgid "Hether"
@@ -17081,7 +17081,7 @@ msgstr "대사제"
 
 #: ../src/role.c:285
 msgid "High Priestess"
-msgstr "대여사제"
+msgstr "대사제"
 
 #: ../src/pray.c:1523
 msgid "High Temple"
@@ -18216,7 +18216,7 @@ msgstr "조슈"
 
 #: ../src/role.c:460
 msgid "Journeyer"
-msgstr "여정자"
+msgstr "나그네"
 
 #: ../src/monster_i18n.c:316 ../src/obj_descr_i18n.c:812
 msgid "Juiblex"
@@ -18459,7 +18459,7 @@ msgstr "국세청이 그렇게 많이 가지고 있다는 것을 알면 매우 �
 
 #: ../src/role.c:503
 msgid "Lady"
-msgstr "여군주"
+msgstr "군주"
 
 #: ../src/fountain.c:409
 msgid "Lady of the Lake"
@@ -18658,7 +18658,7 @@ msgstr "%s에 대한 정보 조회"
 
 #: ../src/role.c:375
 msgid "Lookout"
-msgstr "감시자"
+msgstr "파수꾼"
 
 #: ../src/pray.c:591
 msgid "Looks like you are back in Kansas."
@@ -18751,7 +18751,7 @@ msgstr "마담 엘비라의 서큐버스 클럽 평생 회원"
 
 #: ../src/role.c:543
 msgid "Mage"
-msgstr "마도사"
+msgstr "대마법사"
 
 #: ../src/read.c:453
 msgid "Magic Memory Vault Charge Card"
@@ -18772,11 +18772,11 @@ msgstr "마술사"
 
 #: ../src/role.c:162
 msgid "Magister"
-msgstr "스승"
+msgstr "의학 박사"
 
 #: ../src/role.c:162
 msgid "Magistra"
-msgstr "스승"
+msgstr "의학 박사"
 
 #: ../src/role.c:327
 msgid "Magsman"
@@ -18784,7 +18784,7 @@ msgstr "사기꾼"
 
 #: ../src/role.c:327
 msgid "Magswoman"
-msgstr "여사기꾼"
+msgstr "사기꾼"
 
 #: ../src/insight.c:2638
 msgid "Major"
@@ -18806,7 +18806,7 @@ msgstr "수컷은"
 
 #: ../src/role.c:498
 msgid "Man-at-arms"
-msgstr "종자"
+msgstr "무장병"
 
 #: ../src/role.c:205
 msgid "Manannan Mac Lir"
@@ -18826,7 +18826,7 @@ msgstr "저격수"
 
 #: ../src/role.c:382
 msgid "Markswoman"
-msgstr "여저격수"
+msgstr "저격수"
 
 #: ../src/role.c:383
 msgid "Mars"
@@ -18835,6 +18835,17 @@ msgstr "마르스"
 #: ../src/do_name.c:1649
 msgid "Maskerade"
 msgstr "가면무도회"
+
+# 칭호 전용 (botl.c tr_rank): 원문이 스킬 단계·옥좌 호칭과 같은 칭호
+#: ../src/role.c:244
+msgctxt "rank"
+msgid "Master"
+msgstr "대사범"
+
+#: ../src/role.c:203
+msgctxt "rank"
+msgid "Dame"
+msgstr "영주"
 
 #: ../src/role.c:244 ../src/weapon.c:1113
 msgid "Master"
@@ -18854,7 +18865,7 @@ msgstr "도둑 수장"
 
 #: ../src/role.c:284
 msgid "Matriarch"
-msgstr "여족장"
+msgstr "대주교"
 
 #: ../src/do_name.c:766
 msgid "Maud"
@@ -19946,7 +19957,7 @@ msgstr "%s 꼬리 일부가 잘렸다."
 
 #: ../src/role.c:284
 msgid "Patriarch"
-msgstr "총대주교"
+msgstr "대주교"
 
 #: ../src/shk.c:2436
 msgid "Pay"
@@ -20286,7 +20297,7 @@ msgstr "사제"
 
 #: ../src/obj_descr_i18n.c:1215 ../src/role.c:276 ../src/role.c:280
 msgid "Priestess"
-msgstr "여사제"
+msgstr "사제"
 
 #: ../src/save.c:341
 msgid "Probably someone removed it."
@@ -20458,7 +20469,7 @@ msgstr "무작위"
 
 #: ../src/obj_descr_i18n.c:1216 ../src/role.c:359
 msgid "Ranger"
-msgstr "순찰자"
+msgstr "레인저"
 
 #: ../src/read.c:459
 msgid "Ransmannsby Moneylenders Association"
@@ -21502,11 +21513,11 @@ msgstr "무언가 당신의 %s{을/를} 튀겼다"
 
 #: ../src/role.c:540
 msgid "Sorcerer"
-msgstr "마법사"
+msgstr "마도사"
 
 #: ../src/role.c:540
 msgid "Sorceress"
-msgstr "여마법사"
+msgstr "마도사"
 
 #: ../src/quest.c:244
 msgid "Sorry to say, this is a mere imitation of the true Amulet of Yendor."
@@ -23105,7 +23116,7 @@ msgstr "죽었어"
 
 #: ../src/role.c:328
 msgid "Thief"
-msgstr "도둑"
+msgstr "대도"
 
 #: ../src/do_name.c:1652
 msgid "Thief of Time"
@@ -23865,7 +23876,7 @@ msgstr "트라이가닉 푸"
 # Caveman/Cavewoman ranks
 #: ../src/role.c:115
 msgid "Troglodyte"
-msgstr "혈거인"
+msgstr "동굴 거주자"
 
 #: ../src/rumors.c:557
 #, c-format
@@ -24419,7 +24430,7 @@ msgstr "카메라를 수중에서 사용하면 보증이 무효화된다."
 
 #: ../src/role.c:118
 msgid "Vagrant"
-msgstr "방랑자"
+msgstr "떠돌이"
 
 #: ../src/cmd.c:4263
 #, c-format
@@ -25152,7 +25163,7 @@ msgstr "흔들림"
 
 #: ../src/role.c:498
 msgid "Woman-at-arms"
-msgstr "여종자"
+msgstr "무장병"
 
 # 찰리와 초콜릿 공장 참조
 #: ../src/read.c:292
@@ -32637,7 +32648,7 @@ msgstr "%ld %s 가치의 피해를 입혔다!"
 
 #: ../src/monster_i18n.c:440
 msgid "cave dweller"
-msgstr "동굴인"
+msgstr "원시인"
 
 #: ../src/monster_i18n.c:112 ../src/obj_descr_i18n.c:886
 msgid "cave spider"
@@ -32645,11 +32656,11 @@ msgstr "동굴 거미"
 
 #: ../src/monster_i18n.c:438
 msgid "caveman"
-msgstr "동굴 남자"
+msgstr "원시인"
 
 #: ../src/monster_i18n.c:439
 msgid "cavewoman"
-msgstr "동굴 여자"
+msgstr "원시인"
 
 #: ../src/teleport.c:1263
 msgid "cease to exist."
@@ -36079,7 +36090,7 @@ msgstr "드워프 왕"
 
 #: ../src/monster_i18n.c:400
 msgid "dwarf lady"
-msgstr "드워프 여귀족"
+msgstr "드워프 귀족"
 
 #: ../src/monster_i18n.c:401
 msgid "dwarf leader"
@@ -36322,7 +36333,7 @@ msgstr "엘프 좀비"
 
 #: ../src/monster_i18n.c:424
 msgid "elf-lady"
-msgstr "엘프 여귀족"
+msgstr "엘프 귀족"
 
 #: ../src/monster_i18n.c:423 ../src/obj_descr_i18n.c:758
 msgid "elf-lord"
@@ -39541,7 +39552,7 @@ msgstr "노움 왕"
 
 #: ../src/monster_i18n.c:409
 msgid "gnome lady"
-msgstr "노움 여귀족"
+msgstr "노움 귀족"
 
 #: ../src/monster_i18n.c:410
 msgid "gnome leader"
@@ -41044,7 +41055,7 @@ msgstr "고위 사제"
 
 #: ../src/do_name.c:1202 ../src/monster_i18n.c:433
 msgid "high priestess"
-msgstr "고위 여사제"
+msgstr "고위 사제"
 
 #: ../src/obj_descr_i18n.c:245
 msgid "hiking boots"
@@ -43037,7 +43048,7 @@ msgstr "코볼트"
 
 #: ../src/monster_i18n.c:406
 msgid "kobold lady"
-msgstr "코볼트 여귀족"
+msgstr "코볼트 귀족"
 
 #: ../src/monster_i18n.c:407
 msgid "kobold leader"
@@ -46449,7 +46460,7 @@ msgstr "오거 왕"
 
 #: ../src/monster_i18n.c:415
 msgid "ogre lady"
-msgstr "오거 여귀족"
+msgstr "오거 귀족"
 
 #: ../src/monster_i18n.c:416
 msgid "ogre leader"
@@ -48008,7 +48019,7 @@ msgstr "priest without epri (%s)"
 
 #: ../src/monster_i18n.c:430 ../src/monster_i18n.c:442 ../src/priest.c:321
 msgid "priestess"
-msgstr "여사제"
+msgstr "사제"
 
 #: ../src/wield.c:773
 msgid "primary"
@@ -56224,7 +56235,7 @@ msgstr "흡혈 박쥐"
 
 #: ../src/monster_i18n.c:421
 msgid "vampire lady"
-msgstr "뱀파이어 여귀족"
+msgstr "뱀파이어 귀족"
 
 #: ../src/monster_i18n.c:422
 msgid "vampire leader"
