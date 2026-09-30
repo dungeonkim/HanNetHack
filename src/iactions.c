@@ -327,6 +327,9 @@ itemactions(struct obj *otmp)
     struct monst *mtmp;
     const char *light = otmp->lamplit ? _("Extinguish") : _("Light");
     boolean already_worn = (otmp->owornmask & (W_ARMOR | W_ACCESSORY)) != 0;
+    extern struct obj *dknh_ia_obj; /* pager.c: dknethack shows its lore */
+
+    dknh_ia_obj = otmp;
 
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);

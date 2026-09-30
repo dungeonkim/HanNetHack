@@ -1288,14 +1288,16 @@ do_data(void)
     Fprintf(ofp, "%s%08lx\n", Dont_Edit_Data, 0L);
 
     entry_cnt = line_cnt = 0;
-    set_fgetline_context(infile, TRUE, TRUE);
+    /* no non-ASCII filter: the Korean data.base (dknethack builds it into
+       locale/ko/data) is UTF-8 */
+    set_fgetline_context(infile, FALSE, TRUE);
     /* read through the input file and split it into two sections */
     while ((line = fgetline(ifp)) != 0) {
         if (d_filter(line)) {
             free((genericptr_t) line);
             continue;
         }
-        if (*line > ' ') { /* got an entry name */
+        if ((unsigned char) *line > ' ') { /* got an entry name (UTF-8 too) */
             /* first finish previous entry */
             if (line_cnt)
                 Fprintf(ofp, "%d\n", line_cnt), line_cnt = 0;

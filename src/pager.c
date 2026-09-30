@@ -812,6 +812,69 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
     return (pm && !Hallucination) ? pm : (struct permonst *) 0;
 }
 
+/* dknethack: while set, checkfile() appends the entry's lines here instead
+   of opening a window (dknh_lore_at, dknh_lore_ia) */
+static char *lore_buf;
+static size_t lore_sz;
+
+/* dknethack: the data.base entry for what the map shows at (x,y), looked up
+   by its English name (a monster's type, an object's name or look, the
+   terrain), as text lines; "" when there is none */
+const char *
+dknh_lore_at(int x, int y)
+{
+    static char out[BUFSZ * 12];
+    char key[BUFSZ];
+    struct permonst *pm = (struct permonst *) 0;
+    int glyph;
+
+    out[0] = key[0] = '\0';
+    if (!isok(x, y))
+        return out;
+    glyph = glyph_at(x, y);
+    if (glyph_is_monster(glyph)) {
+        pm = &mons[glyph_to_mon(glyph)];
+        Strcpy(key, pmname(pm, NEUTRAL));
+    } else if (glyph_is_object(glyph)) {
+        int otyp = glyph_to_obj(glyph);
+        const char *n = objects[otyp].oc_name_known ? OBJ_NAME(objects[otyp])
+                                                    : OBJ_DESCR(objects[otyp]);
+
+        if (n)
+            Strcpy(key, n);
+    } else if (glyph_is_cmap(glyph)) {
+        Strcpy(key, defsyms[glyph_to_cmap(glyph)].explanation);
+    }
+    if (*key) {
+        lore_buf = out, lore_sz = sizeof out;
+        (void) checkfile(key, pm, chkfilDontAsk, (char *) 0);
+        lore_buf = (char *) 0;
+    }
+    return out;
+}
+
+/* dknethack: the data.base entry for the item whose action menu is open */
+struct obj *dknh_ia_obj;
+const char *
+dknh_lore_ia(void)
+{
+    static char out[BUFSZ * 12];
+    char itemnam[BUFSZ];
+    struct obj *otmp;
+
+    out[0] = '\0';
+    for (otmp = gi.invent; otmp; otmp = otmp->nobj)
+        if (otmp == dknh_ia_obj)
+            break;
+    if (!otmp)
+        return out;
+    Strcpy(itemnam, singular(otmp, xname));
+    lore_buf = out, lore_sz = sizeof out;
+    (void) checkfile(itemnam, (struct permonst *) 0, chkfilDontAsk, (char *) 0);
+    lore_buf = (char *) 0;
+    return out;
+}
+
 /* used to decide whether the context-sensitive inventory action menu for
    item 'otmp' should include the "/ - look up this item" choice */
 boolean
@@ -1087,7 +1150,8 @@ checkfile(
                     if (ia_checking)
                         goto checkfile_done;
 
-                    datawin = create_nhwindow(NHW_MENU);
+                    if (!lore_buf)
+                        datawin = create_nhwindow(NHW_MENU);
                     for (i = 0; i < entry_count; i++) {
                         /* room for 1-tab or 8-space prefix + BUFSZ-1 + \0 */
                         char tabbuf[BUFSZ + 8], *tp;
@@ -1117,10 +1181,17 @@ checkfile(
                            at the end of quotes typically have them */
                         if (strchr(tp, '\t') != 0)
                             (void) tabexpand(tp);
-                        putstr(datawin, 0, tp);
+                        if (lore_buf) {
+                            size_t n = strlen(lore_buf);
+
+                            Snprintf(lore_buf + n, lore_sz - n, "%s\n", tp);
+                        } else
+                            putstr(datawin, 0, tp);
                     }
-                    display_nhwindow(datawin, FALSE);
-                    destroy_nhwindow(datawin), datawin = WIN_ERR;
+                    if (!lore_buf) {
+                        display_nhwindow(datawin, FALSE);
+                        destroy_nhwindow(datawin), datawin = WIN_ERR;
+                    }
                 }
             } else if (user_typed_name && pass == 0 && !pass1found_in_file) {
                 pline(_("You don't have any information on those things."));
