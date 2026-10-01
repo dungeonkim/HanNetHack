@@ -251,7 +251,7 @@ msgstr "  %s [%s %s]"
 #: ../src/getpos.c:293
 #, c-format
 msgid "  '%s' describe current spot, move to another spot;"
-msgstr "  '%s' 현재 위치 설명, 다른 위치로 이동;"
+msgstr "  '%s' 현재 위치 설명, 다른 위치로 이동"
 
 #: ../src/getpos.c:284
 #, c-format
@@ -261,12 +261,12 @@ msgstr "  '%s' 현재 위치 설명, '추가 정보' 표시, 다른 위치로 �
 #: ../src/getpos.c:297
 #, c-format
 msgid "  '%s' describe current spot, stop looking at things;"
-msgstr "  '%s' 현재 위치 설명, 살펴보기 종료;"
+msgstr "  '%s' 현재 위치 설명, 살펴보기 종료"
 
 #: ../src/getpos.c:288
 #, c-format
 msgid "  '%s' describe current spot,%s move to another spot;"
-msgstr "  '%s' 현재 위치 설명,%s 다른 위치로 이동;"
+msgstr "  '%s' 현재 위치 설명,%s 다른 위치로 이동"
 
 #: ../src/weapon.c:1388
 #, c-format
@@ -587,7 +587,7 @@ msgstr " (?로 사용된 글자 보기)"
 #: ../src/objnam.c:1626
 #, c-format
 msgid " (alternate weapon%s; not wielded)"
-msgstr " (보조 무기%s; 미장착)"
+msgstr " (보조 무기%s, 미장착)"
 
 # objnam.c:1437 - 아이템이 무언가에 연결됨 (ball and chain 등)
 # 결과: "iron ball (attached to orc)" → "철구 (오크에 연결됨)"
@@ -2397,7 +2397,7 @@ msgstr " 스크롤"
 
 #: ../src/shk.c:3566
 msgid " scum;"
-msgstr " 쓰레기;"
+msgstr "이 쓰레기야,"
 
 #: ../src/do_wear.c:363
 msgid " see through"
@@ -2842,7 +2842,7 @@ msgstr "\"1골드. 857 GUE. 프롭스를 믿으라.\""
 
 #: ../src/shk.c:3564
 msgid "\"For you,"
-msgstr "\"당신을 위해,"
+msgstr "\"자,"
 
 #: ../src/vault.c:502
 msgid "\"Hello stranger, who are you?\" -"
@@ -3047,7 +3047,7 @@ msgstr "%d마리의%s 보이지 않는 괴물"
 #: ../src/shk.c:3902
 #, c-format
 msgid "%ld %s added%s to your credit; total is now %ld %s."
-msgstr "%ld%s{이/가} 신용에 추가됐다%s; 총액은 이제 %ld%s다."
+msgstr "%ld%s{이/가} 신용에 추가됐다%s. 총액은 이제 %ld%s다."
 
 #: ../src/zap.c:4646
 #, c-format
@@ -3145,7 +3145,7 @@ msgstr "%s %d;"
 #: ../src/shk.c:3574
 #, c-format
 msgid "%s %ld %s %s %s%s.\""
-msgstr "%s %ld%s %s %s%s.\""
+msgstr "%1$s %5$s%6$s{은/는} %2$ld%3$s{이다/다}.\"%4$.0s"
 
 #: ../src/wield.c:606
 #, c-format
@@ -12462,7 +12462,7 @@ msgstr "(키 할당이 없는 명령 포함)"
 
 #: ../src/obj_descr_i18n.c:1281
 msgid "(alternate weapon; not wielded)"
-msgstr "(보조 무기; 미장착)"
+msgstr "(보조 무기, 미장착)"
 
 #: ../src/obj_descr_i18n.c:1283
 msgid "(at the ready)"
@@ -13042,7 +13042,7 @@ msgstr "; 열 80은 사용되지 않음"
 
 #: ../src/eat.c:3647
 msgid "; eat them?"
-msgstr "; 먹겠습니까?"
+msgstr ". 먹겠습니까?"
 
 #: ../src/insight.c:3357
 #, c-format
@@ -13052,7 +13052,7 @@ msgstr "; 배고픔 %ld; 물건가져오기 %d"
 # 아이템이 피부에 박힌 경우
 #: ../src/do_wear.c:1795
 msgid "; it's embedded"
-msgstr "; 피부에 박혀 있다"
+msgstr " (피부에 박혀 있다)"
 
 # insight.c:1218 - 짐 무게 이동 속도
 # Sprintf(eos(buf), "; movement %s %s%s", "is"/"was", adj, " slowed"/""
@@ -13062,25 +13062,25 @@ msgstr "; 피부에 박혀 있다"
 #: ../src/insight.c:1275
 #, c-format
 msgid "; movement %s %s%s"
-msgstr "; 이동이 %2$s%3$s%1$.0s"
+msgstr ", 이동이 %2$s%3$s%1$.0s"
 
 #: ../src/shk.c:3570
 msgid "; only"
-msgstr " 만"
+msgstr "께만 특별히,"
 
 #: ../src/eat.c:3648
 msgid "; resume eating them?"
-msgstr "; 계속 먹겠습니까?"
+msgstr ". 계속 먹겠습니까?"
 
 #: ../src/objnam.c:1415
 msgid "; slippery)"
-msgstr "; 미끄러움)"
+msgstr ", 미끄러움)"
 
 # 위저드 모드 메시지
 #: ../src/teleport.c:1927
 #, c-format
 msgid "<%d,%d> is not considered viable; force anyway?"
-msgstr "<%d,%d>는 유효하지 않음; 강제 진행?"
+msgstr "<%d,%d>는 갈 수 없는 곳이다. 그래도 진행하겠습니까?"
 
 #: ../src/engrave.c:1374
 msgid "<= -3 weapon valid for engraving"
@@ -13825,7 +13825,7 @@ msgstr "항상 %s 강조"
 
 #: ../src/options.c:6407
 msgid "Always pickup '<'; never pickup '>'"
-msgstr "항상 '<' 줍기; 절대 '>' 안 줍기"
+msgstr "항상 '<' 줍기, 절대 '>' 안 줍기"
 
 #: ../src/invent.c:5077
 msgid "Amount to split from current stack must be"
@@ -14113,7 +14113,7 @@ msgstr "%s{을/를} 때리자, %s%s{이/가} 산산조각이 났다."
 
 #: ../src/dokick.c:953
 msgid "As you kick the door, it crashes open!"
-msgstr "문을 차자, 쾅 열렸다!"
+msgstr "문을 차자, 쾅하고 열렸다!"
 
 #: ../src/dokick.c:948
 msgid "As you kick the door, it shatters to pieces!"
@@ -15181,7 +15181,7 @@ msgstr "%s{을/를} 항상 강조할 색상 선택:"
 
 #: ../src/invent.c:2705
 msgid "Choose an item; use ESC to decline."
-msgstr "항목을 선택하세요; ESC로 취소."
+msgstr "항목을 선택하세요. 취소하려면 ESC를 누르세요."
 
 #: ../src/botl.c:4170
 #, c-format
@@ -17524,7 +17524,7 @@ msgstr "바보! 스스로를 쐈다!"
 
 #: ../src/options.c:9113
 msgid "If not on last page, advance one page;"
-msgstr "마지막 페이지가 아니면 다음 페이지로;"
+msgstr "마지막 페이지가 아니면 다음 페이지로"
 
 #: ../src/read.c:265
 msgid "If we weren't meant to eat animals, why are they made out of meat?"
@@ -19475,7 +19475,7 @@ msgstr "안 돼, 필멸자여! 그것은 이루어지지 않을 것이다."
 
 #: ../src/role.c:2702
 msgid "No; choose role again"
-msgstr "아니오; 역할 다시 선택"
+msgstr "아니오, 직업 다시 선택"
 
 #: ../src/role.c:121
 msgid "Nomad"
@@ -19535,7 +19535,7 @@ msgstr "갑옷이나 장신구를 착용하지 않았다."
 
 #: ../src/role.c:2706
 msgid "Not yet; choose another name"
-msgstr "아직; 다른 이름 선택"
+msgstr "아직, 다른 이름 선택"
 
 #: ../src/cmd.c:965
 msgid "Note: normally you wouldn't be allowed into explore mode."
@@ -20715,7 +20715,7 @@ msgstr "이름 바꾸기/지우기"
 #: ../src/spell.c:2025
 #, c-format
 msgid "Reordering spells; swap '%c' with"
-msgstr "주문 재정렬; '%c'{을/를} 다음과 교환:"
+msgstr "주문 순서 바꾸기: '%c'{과/와} 바꿀 주문"
 
 #: ../src/dungeon.c:2513
 #, c-format
@@ -22102,7 +22102,7 @@ msgstr "%2$s 사체를 든 채로 %1$s{을/를} 벗으시겠습니까?"
 #: ../src/mhitu.c:2336
 #, c-format
 msgid "Take off your %s; %s."
-msgstr "%s{을/를} 벗어라; %s."
+msgstr "%s{을/를} 벗어. %s."
 
 #: ../src/sounds.c:1167
 msgid "Take off your shirt, please."
@@ -22995,7 +22995,7 @@ msgstr "%1$s{과/와} %2$s{이/가} 있다. %4$s{을/를} %3$s?"
 #: ../src/eat.c:3662
 #, c-format
 msgid "There are %ld gold pieces here; eat them?"
-msgstr "여기에 %ld골드가 있다; 먹겠습니까?"
+msgstr "%ld골드가 있다. 먹겠습니까?"
 
 #: ../src/eat.c:3638
 msgid "There are iron bars here"
@@ -23025,12 +23025,12 @@ msgstr "여기에 %s{이/가} 있다."
 
 #: ../src/eat.c:3660
 msgid "There is 1 gold piece here; eat it?"
-msgstr "여기에 1골드가 있다; 먹겠습니까?"
+msgstr "1골드가 있다. 먹겠습니까?"
 
 #: ../src/eat.c:3611
 #, c-format
 msgid "There is a bear trap here (%s); eat it?"
-msgstr "여기에 곰 덫이 있다 (%s); 먹겠습니까?"
+msgstr "곰 덫이 있다 (%s). 먹겠습니까?"
 
 #: ../src/teleport.c:1049
 msgid "There is a level teleporter here. Trigger it?"
@@ -23094,7 +23094,7 @@ msgstr "%s에 함정이 있다."
 
 #: ../src/zap.c:3330
 msgid "There's a trapdoor beneath you; it shatters."
-msgstr "아래에 함정문이 있다; 산산이 부서졌다."
+msgstr "아래에 함정문이 있었는데, 산산이 부서졌다."
 
 # %s = "위"/"아래" (방향)
 #: ../src/sounds.c:1458
@@ -25385,7 +25385,7 @@ msgstr "그래... 하지만 전쟁은 적을 보존하지 않는다..."
 # ============================================================
 #: ../src/role.c:2699
 msgid "Yes; start game"
-msgstr "예; 게임 시작"
+msgstr "예, 게임 시작"
 
 #: ../src/apply.c:1051
 msgid "Yikes!  You've frozen yourself!"
@@ -26928,7 +26928,7 @@ msgstr "[이전 메시지를 한 번에 하나씩,"
 
 #: ../src/options.c:191
 msgid "[skip class filtering; always"
-msgstr "[종류 필터링 건너뛰기; 항상"
+msgstr "[종류 필터링 건너뛰기, 항상"
 
 #: ../src/spell.c:2131
 msgid "[sort spells]"
@@ -32363,7 +32363,7 @@ msgstr "%s 깊숙이 있는 것을 %s할 수 없다."
 #: ../src/do_wear.c:2720
 #, c-format
 msgid "cannot %s to remove the ring."
-msgstr "반지를 빼기 위해 %s할 수 없다."
+msgstr "%s 반지를 뺄 수 없다."
 
 #: ../src/do_wear.c:2770
 #, c-format
@@ -35798,7 +35798,7 @@ msgstr "문이 그대로 남아 있다."
 
 #: ../src/lock.c:920 ../src/lock.c:1047
 msgid "door resists!"
-msgstr "문이 버틴다!"
+msgstr "열리지 않았다!"
 
 #: ../src/objnam.c:3918
 msgid "doorless doorway"
@@ -38714,7 +38714,7 @@ msgstr "기괴하게 "
 #: ../src/do_wear.c:2712
 #, c-format
 msgid "free a weapon %s"
-msgstr "%s 무기를 풀다"
+msgstr "무기를 쥔 %s{을/를} 뗄 수 없어"
 
 # insight.c - "You have free action"
 # 기존: "자유 행동" → "당신은 자유 행동" (불완전)
@@ -45135,7 +45135,7 @@ msgstr "빗나갔다."
 
 #: ../src/apply.c:3569
 msgid "miss; there is no one there to hit."
-msgstr "빗나갔다; 거기에 때릴 대상이 없다."
+msgstr "빗나갔다. 거기에는 때릴 대상이 없다."
 
 #: ../src/do.c:552
 msgid "misses"
@@ -52096,7 +52096,7 @@ msgstr "단단한 바위"
 
 #: ../src/hack.c:1068
 msgid "solid stone"
-msgstr "단단한 돌"
+msgstr "단단한 돌벽"
 
 #: ../src/dungeon.c:3373 ../src/pickup.c:1682 ../src/region.c:469
 #: ../src/uhitm.c:1205 ../src/uhitm.c:1224
@@ -53739,7 +53739,7 @@ msgstr "벗을"
 #: ../src/do_wear.c:2715
 #, c-format
 msgid "take off your %s%s"
-msgstr "%s{을/를} 벗어라; %s."
+msgstr "%1$s%2$s{을/를} 벗을 수 없어"
 
 # ============================================================
 # 장비 해제 (do_wear.c:1788)
@@ -63819,3 +63819,5 @@ msgstr "해제하겠습니까"
 msgctxt "trap_verb"
 msgid "Remove"
 msgstr "걷어내겠습니까"
+
+# 종료 창: 플레이 시간, 능력치 탭 열, 던전 개요 현재 위치

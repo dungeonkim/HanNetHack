@@ -3451,7 +3451,7 @@ shk_names_obj(
     }
     obj_name = paydoname(obj);
     /* Use an alternate message when extra information is being provided */
-    if (was_unknown) {
+    if (was_unknown && !is_korean_locale()) { /* Korean: the name is in the sentence */
         Sprintf(fmtbuf, "%%s; you %s", fmt);
         obj_name[0] = highc(obj_name[0]);
         pline(fmtbuf, obj_name, (obj->quan > 1L) ? _("them") : _("it"), amt,
