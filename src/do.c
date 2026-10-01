@@ -1115,9 +1115,9 @@ u_stuck_cannot_go(const char *updn)
 {
     if (u.ustuck) {
         if (u.uswallow || !sticks(gy.youmonst.data)) {
-            You(_("are %s, and cannot go %s."),                 !u.uswallow ? "being held"
-                : digests(u.ustuck->data) ? "swallowed"
-                : "engulfed", updn);
+            You(_("are %s, and cannot go %s."),                 !u.uswallow ? C_("state", "being held")
+                : digests(u.ustuck->data) ? C_("state", "swallowed")
+                : C_("state", "engulfed"), updn);
             return TRUE;
         } else {
             struct monst *mtmp = u.ustuck;
@@ -1236,7 +1236,7 @@ dodown(void)
                 return use_pick_axe2(uwep);
             } else {
                 You_cant(_("go down here%s."),
-                         (trap && trap->ttyp == VIBRATING_SQUARE) ? " yet"
+                         (trap && trap->ttyp == VIBRATING_SQUARE) ? _(" yet")
                                                                   : "");
                 return ECMD_OK;
             }

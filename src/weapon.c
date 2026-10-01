@@ -88,9 +88,9 @@ give_may_advance_msg(int skill)
 {
     You_feel(_("more confident in your %sskills."),
              (skill == P_NONE) ? ""
-                 : (skill <= P_LAST_WEAPON) ? "weapon "
-                     : (skill <= P_LAST_SPELL) ? "spell casting "
-                         : "fighting ");
+                 : (skill <= P_LAST_WEAPON) ? _("weapon ")
+                     : (skill <= P_LAST_SPELL) ? _("spell casting ")
+                         : _("fighting "));
     (void) handle_tip(TIP_ENHANCE);
 }
 

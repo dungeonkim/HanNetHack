@@ -176,8 +176,10 @@ toggle_displacement(
         if (obj)
             makeknown(obj->otyp);
 
-        You_feel(_("that monsters%s have difficulty pinpointing your location."),
-                 on ? "" : " no longer");
+        if (on)
+            You_feel(_("that monsters have difficulty pinpointing your location."));
+        else
+            You_feel(_("that monsters no longer have difficulty pinpointing your location."));
     }
 }
 
@@ -278,7 +280,7 @@ Boots_off(void)
     case SPEED_BOOTS:
         if (!Very_fast && !svc.context.takeoff.cancelled_don) {
             makeknown(otyp);
-            You_feel(_("yourself slow down%s."), Fast ? " a bit" : "");
+            You_feel(_("yourself slow down%s."), Fast ? _(" a bit") : "");
         }
         break;
     case WATER_WALKING_BOOTS:

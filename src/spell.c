@@ -1314,8 +1314,8 @@ spelleffects_check(int spell, int *res, int *energy)
          */
         You(_("don't have enough energy to cast that spell%s."),
             (u.uen < u.uenmax) ? "" /* not at full energy => normal message */
-            : (*energy > u.uenpeak) ? " yet" /* haven't ever had enough */
-              : " anymore"); /* once had enough but have lost some since */
+            : (*energy > u.uenpeak) ? _(" yet") /* haven't ever had enough */
+              : _(" anymore")); /* once had enough but have lost some since */
         return TRUE;
     } else {
         if (spellid(spell) != SPE_DETECT_FOOD) {

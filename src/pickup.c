@@ -2368,7 +2368,7 @@ doloot_core(void)
             if (!underfoot && container_at(cc.x, cc.y, FALSE)) {
                 if (mtmp) {
                     You_cant(_("loot anything %sthere with %s in the way."),
-                             prev_inquiry ? "else " : "", mon_nam(mtmp));
+                             prev_inquiry ? _("else ") : "", mon_nam(mtmp));
                     return (timepassed ? ECMD_TIME : ECMD_OK);
                 } else {
                     You(_("have to be at a container to loot it."));

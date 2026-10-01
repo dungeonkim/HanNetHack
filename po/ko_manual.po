@@ -2879,7 +2879,7 @@ msgstr "\"그렇다면 대규모 상담을 원하시나요?\" (%d %s)"
 #: ../src/pray.c:739
 #, c-format
 msgid "\"Thou %s, %s.\""
-msgstr "\"그대여 %s, %s.\""
+msgstr "\"그대 %2$s{은/는} %1$s.\""
 
 #: ../src/rumors.c:717
 #, c-format
@@ -3132,7 +3132,7 @@ msgstr "%s"
 #: ../src/dothrow.c:246
 #, c-format
 msgid "%s %d %s."
-msgstr "%s %d %s."
+msgstr "%3$s %2$d개를 날렸다.%1$.0s"
 
 #: ../src/display.c:3347
 #, c-format
@@ -3518,7 +3518,7 @@ msgstr "%1$s{이/가} %3$s{을/를} 맞혔다%4$s%2$.0s"
 #: ../src/mhitm.c:1290
 #, c-format
 msgid "%s %s %s%s %s at %s."
-msgstr "%s{이/가} %s에게 %s%s{을/를} %s %s."
+msgstr "%1$s{이/가} %6$s에게 %5$s{을/를} %2$s.%3$.0s%4$.0s"
 
 # ============================================================
 # 전투 메시지 추가 (Additional Combat Messages)
@@ -3772,7 +3772,7 @@ msgstr "%s %s{이/가} 사라진다!"
 #: ../src/weapon.c:1083
 #, c-format
 msgid "%s %s dries%s."
-msgstr "%s %s{이/가} 말랐다%s."
+msgstr "%s %s{이/가} 말랐다.%.0s"
 
 # ============================================================
 # 전투 메시지 추가 (Additional Combat Messages)
@@ -4215,7 +4215,7 @@ msgstr "%s %s{이/가} 단단히 밀봉되어 있다."
 #: ../src/lock.c:1284
 #, c-format
 msgid "%s %s shatter!"
-msgstr "%s %s{이/가} 산산조각났다!"
+msgstr "%2$s{이/가} 산산조각났다!%1$.0s"
 
 # [리뷰 완료] worn.c:985 — Yname2 + otense(are) + adesc, 몬스터 갑옷 빛나는 중
 # %1$s = Yname2(best), %2$s = otense(are)="이다", %3$s = adesc
@@ -4435,7 +4435,7 @@ msgstr "%s{이/가} %s 화가 난 듯하다..."
 #: ../src/do_name.c:741
 #, c-format
 msgid "%s %s to call you \"%s.\""
-msgstr "%s{이/가} 당신을 \"%s\"라고 부르려고 %s."
+msgstr "%1$s{이/가} 당신을 \"%3$s\"라고 부르기로 했다.%2$.0s"
 
 #: ../src/shk.c:903
 #, c-format
@@ -5154,7 +5154,7 @@ msgstr "%s{이/가} %s 머리가 %s아픈 것처럼 행동한다."
 #: ../src/shk.c:6061
 #, c-format
 msgid "%s added %ld %s %s %ld %s."
-msgstr "%s{이/가} %ld%s{을/를} 추가했다 %s %ld%s."
+msgstr "%1$s{이/가} 외상 %2$ld%3$s{을/를} 추가했다. 이제 총 %5$ld%6$s{이다/다}.%4$.0s"
 
 #: ../src/dokick.c:1608 ../src/dokick.c:1611
 #, c-format
@@ -5185,7 +5185,7 @@ msgstr "%s 목걸이"
 #: ../src/sit.c:391
 #, c-format
 msgid "%s an egg."
-msgstr "알을 %s."
+msgstr "알을 낳았다.%.0s"
 
 # [리뷰 완료] apply.c:1269 — Tobjnam+issue, 뿔피리 불안한 소리
 # %s = "뿔피리{이/가}" (계사 억제)
@@ -6004,7 +6004,7 @@ msgstr "%s{이/가} 나뭇가지 더미에 주문을 걸었지만 아무 일도 
 #: ../src/dog.c:1206
 #, c-format
 msgid "%s catches %s%s"
-msgstr "%s{이/가} %s%s{을/를} 잡았다."
+msgstr "%s{이/가} %s{을/를} 잡았다%s"
 
 #: ../src/dothrow.c:2101 ../src/dothrow.c:2116
 #, c-format
@@ -6358,7 +6358,7 @@ msgstr "%s{이/가} 반응하지 않는다."
 #: ../src/vault.c:544
 #, c-format
 msgid "%s doesn't %srecognize you."
-msgstr "%s{은/는} 당신을 %s알아보지 못한다."
+msgstr "%1$s{은/는} 당신을 알아보지 못한다.%2$.0s"
 
 #: ../src/dothrow.c:1145
 #, c-format
@@ -6479,7 +6479,7 @@ msgstr "%s{이/가} %s에게서 %s{을/를} 빼앗았다!"
 #: ../src/weapon.c:1080
 #, c-format
 msgid "%s dries%s."
-msgstr "%s{이/가} 마른%s."
+msgstr "%s{이/가} 말랐다.%.0s"
 
 # [FIX] muse.c:297 — 몬스터 물약 음용
 # %1$s = Monnam(mtmp), %2$s = singular(otmp, doname) (물약 이름)
@@ -7055,7 +7055,7 @@ msgstr "%s{이/가} 에일에 대해 %s%s{을/를} 준다."
 #: ../src/vault.c:563
 #, c-format
 msgid "%s glares at you%s."
-msgstr "%s{이/가} 당신을%s 노려보았다."
+msgstr "%s{이/가} 당신을 노려보았다.%.0s"
 
 #: ../src/read.c:2565
 #, c-format
@@ -8686,7 +8686,7 @@ msgstr "여기에는 아무 물체도 보이지 않는다.%.0s"
 #: ../src/shk.c:2019
 #, c-format
 msgid "%s nods%s at you for shopping in %s %s%s"
-msgstr "%s{이/가} %s %s%s에서 쇼핑한 것에 고개를 %s 끄덕인다"
+msgstr "%1$s{이/가} %4$s에서 쇼핑해 준 것에 %2$s고개를 끄덕인다%5$s%3$.0s"
 
 #: ../src/polyself.c:988
 #, c-format
@@ -9810,7 +9810,7 @@ msgstr "%s 연기."
 #: ../src/do.c:2010
 #, c-format
 msgid "%s smoke..."
-msgstr "%s 연기..."
+msgstr "%.0s연기가 느껴진다..."
 
 #: ../src/pray.c:1560
 #, c-format
@@ -9995,7 +9995,7 @@ msgstr "%s{이/가} %s{을/를} 훔쳤다."
 #: ../src/vault.c:553
 #, c-format
 msgid "%s stomps%s."
-msgstr "%s{이/가} 쿵쿵거린다%s."
+msgstr "%s{이/가}%s 발을 구른다."
 
 #: ../src/uhitm.c:6326
 #, c-format
@@ -10714,7 +10714,7 @@ msgstr "뜨거운 땅에서 %1$s 뜨거워졌다.%2$.0s"
 #: ../src/dig.c:2255
 #, c-format
 msgid "%s up through the %s."
-msgstr "%s{을/를} 통해 위로 %s."
+msgstr "%2$s{을/를} 뚫고 위로 올라가려 했다.%1$.0s"
 
 #: ../src/muse.c:825
 #, c-format
@@ -11436,7 +11436,7 @@ msgstr "%1$s %5$s의 %4$s{을/를} 막았다!%2$.0s%3$.0s"
 #: ../src/do_wear.c:2457
 #, c-format
 msgid "%s%s are full, and you're already wearing an amulet and %s."
-msgstr "%s%s{이/가} 가득 차 있고, 이미 목걸이와 %s{을/를} 착용하고 있다."
+msgstr "반지를 낄 %.0s%s{이/가} 다 찼고, 이미 목걸이와 %s{을/를} 착용하고 있다."
 
 #: ../src/do_wear.c:134
 #, c-format
@@ -11580,7 +11580,7 @@ msgstr "잠깐 %1$s%2$s%3$s."
 #: ../src/mhitm.c:1177
 #, c-format
 msgid "%s%s%s turns into %s."
-msgstr "%s%s%s{이/가} %s{으로/로} 변했다."
+msgstr "%1$s{이/가} %2$s%4$s{으로/로} 변했다.%3$.0s"
 
 #: ../src/invent.c:2900
 #, c-format
@@ -12235,7 +12235,7 @@ msgstr "%.0s꺼내고 넣기 (1턴)"
 #: ../src/lock.c:412
 #, c-format
 msgid "%sunlock %s."
-msgstr "%s{을/를} %s열었다."
+msgstr "%2$s{을/를} 열 수는 없다.%1$.0s"
 
 #: ../src/cmd.c:4549
 #, c-format
@@ -13582,7 +13582,7 @@ msgstr "한 줄기 수증기가 피어오른다..."
 #: ../src/sit.c:77
 #, c-format
 msgid "A%s electric shock shoots through your body!"
-msgstr "%s 전기 충격이 몸을 관통한다!"
+msgstr "%.0s전기 충격이 몸을 관통한다!"
 
 #: ../src/priest.c:525
 #, c-format
@@ -14726,7 +14726,7 @@ msgstr "하지만 닿을 수 없다!"
 #: ../src/shk.c:1971
 #, c-format
 msgid "But you don't%s have enough gold%s."
-msgstr "그러나 %1$s보유 자금%2$s이 충분하지 않다."
+msgstr "그러나 금화%2$s{이/가} 충분하지 않다.%1$.0s"
 
 # ============================================================
 # 아이템 메시지 (Item Messages)
@@ -16583,7 +16583,7 @@ msgstr "어쩐지 싱거운 맛이다."
 #: ../src/do.c:695
 #, c-format
 msgid "For some reason, you cannot %s%s the stone%s!"
-msgstr "어떤 이유로 돌%s{을/를} %s%s할 수 없다!"
+msgstr "어떤 이유로 그 돌을 손에서 놓을 수 없다!%1$.0s%2$.0s%3$.0s"
 
 #: ../src/potion.c:829
 msgid "For some reason, you feel your presence is known."
@@ -18489,7 +18489,7 @@ msgstr "경찰 하사"
 #: ../src/shk.c:5618
 #, c-format
 msgid "Kop%s (disappointed) vanish%s into thin air."
-msgstr "경찰%s{이/가} (실망하며) 허공으로 사라진다%s."
+msgstr "경찰{이/가} (실망하며) 허공으로 사라진다.%.0s%.0s"
 
 #: ../src/role.c:329
 msgid "Kos"
@@ -22449,7 +22449,7 @@ msgstr "%s{이/가} 사라졌다."
 #: ../src/mkobj.c:3834
 #, c-format
 msgid "The %s%s coalesce%s."
-msgstr "%s%s{이/가} 합쳐%s."
+msgstr "%1$s%2$s{이/가}%3$s 합쳐졌다."
 
 #: ../src/cmd.c:3718
 #, c-format
@@ -23305,7 +23305,7 @@ msgstr "%s처럼 타오른다!"
 #: ../src/potion.c:1303 ../src/potion.c:1696
 #, c-format
 msgid "This burns%s!"
-msgstr "이건 타오른다%s!"
+msgstr "이건%s 타오른다!"
 
 #: ../src/apply.c:2031
 msgid "This calls for swimming, not jumping!"
@@ -26428,7 +26428,7 @@ msgstr "죽겠다!"
 #: ../src/read.c:2099
 #, c-format
 msgid "You're not carrying anything%s to be identified."
-msgstr "감정할 것%s{을/를} 가지고 있지 않다."
+msgstr "감정할 %s물건을 가지고 있지 않다."
 
 #: ../src/trap.c:6953
 msgid "You're still burning."
@@ -27266,7 +27266,7 @@ msgstr "도개교가 %s 내려가는 것을!"
 #: ../src/dbridge.c:792
 #, c-format
 msgid "a drawbridge %s up!"
-msgstr "도개교가 %s 올라가는 것을!"
+msgstr "도개교가 올라가는 것이 보인다!%.0s"
 
 #: ../src/mthrowu.c:1044
 msgid "a dry rattle nearby."
@@ -28715,7 +28715,7 @@ msgstr "여기에 %s%s 물체가 있다."
 #: ../src/do.c:1116
 #, c-format
 msgid "are %s, and cannot go %s."
-msgstr "%s 상태라 %s{으로/로} 갈 수 없다."
+msgstr "%s 있어서 이동할 수 없다.%.0s"
 
 # ============================================================
 # 스크롤 (Scrolls)
@@ -29128,7 +29128,7 @@ msgstr "격렬하게 흔들렸다!"
 #: ../src/mhitu.c:1440
 #, c-format
 msgid "are laden with moisture and %s"
-msgstr "습기로 가득 차 있고 %s"
+msgstr "습기를 잔뜩 머금어 %s"
 
 #: ../src/allmain.c:60
 msgid "are lucky!  Full moon tonight."
@@ -29207,7 +29207,7 @@ msgstr "더 이상 어떤 무기도 장비하고 있지 않다."
 #: ../src/do_wear.c:2257
 #, c-format
 msgid "are no more %s%s to fill."
-msgstr "더 이상 채울 %s%s{이/가} 없다."
+msgstr "더 이상 반지를 낄 %.0s%s{이/가} 없다."
 
 #: ../src/trap.c:6037
 msgid "are no other chests or boxes here."
@@ -29636,7 +29636,7 @@ msgstr "다치지 않았다!"
 #: ../src/read.c:2808
 #, c-format
 msgid "aren't permitted to genocide %s%s."
-msgstr "%s%s{을/를} 학살하는 것은 허용되지 않는다."
+msgstr "%.0s%s{을/를} 학살하는 것은 허용되지 않는다."
 
 #: ../src/read.c:2707
 msgid "aren't permitted to genocide such monsters."
@@ -30527,7 +30527,7 @@ msgstr "이다"
 #: ../src/uhitm.c:543
 #, c-format
 msgid "begin %s monsters with your %s %s."
-msgstr "%3$s %2$s{으로/로} 몬스터를 %1$s 시작했다."
+msgstr "%2$s %3$s{으로/로} 몬스터를 치기 시작했다.%1$.0s"
 
 #: ../src/uhitm.c:541
 #, c-format
@@ -31025,7 +31025,7 @@ msgstr "몸이 죽음에서 일어난다"
 #: ../src/do_wear.c:1402
 #, c-format
 msgid "body seems to unfade%s."
-msgstr "몸이 다시 보이기 시작%s."
+msgstr "몸이 다시 보이기 시작했다.%.0s"
 
 #: ../src/artifact.c:2228
 msgid "body seems to unfade..."
@@ -32893,7 +32893,7 @@ msgstr "매혹"
 #: ../src/uhitm.c:2207
 #, c-format
 msgid "charm %s.  %s gladly hands over %s%s possessions."
-msgstr "%s{을/를} 매료시켰다. %s{이/가} 기꺼이 %s%s 소지품을 넘겨준다."
+msgstr "%1$s{을/를} 매료시켰다. %2$s{이/가} 기꺼이 소지품을 %3$s넘겨준다.%4$.0s"
 
 #: ../src/obj_descr_i18n.c:567
 msgid "charm monster"
@@ -36865,7 +36865,7 @@ msgstr "탈출"
 #: ../src/trap.c:3053
 #, c-format
 msgid "escape %s %s."
-msgstr "%s %s{을/를} 피했다."
+msgstr "%2$s{을/를} 피했다.%1$.0s"
 
 #: ../src/uhitm.c:3554
 msgid "escape harm."
@@ -37867,7 +37867,7 @@ msgstr "손끝"
 #: ../src/eat.c:557
 #, c-format
 msgid "finish %s %s."
-msgstr "%s %s{을/를} 다 먹었다."
+msgstr "%.0s%s{을/를} 다 먹었다."
 
 #: ../src/do_wear.c:2923 ../src/engrave.c:1483
 #, c-format
@@ -39674,7 +39674,7 @@ msgstr "이다"
 #: ../src/do.c:1236
 #, c-format
 msgid "go down here%s."
-msgstr "여기서 내려갈 수%s 없다."
+msgstr "여기서%s 내려갈 수 없다."
 
 # do.c:1315 You_cant("go up here.") - 오역 수정: "올라갈 수 없다"는 부정문
 #: ../src/do.c:1315
@@ -40293,7 +40293,7 @@ msgstr "손"
 #: ../src/artifact.c:2534
 #, c-format
 msgid "handle %s%s!"
-msgstr "%s%s{을/를} 다루다!"
+msgstr "%1$s{을/를}%2$s 다룰 수 없다!"
 
 #: ../src/insight.c:2406 ../src/insight.c:2415 ../src/insight.c:2421
 msgid "handled"
@@ -41059,7 +41059,7 @@ msgstr "%s 아래에 숨었다."
 #: ../src/polyself.c:1789
 #, c-format
 msgid "hide while you're %s."
-msgstr "%s 동안 숨을 수 없다."
+msgstr "%s 있는 동안에는 숨을 수 없다."
 
 #: ../src/apply.c:1012
 msgid "hideous"
@@ -41311,7 +41311,7 @@ msgstr "%s{을/를} 잡을 수 없다 -- 손이 없다!"
 #: ../src/wield.c:709
 #, c-format
 msgid "hold %s strongly enough."
-msgstr "%s{을/를} 충분히 강하게 잡는다."
+msgstr "충분히 단단히 잡을 수 없다.%.0s"
 
 #: ../src/fountain.c:733
 #, c-format
@@ -41673,7 +41673,7 @@ msgstr "환상의 바닥"
 #: ../src/artifact.c:1532
 #, c-format
 msgid "imaginary widget hits%s %s%c"
-msgstr "상상의 장치가 %s %s{을/를} 쳤다%c"
+msgstr "상상의 장치가%s %s{을/를} 쳤다%c"
 
 #: ../src/zap.c:4571
 msgid "imagined"
@@ -44231,7 +44231,7 @@ msgstr "노획물"
 #: ../src/pickup.c:2328
 #, c-format
 msgid "loot anything %sthere with %s in the way."
-msgstr "%s{이/가} 막고 있어서 %s거기 있는 것을 약탈할 수 없다."
+msgstr "%2$s{이/가} 가로막고 있어서 거기 있는 %1$s것을 뒤질 수 없다."
 
 #: ../src/pickup.c:3456
 msgid "loot next container"
@@ -44698,7 +44698,7 @@ msgstr "남성적인"
 #: ../src/artifact.c:1518
 #, c-format
 msgid "massive hammer hits%s %s%c"
-msgstr "거대한 망치가 %s %s{을/를} 쳤다%c"
+msgstr "거대한 망치가%s %s{을/를} 쳤다%c"
 
 #: ../src/monster_i18n.c:204 ../src/obj_descr_i18n.c:997
 msgid "master lich"
@@ -49386,7 +49386,7 @@ msgstr "이다"
 #: ../src/restore.c:858
 #, c-format
 msgid "return to level %d in %s%s."
-msgstr "%2$s%3$s의 레벨 %1$d로 돌아간다."
+msgstr "%2$s의 레벨 %1$d로 돌아간다%3$s."
 
 #: ../src/detect.c:1868
 #, c-format
@@ -53011,7 +53011,7 @@ msgstr "이다"
 #: ../src/dothrow.c:595
 #, c-format
 msgid "stop %s after the %d%s %s."
-msgstr "%2$d%3$s %4$s 후에 %1$s{을/를} 멈췄다."
+msgstr "%2$d번째에서 멈췄다.%1$.0s%3$.0s%4$.0s"
 
 # ============================================================
 # 마법 지팡이 (Wands)
@@ -58397,7 +58397,7 @@ msgstr "자제력을 잃는다"
 #: ../src/do_wear.c:278 ../src/timeout.c:728
 #, c-format
 msgid "yourself slow down%s."
-msgstr "느려지는 것을 느꼈다%s."
+msgstr "%s느려지는 것을 느꼈다."
 
 #: ../src/do_wear.c:225
 #, c-format
@@ -59442,7 +59442,7 @@ msgid "amethyst"
 msgstr "자수정"
 
 msgid "and all your belongings "
-msgstr "와 모든 소지품 "
+msgstr "소지품과 함께 "
 
 msgid "angel"
 msgstr "천사"
@@ -63628,3 +63628,162 @@ msgstr "눈멀게 하는 독액"
 msgid "splash of acid venom"
 msgstr "산성 독액"
 
+# ============================================================
+# 번역되지 않은 영어 인자 (eating 등) — 소스에서 _()/C_()로 감싼 조각
+# ============================================================
+
+msgid "!  Lightning strikes"
+msgstr " 번개와 함께"
+
+msgid "!  A hail of magic missiles strikes"
+msgstr " 마법 화살 세례와 함께"
+
+msgid " anymore"
+msgstr " 더 이상"
+
+msgid "adjacent "
+msgstr "옆의 "
+
+msgctxt "state"
+msgid "being held"
+msgstr "붙잡혀"
+
+msgctxt "state"
+msgid "swallowed"
+msgstr "삼켜져"
+
+msgctxt "state"
+msgid "engulfed"
+msgstr "휘감겨"
+
+msgctxt "state"
+msgid "trapped"
+msgstr "갇혀"
+
+msgctxt "state"
+msgid "holding someone"
+msgstr "누군가를 붙잡고"
+
+msgctxt "state"
+msgid "holding that creature"
+msgstr "그 생물을 붙잡고"
+
+msgid ", or vice versa!"
+msgstr "! 아니면 그 반대인가!"
+
+msgid "that monsters have difficulty pinpointing your location."
+msgstr "괴물들이 당신의 위치를 파악하기 어려워한다."
+
+msgid "that monsters no longer have difficulty pinpointing your location."
+msgstr "괴물들이 다시 당신의 위치를 쉽게 파악한다."
+
+msgid " a bit"
+msgstr "조금 "
+
+msgid " throne"
+msgstr " 왕좌가 있는"
+
+#, c-format
+msgctxt "cockatrice"
+msgid "%s %s%s."
+msgstr "%2$s{이/가} 있다%3$s.%1$.0s"
+
+msgctxt "expel"
+msgid "regurgitates"
+msgstr "토해냈다"
+
+msgctxt "expel"
+msgid "releases"
+msgstr "풀어 주었다"
+
+msgctxt "expel"
+msgid "expels"
+msgstr "뱉어냈다"
+
+msgid "loud "
+msgstr "커다란 "
+
+msgid " inside your pack"
+msgstr " 배낭 안에서"
+
+msgid " then shrugs."
+msgstr ", 그리고 어깨를 으쓱한다."
+
+#, c-format
+msgid "Splat!  %s is hit with an egg!"
+msgstr "철퍽! %s{이/가} 알에 맞았다!"
+
+msgid ", and now seems quieter"
+msgstr ", 이제 조용해진 듯하다"
+
+msgid "A nearby voice"
+msgstr "근처의 목소리"
+
+msgid "n enormous"
+msgstr "거대한 "
+
+msgid " while in debug mode"
+msgstr " (디버그 모드)"
+
+msgid " while in explore mode"
+msgstr " (탐험 모드)"
+
+msgid " appreciatively"
+msgstr "고맙다는 듯이 "
+
+msgid " reaches over and"
+msgstr " 손을 뻗어"
+
+msgid "has vanished"
+msgstr "사라졌다"
+
+msgid "meager "
+msgstr "보잘것없는 "
+
+msgctxt "sit"
+msgid "land"
+msgstr "착지했다"
+
+msgctxt "sit"
+msgid "sit down"
+msgstr "앉았다"
+
+msgid "(nonexistent) "
+msgstr "(있지도 않은) "
+
+msgctxt "agony"
+msgid "writhe"
+msgstr "몸부림친다"
+
+msgctxt "agony"
+msgid "scream"
+msgstr "비명을 지른다"
+
+msgid ", and you gather up all your possessions"
+msgstr ". 소지품도 모두 챙겼다"
+
+msgid "cough."
+msgstr "기침을 했다."
+
+msgid "most of "
+msgstr "거의 다 "
+
+msgctxt "engulf"
+msgid "being squashed"
+msgstr "짓눌리고 있다"
+
+msgctxt "engulf"
+msgid "pummeled with your debris"
+msgstr "당신의 잔해에 두들겨 맞고 있다"
+
+msgid " and beckons"
+msgstr " 손짓하며"
+
+msgid "weapon "
+msgstr "무기 "
+
+msgid "spell casting "
+msgstr "주문 "
+
+msgid "fighting "
+msgstr "전투 "
