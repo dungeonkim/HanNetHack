@@ -18,6 +18,7 @@
 #endif
 
 staticfn void enlght_out(const char *);
+staticfn void enlght_out_attr(const char *, int);
 staticfn void enlght_line(const char *, const char *, const char *,
                           const char *);
 staticfn char *enlght_combatinc(const char *, int, int, char *);
@@ -43,6 +44,16 @@ staticfn void item_resistance_message(int, const char *, int);
 
 extern const char *const hu_stat[];  /* hunger status from eat.c */
 extern const char *const enc_stat[]; /* encumbrance status from botl.c */
+
+/* dknethack: the UI draws a window title (ATR_BOLD) and section headings (any other attribute) in
+   their own colours, end-of-game disclosure included; tty keeps NetHack's plain final windows */
+#ifdef __EMSCRIPTEN__
+#define DK_TITLE ATR_BOLD
+#define DK_FINAL_HEADING iflags.menu_headings.attr
+#else
+#define DK_TITLE ATR_NONE
+#define DK_FINAL_HEADING ATR_NONE
+#endif
 
 #define You_ _("You ")
 #define are _("are ")
@@ -171,6 +182,14 @@ ko_enlght_tidy(const char *in, char *out, size_t outsz)
 staticfn void
 enlght_out(const char *buf)
 {
+    enlght_out_attr(buf, -1);
+}
+
+/* attr -1: a heading ("Background:", no indent, ends with ':') gets the heading attribute */
+staticfn void
+enlght_out_attr(const char *buf, int attr)
+{
+    size_t n;
 #ifdef ENABLE_NLS
     char processed[BUFSZ], tidied[BUFSZ];
     if (is_korean_locale() && strchr(buf, KO_PP_START)) {
@@ -180,10 +199,18 @@ enlght_out(const char *buf)
     if (is_korean_locale())
         buf = ko_enlght_tidy(buf, tidied, sizeof tidied);
 #endif
+    if (attr < 0) {
+        n = strlen(buf);
+        attr = (n && *buf != ' ' && buf[n - 1] == ':') ? DK_FINAL_HEADING
+                                                        : ATR_NONE;
+    }
     if (ge.en_via_menu) {
-        add_menu_str(ge.en_win, buf);
+        anything any = cg.zeroany;
+
+        add_menu(ge.en_win, &nul_glyphinfo, &any, '\0', '\0', attr,
+                 NO_COLOR, buf, MENU_ITEMFLAGS_NONE);
     } else
-        putstr(ge.en_win, 0, buf);
+        putstr(ge.en_win, attr, buf);
 }
 
 staticfn void
@@ -438,6 +465,13 @@ fmt_elapsed_time(char *outbuf, int final)
     }
     if (eseconds)
         Sprintf(eos(outbuf), _(" %ld second%s"), eseconds, plur(eseconds));
+#ifdef ENABLE_NLS
+    if (is_korean_locale()) {
+        (void) strsubst(outbuf, _(" and"), "");
+        while (strchr(outbuf, ','))
+            (void) strsubst(outbuf, ",", "");
+    }
+#endif
     return outbuf;
 }
 
@@ -491,7 +525,7 @@ enlightenment(
                     : _(gu.urole.name.m));
 
     /* title */
-    enlght_out(buf); /* "Conan the Archeologist's attributes:" */
+    enlght_out_attr(buf, DK_TITLE); /* "Conan the Archeologist's attributes:" */
     /* background and characteristics; ^X or end-of-game disclosure */
     if (mode & BASICENLIGHTENMENT) {
         /* role, race, alignment, deities, dungeon level, time, experience */
@@ -545,7 +579,8 @@ enlightenment(
         }
     }
     (void) fmt_elapsed_time(buf, final);
-    enl_msg(_("Total elapsed playing time "), _("is"), _("was"), buf, "");
+    enl_msg(_("Total elapsed playing time "), C_("copula", "is"),
+            C_("copula", "was"), buf, "");
     } /* !Korean in-game */
 
     if (!ge.en_via_menu) {
@@ -1048,7 +1083,7 @@ one_characteristic(int mode, int final, int attrindx)
 
     acurrent = ACURR(attrindx);
     (void) attrval(attrindx, acurrent, valubuf); /* Sprintf(valubuf,"%d",) */
-    Sprintf(subjbuf, _("Your %s "), _(attrname[attrindx]));
+    Sprintf(subjbuf, C_("characteristic", "Your %s "), _(attrname[attrindx]));
 
     if (!hide_innate_value) {
         /* show abase, amax, and/or attrmax if acurr doesn't match abase
@@ -1385,8 +1420,25 @@ status_enlightenment(int mode, int final)
             adj = _("not possible");
             break;
         }
+#ifdef ENABLE_NLS
+        if (is_korean_locale()) {
+            static const char *const ko_load[] = {
+                "", "짐이 많아서 이동이 다소 느려짐",
+                "짐이 무거워서 이동이 꽤 느려짐",
+                "짐이 버거워서 이동이 매우 느려짐",
+                "짐이 한계에 달해 이동이 극도로 느려짐",
+                "짐이 너무 무거워 움직일 수 없음",
+            };
+
+            Strcpy(buf, ko_load[cap]);
+            nhUse(adj);
+        }
+#endif
         if (wizard)
             Sprintf(eos(buf), " <%d>", inv_weight());
+#ifdef ENABLE_NLS
+        if (!is_korean_locale())
+#endif
         Sprintf(eos(buf), _("; movement %s %s%s"), !final ? _("is") : _("was"), adj,
                 (cap < OVERLOADED) ? _(" slowed") : "");
         you_are(buf, "");
@@ -1676,11 +1728,30 @@ attributes_enlightenment(
         you_are(hofe_title, "");
     }
 
+#ifdef ENABLE_NLS
+    if (is_korean_locale()) {
+        int rec = u.ualign.record;
+
+        enlght_out(rec >= 20 ? "  당신은 신앙심이 매우 깊다"
+                   : rec > 13 ? "  당신은 신앙심이 깊다"
+                   : rec > 8 ? "  당신은 신앙심이 꽤 깊다"
+                   : rec > 3 ? "  당신은 신앙심이 있다"
+                   : rec == 3 ? "  당신은 성향에 충실하다"
+                   : rec > 0 ? "  당신은 성향을 겨우 지키고 있다"
+                   : rec == 0 ? "  당신은 성향을 이름만 지키고 있다"
+                   : rec >= -3 ? "  당신은 성향에서 벗어났다"
+                   : rec >= -8 ? "  당신은 신에게 죄를 지었다"
+                   : "  당신은 신에게 큰 죄를 지었다");
+    } else {
+#endif
     Sprintf(buf, "%s", piousness(TRUE, _("aligned")));
     if (u.ualign.record >= 0)
         you_are(buf, "");
     else
         you_have(buf, "");
+#ifdef ENABLE_NLS
+    }
+#endif
 
     if (wizard) {
         Sprintf(buf, _(" %d"), u.ualign.record);
@@ -2003,7 +2074,8 @@ attributes_enlightenment(
             Strcpy(cast_adj, _(" enhanced by wearing a robe"));
 
         if (*cast_adj)
-            enl_msg(_("Your spell casting "), _("is"), _("was"), cast_adj, "");
+            enl_msg(_("Your spell casting "), C_("copula", "is"),
+                    C_("copula", "was"), cast_adj, "");
     }
     /* polymorph and other shape change */
     if (Protection_from_shape_changers)
@@ -2269,7 +2341,7 @@ show_conduct(int final)
 
     /* Create the conduct window */
     ge.en_win = create_nhwindow(NHW_MENU);
-    putstr(ge.en_win, 0, _("Voluntary challenges:"));
+    putstr(ge.en_win, DK_TITLE, _("Voluntary challenges:"));
 
     /* rerolling; "You <this or that>" is about the character, rerolling
        is about the player so phrase it differently;
@@ -2449,7 +2521,7 @@ show_achievements(
         awin = create_nhwindow(NHW_MENU);
     }
     Sprintf(title, _("Achievement%s:"), plur(acnt));
-    putstr(awin, 0, title);
+    putstr(awin, (awin == ge.en_win) ? DK_FINAL_HEADING : DK_TITLE, title);
 
     /* display achievements in the order in which they were recorded;
        lone exception is to defer the Amulet if we just ascended;
@@ -3043,7 +3115,7 @@ list_vanquished(char defquery, boolean ask)
                             && ntypes > 1);
 
             klwin = create_nhwindow(NHW_MENU);
-            putstr(klwin, 0, _("Vanquished creatures:"));
+            putstr(klwin, DK_TITLE, _("Vanquished creatures:"));
             if (!dumping)
                 putstr(klwin, 0, "");
 
@@ -3064,7 +3136,7 @@ list_vanquished(char defquery, boolean ask)
                     }
                     /* 'ask' implies final disclosure, where highlighting
                        of various header lines is suppressed */
-                    putstr(klwin, ask ? ATR_NONE : iflags.menu_headings.attr,
+                    putstr(klwin, ask ? DK_FINAL_HEADING : iflags.menu_headings.attr,
                            upstart(buf));
                     prev_mlet = mlet;
                 }
@@ -3097,6 +3169,12 @@ list_vanquished(char defquery, boolean ask)
                 if (class_header)
                     ++pfx;
                 Snprintf(buftoo, sizeof buftoo, "%*s%s", pfx, "", buf);
+#ifdef ENABLE_NLS
+                if (is_korean_locale()) /* "  고블린\t3" */
+                    Snprintf(buftoo, sizeof buftoo, "%s%s\t%d",
+                             class_header ? "  " : " ",
+                             _(mons[i].pmnames[NEUTRAL]), nkilled);
+#endif
                 putstr(klwin, 0, buftoo);
             }
             /*
@@ -3255,7 +3333,7 @@ list_genocided(char defquery, boolean ask)
             Sprintf(buf, _("%s%s species:"),
                     (ngenocided) ? _("Genocided") : _("Extinct"),
                     (nextinct && ngenocided) ? _(" or extinct") : "");
-            putstr(klwin, 0, buf);
+            putstr(klwin, DK_TITLE, buf);
             if (!dumping)
                 putstr(klwin, 0, "");
 
@@ -3266,7 +3344,7 @@ list_genocided(char defquery, boolean ask)
                     Strcpy(buf, tr_monsym_explain((int) mlet));
                     /* 'ask' implies final disclosure, where highlighting
                        of various header lines is suppressed */
-                    putstr(klwin, ask ? ATR_NONE : iflags.menu_headings.attr,
+                    putstr(klwin, ask ? DK_FINAL_HEADING : iflags.menu_headings.attr,
                            upstart(buf));
                     prev_mlet = mlet;
                 }

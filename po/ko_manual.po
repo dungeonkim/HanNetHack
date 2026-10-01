@@ -1222,7 +1222,7 @@ msgstr " 다른"
 # suffix - 앞 공백 제거, 뒤 공백 추가
 #: ../src/insight.c:477
 msgid " any bones levels"
-msgstr "뼈 레벨을 "
+msgstr "다른 모험가가 죽은 층을 "
 
 # 조합: prefx1 + prefx2 + verb + suffx
 #: ../src/pickup.c:1692
@@ -1495,7 +1495,7 @@ msgstr " 돌에 박힌"
 # 조합: " 당신의 주문 시전 능력이 로브 착용으로 강화된 상태이다​."
 #: ../src/insight.c:1888
 msgid " enhanced by wearing a robe"
-msgstr "로브 착용으로 강화된 상태이다"
+msgstr "로브 착용으로 강화된 상태"
 
 #: ../src/dothrow.c:2299 ../src/dothrow.c:2682
 msgid " entrails"
@@ -1744,7 +1744,7 @@ msgstr " 질병"
 #: ../src/insight.c:1885
 #, c-format
 msgid " impaired by metallic armor%s"
-msgstr "금속 갑옷으로 인해 저하된 상태이다%s"
+msgstr "금속 갑옷으로 인해 저하된 상태%s"
 
 #: ../src/insight.c:288 ../src/obj_descr_i18n.c:1160
 #, c-format
@@ -14619,7 +14619,7 @@ msgstr "이런! 추락했다."
 # ============================================================
 #: ../src/botl.c:12
 msgid "Burdened"
-msgstr "짐"
+msgstr "짐 많음"
 
 #: ../src/role.c:325
 msgid "Burglar"
@@ -19947,11 +19947,11 @@ msgstr "walkfrom에서 오버플로"
 
 #: ../src/botl.c:13
 msgid "Overloaded"
-msgstr "과적"
+msgstr "짐 초과"
 
 #: ../src/botl.c:13
 msgid "Overtaxed"
-msgstr "과부하"
+msgstr "짐 한계"
 
 #: ../src/cfgfiles.c:187
 #, c-format
@@ -21810,7 +21810,7 @@ msgstr "법의 이름으로 멈춰라!"
 
 #: ../src/botl.c:13
 msgid "Strained"
-msgstr "긴장"
+msgstr "짐 버거움"
 
 #: ../src/display.c:2408
 #, c-format
@@ -21840,7 +21840,7 @@ msgstr "힘:"
 
 #: ../src/botl.c:12
 msgid "Stressed"
-msgstr "무리"
+msgstr "짐 무거움"
 
 # ============================================================
 # 전사 계급 (Warrior Ranks)
@@ -23876,7 +23876,7 @@ msgstr "이빨 요정"
 # 수정: trailing space 제거
 #: ../src/insight.c:485
 msgid "Total elapsed playing time "
-msgstr "총 경과 플레이 시간은"
+msgstr "총 플레이 시간은"
 
 #: ../src/shk.c:4260
 msgid "Total:"
@@ -35076,7 +35076,7 @@ msgstr "향후 버전의 새 기능 알림을 비활성화한다."
 #: ../src/insight.c:472
 #, c-format
 msgid "disabled loading%s of bones levels"
-msgstr "뼈 레벨 불러오기%.0s를 비활성화했다"
+msgstr "다른 모험가가 죽은 층 불러오기%.0s를 비활성화했다"
 
 # artifact.c:2017 - 사라짐
 #: ../src/artifact.c:2018
@@ -36549,7 +36549,7 @@ msgstr "감싸다가"
 #: ../src/insight.c:479
 #, c-format
 msgid "encountered %ld bones level%s"
-msgstr "뼈 레벨 %1$ld개를 만났다%2$.0s"
+msgstr "다른 모험가가 죽은 층을 %1$ld번 만났다%2$.0s"
 
 #: ../src/timeout.c:1808
 #, c-format
@@ -63787,3 +63787,25 @@ msgstr "주문 "
 
 msgid "fighting "
 msgstr "전투 "
+
+# 종료 창: 플레이 시간, 능력치 탭 열, 던전 개요 현재 위치
+
+msgctxt "copula"
+msgid "is"
+msgstr "{이다/다}"
+
+msgctxt "copula"
+msgid "was"
+msgstr "{이었/였}다"
+
+#, c-format
+msgctxt "characteristic"
+msgid "Your %s "
+msgstr "%s\t"
+
+#, c-format
+msgid " <- You %s here."
+msgstr " <- 여기%.0s"
+
+msgid "left from"
+msgstr "떠난 곳"

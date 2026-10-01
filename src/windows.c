@@ -1822,9 +1822,11 @@ add_menu_heading(winid tmpwin, const char *buf)
     int attr = iflags.menu_headings.attr,
         color = iflags.menu_headings.color;
 
+#ifndef __EMSCRIPTEN__ /* dknethack colours headings in every window */
     /* suppress highlighting during end-of-game disclosure */
     if (program_state.gameover)
         attr = ATR_NONE, color = NO_COLOR;
+#endif
 
     add_menu(tmpwin, &nul_glyphinfo, &any, '\0', '\0', attr, color,
              buf, MENU_ITEMFLAGS_SKIPMENUCOLORS);
