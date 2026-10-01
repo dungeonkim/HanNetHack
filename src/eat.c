@@ -3706,6 +3706,15 @@ floorfood(
                "There are <N objects> here; <verb> one?" */
             Sprintf(qbuf, _("There %s "), otense(otmp, _("are")));
             Sprintf(qsfx, _(" here; %s %s?"), verb, one ? _("it") : _("one"));
+#ifdef ENABLE_NLS
+            if (is_korean_locale()) { /* "고블린 사체가 있다. 먹겠습니까?" */
+                *qbuf = '\0';
+                Sprintf(qsfx, "{이/가} 있다. %s",
+                        !strcmp(verb, "tin") ? "통조림으로 만들겠습니까?"
+                        : !strcmp(verb, "sacrifice") ? "제물로 바치겠습니까?"
+                        : "먹겠습니까?");
+            }
+#endif
             (void) safe_qbuf(qbuf, qbuf, qsfx, otmp, doname, ansimpleoname,
                              one ? something : (const char *) _("things"));
             if ((c = yn_function(qbuf, ynqchars, 'n', TRUE)) == 'y')

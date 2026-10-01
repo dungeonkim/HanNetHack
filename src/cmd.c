@@ -6,6 +6,7 @@
 #include "hack.h"
 #include "func_tab.h"
 #include "i18n.h"
+#include "ko_postpos.h" /* ko_process_string for yn_function queries */
 
 #ifdef UNIX
 /*
@@ -5521,6 +5522,16 @@ yn_function(
 
     iflags.last_msg = PLNMSG_UNKNOWN; /* most recent pline is clobbered */
 
+#ifdef ENABLE_NLS
+    /* a translated question may carry {이/가}-style postpositions for the
+       object name formatted into it; pline() resolves them, so do we */
+    if (is_korean_locale() && strchr(query, KO_PP_START)) {
+        static char kobuf[BUFSZ];
+
+        ko_process_string(kobuf, sizeof kobuf, query);
+        query = kobuf;
+    }
+#endif
     /* maximum acceptable length is QBUFSZ-1 */
     if (strlen(query) >= QBUFSZ) {
         /* caller shouldn't have passed anything this long */
