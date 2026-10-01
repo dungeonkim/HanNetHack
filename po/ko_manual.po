@@ -1440,7 +1440,7 @@ msgstr " %1$ld개 물건 포함%2$.0s"
 
 #: ../src/objnam.c:1909
 msgid " corpse"
-msgstr " 시체"
+msgstr " 사체"
 
 #: ../src/dothrow.c:2299
 msgid " currents"
@@ -3310,12 +3310,12 @@ msgstr "%2$s %3$s %4$s에서 %1$s!"
 msgid "%s %s %s approaching!"
 msgstr "%s %s %s{이/가} 다가온다!"
 
-# [리뷰 완료] potion.c:2590 — 이끼 시체 산성 포션 담그기
+# [리뷰 완료] potion.c:2590 — 이끼 사체 산성 포션 담그기
 # %1$s = The(cxname(obj)), %2$s = otense(turn) = "변했다"
 # %3$s = C_("condition","wrinkled") = "주름진 상태" 또는 hcolor = "주황색"/"빨간색"
 # 영어: "The lichen corpse turns wrinkled around the edges."
-# 한국어 (blind): "이끼 시체가 가장자리부터 주름진 상태로 변했다."
-# 한국어 (seeing): "이끼 시체가 가장자리부터 주황색으로 변했다."
+# 한국어 (blind): "이끼 사체가 가장자리부터 주름진 상태로 변했다."
+# 한국어 (seeing): "이끼 사체가 가장자리부터 주황색으로 변했다."
 #: ../src/potion.c:2596
 #, c-format
 msgid "%s %s %s around the edges."
@@ -3591,7 +3591,7 @@ msgstr "%1$s{이/가} %3$s{을/를} 빗나갔다%2$.0s."
 # dogmove.c:290, muse.c:2894 - 몬스터/펫이 먹음/마심
 # %1$s=Monnam, %2$s=devours/eats/quaffs, %3$s=obj_name
 # 영어 조합: "Fido devours a corpse." / "The orc quaffs a potion of healing."
-# 한국어 조합: "피도가 시체를 먹어치웠다." / "오크가 치료의 물약을 마셨다."
+# 한국어 조합: "피도가 사체를 먹어치웠다." / "오크가 치료의 물약을 마셨다."
 #: ../src/dogmove.c:290 ../src/muse.c:2929
 #, c-format
 msgctxt "mon_eat"
@@ -3929,8 +3929,8 @@ msgstr "아래 흙더미 속에 %2$s %1$s."
 msgid "%s %s in pain!"
 msgstr "%s %s{이/가} 고통스럽다!"
 
-# %1$s="휘두르게 되었다"/"휘두르고 있다"(동사), %2$s=시체 이름, %3$s=손
-# 조합: "맨 손으로 코카트리스 시체를 휘두르게 되었다."
+# %1$s="휘두르게 되었다"/"휘두르고 있다"(동사), %2$s=사체 이름, %3$s=손
+# 조합: "맨 손으로 코카트리스 사체를 휘두르게 되었다."
 #: ../src/do_wear.c:625
 #, c-format
 msgid "%s %s in your bare %s."
@@ -5014,7 +5014,7 @@ msgstr "여기 %s%s{은/는} 너무 단단해서 팔 수 없다."
 #: ../src/shk.c:2599
 #, c-format
 msgid "%s %slooks at your corpse%s and %s."
-msgstr "%s{이/가} %s당신의 시체를%s 보고 %s."
+msgstr "%s{이/가} %s당신의 사체를%s 보고 %s."
 
 #: ../src/mhitu.c:97
 #, c-format
@@ -6089,12 +6089,12 @@ msgstr "%s 내용물이 %s 위로 쏟아졌다."
 #: ../src/trap.c:3906 ../src/trap.c:3918
 #, c-format
 msgid "%s corpse"
-msgstr "%s 시체"
+msgstr "%s 사체"
 
 #: ../src/mon.c:3601
 #, c-format
 msgid "%s corpse ends up buried."
-msgstr "%s 시체가 결국 묻혔다."
+msgstr "%s 사체가 결국 묻혔다."
 
 #: ../src/region.c:1140
 #, c-format
@@ -7289,7 +7289,7 @@ msgstr "%s{을/를} 낚아채려다 맞았다!"
 #: ../src/uhitm.c:4047
 #, c-format
 msgid "%s hits you with the %s corpse."
-msgstr "%s{이/가} %s 시체로 당신을 때렸다."
+msgstr "%s{이/가} %s 사체로 당신을 때렸다."
 
 #: ../src/uhitm.c:4318
 #, c-format
@@ -10476,7 +10476,7 @@ msgstr "%s{이/가} %s{을/를} 만졌다."
 #: ../src/trap.c:3905 ../src/trap.c:3917
 #, c-format
 msgid "%s touch the %s corpse."
-msgstr "%1$s %2$s 시체를 만졌다."
+msgstr "%1$s %2$s 사체를 만졌다."
 
 #: ../src/mhitm.c:685
 #, c-format
@@ -11311,11 +11311,11 @@ msgstr "%s%s %s %s%c"
 msgid "%s%s %s %s."
 msgstr "%s%s{이/가} %s %s."
 
-# [리뷰 완료] dig.c:2161 — Your()+otense(rot)+cname, 시체 부패
-# %1$s = "wielded " 또는 "" (장비 여부), %2$s = cname (시체 이름)
+# [리뷰 완료] dig.c:2161 — Your()+otense(rot)+cname, 사체 부패
+# %1$s = "wielded " 또는 "" (장비 여부), %2$s = cname (사체 이름)
 # %3$s = otense(rot) (억제), %4$c = '!' 또는 '.'
 # 영어: "Your wielded corpse rots away!"
-# 한국어: "당신의 휘두르고 있는 시체가 썩어 사라졌다!"
+# 한국어: "당신의 휘두르고 있는 사체가 썩어 사라졌다!"
 #: ../src/dig.c:2159
 #, c-format
 msgid "%s%s %s away%c"
@@ -13266,7 +13266,7 @@ msgstr "%s에서 코팅이 벗겨졌다."
 
 #: ../src/zap.c:1054
 msgid "A corpse is resuscitated."
-msgstr "시체가 소생했다."
+msgstr "사체가 소생했다."
 
 #: ../src/sit.c:138
 msgid "A curse upon thee for sitting upon this most holy throne!"
@@ -14186,7 +14186,7 @@ msgstr "유물 중 적어도 하나가 저주받았다..."
 #: ../src/pickup.c:308
 #, c-format
 msgid "At your %s, the corpse suddenly moves..."
-msgstr "%s하자, 시체가 갑자기 움직인다..."
+msgstr "%s하자, 사체가 갑자기 움직인다..."
 
 #: ../src/apply.c:1412
 msgid "Attach "
@@ -14984,7 +14984,7 @@ msgid "Canoness"
 msgstr "참사회원"
 
 # %s = The(aobjnam(obj, materialize)) = "name{이/가}" (wish_fall 계사 억제)
-# 조합: "조심하세요! 코카트리스 시체가 바닥에 나타났다!"
+# 조합: "조심하세요! 코카트리스 사체가 바닥에 나타났다!"
 #: ../src/zap.c:6416
 #, c-format
 msgid "Careful! %s on the floor!"
@@ -15954,7 +15954,7 @@ msgstr "물건 버리기"
 #: ../src/do.c:959
 #, c-format
 msgid "Drop the %s corpse without %s protection on?"
-msgstr "%s 보호 없이 %s 시체를 버리겠습니까?"
+msgstr "%s 보호 없이 %s 사체를 버리겠습니까?"
 
 #: ../src/dokick.c:364
 msgid "Drop the rest and follow me."
@@ -15972,7 +15972,7 @@ msgstr "버릴 물건의 종류는?"
 
 #: ../src/dig.c:1068
 msgid "Dude!  The living dead"
-msgstr "이런! 살아있는 시체"
+msgstr "이런! 살아있는 사체"
 
 #: ../src/dokick.c:878
 msgid "Dumb move!  You strain a muscle."
@@ -17030,7 +17030,7 @@ msgstr "안-녕, 간호사!"
 
 #: ../src/wizard.c:836
 msgid "Hell shall soon claim thy remains,"
-msgstr "지옥이 곧 네 시체를 가져갈 것이다,"
+msgstr "지옥이 곧 네 사체를 가져갈 것이다,"
 
 #: ../src/role.c:2177
 msgid "Hello"
@@ -17123,7 +17123,7 @@ msgid "Hide [h] or spin a web [s]?"
 msgstr "숨으시겠습니까 [h] 아니면 거미줄을 치시겠습니까 [s]?"
 
 # 석화 경고 메시지
-# %s=시체이름, %s=plur()
+# %s=사체이름, %s=plur()
 #: ../src/polyself.c:1838
 #, c-format
 msgid "Hiding under %s%s is a fatal mistake..."
@@ -17611,7 +17611,7 @@ msgid "In what direction?"
 msgstr "어느 방향으로?"
 
 # 조합 패턴: "%s %s%s." (Including/They're/It's + corpse name + , unfortunately)
-# 코카트리스 시체 감지 메시지
+# 코카트리스 사체 감지 메시지
 #: ../src/invent.c:4290
 msgid "Including"
 msgstr "포함해서"
@@ -19653,7 +19653,7 @@ msgstr "이 목걸이를 이 제단에 제물로 바치기"
 
 #: ../src/iactions.c:478
 msgid "Offer this corpse as a sacrifice at this altar"
-msgstr "이 시체를 이 제단에 제물로 바치기"
+msgstr "이 사체를 이 제단에 제물로 바치기"
 
 #: ../src/role.c:464
 msgid "Offler"
@@ -22097,7 +22097,7 @@ msgstr "갑옷 벗기"
 #: ../src/do_wear.c:3001
 #, c-format
 msgid "Take off your %s despite carrying a dead %s?"
-msgstr "%2$s 시체를 든 채로 %1$s{을/를} 벗으시겠습니까?"
+msgstr "%2$s 사체를 든 채로 %1$s{을/를} 벗으시겠습니까?"
 
 #: ../src/mhitu.c:2336
 #, c-format
@@ -24436,7 +24436,7 @@ msgstr "물에서 산란하려면 #sit 명령을 사용하세요."
 
 #: ../src/iactions.c:333
 msgid "Use this kit to tin a corpse"
-msgstr "이 도구로 시체를 통조림으로 만들기"
+msgstr "이 도구로 사체를 통조림으로 만들기"
 
 # 잘못된 번역 수정
 #: ../src/iactions.c:342
@@ -27789,7 +27789,7 @@ msgstr "산성 의자"
 
 #: ../src/eat.c:1925
 msgid "acidic corpse"
-msgstr "시체"
+msgstr "사체"
 
 #: ../src/eat.c:1925
 msgid "acidic glob"
@@ -29659,7 +29659,7 @@ msgstr "더 이상 은신 상태가 아니다."
 #: ../src/zap.c:2244
 #, c-format
 msgid "aren't sure whether %s has %s or its corpse inside."
-msgstr "%s 안에 %s{이/가} 있는지 시체가 있는지 확실하지 않다."
+msgstr "%s 안에 %s{이/가} 있는지 사체가 있는지 확실하지 않다."
 
 #: ../src/uhitm.c:3754
 msgid "aren't transformed."
@@ -33734,15 +33734,15 @@ msgstr "마법사 모자"
 
 #: ../src/obj_descr_i18n.c:369 ../src/obj_descr_i18n.c:445
 msgid "corpse"
-msgstr "시체"
+msgstr "사체"
 
 #: ../src/apply.c:2224
 msgid "corpse evades your grasp."
-msgstr "시체가 손아귀를 피한다."
+msgstr "사체가 손아귀를 피한다."
 
 #: ../src/eat.c:1960
 msgid "corpse rots away completely."
-msgstr "시체가 완전히 썩었다."
+msgstr "사체가 완전히 썩었다."
 
 #: ../src/dungeon.c:452
 msgid "correct_branch_type: unknown branch type"
@@ -37668,8 +37668,8 @@ msgstr "여성"
 msgid "female "
 msgstr "여성 "
 
-# objnam.c corpse_xname() - 시체가 합쳐지지 않는 이유(성별 차이) 표시용 접두사
-# 조합: "female newt corpse" → "암컷 영원 시체"
+# objnam.c corpse_xname() - 사체가 합쳐지지 않는 이유(성별 차이) 표시용 접두사
+# 조합: "female newt corpse" → "암컷 영원 사체"
 #: ../src/objnam.c:1922
 msgctxt "corpse_gender"
 msgid "female "
@@ -41085,7 +41085,7 @@ msgstr "hiding monster stuck to you (%s)"
 
 # ===== polyself.c =====
 # 석화 사망 원인
-# %s=시체이름, %s=plur()
+# %s=사체이름, %s=plur()
 #: ../src/polyself.c:1840
 #, c-format
 msgid "hiding under %s%s"
@@ -44569,8 +44569,8 @@ msgstr "남성"
 msgid "male "
 msgstr "남성 "
 
-# objnam.c corpse_xname() - 시체가 합쳐지지 않는 이유(성별 차이) 표시용 접두사
-# 조합: "male newt corpse" → "수컷 영원 시체"
+# objnam.c corpse_xname() - 사체가 합쳐지지 않는 이유(성별 차이) 표시용 접두사
+# 조합: "male newt corpse" → "수컷 영원 사체"
 #: ../src/objnam.c:1920
 msgctxt "corpse_gender"
 msgid "male "
@@ -55952,7 +55952,7 @@ msgstr "물 속에 있다"
 
 #: ../src/dig.c:1062
 msgid "unearth a corpse."
-msgstr "시체를 발굴했다."
+msgstr "사체를 발굴했다."
 
 # [조합] insight.c:1249 - you_are("unencumbered", "")
 # 영어: " You are unencumbered."

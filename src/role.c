@@ -1984,6 +1984,11 @@ role_menu_extra(int which, winid where, boolean preselect)
         any.a_int = 0;
         /* use four spaces of padding to fake a grayed out menu choice */
         Sprintf(buf, "%4s%s forces %s", "", constrainer, forcedvalue);
+        if (is_korean_locale()) /* grey (dknethack menu colour tag) */
+            Sprintf(buf, "%4s<#808080>%s 선택 불가</>", "",
+                    (which == RS_RACE) ? "종족"
+                    : (which == RS_GENDER) ? "성별"
+                      : (which == RS_ALGNMNT) ? "성향" : "직업");
         add_menu_str(where, buf);
     } else if (what) {
         any.a_int = RS_menu_arg(which);

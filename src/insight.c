@@ -1387,6 +1387,20 @@ status_enlightenment(int mode, int final)
        needed for wizard mode's reveal of u.uhunger but add it for everyone */
     if (!*buf)
         Strcpy(buf, _("not hungry"));
+#ifdef ENABLE_NLS
+    if (is_korean_locale()) { /* "당신은 배가 부르다", not the status line's "포만" */
+        static const char *const ko_hunger[] = {
+            "배가 부르다", "배고프지 않다", "배가 고프다", "굶주려 쇠약하다",
+            "굶주려 쓰러질 것 같다", "굶주려 쓰러졌다", "굶어 죽었다",
+        };
+
+        Strcpy(buf, ko_hunger[u.uhs]);
+        if (wizard)
+            Sprintf(eos(buf), " <%d>", u.uhunger);
+        you_are(buf, "");
+        *buf = '\0';
+    }
+#endif
     if (*buf) { /* (since "not hungry" was added, this will always be True) */
         *buf = lowc(*buf); /* override capitalization */
         if (u.uhs == WEAK)
