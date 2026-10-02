@@ -15381,7 +15381,7 @@ msgstr "%s{으로/로} 계속한다."
 
 #: ../src/eat.c:2189
 msgid "Core dumped."
-msgstr "코어가 덤프됐다."
+msgstr "속까지 다 먹었다!"
 
 #: ../src/rect.c:35
 msgid "Could not alloc rect"
