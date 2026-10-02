@@ -367,7 +367,7 @@ msgstr "%s %s 피해를 "
 #: ../src/dokick.c:1932
 #, c-format
 msgid " %s %s object%s"
-msgstr " %s %s 물체%s"
+msgstr " %s %s 물건%s"
 
 # " and"는 이미 정의됨
 # insight.c:547 - 신 이름과 성향
@@ -703,11 +703,11 @@ msgstr " (장착중)"
 
 #: ../src/end.c:1413
 msgid " (with a fake Amulet)"
-msgstr " (가짜 아뮬렛을 가지고)"
+msgstr " (가짜 옌더의 목걸이를 가지고)"
 
 #: ../src/end.c:1408
 msgid " (with the Amulet)"
-msgstr " (아뮬렛을 가지고)"
+msgstr " (옌더의 목걸이를 가지고)"
 
 # ===== invent.c =====
 # 미확인 물품 접미사
@@ -1898,7 +1898,7 @@ msgstr "{은/는} 당신의 쓰레기에 관심이 없다."
 
 #: ../src/mon.c:5080
 msgid " kind of monster?"
-msgstr "어떤 종류의 괴물이 되겠습니까? [이름을 입력하세요]"
+msgstr "어떤 종류의 몬스터가 되겠습니까? [이름을 입력하세요]"
 
 #: ../src/obj_descr_i18n.c:528 ../src/objnam.c:868
 msgid " labeled "
@@ -2955,7 +2955,7 @@ msgstr "%1$d개의 기어가 돌아간다.%2$.0s"
 #: ../src/detect.c:1862
 #, c-format
 msgid "%d hidden monsters"
-msgstr "%d마리의 숨겨진 괴물"
+msgstr "%d마리의 숨겨진 몬스터"
 
 # insight.c:772 - you_have() 패턴: "당신은 5 히트 다이스가 있다."
 #: ../src/insight.c:805
@@ -2969,7 +2969,7 @@ msgstr "%d 히트 다이스가 있다"
 #: ../src/dig.c:2316
 #, c-format
 msgid "%d object%s buried."
-msgstr "%1$d개의 물체가 묻혔다.%2$.0s"
+msgstr "%1$d개의 물건이 묻혔다.%2$.0s"
 
 # 에너지 일부 (pw != pwmax)
 # 영어: "You have 10 out of 42 energy points (spell power)."
@@ -3042,7 +3042,7 @@ msgstr "%1$d개의 텀블러가 딸깍거린다.%2$.0s"
 #: ../src/detect.c:1872
 #, c-format
 msgid "%d%s unseen monsters"
-msgstr "%d마리의%s 보이지 않는 괴물"
+msgstr "%d마리의%s 보이지 않는 몬스터"
 
 #: ../src/shk.c:3902
 #, c-format
@@ -5218,7 +5218,7 @@ msgstr "%s하고 %s변신한다."
 #: ../src/detect.c:2404
 #, c-format
 msgid "%s and monsters"
-msgstr "%s{과/와} 괴물"
+msgstr "%s{과/와} 몬스터"
 
 # ============================================================
 # 전투 메시지 추가 (Additional Combat Messages)
@@ -8247,7 +8247,7 @@ msgstr "%s{이/가} 가렵다."
 #: ../src/trap.c:6928
 #, c-format
 msgid "%s item%s in your inventory %s been destroyed."
-msgstr "인벤토리의 %1$s 항목이 파괴되었다.%2$.0s%3$.0s"
+msgstr "소지품 중 %1$s 물건이 파괴되었다.%2$.0s%3$.0s"
 
 #: ../src/zap.c:4111
 #, c-format
@@ -8681,7 +8681,7 @@ msgstr "%s{이/가} 더 이상 그렇게 밝게 %s 빛나지 않는다."
 #: ../src/invent.c:4179 ../src/invent.c:4269
 #, c-format
 msgid "%s no objects here."
-msgstr "여기에는 아무 물체도 보이지 않는다.%.0s"
+msgstr "여기에는 아무 물건도 보이지 않는다.%.0s"
 
 #: ../src/shk.c:2019
 #, c-format
@@ -10691,7 +10691,7 @@ msgstr "%s{이/가} 문을 열고 잠금을 해제했다."
 #: ../src/detect.c:1875
 #, c-format
 msgid "%s unseen monster"
-msgstr "%s 보이지 않는 괴물"
+msgstr "%s 보이지 않는 몬스터"
 
 #: ../src/shk.c:4759
 #, c-format
@@ -11207,7 +11207,7 @@ msgstr "%s{을/를} 둘러 %s!"
 #: ../src/muse.c:188
 #, c-format
 msgid "%s zaps %s!"
-msgstr "%s{이/가} %s에게 지팡이를 쐈다!"
+msgstr "%s{이/가} %s에게 마법봉을 쐈다!"
 
 #: ../src/muse.c:139
 #, c-format
@@ -11496,7 +11496,7 @@ msgstr "%s%s{이/가} 이제 켜졌다."
 #: ../src/detect.c:2400
 #, c-format
 msgid "%s%s objects"
-msgstr "%s%s 물체"
+msgstr "%s%s 물건"
 
 #: ../src/trap.c:6212
 #, c-format
@@ -12523,7 +12523,7 @@ msgstr "(실패 가능)"
 
 #: ../src/do.c:1440
 msgid "(monster in hero's way)"
-msgstr "(괴물이 영웅의 길을 막고 있음)"
+msgstr "(몬스터가 영웅의 길을 막고 있음)"
 
 #: ../src/obj_descr_i18n.c:1284
 msgid "(on left hand)"
@@ -13288,7 +13288,7 @@ msgstr "상실감이 엄습한다."
 # zap.c - 지팡이 효과. 단독 문장
 #: ../src/engrave.c:661
 msgid "A few ice cubes drop from the wand."
-msgstr "지팡이에서 얼음 조각 몇 개가 떨어졌다."
+msgstr "마법봉에서 얼음 조각 몇 개가 떨어졌다."
 
 #: ../src/mcastu.c:456
 msgid "A field of force surrounds you!"
@@ -13355,12 +13355,12 @@ msgstr "지도가 정신 속에서 형성되었다!"
 
 #: ../src/apply.c:3151
 msgid "A monster"
-msgstr "괴물이"
+msgstr "몬스터가"
 
 # 조합 패턴: "A monster/Monsters appear at a spot near you!"
 #: ../src/mcastu.c:433
 msgid "A monster appears"
-msgstr "괴물이 나타났다"
+msgstr "몬스터가 나타났다"
 
 #: ../src/mon.c:2332
 #, c-format
@@ -13758,7 +13758,7 @@ msgstr "모두 "
 
 #: ../src/read.c:2705
 msgid "All such monsters are already nonexistent."
-msgstr "그런 괴물은 이미 모두 사라졌다."
+msgstr "그런 몬스터는 이미 모두 사라졌다."
 
 #: ../src/dokick.c:1608
 msgid "All the"
@@ -13897,7 +13897,7 @@ msgstr "물건 하나가 쏟아졌다"
 # mon.c - 물체 낙하. "An object tumbles from the chest"
 #: ../src/pickup.c:3750
 msgid "An object tumbles"
-msgstr "물체가 굴러 떨어졌다"
+msgstr "물건이 굴러 떨어졌다"
 
 #: ../src/fountain.c:502
 msgid "An urge to take a bath overwhelms you."
@@ -14419,7 +14419,7 @@ msgstr "%s{이/가} 되겠습니까?"
 
 #: ../src/polyself.c:520
 msgid "Become what kind of monster? [type the name]"
-msgstr "어떤 종류의 괴물이 되겠습니까? [이름을 입력하세요]"
+msgstr "어떤 종류의 몬스터가 되겠습니까? [이름을 입력하세요]"
 
 #: ../src/priest.c:609
 msgid "Begone!  Thou desecratest this holy place with thy presence."
@@ -14726,7 +14726,7 @@ msgstr "하지만 닿을 수 없다!"
 #: ../src/shk.c:1971
 #, c-format
 msgid "But you don't%s have enough gold%s."
-msgstr "그러나 금화%2$s{이/가} 충분하지 않다.%1$.0s"
+msgstr "그러나 골드%2$s{이/가} 충분하지 않다.%1$.0s"
 
 # ============================================================
 # 아이템 메시지 (Item Messages)
@@ -15210,7 +15210,7 @@ msgstr "%s{을/를} 항상 강조할 속성 선택:"
 
 #: ../src/options.c:6081
 msgid "Choose permanent inventory mode:"
-msgstr "영구 인벤토리 모드 선택:"
+msgstr "영구 소지품 모드 선택:"
 
 #: ../src/botl.c:3172
 msgid "Choose status conditions"
@@ -15471,7 +15471,7 @@ msgstr "스냅샷을 만들까요?"
 
 #: ../src/read.c:3383
 msgid "Create what kind of monster?"
-msgstr "어떤 종류의 괴물이 되겠습니까? [이름을 입력하세요]"
+msgstr "어떤 종류의 몬스터가 되겠습니까? [이름을 입력하세요]"
 
 #: ../src/read.c:3270
 #, c-format
@@ -16082,7 +16082,7 @@ msgstr "엘프"
 #: ../src/read.c:2719
 #, c-format
 msgid "Eliminated %d monster%s."
-msgstr "%1$d마리의 괴물을 제거했다.%2$.0s"
+msgstr "%1$d마리의 몬스터를 제거했다.%2$.0s"
 
 #: ../src/monster_i18n.c:426 ../src/obj_descr_i18n.c:759
 msgid "Elvenking"
@@ -16153,7 +16153,7 @@ msgstr "디버거에 들어갈까요?"
 
 #: ../src/zap.c:6171
 msgid "Enter the name of an object, such as \"potion of monster detection\","
-msgstr "물건의 이름을 입력하세요, 예: \"괴물 탐지의 물약\","
+msgstr "물건의 이름을 입력하세요, 예: \"몬스터 탐지의 물약\","
 
 #: ../src/allmain.c:579
 msgid "Entering the tutorial."
@@ -16494,7 +16494,7 @@ msgstr "오메가 제일은행"
 
 #: ../src/engrave.c:716
 msgid "Flames fly from the wand."
-msgstr "지팡이에서 불꽃이 튀어 나온다."
+msgstr "마법봉에서 불꽃이 튀어 나온다."
 
 # 은하수를 여행하는 히치하이커 참조 (POBBLE bead: 장식용 알갱이 단위)
 #: ../src/invent.c:1530
@@ -17504,7 +17504,7 @@ msgstr "갇혀버렸어!"
 
 #: ../src/polyself.c:568 ../src/read.c:3395
 msgid "I've never heard of such monsters."
-msgstr "그런 괴물은 들어본 적이 없다."
+msgstr "그런 몬스터는 들어본 적이 없다."
 
 #: ../src/pager.c:1956
 msgid "I've never heard of such things."
@@ -18592,7 +18592,7 @@ msgstr "빛이 %s{을/를} 비추기 시작한다."
 
 #: ../src/engrave.c:727
 msgid "Lightning arcs from the wand."
-msgstr "지팡이에서 번개가 뻗어 나온다."
+msgstr "마법봉에서 번개가 뻗어 나온다."
 
 #: ../src/read.c:1783
 msgid "Lights appear all around you!"
@@ -19062,7 +19062,7 @@ msgstr "몰록"
 #: ../src/muse.c:172
 #, c-format
 msgid "Mon zapping wand with %d charges?"
-msgstr "충전 %d인 지팡이를 몬스터가 흔들었다?"
+msgstr "충전 %d인 마법봉을 몬스터가 흔들었다?"
 
 #: ../src/obj_descr_i18n.c:1213 ../src/role.c:235
 msgid "Monk"
@@ -19080,7 +19080,7 @@ msgstr "몬스터들이 나타났다"
 
 #: ../src/detect.c:847
 msgid "Monsters sense the presence of you."
-msgstr "괴물들이 당신의 존재를 감지했다."
+msgstr "몬스터들이 당신의 존재를 감지했다."
 
 #: ../src/do_name.c:1655
 msgid "Monstrous Regiment"
@@ -19136,7 +19136,7 @@ msgstr "아마도 모든 골드가 이 금고에서 도난당했다."
 
 #: ../src/zap.c:6181
 msgid "Most modifiers shown when viewing your inventory can be specified."
-msgstr "인벤토리에서 볼 수 있는 대부분의 수식어를 지정할 수 있다."
+msgstr "소지품에서 볼 수 있는 대부분의 수식어를 지정할 수 있다."
 
 #: ../src/artifact.c:2015
 msgid "Most of the"
@@ -19339,7 +19339,7 @@ msgstr "기록된 사건이 없다."
 
 #: ../src/read.c:2670
 msgid "No class of monsters specified"
-msgstr "괴물 종류가 지정되지 않았다"
+msgstr "몬스터 종류가 지정되지 않았다"
 
 #: ../src/invent.c:1954
 msgid "No count allowed with this command."
@@ -19392,7 +19392,7 @@ msgstr "몬스터 난이도 불일치가 감지되지 않았다."
 
 #: ../src/wizcmds.c:1525
 msgid "No monsters currently migrating."
-msgstr "현재 이동 중인 괴물이 없다."
+msgstr "현재 이동 중인 몬스터가 없다."
 
 #: ../src/muse.c:836
 msgid "No need for unicorn horn?"
@@ -19400,11 +19400,11 @@ msgstr "유니콘 뿔이 필요 없다?"
 
 #: ../src/dig.c:2312
 msgid "No objects buried."
-msgstr "묻힌 물체가 없다."
+msgstr "묻힌 물건이 없다."
 
 #: ../src/dig.c:2307
 msgid "No objects here or adjacent to bury."
-msgstr "여기나 인접한 곳에 묻을 물체가 없다."
+msgstr "여기나 인접한 곳에 묻을 물건이 없다."
 
 #: ../src/dungeon.c:2422
 msgid "No portal found."
@@ -19458,7 +19458,7 @@ msgstr "이동 목적지가 설정되지 않았다."
 
 #: ../src/read.c:2873
 msgid "No type of monster specified"
-msgstr "괴물 유형이 지정되지 않았다"
+msgstr "몬스터 유형이 지정되지 않았다"
 
 #: ../src/invent.c:3960
 #, c-format
@@ -19626,7 +19626,7 @@ msgstr "물건들이 쏟아졌다"
 # ============================================================
 #: ../src/pickup.c:3750
 msgid "Objects tumble"
-msgstr "물체들이 굴러들어간다"
+msgstr "물건들이 굴러들어간다"
 
 #: ../src/mhitu.c:1582
 #, c-format
@@ -20075,16 +20075,16 @@ msgstr "오래된 %s{이/가} 남아있을 수 있다."
 
 #: ../src/invent.c:2854
 msgid "Persistent inventory ('perm_invent' option) is not presently enabled."
-msgstr "지속적 인벤토리('perm_invent' 옵션)가 현재 활성화되어 있지 않다."
+msgstr "지속적 소지품('perm_invent' 옵션)이 현재 활성화되어 있지 않다."
 
 #: ../src/invent.c:2858
 msgid "Persistent inventory display is empty."
-msgstr "지속적 인벤토리 표시가 비어 있다."
+msgstr "지속적 소지품 표시가 비어 있다."
 
 #: ../src/invent.c:2849
 #, c-format
 msgid "Persistent inventory display is not supported by '%s'."
-msgstr "'%s'는 지속적 인벤토리 표시를 지원하지 않는다."
+msgstr "'%s'는 지속적 소지품 표시를 지원하지 않는다."
 
 #: ../src/monster_i18n.c:325 ../src/obj_descr_i18n.c:835
 msgid "Pestilence"
@@ -21057,7 +21057,7 @@ msgstr "현재 페이지의 모든 항목 선택"
 
 #: ../src/invent.c:5203
 msgid "Select an inventory slot letter."
-msgstr "인벤토리 슬롯 문자를 선택하세요."
+msgstr "소지품 슬롯 문자를 선택하세요."
 
 #: ../src/options.c:6298
 msgid "Select coordinate display when auto-describing a map position:"
@@ -21424,7 +21424,7 @@ msgstr "일부 %s{이/가} 아래에서 소용돌이친다."
 #: ../src/zap.c:1631
 #, c-format
 msgid "Some %sobjects meld, and %s arises from the pile!"
-msgstr "일부 %s물체가 합쳐지고, %s{이/가} 더미에서 일어났다!"
+msgstr "일부 %s물건이 합쳐지고, %s{이/가} 더미에서 일어났다!"
 
 #: ../src/fountain.c:659
 #, c-format
@@ -22206,7 +22206,7 @@ msgstr "저 %s{은/는} 사실 %%s!"
 #: ../src/read.c:2722
 #, c-format
 msgid "That %s does not represent any monster."
-msgstr "그 %s{은/는} 어떤 괴물도 나타내지 않는다."
+msgstr "그 %s{은/는} 어떤 몬스터도 나타내지 않는다."
 
 #: ../src/write.c:120
 #, c-format
@@ -22463,7 +22463,7 @@ msgstr "놀라운 모리스와 그의 교양 있는 설치류들"
 # 업스트림 머지: allmain.c 아뮬렛 소원
 #: ../src/allmain.c:450
 msgid "The Amulet is bestowing a wish upon you!"
-msgstr "아뮬렛이 당신에게 소원을 내리고 있다!"
+msgstr "옌더의 목걸이가 당신에게 소원을 내리고 있다!"
 
 #: ../src/end.c:1537
 msgid "The Astral Plane"
@@ -22910,7 +22910,7 @@ msgstr "%s의 목소리가 동굴에 울려 퍼진다:"
 
 #: ../src/engrave.c:223
 msgid "The wand does nothing more, and the tip of the wand"
-msgstr "지팡이는 더 이상 아무 일도 하지 않고, 지팡이 끝이"
+msgstr "마법봉은 더 이상 아무 일도 하지 않고, 마법봉 끝이"
 
 #: ../src/zap.c:2890
 msgid "The wand shoots an apparently harmless beam at you."
@@ -22919,7 +22919,7 @@ msgstr "마법봉이 겉보기에 무해한 광선을 쏘았다."
 # engrave.c:603 — 지팡이 저항
 #: ../src/engrave.c:604
 msgid "The wand unsuccessfully fights your attempt to write!"
-msgstr "지팡이가 당신의 쓰기 시도를 막으려 하지만 실패한다!"
+msgstr "마법봉이 당신의 쓰기 시도를 막으려 하지만 실패한다!"
 
 #: ../src/zap.c:5205
 msgid "The water evaporates."
@@ -23258,17 +23258,17 @@ msgstr "이 %s{은/는} %s"
 #: ../src/engrave.c:689
 #, c-format
 msgid "This %s is a wand of digging!"
-msgstr "이 %s{은/는} 굴착 지팡이다!"
+msgstr "이 %s{은/는} 굴착의 마법봉이다!"
 
 #: ../src/engrave.c:712
 #, c-format
 msgid "This %s is a wand of fire!"
-msgstr "이 %s{은/는} 화염 지팡이다!"
+msgstr "이 %s{은/는} 화염의 마법봉이다!"
 
 #: ../src/engrave.c:723
 #, c-format
 msgid "This %s is a wand of lightning!"
-msgstr "이 %s{은/는} 번개 지팡이다!"
+msgstr "이 %s{은/는} 번개의 마법봉이다!"
 
 #: ../src/apply.c:837
 #, c-format
@@ -23380,7 +23380,7 @@ msgstr "이것은 감정 스크롤이다."
 #: ../src/bones.c:696
 #, c-format
 msgid "This is bones level '%s', not '%s'!"
-msgstr "이것은 '%s' 본즈 레벨이지, '%s'가 아니다!"
+msgstr "이것은 '%s' 다른 모험가가 죽은 층이지, '%s'{이/가} 아니다!"
 
 #: ../src/restore.c:1096
 #, c-format
@@ -23992,7 +23992,7 @@ msgstr "몬스터 부류의 문자(또는 기호)나 이름, 혹은 'none'을 �
 
 #: ../src/read.c:2870
 msgid "Type the name of a type of monster or 'none'"
-msgstr "괴물 유형의 이름을 입력하거나 'none' 입력"
+msgstr "몬스터 유형의 이름을 입력하거나 'none' 입력"
 
 # 발키리 (노르웨이)
 #: ../src/role.c:504
@@ -24606,7 +24606,7 @@ msgstr "잠깐! 보이지 않는 %s{이/가} 거기 있다!"
 
 #: ../src/uhitm.c:288
 msgid "Wait!  There's a hidden monster there!"
-msgstr "잠깐! 숨겨진 괴물이 거기 있다!"
+msgstr "잠깐! 숨겨진 몬스터가 거기 있다!"
 
 #: ../src/mhitu.c:693
 #, c-format
@@ -24915,7 +24915,7 @@ msgstr "어떤 종류의 %s{을/를} 쓰시겠습니까?"
 
 #: ../src/read.c:2858
 msgid "What type of monster do you want to genocide?"
-msgstr "어떤 종류의 괴물을 학살하겠습니까?"
+msgstr "어떤 종류의 몬스터를 학살하겠습니까?"
 
 # invent.c - 인벤토리 필터 프롬프트. 단독 질문
 #: ../src/invent.c:3843
@@ -25503,7 +25503,7 @@ msgstr "당신은 몬스터들을 자극한다"
 
 #: ../src/detect.c:2103
 msgid "You already found a monster."
-msgstr "이미 괴물을 찾았다."
+msgstr "이미 몬스터를 찾았다."
 
 # botl.c - "You also have 5 gold". 추가 정보
 #: ../src/insight.c:1466
@@ -25869,7 +25869,7 @@ msgstr "발밑 얼음이 움직이는 것이 느껴진다!"
 # engrave.c:715 - 단독 pline
 #: ../src/engrave.c:715
 msgid "You feel the wand heat up."
-msgstr "지팡이가 뜨거워지는 것이 느껴진다."
+msgstr "마법봉이 뜨거워지는 것이 느껴진다."
 
 # detect.c:821 - 위협을 느낌
 #: ../src/detect.c:821
@@ -27381,7 +27381,7 @@ msgstr "콸콸 흐르는 소리가 난다."
 
 #: ../src/detect.c:1864
 msgid "a hidden monster"
-msgstr "괴물"
+msgstr "몬스터"
 
 #: ../src/mthrowu.c:1458
 msgid "a hissing noise."
@@ -27516,11 +27516,11 @@ msgstr "몬스터에게 이름 붙이기"
 #: ../src/hack.c:467
 #, c-format
 msgid "a monster behind %s."
-msgstr "%s 뒤에 괴물이 있다."
+msgstr "%s 뒤에 몬스터가 있다."
 
 #: ../src/pager.c:1669
 msgid "a monster, object or location"
-msgstr "괴물, 물체 또는 위치"
+msgstr "몬스터, 물건 또는 위치"
 
 #: ../src/dokick.c:460 ../src/dokick.c:1743
 #, c-format
@@ -28195,15 +28195,15 @@ msgstr "서리"
 
 #: ../src/options.c:227
 msgid "all inventory except for gold"
-msgstr "골드 제외 모든 인벤토리"
+msgstr "골드 제외 모든 소지품"
 
 #: ../src/pager.c:1765
 msgid "all monsters shown on map"
-msgstr "지도에 표시된 모든 괴물"
+msgstr "지도에 표시된 모든 몬스터"
 
 #: ../src/pager.c:1776
 msgid "all objects shown on map"
-msgstr "지도에 표시된 모든 물체"
+msgstr "지도에 표시된 모든 물건"
 
 #: ../src/pager.c:1799
 msgid "all seen or remembered engravings"
@@ -28321,7 +28321,7 @@ msgstr "항상"
 
 #: ../src/options.c:178
 msgid "always pick from inventory for Remove and Takeoff"
-msgstr "제거와 벗기에서 항상 인벤토리에서 선택"
+msgstr "제거와 벗기에서 항상 소지품에서 선택"
 
 #: ../src/artifact.c:1245
 msgid "amaze"
@@ -28454,12 +28454,12 @@ msgstr "보이지 않는 나무"
 
 #: ../src/pray.c:1814
 msgid "an object"
-msgstr "물체"
+msgstr "물건"
 
 #: ../src/apply.c:3799
 #, c-format
 msgid "an object on the %s"
-msgstr "%s 위의 물체"
+msgstr "%s 위의 물건"
 
 #: ../src/cmd.c:2936
 msgid "an obstacle."
@@ -28487,7 +28487,7 @@ msgstr "보이지 않는 생물"
 
 #: ../src/detect.c:2008
 msgid "an unseen monster!"
-msgstr "보이지 않는 괴물!"
+msgstr "보이지 않는 몬스터!"
 
 #: ../src/priest.c:483
 msgid "an unusual"
@@ -28756,7 +28756,7 @@ msgstr "%s %s{이다/다}."
 #: ../src/pickup.c:824
 #, c-format
 msgid "are %s objects here."
-msgstr "여기에 %s 물체가 있다."
+msgstr "여기에 %s 물건이 있다."
 
 #: ../src/pray.c:2438
 #, c-format
@@ -28771,7 +28771,7 @@ msgstr "%s!"
 #: ../src/invent.c:4281
 #, c-format
 msgid "are %s%s objects here."
-msgstr "여기에 %s%s 물체가 있다."
+msgstr "여기에 %s%s 물건이 있다."
 
 #: ../src/do.c:1116
 #, c-format
@@ -29701,7 +29701,7 @@ msgstr "%.0s%s{을/를} 학살하는 것은 허용되지 않는다."
 
 #: ../src/read.c:2707
 msgid "aren't permitted to genocide such monsters."
-msgstr "그런 괴물을 학살하는 것은 허용되지 않는다."
+msgstr "그런 몬스터를 학살하는 것은 허용되지 않는다."
 
 #: ../src/hack.c:280
 #, c-format
@@ -32193,7 +32193,7 @@ msgstr "다시 움직일 수 있다"
 
 #: ../src/wizcmds.c:900
 msgid "can move the cursor to a monster that you want to smell."
-msgstr "냄새 맡고 싶은 괴물에 커서를 이동할 수 있다."
+msgstr "냄새 맡고 싶은 몬스터에 커서를 이동할 수 있다."
 
 #: ../src/polyself.c:1264
 msgid "can no longer hold your shield!"
@@ -35515,7 +35515,7 @@ msgstr "반응하지 않는다"
 #: ../src/do_name.c:706
 #, c-format
 msgid "doesn't seem to be any object %s."
-msgstr "%s 물체가 없는 듯하다."
+msgstr "%s 물건이 없는 듯하다."
 
 #: ../src/lock.c:546
 msgid "doesn't seem to be any sort of lock here."
@@ -35780,7 +35780,7 @@ msgstr "메뉴에 물건 기호 표시 안 함"
 
 #: ../src/wizcmds.c:933
 msgid "don't smell any monster there."
-msgstr "거기서 괴물 냄새가 나지 않는다."
+msgstr "거기서 몬스터 냄새가 나지 않는다."
 
 #: ../src/apply.c:4489
 msgid "don't want to get the pages even more soggy, do you?"
@@ -36664,7 +36664,7 @@ msgstr "새긴다"
 
 #: ../src/engrave.c:770
 msgid "engrave with such a large object!"
-msgstr "그렇게 큰 물체로 새길 수 없다!"
+msgstr "그렇게 큰 물건으로 새길 수 없다!"
 
 #: ../src/do_name.c:353
 #, c-format
@@ -37485,7 +37485,7 @@ msgstr "떨어지는 도개교"
 
 #: ../src/dothrow.c:1424
 msgid "falling object"
-msgstr "떨어지는 물체"
+msgstr "떨어지는 물건"
 
 #: ../src/worn.c:1339
 #, c-format
@@ -38979,11 +38979,11 @@ msgstr "완전 치료"
 
 #: ../src/options.c:228
 msgid "full inventory including gold"
-msgstr "골드 포함 전체 인벤토리"
+msgstr "골드 포함 전체 소지품"
 
 #: ../src/options.c:233
 msgid "full inventory, plus unused letters"
-msgstr "전체 인벤토리, 미사용 문자 포함"
+msgstr "전체 소지품, 미사용 문자 포함"
 
 #: ../src/potion.c:747
 msgid "full of awe."
@@ -39328,7 +39328,7 @@ msgstr "슬라임투성이가 되다"
 
 #: ../src/wizard.c:99
 msgid "get the creepy feeling that somebody noticed your taking the Amulet."
-msgstr "누군가 당신이 아뮬렛을 가져간 것을 알아챘다는 섬뜩한 느낌이 든다."
+msgstr "누군가 당신이 옌더의 목걸이를 가져간 것을 알아챘다는 섬뜩한 느낌이 든다."
 
 #: ../src/mhitu.c:1632
 msgid "get the impression it was not terribly bright."
@@ -40813,7 +40813,7 @@ msgstr "열 깡통이 없다."
 
 #: ../src/uhitm.c:524
 msgid "have no way to attack monsters physically."
-msgstr "괴물을 물리적으로 공격할 방법이 없다."
+msgstr "몬스터를 물리적으로 공격할 방법이 없다."
 
 #: ../src/insight.c:2288
 msgid "have not violated"
@@ -42306,7 +42306,7 @@ msgstr "투명한 "
 
 #: ../src/apply.c:449
 msgid "invisible monster must have moved."
-msgstr "투명 괴물이 이동한 듯하다."
+msgstr "투명 몬스터가 이동한 듯하다."
 
 # ============================================================
 # [조합 검토] Section F: Resistances (insight.c:1542-1584)
@@ -42502,7 +42502,7 @@ msgstr "거기에 %s{이/가} 숨어있다."
 #: ../src/invent.c:4279
 #, c-format
 msgid "is %s object here."
-msgstr "여기에 %s 물체가 있다."
+msgstr "여기에 %s 물건이 있다."
 
 #: ../src/apply.c:440
 #, c-format
@@ -42611,7 +42611,7 @@ msgstr "더 이상 길들여지지 않았다"
 
 #: ../src/wizcmds.c:334
 msgid "is no monster there."
-msgstr "거기에 괴물이 없다."
+msgstr "거기에 몬스터가 없다."
 
 #: ../src/lock.c:1013
 msgid "is no obvious way to close the drawbridge."
@@ -44872,7 +44872,7 @@ msgstr "아가리"
 
 #: ../src/detect.c:1302
 msgid "may look for an object, monster, or special map symbol."
-msgstr "물체, 괴물, 또는 특수 지도 기호를 찾을 수 있다."
+msgstr "물건, 몬스터, 또는 특수 지도 기호를 찾을 수 있다."
 
 #: ../src/zap.c:6327
 msgid "may wish for an object."
@@ -45537,7 +45537,7 @@ msgstr "monster throwing egg type %d"
 
 #: ../src/pager.c:2026 ../src/pager.c:2070
 msgid "monsters"
-msgstr "괴물"
+msgstr "몬스터"
 
 #: ../src/sounds.c:347
 msgid "moo"
@@ -45934,11 +45934,11 @@ msgstr "근처 각인"
 
 #: ../src/pager.c:1760
 msgid "nearby monsters"
-msgstr "근처 괴물"
+msgstr "근처 몬스터"
 
 #: ../src/pager.c:1771
 msgid "nearby objects"
-msgstr "근처 물체"
+msgstr "근처 물건"
 
 #: ../src/pager.c:1782
 msgid "nearby traps"
@@ -46184,7 +46184,7 @@ msgstr "no old fruit?"
 
 #: ../src/options.c:226
 msgid "no permanent inventory window"
-msgstr "영구 인벤토리 창 없음"
+msgstr "영구 소지품 창 없음"
 
 #: ../src/mcastu.c:743
 msgid "no reason for monster to cast blindness spell?"
@@ -46521,15 +46521,15 @@ msgstr "objdescr_is: null obj"
 # pager.c - 메뉴 옵션. 단독
 #: ../src/artifact.c:1701 ../src/detect.c:786
 msgid "object"
-msgstr "물체"
+msgstr "물건"
 
 #: ../src/obj_descr_i18n.c:633
 msgid "object detection"
-msgstr "물체 탐지"
+msgstr "물건 탐지"
 
 #: ../src/dokick.c:1602
 msgid "object falls"
-msgstr "물체가 떨어진다"
+msgstr "물건이 떨어진다"
 
 #: ../src/detect.c:619
 #, c-format
@@ -46538,20 +46538,20 @@ msgstr "object_detect:  illegal class %d"
 
 #: ../src/pager.c:2026 ../src/pager.c:2070
 msgid "objects"
-msgstr "물체"
+msgstr "물건"
 
 #: ../src/dokick.c:1602
 msgid "objects fall"
-msgstr "물체들이 떨어진다"
+msgstr "물건들이 떨어진다"
 
 #: ../src/dokick.c:1613
 msgid "objects falls"
-msgstr "물체들이 떨어진다"
+msgstr "물건들이 떨어진다"
 
 #: ../src/dig.c:2276
 #, c-format
 msgid "objects on the %s tumble into a hole!"
-msgstr "%s 위의 물체가 구멍으로 굴러 떨어졌다!"
+msgstr "%s 위의 물건이 구멍으로 굴러 떨어졌다!"
 
 #: ../src/o_init.c:181
 #, c-format
@@ -49384,7 +49384,7 @@ msgstr "이 캐릭터를 다시 굴릴까요?"
 
 #: ../src/pray.c:2307
 msgid "residual undead turning effect"
-msgstr "언데드 퇴치의 지팡이"
+msgstr "언데드 퇴치의 마법봉"
 
 # ============================================================
 # [조합 메시지] 환각 저항 - insight.c:1545
@@ -49810,7 +49810,7 @@ msgstr "직업"
 
 #: ../src/role.c:1983
 msgid "role/race/&c filtering"
-msgstr "역할/종족/등 필터"
+msgstr "직업/종족/등 필터"
 
 #: ../src/role.c:1814
 msgid "role:"
@@ -50868,7 +50868,7 @@ msgstr "%s{이/가} 다소 %s스럽다고 느껴진다."
 
 #: ../src/detect.c:845
 msgid "sense the presence of monsters."
-msgstr "괴물의 존재를 감지했다."
+msgstr "몬스터의 존재를 감지했다."
 
 #: ../src/detect.c:1558
 msgid "sense your surroundings."
@@ -52078,7 +52078,7 @@ msgstr "매끄러운 방패"
 #: ../src/apply.c:3830
 #, c-format
 msgid "snag an object from the %s!"
-msgstr "%s에서 물체를 낚아챘다!"
+msgstr "%s에서 물건을 낚아챘다!"
 
 #: ../src/monster_i18n.c:232 ../src/obj_descr_i18n.c:1061
 msgid "snake"
@@ -54229,12 +54229,12 @@ msgstr "%s{을/를} 먹은 것은 나쁜 생각이었다."
 
 #: ../src/mcastu.c:827
 msgid "that monsters are aware of your presence."
-msgstr "괴물들이 존재를 알아챘다."
+msgstr "몬스터들이 존재를 알아챘다."
 
 #: ../src/do_wear.c:176
 #, c-format
 msgid "that monsters%s have difficulty pinpointing your location."
-msgstr "괴물들이%s 당신의 위치를 파악하기 어려워한다."
+msgstr "몬스터들이%s 당신의 위치를 파악하기 어려워한다."
 
 #: ../src/trap.c:5559
 msgid "that you did the right thing."
@@ -54526,7 +54526,7 @@ msgstr "달이 당신을 향해 울부짖는 듯한 소리가 들린다."
 
 #: ../src/read.c:2863
 msgid "the name of a type of monster, or '?'"
-msgstr "괴물 종류의 이름, 또는 '?'"
+msgstr "몬스터 종류의 이름, 또는 '?'"
 
 #: ../src/pager.c:2232
 msgid "the ordinarily sheltered town that is located "
@@ -54682,7 +54682,7 @@ msgstr "밴시의 통곡을..."
 # apply.c:3934 - 지팡이 부수기 문맥. "break the wand"
 #: ../src/apply.c:3948
 msgid "the wand"
-msgstr "지팡이를"
+msgstr "마법봉을"
 
 #: ../src/do.c:1197 ../src/mhitu.c:1172
 msgid "the water"
@@ -56973,7 +56973,7 @@ msgstr "마법봉이 당신을 맞았다!"
 
 #: ../src/engrave.c:814
 msgid "wand is too worn out to engrave."
-msgstr "지팡이가 너무 낡아서 새길 수 없다."
+msgstr "마법봉이 너무 낡아서 새길 수 없다."
 
 #: ../src/muse.c:1629
 msgid "wand misses you."
@@ -58275,7 +58275,7 @@ msgstr "평화로운 몬스터 공격 시 yes vs y"
 
 #: ../src/options.c:160
 msgid "yes vs y to break a wand via (a)pply"
-msgstr "(a)pply로 지팡이 부러뜨릴 때 yes vs y"
+msgstr "(a)pply로 마법봉 부러뜨릴 때 yes vs y"
 
 #: ../src/options.c:164
 msgid "yes vs y to change form when lycanthropy is controllable"
@@ -58295,7 +58295,7 @@ msgstr "종료나 탐험 모드 진입 시 yes vs y"
 
 #: ../src/options.c:156
 msgid "yes vs y to save bones data when dying in debug mode"
-msgstr "디버그 모드에서 죽을 때 뼈 데이터 저장에 yes vs y"
+msgstr "디버그 모드에서 죽을 때 다른 모험가가 죽은 층 저장에 yes vs y"
 
 #: ../src/monster_i18n.c:253 ../src/obj_descr_i18n.c:1113
 msgid "yeti"
@@ -59118,7 +59118,7 @@ msgid "No longer petrify-resistant, "
 msgstr "더 이상 석화에 저항하지 못하는 "
 
 msgid "Some monster"
-msgstr "괴물이"
+msgstr "몬스터가"
 
 # ============================================================
 # 상태 표시줄 약어 (Status Line Abbreviations)
@@ -60108,7 +60108,7 @@ msgstr "푸딩 또는 슬라임"
 
 #: ../src/i18n.c:241
 msgid "rust monster or disenchanter"
-msgstr "녹슨 괴물 또는 디스인챈터"
+msgstr "녹 괴물 또는 해주술사"
 
 #: ../src/i18n.c:241
 msgid "apelike creature"
@@ -60251,7 +60251,7 @@ msgstr "님프"
 
 #, c-format
 msgid "object on map (or '.' for one %s you)"
-msgstr "지도의 물체 (또는 '.'으로 당신 %s의 물체)"
+msgstr "지도의 물건 (또는 '.'으로 당신 %s의 물건)"
 
 msgid "obsidian"
 msgstr "흑요석"
@@ -60787,52 +60787,52 @@ msgid "wand of cold"
 msgstr "냉기의 마법봉"
 
 msgid "wand of create monster"
-msgstr "몬스터 소환의 지팡이"
+msgstr "몬스터 소환의 마법봉"
 
 msgid "wand of death"
 msgstr "죽음의 마법봉"
 
 msgid "wand of digging"
-msgstr "굴착의 지팡이"
+msgstr "굴착의 마법봉"
 
 msgid "wand of fire"
 msgstr "화염의 마법봉"
 
 msgid "wand of light"
-msgstr "빛의 지팡이"
+msgstr "빛의 마법봉"
 
 msgid "wand of lightning"
 msgstr "번개의 마법봉"
 
 msgid "wand of locking"
-msgstr "잠금의 지팡이"
+msgstr "잠금의 마법봉"
 
 msgid "wand of magic missile"
 msgstr "마법 미사일 마법봉"
 
 msgid "wand of opening"
-msgstr "열기의 지팡이"
+msgstr "열기의 마법봉"
 
 msgid "wand of polymorph"
-msgstr "변신의 지팡이"
+msgstr "변신의 마법봉"
 
 msgid "wand of probing"
-msgstr "탐색의 지팡이"
+msgstr "탐색의 마법봉"
 
 msgid "wand of sleep"
 msgstr "수면의 마법봉"
 
 msgid "wand of slow monster"
-msgstr "몬스터 감속의 지팡이"
+msgstr "몬스터 감속의 마법봉"
 
 msgid "wand of striking"
-msgstr "강타의 지팡이"
+msgstr "강타의 마법봉"
 
 msgid "wand of teleportation"
 msgstr "순간이동 마법봉"
 
 msgid "wand of wishing"
-msgstr "소원의 지팡이"
+msgstr "소원의 마법봉"
 
 # 사망 원인 메시지 (Death cause - used in losehp())
 msgid "wedging into a narrow crevice"
@@ -62950,7 +62950,7 @@ msgstr "몬스터 탐지 물약"
 
 msgctxt "objname"
 msgid "potion of object detection"
-msgstr "물체 탐지 물약"
+msgstr "물건 탐지 물약"
 
 msgctxt "objname"
 msgid "potion of gain energy"
@@ -63790,10 +63790,10 @@ msgid ", or vice versa!"
 msgstr "! 아니면 그 반대인가!"
 
 msgid "that monsters have difficulty pinpointing your location."
-msgstr "괴물들이 당신의 위치를 파악하기 어려워한다."
+msgstr "몬스터들이 당신의 위치를 파악하기 어려워한다."
 
 msgid "that monsters no longer have difficulty pinpointing your location."
-msgstr "괴물들이 다시 당신의 위치를 쉽게 파악한다."
+msgstr "몬스터들이 다시 당신의 위치를 쉽게 파악한다."
 
 msgid " a bit"
 msgstr "조금 "

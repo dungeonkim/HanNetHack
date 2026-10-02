@@ -100,6 +100,8 @@
 - **주문 이름**은 마법책 이름에서 "마법책"을 뺀 것과 같다(굴착 마법책 → 굴착). 일반 단어 번역과 겹치면 msgctxt "spell"로 따로 둔다(tr_spell_name, obj_descr_i18n.c의 C_("spell", ...)).
 
 ## 몬스터 이름
+- monster는 **몬스터**. 한국어 말에 붙어 "몬스터"가 어색한 이름만 **괴물**: 이끼괴물, 진흙괴물, 점액괴물, 녹 괴물, 바다 괴물.
+- object/item은 **물건** (물체 쓰지 않음, 물건 탐지 물약). inventory는 **소지품**. the Amulet은 **옌더의 목걸이** (아뮬렛 쓰지 않음).
 - were-X는 **X인간**: 늑대인간, 자칼인간, 쥐인간.
 - 같은 이름을 두 몬스터가 쓰지 않는다: elven monarch 엘프 통치자, guard 경비병 / watchman 감시자, high priest(ess) 고위 사제 / Arch Priest 대사제.
 - lord / lady는 둘 다 **귀족** (드워프·코볼트·노움·오거·뱀파이어·엘프). 성별 없는 형태(leader)는 지도자.

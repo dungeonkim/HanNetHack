@@ -231,7 +231,7 @@ paranoid_confirmation  대체 프롬프트를 원하는 상황의     [paranoid_
               die     -- 죽음 확인에 y 대신 yes (탐험 또는 디버그 모드용)
               bones   -- 디버그 모드에서 뼈 데이터 저장 확인에 y 대신 yes
               attack  -- 평화로운 괴물 공격 확인에 y 대신 yes
-              wand-break  -- 지팡이 부수기 확인에 y 대신 yes
+              wand-break  -- 마법봉 부수기 확인에 y 대신 yes
               eating  -- 계속 먹을지 확인에 y 대신 yes
               Were-change -- 폴리모프 제어가 있을 때 늑대인간으로 인한
                       형태 변경 확인에 y 대신 yes;
