@@ -240,7 +240,7 @@ msgstr "    현재 키 바인딩 전체 목록"
 #: ../src/dungeon.c:2388
 #, c-format
 msgid "   %s to %s"
-msgstr "   %s에서 %s로"
+msgstr "   %2$s{으로/로} 가는 %1$s"
 
 #: ../src/artifact.c:1169
 #, c-format
@@ -2944,7 +2944,7 @@ msgstr "%8ld개의 쓸모없는 색유리 조각%s,"
 #: ../src/dungeon.c:2273
 #, c-format
 msgid "%c %s to %s: %d"
-msgstr "%c %s에서 %s로: %d층"
+msgstr "%1$c %3$s{으로/로} 가는 %2$s: %4$d층"
 
 # [조합 메시지] music.c:882 - 기어만 돌아가는 소리
 #: ../src/music.c:881
@@ -63957,3 +63957,13 @@ msgstr " %1$s%3$s 스킬이 %2$s 단계라서 제한된 상태"
 msgctxt "twoweap_limit"
 msgid " %slimited by having no skill with %s"
 msgstr " %1$s%2$s 스킬이 없어서 제한된 상태"
+
+# dungeon.c #overview: a branch line, '아래로 가는 계단 → 노움 광산'
+#, c-format
+msgctxt "overview_branch"
+msgid "%s%s to %s"
+msgstr "%s%s → %s"
+
+#, c-format
+msgid ", level %d"
+msgstr ", %d층"

@@ -477,6 +477,22 @@ describe_level(
     if (Is_knox(&u.uz)) {
         Sprintf(buf, "%s", _(svd.dungeons[u.uz.dnum].dname));
         addbranch = FALSE;
+#ifdef DKNETHACK
+    } else if (!addbranch && is_korean_locale() && !In_endgame(&u.uz)
+               && (u.uz.dnum != 0 || In_tutorial(&u.uz))) {
+        /* a branch with a name of its own reads "노움 광산 2층", counted from
+           where it is entered (Sokoban and Vlad's Tower go up); the main
+           dungeon keeps "Dlvl:n", which the front end shows as "지하 n층" */
+        int n = builds_up(&u.uz)
+                    ? dunlevs_in_dungeon(&u.uz) - dunlev(&u.uz) + 1
+                    : dunlev(&u.uz);
+
+        Sprintf(buf, "%s %d층",
+                In_tutorial(&u.uz) ? _("Tutorial")
+                : In_quest(&u.uz) ? _("The Quest")
+                : _(svd.dungeons[u.uz.dnum].dname), n);
+        ret = 0;
+#endif
     } else if (In_quest(&u.uz)) {
         Sprintf(buf, _("Home %d"), dunlev(&u.uz));
     } else if (In_endgame(&u.uz)) {

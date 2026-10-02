@@ -7,6 +7,7 @@
 #include "dgn_file.h"
 #include "dlb.h"
 #include "i18n.h"
+#include "ko_postpos.h" /* ko_process_string for branch lines */
 
 #define DUNGEON_FILE "dungeon.lua"
 
@@ -68,6 +69,7 @@ staticfn boolean unplaced_floater(struct dungeon *);
 staticfn boolean unreachable_level(d_level *, boolean);
 staticfn void tport_menu(winid, char *, struct lchoice *, d_level *, boolean);
 staticfn const char *br_string(int) NONNULL;
+staticfn void ko_resolve_postpos(char *);
 staticfn char chr_u_on_lvl(d_level *);
 staticfn void print_branch(winid, int, int, int, boolean, struct lchoice *);
 staticfn char *get_annotation(d_level *);
@@ -2261,6 +2263,23 @@ br_string(int type)
     return _(" (unknown)");
 }
 
+/* a translated branch line may carry {으로/로} after a dungeon name; menus
+   and text windows do not resolve such markers the way pline does */
+staticfn void
+ko_resolve_postpos(char *buf)
+{
+#ifdef ENABLE_NLS
+    char tmp[BUFSZ];
+
+    if (is_korean_locale() && strchr(buf, KO_PP_START)) {
+        ko_process_string(tmp, sizeof tmp, buf);
+        Strcpy(buf, tmp);
+    }
+#else
+    nhUse(buf);
+#endif
+}
+
 staticfn char
 chr_u_on_lvl(d_level *dlev)
 {
@@ -2285,6 +2304,7 @@ print_branch(
                     bymenu ? chr_u_on_lvl(&br->end1) : ' ',
                     _(br_string(br->type)),
                     _(svd.dungeons[br->end2.dnum].dname), depth(&br->end1));
+            ko_resolve_postpos(buf);
             if (bymenu)
                 tport_menu(win, buf, lchoices_p, &br->end1,
                            unreachable_level(&br->end1, FALSE));
@@ -2398,6 +2418,7 @@ print_dungeon(boolean bymenu, schar *rlev, xint16 *rdgn)
             }
             Sprintf(buf, _("   %s to %s"), _(br_string(br->type)),
                     _(svd.dungeons[br->end2.dnum].dname));
+            ko_resolve_postpos(buf);
             putstr(win, 0, buf);
         }
     }
@@ -3686,7 +3707,8 @@ print_mapseen(
 
     /* print out branches */
     if (mptr->br) {
-        Sprintf(buf, "%s%s to %s", PREFIX, br_string2(mptr->br),
+        Sprintf(buf, C_("overview_branch", "%s%s to %s"), PREFIX,
+                br_string2(mptr->br),
                 _(svd.dungeons[mptr->br->end2.dnum].dname));
 
         /* Since mapseen objects are printed out in increasing order
@@ -3694,7 +3716,7 @@ print_mapseen(
          * if the branch goes upwards.  Unless it's the end game.
          */
         if (mptr->br->end1_up && !In_endgame(&(mptr->br->end2)))
-            Sprintf(eos(buf), ", level %d", depth(&(mptr->br->end2)));
+            Sprintf(eos(buf), _(", level %d"), depth(&(mptr->br->end2)));
         Strcat(buf, ".");
         add_menu_str(win, buf);
     }
