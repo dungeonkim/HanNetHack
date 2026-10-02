@@ -32330,7 +32330,7 @@ msgstr "현재 형태로는 갑옷을 입을 수 없다."
 #: ../src/do_wear.c:1912
 #, c-format
 msgid "can't.  %s cursed."
-msgstr "할 수 없다. %s{이/가} 저주받았다."
+msgstr "저주받았기 때문에 몸에서 떼어낼 수 없다!%.0s"
 
 #: ../src/steed.c:636
 #, c-format
