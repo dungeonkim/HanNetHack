@@ -176,7 +176,7 @@ disclose      게임 끝에서 제공받고 싶은               [ni na nv ng nc
               괴물, 'g' 학살 및 멸종 괴물, 'c' 행동과 업적,
               'o' 던전 개요)
 fruit         먹는 걸 좋아하는 과일 이름                       [slime mold]
-              (기본적으로 NetHack이 가끔 사용하는 장난)
+              (기본적으로 네트핵이 가끔 사용하는 장난)
 hilite_status 상태 필드 강조 규칙 지정                                    []
               (여러 인스턴스 허용)
 menustyle     여러 물건 선택을 위한 사용자 인터페이스:               [Full]

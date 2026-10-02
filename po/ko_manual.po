@@ -1837,7 +1837,7 @@ msgstr " (타고난 능력)"
 
 #: ../src/cmd.c:2962
 msgid " interrupt: break out of NetHack (SIGINT)"
-msgstr " 인터럽트: 넷핵 중단 (SIGINT)"
+msgstr " 인터럽트: 네트핵 중단 (SIGINT)"
 
 #: ../src/hack.c:560
 msgid " into"
@@ -4902,12 +4902,12 @@ msgstr "%s{이/가} %s하고, 배낭을 %s!"
 #: ../src/allmain.c:920
 #, c-format
 msgid "%s %s, the%s, welcome back to NetHack!"
-msgstr "%s %s, %s, NetHack에 다시 오신 것을 환영합니다!"
+msgstr "돌아왔구나, %2$s! 네트핵에 다시 온 것을 환영한다.%1$.0s%3$.0s"
 
 #: ../src/allmain.c:919
 #, c-format
 msgid "%s %s, welcome to NetHack!  You are a%s."
-msgstr "%s %s, NetHack에 오신 것을 환영한다! 당신은 %s이다."
+msgstr "반갑다, %2$s! 네트핵의 세계에 온 것을 환영한다! 당신은%3$s{이다/다}.%1$.0s"
 
 #: ../src/attrib.c:664 ../src/dig.c:1307 ../src/dog.c:1336 ../src/dokick.c:212
 #: ../src/dothrow.c:1966 ../src/dothrow.c:2520 ../src/eat.c:3042
@@ -11973,7 +11973,7 @@ msgstr "%s집%s."
 #: ../src/mail.c:516
 #, c-format
 msgid "%sInvitation: Visit the NetHack web site at %s%s"
-msgstr "%s초대: %s%s 넷핵 웹사이트를 방문하세요"
+msgstr "%s초대: %s%s 네트핵 웹사이트를 방문하세요"
 
 #: ../src/dungeon.c:3558
 #, c-format
@@ -13600,7 +13600,7 @@ msgstr "원주민"
 
 #: ../src/pager.c:2833
 msgid "About NetHack (version information)."
-msgstr "NetHack 정보 (버전 정보)."
+msgstr "네트핵 정보 (버전 정보)."
 
 # == Menu Control Help (메뉴 조작 도움말) ==
 # From src/options.c - hardcoded menu control descriptions
@@ -15296,7 +15296,7 @@ msgstr "복합 옵션:"
 
 #: ../src/pager.c:2836
 msgid "Concise history of NetHack."
-msgstr "NetHack의 간략한 역사."
+msgstr "네트핵의 간략한 역사."
 
 #: ../src/version.c:416
 #, c-format
@@ -15610,7 +15610,7 @@ msgstr "데모고르곤"
 
 #: ../src/pager.c:2845
 msgid "Description of NetHack's command line."
-msgstr "NetHack 명령줄 설명."
+msgstr "네트핵 명령줄 설명."
 
 #: ../src/pray.c:2669
 msgid "Despite your deafness, you seem to hear"
@@ -16552,7 +16552,7 @@ msgstr "잠시 %s!"
 
 #: ../src/pager.c:2739
 msgid "For more information on NetHack, or to report a bug,"
-msgstr "NetHack에 대한 자세한 정보나 버그 신고는,"
+msgstr "네트핵에 대한 자세한 정보나 버그 신고는,"
 
 #: ../src/zap.c:6175
 msgid "For object types which come in stacks, you may specify a plural name"
@@ -19249,11 +19249,11 @@ msgstr "네메시스 리디쿨리"
 
 #: ../src/allmain.c:871
 msgid "NetHack is filmed in front of an undead studio audience."
-msgstr "NetHack은 언데드 스튜디오 관객 앞에서 촬영되었다."
+msgstr "네트핵은 언데드 스튜디오 관객 앞에서 촬영되었다."
 
 #: ../src/artifact.c:2293 ../src/rumors.c:553
 msgid "NetHack rumors file closed for renovation."
-msgstr "NetHack 소문 파일이 수리를 위해 닫혔다."
+msgstr "네트핵 소문 파일이 수리를 위해 닫혔다."
 
 #: ../src/botl.c:1059
 msgid "Neutral"
@@ -22517,7 +22517,7 @@ msgstr "이 게임의 NHUUID는 { %s } 이다."
 
 #: ../src/pager.c:2846
 msgid "The NetHack license."
-msgstr "NetHack 라이선스."
+msgstr "네트핵 라이선스."
 
 #: ../src/rumors.c:675
 msgid "The Oracle meditates for a moment and then intones:"
@@ -22610,12 +22610,12 @@ msgstr "부서진 문이 재조립되어 잠긴다!"
 #: ../src/engrave.c:608
 #, c-format
 msgid "The bugs on the %s slow down!"
-msgstr "%s 위의 벌레들이 느려집니다!"
+msgstr "%s 위의 벌레들이 느려졌다!"
 
 #: ../src/engrave.c:614
 #, c-format
 msgid "The bugs on the %s speed up!"
-msgstr "%s 위의 벌레들이 빨라집니다!"
+msgstr "%s 위의 벌레들이 빨라졌다!"
 
 #: ../src/engrave.c:654
 #, c-format
@@ -22729,7 +22729,7 @@ msgstr "기초가 너무 단단해서 이 각도로는 뚫을 수 없다."
 
 #: ../src/wizcmds.c:552
 msgid "The fuzz tester will make NetHack execute random keypresses."
-msgstr "퍼즈 테스터가 NetHack이 무작위 키 입력을 실행하게 한다."
+msgstr "퍼즈 테스터가 네트핵이 무작위 키 입력을 실행하게 한다."
 
 #: ../src/apply.c:1134 ../src/mhitu.c:1728
 #, c-format
@@ -23448,11 +23448,7 @@ msgid ""
 "%LOCALAPPDATA%\\NetHack\\3.7\\ and bones bon* under "
 "%PROGRAMDATA%\\NetHack\\3.7\\ (HanNetHack: sys/windows/cleanup-incompatible-"
 "saves.cmd).\n"
-msgstr ""
-"이 세이브나 bones는 지금 실행 중인 프로그램과 맞지 않습니다(내부 구조 변경). Windows 3.7+에서는 "
-"%%LOCALAPPDATA%%\\NetHack\\3.7\\ 안의 *.NetHack-saved-game과 "
-"%%PROGRAMDATA%%\\NetHack\\3.7\\ 안의 bon* bones를 지우거나, HanNetHack의 "
-"sys\\windows\\cleanup-incompatible-saves.cmd 를 실행하세요.\n"
+msgstr "이 세이브나 bones는 지금 실행 중인 프로그램과 맞지 않습니다(내부 구조 변경). Windows 3.7+에서는 %%LOCALAPPDATA%%\\네트핵\\3.7\\ 안의 *.네트핵-saved-game과 %%PROGRAMDATA%%\\네트핵\\3.7\\ 안의 bon* bones를 지우거나, Han네트핵의 sys\\windows\\cleanup-incompatible-saves.cmd 를 실행하세요.\n"
 
 #: ../src/version.c:743
 msgid ""
@@ -23783,7 +23779,7 @@ msgstr "현지 지원에 연락하려면, %s에게 연락하세요."
 
 #: ../src/pager.c:2733
 msgid "To contact the NetHack development team directly,"
-msgstr "NetHack 개발팀에 직접 연락하려면,"
+msgstr "네트핵 개발팀에 직접 연락하려면,"
 
 #: ../src/pray.c:1237
 msgid "To enter the castle, thou must play the right tune!"
@@ -24755,7 +24751,7 @@ msgstr "데이빗의 보물 동물원에 온 것을 환영한다!"
 # role.c - 게임 시작 시 환영 메시지. 단독 문장
 #: ../src/mail.c:495
 msgid "Welcome to NetHack."
-msgstr "NetHack에 오신 것을 환영합니다."
+msgstr "네트핵에 온 것을 환영한다."
 
 #: ../src/vault.c:1000
 msgid "Well, begone."
@@ -26160,7 +26156,7 @@ msgstr "사슬이 닿는 범위 안에서 움직였다."
 #, c-format
 msgid ""
 "You need to remove any unpaid items from that %s and buy them separately."
-msgstr "%s에서 미지불 물건을 꺼내 따로 구매해야 합니다."
+msgstr "%s에서 미지불 물건을 꺼내 따로 구매해야 한다."
 
 #: ../src/polyself.c:836
 msgid "You no longer seem to be petrifying."
@@ -26732,7 +26728,7 @@ msgstr "당신의 시선이 %s의 %s에 반사되어 튕겨 나갔다."
 
 #: ../src/engrave.c:732
 msgid "Your hair stands up!"
-msgstr "머리카락이 곤두섭니다!"
+msgstr "머리카락이 곤두선다!"
 
 #: ../src/timeout.c:318
 msgid "Your illness feels worse."
@@ -26881,7 +26877,7 @@ msgstr "당신의 주문 시전 능력이 "
 
 #: ../src/eat.c:3781
 msgid "Your stomach acid melts straight through the ice!"
-msgstr "당신의 위산이 얼음을 녹여버립니다!"
+msgstr "위산이 얼음을 단숨에 녹여 버렸다!"
 
 # 쌍수 무기 기술 메시지
 #: ../src/insight.c:1413 ../src/insight.c:1446
@@ -35334,7 +35330,7 @@ msgstr "만화경 같은 나비들의 향연을 펼친다."
 
 #: ../src/pickup.c:3654
 msgid "dissipate"
-msgstr "빠르게 흩어집니다"
+msgstr "빠르게 흩어진다"
 
 # trap.c:1009 — "dissolve" 자동사 과거형 (ko.po "녹이다" 사전형 교정)
 # 거미줄 용해 (acidic 몬스터)
@@ -48654,7 +48650,7 @@ msgstr "간단한 간식"
 
 #: ../src/lock.c:1111
 msgid "quickly dissipates"
-msgstr "빠르게 흩어집니다"
+msgstr "빠르게 흩어진다"
 
 #: ../src/mhitu.c:170
 msgid "quickness feels less natural."
@@ -58701,9 +58697,7 @@ msgstr ""
 msgid ""
 "\n"
 "Are you perhaps trying to run NetHack within a zip utility?"
-msgstr ""
-"\n"
-"ZIP 유틸리티 안에서 NetHack을 실행하려는 것은 아닌지요?"
+msgstr "\nZIP 유틸리티 안에서 네트핵을 실행하려는 것은 아닌지요?"
 
 msgid "         By Stichting Mathematisch Centrum and M. Stephenson."
 msgstr "         Stichting Mathematisch Centrum 및 M. Stephenson 제작."
@@ -59092,7 +59086,7 @@ msgstr "필수 파일을 열 수 없습니다: \"%s\""
 # Copyright 배너 (Copyright Banner)
 # ============================================================
 msgid "NetHack, Copyright 1985-2026"
-msgstr "NetHack, 저작권 1985-2026"
+msgstr "네트핵, 저작권 1985-2026"
 
 msgid "PRATYAVAYAH"
 msgstr "PRATYAVAYAH"
@@ -62295,7 +62289,7 @@ msgstr "처치한 몬스터 목록"
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
 msgid "list compile time options for this version of NetHack"
-msgstr "이 NetHack 버전의 컴파일 옵션 목록"
+msgstr "이 네트핵 버전의 컴파일 옵션 목록"
 
 #. # Extended command descriptions (cmd.c doextlist)
 msgctxt "extcmd_desc"
