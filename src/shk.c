@@ -1985,7 +1985,7 @@ dopay(void)
         if (umoney + eshkp->credit < dtmp) {
             pline(_("But you don't%s have enough gold%s."),
                   stashed_gold ? " seem to" : "",
-                  eshkp->credit ? " or credit" : "");
+                  eshkp->credit ? _(" or credit") : "");
             return ECMD_TIME;
         } else {
             if (eshkp->credit >= dtmp) {
@@ -2032,7 +2032,7 @@ dopay(void)
                       !eshkp->surcharge ? "!" : ".");
         } else {
             pline(_("%s nods%s at you for shopping in %s %s%s"),
-                  Shknam(shkp), !eshkp->surcharge ? " appreciatively" : "",
+                  Shknam(shkp), !eshkp->surcharge ? _(" appreciatively") : "",
                   noit_mhis(shkp), shtypes[eshkp->shoptype - SHOPBASE].name,
                   !eshkp->surcharge ? "!" : ".");
         }
@@ -3451,7 +3451,7 @@ shk_names_obj(
     }
     obj_name = paydoname(obj);
     /* Use an alternate message when extra information is being provided */
-    if (was_unknown) {
+    if (was_unknown && !is_korean_locale()) { /* Korean: the name is in the sentence */
         Sprintf(fmtbuf, "%%s; you %s", fmt);
         obj_name[0] = highc(obj_name[0]);
         pline(fmtbuf, obj_name, (obj->quan > 1L) ? _("them") : _("it"), amt,
@@ -4398,7 +4398,7 @@ shkcatch(
         }
         if (cansee(x, y)) {
             pline(_("%s nimbly%s catches %s."), Shknam(shkp),
-                  (x == shkp->mx && y == shkp->my) ? "" : " reaches over and",
+                  (x == shkp->mx && y == shkp->my) ? "" : _(" reaches over and"),
                   the(xname(obj)));
             if (!canspotmon(shkp))
                 map_invisible(x, y);
