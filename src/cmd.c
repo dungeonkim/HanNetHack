@@ -4326,7 +4326,7 @@ directionname(int dir)
 
     if (dir < 0 || dir >= N_DIRS_Z)
         return "invalid";
-    return dirnames[dir];
+    return C_("direction", dirnames[dir]);
 }
 
 int

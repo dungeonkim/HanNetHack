@@ -5232,13 +5232,13 @@ drain_en(int n, boolean max_already_drained)
             u.uen = u.uenmax = 0;
             disp.botl = TRUE;
         }
-        mesg = "momentarily lethargic";
+        mesg = _("momentarily lethargic");
     } else {
         /* throttle further loss a bit when there's not much left to lose */
         if (n > (u.uen + u.uenmax) / 3)
             n = rnd(n);
 
-        mesg = "your magical energy drain away";
+        mesg = _("your magical energy drain away");
         if (n > u.uen)
             punct = '!';
 

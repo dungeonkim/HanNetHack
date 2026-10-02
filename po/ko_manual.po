@@ -40579,7 +40579,66 @@ msgstr "불길한 느낌이%s 든다..."
 #: ../src/hack.c:2621
 #, c-format
 msgid "have already gone as far %s as possible."
-msgstr "이미 가능한 한 %s까지 갔다."
+msgstr "더 이상 %s쪽으로 갈 수 없다."
+
+# 방향 (cmd.c directionname, getpos.c): 나침반 한 글자, 메시지가 "쪽"을 붙인다
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "west"
+msgstr "서"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "northwest"
+msgstr "북서"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "north"
+msgstr "북"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "northeast"
+msgstr "북동"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "east"
+msgstr "동"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "southeast"
+msgstr "남동"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "south"
+msgstr "남"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "southwest"
+msgstr "남서"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "down"
+msgstr "아래"
+
+#: ../src/cmd.c
+msgctxt "direction"
+msgid "up"
+msgstr "위"
+
+#: ../src/trap.c
+msgid "momentarily lethargic"
+msgstr "잠시 나른해졌다"
+
+#: ../src/trap.c
+msgid "your magical energy drain away"
+msgstr "마력이 빠져나간다"
 
 #: ../src/invent.c:2732
 #, c-format

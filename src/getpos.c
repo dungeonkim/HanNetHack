@@ -575,14 +575,23 @@ dxdy_to_dist_descr(coordxy dx, coordxy dy, boolean fulldir)
         if (dy) {
             if (abs(dy) > 9999)
                 dy = sgn(dy) * 9999;
-            Sprintf(eos(buf), "%d%s%s", abs(dy), dirnames[(dy > 0)][fulldir],
-                    dx ? "," : "");
+            if (fulldir && is_korean_locale()) /* "북쪽 3칸, 동쪽 2칸" */
+                Sprintf(eos(buf), "%s쪽 %d칸%s",
+                        C_("direction", dirnames[(dy > 0)][1]), abs(dy),
+                        dx ? ", " : "");
+            else
+                Sprintf(eos(buf), "%d%s%s", abs(dy),
+                        dirnames[(dy > 0)][fulldir], dx ? "," : "");
         }
         if (dx) {
             if (abs(dx) > 9999)
                 dx = sgn(dx) * 9999;
-            Sprintf(eos(buf), "%d%s", abs(dx),
-                    dirnames[2 + (dx > 0)][fulldir]);
+            if (fulldir && is_korean_locale())
+                Sprintf(eos(buf), "%s쪽 %d칸",
+                        C_("direction", dirnames[2 + (dx > 0)][1]), abs(dx));
+            else
+                Sprintf(eos(buf), "%d%s", abs(dx),
+                        dirnames[2 + (dx > 0)][fulldir]);
         }
     }
     return buf;
