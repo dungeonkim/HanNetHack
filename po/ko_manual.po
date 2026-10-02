@@ -1081,7 +1081,7 @@ msgstr ", 그리고 이제 새것처럼 좋아졌다%.0s"
 #, c-format
 msgctxt "skill_enhance"
 msgid " and %s that"
-msgstr " <#ffd23c>[숙련 가능]</>%.0s"
+msgstr " [숙련 가능]%.0s"
 
 #: ../src/apply.c:2449
 #, c-format

@@ -1306,9 +1306,10 @@ add_skills_to_menu(winid win, boolean selectable, boolean speedy)
                     Snprintf(buf, sizeof buf,
                              " %s%s\t[%s]", prefix, P_NAME(i),
                              sklnambuf);
-                /* dknethack: <#rrggbb>..</> is its menus' colour tag */
+                /* Korean marks what can be advanced (the dknethack UI
+                   colours it) */
                 if (is_korean_locale() && selectable && can_advance(i, speedy))
-                    Strcat(buf, " <#ffd23c>[숙련 가능]</>");
+                    Strcat(buf, " [숙련 가능]");
             }
             any.a_int = selectable && can_advance(i, speedy) ? i + 1 : 0;
             add_menu(win, &nul_glyphinfo, &any, 0, 0,

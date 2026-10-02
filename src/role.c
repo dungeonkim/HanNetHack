@@ -1984,8 +1984,8 @@ role_menu_extra(int which, winid where, boolean preselect)
         any.a_int = 0;
         /* use four spaces of padding to fake a grayed out menu choice */
         Sprintf(buf, "%4s%s forces %s", "", constrainer, forcedvalue);
-        if (is_korean_locale()) /* grey (dknethack menu colour tag) */
-            Sprintf(buf, "%4s<#808080>%s 선택 불가</>", "",
+        if (is_korean_locale()) /* the dknethack UI greys "... 선택 불가" */
+            Sprintf(buf, "%4s%s 선택 불가", "",
                     (which == RS_RACE) ? "종족"
                     : (which == RS_GENDER) ? "성별"
                       : (which == RS_ALGNMNT) ? "성향" : "직업");
@@ -2019,8 +2019,10 @@ role_menu_extra(int which, winid where, boolean preselect)
                  ATR_NONE, clr, _("Random"),
                  preselect ? MENU_ITEMFLAGS_SELECTED : MENU_ITEMFLAGS_NONE);
     } else if (which == ROLE_NONE) {
+#ifdef DKNETHACK
         if (is_korean_locale()) /* dknethack: no quit entry (Esc still cancels) */
             return;
+#endif
         any.a_int = ROLE_NONE;
         add_menu(where, &nul_glyphinfo, &any, 'q', 0,
                  ATR_NONE, clr, _("Quit"),
@@ -2740,12 +2742,18 @@ genl_player_setup(int screenheight)
                      clr, _("Not yet; choose another name"),
                      MENU_ITEMFLAGS_NONE);
         }
+#ifdef DKNETHACK
         /* dknethack: no quit here (Esc still cancels) */
         if (!is_korean_locale()) {
             any.a_int = -1;
             add_menu(win, &nul_glyphinfo, &any, 'q', 0,
                      ATR_NONE, clr, _("Quit"), MENU_ITEMFLAGS_NONE);
         }
+#else
+        any.a_int = -1;
+        add_menu(win, &nul_glyphinfo, &any, 'q', 0,
+                 ATR_NONE, clr, _("Quit"), MENU_ITEMFLAGS_NONE);
+#endif
         if (is_korean_locale())
             Strcpy(pbuf, "이대로 시작할까요?");
         else

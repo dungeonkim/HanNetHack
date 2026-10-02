@@ -36,13 +36,16 @@ enum item_action_actions {
     IA_INVOKE_OBJ,
     IA_WIELD_OBJ,
     IA_WEAR_OBJ,
+#ifdef DKNETHACK
     IA_WEAR_SWAP, /* dknethack: take off what fills the slot, then wear this */
+#endif
     IA_SWAPWEAPON,
     IA_TWOWEAPON,
     IA_ZAP_OBJ,
     IA_WHATIS_OBJ, /* '/' specify inventory object */
 };
 
+#ifdef DKNETHACK
 /* dknethack: what must come off before worn armor o can, outermost first
    (a cloak over body armor; a cloak and body armor over a shirt) */
 staticfn int
@@ -56,6 +59,7 @@ ia_armor_covers(struct obj *o, struct obj **covers)
         covers[n++] = uarm;
     return n;
 }
+#endif
 
 /* construct text for the menu entries for IA_NAME_OBJ and IA_NAME_OTYP */
 staticfn boolean
@@ -274,6 +278,7 @@ itemactions_pushkeys(struct obj *otmp, int act)
         cmdq_add_ec(CQ_CANNED, dowear);
         cmdq_add_key(CQ_CANNED, otmp->invlet);
         break;
+#ifdef DKNETHACK
     case IA_WEAR_SWAP: {
         /* take off the layers on top and the worn piece, wear this, then
            put the layers back on (innermost first) */
@@ -298,6 +303,7 @@ itemactions_pushkeys(struct obj *otmp, int act)
         }
         break;
     }
+#endif
     case IA_SWAPWEAPON:
         cmdq_add_ec(CQ_CANNED, doswapweapon);
         break;
@@ -327,11 +333,13 @@ itemactions(struct obj *otmp)
     struct monst *mtmp;
     const char *light = otmp->lamplit ? _("Extinguish") : _("Light");
     boolean already_worn = (otmp->owornmask & (W_ARMOR | W_ACCESSORY)) != 0;
-    /* dknethack: in Korean a shield is held, not worn (see 'W' and 'w') */
+    /* in Korean a shield is held, not worn (see 'W' and 'w') */
     boolean korean = is_korean_locale();
+#ifdef DKNETHACK
     extern struct obj *dknh_ia_obj; /* pager.c: dknethack shows its lore */
 
     dknh_ia_obj = otmp;
+#endif
 
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);
@@ -648,7 +656,7 @@ itemactions(struct obj *otmp)
     /* T: take off armor, tip carried container */
     if (otmp->owornmask & W_ARMOR)
         ia_addmenu(win, IA_TAKEOFF_OBJ, 'T',
-                   /* dknethack: a shield is held, so it is put down */
+                   /* Korean: a shield is held, so it is put down */
                    (korean && is_shield(otmp)) ? "손에서 내려놓기"
                                                : _("Take off this armor"));
     if ((Is_container(otmp) && (Has_contents(otmp) || !otmp->cknown))
@@ -678,7 +686,7 @@ itemactions(struct obj *otmp)
         ia_addmenu(win, IA_WIELD_OBJ, 'w',
                    _("Wield the tin opener to easily open tins"));
     } else if (korean && is_shield(otmp)) {
-        ; /* dknethack: added after 'W' as "무기로 사용하기" */
+        ; /* Korean: added after 'W' as "무기로 사용하기" */
     } else if (!already_worn) {
         /* originally this was using "hold this item in your hands" but
            there's no concept of "holding an item", plus it unwields
@@ -704,11 +712,12 @@ itemactions(struct obj *otmp)
             struct obj *o = wearmask_to_obj(Wmask);
 
             if (!o) {
-                /* dknethack: wearing a shield is holding it in a hand;
+                /* Korean: wearing a shield is holding it in a hand;
                    common sense says "손에 들기" means this, not 'w' */
                 Strcpy(buf, (korean && is_shield(otmp)) ? "손에 들기"
                                                         : _("Wear this armor"));
                 ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);
+#ifdef DKNETHACK
             } else if (o->oclass == ARMOR_CLASS) {
                 /* dknethack: a slot in use becomes a swap, through any
                    layers on top ("입은 방어구를 모두 벗고 입기") */
@@ -730,6 +739,7 @@ itemactions(struct obj *otmp)
                 else
                     Sprintf(buf, "Take off %s and wear this", wornname);
                 ia_addmenu(win, IA_WEAR_SWAP, 'W', buf);
+#endif
             } else {
                 Sprintf(buf, _("[already wearing %s]"), an(armor_simple_name(o)));
                 ia_addmenu(win, IA_WEAR_OBJ, 'W', buf);

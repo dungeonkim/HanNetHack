@@ -6,7 +6,9 @@
 /* Contains code for 't' (throw) */
 
 #include "hack.h"
+#ifdef DKNETHACK
 #include "dknh.h" /* dknethack: sound hooks */
+#endif
 #include "i18n.h"
 
 staticfn int throw_obj(struct obj *, int);
@@ -2009,7 +2011,9 @@ omon_adj(struct monst *mon, struct obj *obj, boolean mon_notices)
 staticfn void
 tmiss(struct obj *obj, struct monst *mon, boolean maybe_wakeup)
 {
+#ifdef DKNETHACK
     dknh_event(DKNH_EV_U_MISS, 1, 0); /* dknethack */
+#endif
     const char *missile = mshot_xname(obj);
 
     /* If the target can't be seen or doesn't look like a valid target,

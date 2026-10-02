@@ -812,6 +812,7 @@ lookat(coordxy x, coordxy y, char *buf, char *monbuf)
     return (pm && !Hallucination) ? pm : (struct permonst *) 0;
 }
 
+#ifdef DKNETHACK
 /* dknethack: while set, checkfile() appends the entry's lines here instead
    of opening a window (dknh_lore_at, dknh_lore_ia) */
 static char *lore_buf;
@@ -874,6 +875,7 @@ dknh_lore_ia(void)
     lore_buf = (char *) 0;
     return out;
 }
+#endif /* DKNETHACK */
 
 /* used to decide whether the context-sensitive inventory action menu for
    item 'otmp' should include the "/ - look up this item" choice */
@@ -1150,8 +1152,12 @@ checkfile(
                     if (ia_checking)
                         goto checkfile_done;
 
+#ifdef DKNETHACK
                     if (!lore_buf)
                         datawin = create_nhwindow(NHW_MENU);
+#else
+                    datawin = create_nhwindow(NHW_MENU);
+#endif
                     for (i = 0; i < entry_count; i++) {
                         /* room for 1-tab or 8-space prefix + BUFSZ-1 + \0 */
                         char tabbuf[BUFSZ + 8], *tp;
@@ -1181,6 +1187,7 @@ checkfile(
                            at the end of quotes typically have them */
                         if (strchr(tp, '\t') != 0)
                             (void) tabexpand(tp);
+#ifdef DKNETHACK
                         if (lore_buf) {
                             size_t n = strlen(lore_buf);
 
@@ -1192,6 +1199,12 @@ checkfile(
                         display_nhwindow(datawin, FALSE);
                         destroy_nhwindow(datawin), datawin = WIN_ERR;
                     }
+#else
+                        putstr(datawin, 0, tp);
+                    }
+                    display_nhwindow(datawin, FALSE);
+                    destroy_nhwindow(datawin), datawin = WIN_ERR;
+#endif
                 }
             } else if (user_typed_name && pass == 0 && !pass1found_in_file) {
                 pline(_("You don't have any information on those things."));

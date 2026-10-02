@@ -8,7 +8,9 @@
  */
 
 #include "hack.h"
+#ifdef DKNETHACK
 #include "dknh.h" /* dknethack: sound hooks */
+#endif
 
 #define CONTAINED_SYM '>' /* from invent.c */
 
@@ -701,12 +703,17 @@ pickup(int what) /* should be a long */
     if (!u.uswallow) {
         struct trap *t;
 
+#ifdef DKNETHACK
         /* no auto-pick if no-pick move, nothing there, or in a pool;
            dknethack: travel sets nopick too, but still picks up here
            unless it was started with the m prefix */
         if (autopickup && ((svc.context.nopick
                             && (!svc.context.travel || iflags.menu_requested))
                            || !OBJ_AT(u.ux, u.uy)
+#else
+        /* no auto-pick if no-pick move, nothing there, or in a pool */
+        if (autopickup && (svc.context.nopick || !OBJ_AT(u.ux, u.uy)
+#endif
                            || (is_pool(u.ux, u.uy) && !Underwater)
                            || is_lava(u.ux, u.uy))) {
             if (flags.mention_decor)
@@ -1226,10 +1233,12 @@ query_objlist(const char *qstr,        /* query string */
     return n;
 }
 
+#ifdef DKNETHACK
 extern int dknh_expert_menus;
-/* dknethack: msgctxt of the 'A' entry's label ("take_out", "put_in", "drop")
-   so a translation can name the action; set by the caller around the call */
-const char *dknh_choose_all_ctx = 0;
+#endif
+/* msgctxt of the 'A' entry's label ("take_out", "put_in", "drop") so a
+   translation can name the action; set by the caller around the call */
+const char *qcat_action_ctx = 0;
 
 /*
  * For menustyle:Full.
@@ -1320,6 +1329,7 @@ query_category(
         return n;
     }
 
+#ifdef DKNETHACK
     /* dknethack: without expert menus, all types are picked and the item
        menu comes next */
     if (!dknh_expert_menus && (qflags & ALL_TYPES) != 0 && how == PICK_ANY) {
@@ -1328,6 +1338,7 @@ query_category(
         (*pick_list)->count = -1L;
         return 1;
     }
+#endif
 
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);
@@ -1338,7 +1349,7 @@ query_category(
 
     show_a = ((qflags & ALL_TYPES) != 0 && ccount > 1);
 
-    /* dknethack: Korean shows 'A' last, as "묻지 않고 전부 <action>" */
+    /* Korean shows 'A' last, as "묻지 않고 전부 <action>" */
     if ((qflags & CHOOSE_ALL) != 0 && !is_korean_locale()) {
         invlet = 'A';
         any = cg.zeroany;
@@ -1369,7 +1380,7 @@ query_category(
         any.a_int = ALL_TYPES_SELECTED;
         add_menu(win, &nul_glyphinfo, &any, invlet, 0, ATR_NONE, clr,
                  do_worn ? _("All worn and wielded types") : _("All types"),
-                 /* dknethack: all types is the usual choice */
+                 /* Korean: all types is the usual choice */
                  MENU_ITEMFLAGS_SKIPINVERT
                      | (is_korean_locale() ? MENU_ITEMFLAGS_SELECTED : 0));
         ++invlet; /* invlet = 'b'; */
@@ -1479,8 +1490,8 @@ query_category(
         any.a_int = 'A';
         add_menu(win, &nul_glyphinfo, &any, 'A', 0, ATR_NONE, clr,
                  do_worn ? _("Auto-select every item being worn or wielded")
-                 : dknh_choose_all_ctx
-                     ? C_(dknh_choose_all_ctx, "Auto-select every relevant item")
+                 : qcat_action_ctx
+                     ? C_(qcat_action_ctx, "Auto-select every relevant item")
                      : _("Auto-select every relevant item"),
                  MENU_ITEMFLAGS_SKIPINVERT);
         verify_All = (how == PICK_ANY) && ParanoidAutoAll;
@@ -2008,7 +2019,9 @@ pickup_prinv(
     if (prefix)
         Sprintf(pbuf, "%s %s", prefix, verb);
 
+#ifdef DKNETHACK
     dknh_event(DKNH_EV_GET, 0, 0); /* dknethack */
+#endif
     prinv(pbuf, obj, count);
 }
 
@@ -3331,11 +3344,11 @@ menu_loot(int retry, boolean put_in)
                            : _("Take out what type of objects?"));
         mflags = (ALL_TYPES | UNPAID_TYPES | BUCX_TYPES | CHOOSE_ALL
                   | JUSTPICKED );
-        dknh_choose_all_ctx = put_in ? "put_in" : "take_out";
+        qcat_action_ctx = put_in ? "put_in" : "take_out";
         n = query_category(buf,
                            put_in ? gi.invent : gc.current_container->cobj,
                            mflags, &pick_list, PICK_ANY);
-        dknh_choose_all_ctx = 0;
+        qcat_action_ctx = 0;
             /* when paranoid_confirm:A is set, 'A' by itself implies
                'A'+'a' which will be followed by a confirmation prompt;
                when that option isn't set, 'A' by itself is rejected
@@ -3444,9 +3457,11 @@ menu_loot(int retry, boolean put_in)
     return n_looted ? ECMD_TIME : ECMD_OK;
 }
 
+#ifdef DKNETHACK
 /* dknethack: its "숙련자용 메뉴 추가" setting; off keeps menus to what a
    newcomer needs (the loot menu drops "take out, then put in" and the like) */
 int dknh_expert_menus = 0;
+#endif
 
 staticfn char
 in_or_out_menu(
@@ -3471,7 +3486,12 @@ in_or_out_menu(
     win = create_nhwindow(NHW_MENU);
     start_menu(win, MENU_BEHAVE_STANDARD);
 
-    /* dknethack: no "look inside" (taking out lists the contents too) */
+#ifndef DKNETHACK /* dknethack: taking out lists the contents too */
+    any.a_int = 1; /* ':' */
+    Sprintf(buf, _("Look inside %s"), thesimpleoname(obj));
+    add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
+             ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
+#endif
     if (outokay) {
         any.a_int = 2; /* 'o' */
         Sprintf(buf, _("take %s out"), something);
@@ -3484,20 +3504,35 @@ in_or_out_menu(
         add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     }
+#ifdef DKNETHACK
     if (outokay && dknh_expert_menus) {
+#else
+    if (outokay) {
+#endif
         any.a_int = 4; /* 'b' */
         Sprintf(buf, _("%stake out, then put in"), inokay ? _("both; ") : "");
         add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     }
+#ifdef DKNETHACK
     if (inokay && dknh_expert_menus) {
+#else
+    if (inokay) {
+#endif
         any.a_int = 5; /* 'r' */
         Sprintf(buf, _("%sput in, then take out"),
                 outokay ? _("both reversed; ") : "");
         add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
                  ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
     }
-    /* dknethack: no "stash one item" (putting in picks one just as well) */
+#ifndef DKNETHACK /* dknethack: putting in picks one just as well */
+    if (inokay) {
+        any.a_int = 6; /* 's' */
+        Sprintf(buf, _("stash one item into %s"), thesimpleoname(obj));
+        add_menu(win, &nul_glyphinfo, &any, menuselector[any.a_int], 0,
+                 ATR_NONE, clr, buf, MENU_ITEMFLAGS_NONE);
+    }
+#endif
     add_menu_str(win, "");
     if (more_containers) {
         any.a_int = 7; /* 'n' */

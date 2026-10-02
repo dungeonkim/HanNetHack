@@ -4,7 +4,9 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+#ifdef DKNETHACK
 #include "dknh.h" /* dknethack: sound hooks */
+#endif
 #include "i18n.h"
 #include "mfndpos.h"
 
@@ -3464,7 +3466,9 @@ xkilled(
     struct monst *mtmp,
     int xkill_flags) /* 1: suppress mesg, 2: suppress corpse, 4: pacifist */
 {
+#ifdef DKNETHACK
     dknh_event(DKNH_EV_KILL, mtmp->data->msize, (xkill_flags & XKILL_NOCORPSE) != 0); /* dknethack */
+#endif
     int tmp, mndx;
     coordxy x = mtmp->mx, y = mtmp->my;
     struct monst museum = cg.zeromonst;

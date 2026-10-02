@@ -1023,7 +1023,7 @@ bot_via_windowport(void)
     /* if "Name the Rank/monster" is too long, truncate the name but
        always keep at least BOTL_NSIZ characters of it; when hitpointbar is
        enabled, anything beyond 30 (long monster name) will be truncated */
-#ifndef __EMSCRIPTEN__ /* dknethack: no hitpointbar, and a byte cap cuts Hangul (3 bytes each) */
+#ifndef DKNETHACK /* dknethack: no hitpointbar, and a byte cap cuts Hangul (3 bytes each) */
     if (i > 30) {
         i = 30 - (int) (sizeof " the " + strlen(titl) - sizeof "");
         nb[max(i, BOTL_NSIZ)] = '\0';
@@ -1048,7 +1048,7 @@ bot_via_windowport(void)
         } else {
             Snprintf(titlebuf, sizeof titlebuf, title_fmt, buf, titl);
         }
-#ifndef __EMSCRIPTEN__
+#ifndef DKNETHACK
         /* truncate if too long (hitpointbar limit is 30) */
         titlebuf[30] = '\0';
 #endif

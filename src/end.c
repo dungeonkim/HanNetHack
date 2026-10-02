@@ -6,7 +6,9 @@
 #define NEED_VARARGS /* comment line for pre-compiled headers */
 
 #include "hack.h"
+#ifdef DKNETHACK
 #include "dknh.h" /* dknethack: sound hooks */
+#endif
 #include "i18n.h"
 #ifndef NO_SIGNAL
 #include <signal.h>
@@ -1135,7 +1137,9 @@ done(int how)
 staticfn void
 really_done(int how)
 {
+#ifdef DKNETHACK
     dknh_event(DKNH_EV_END, how, 0); /* dknethack */
+#endif
     boolean taken;
     char pbuf[BUFSZ];
     winid endwin = WIN_ERR;

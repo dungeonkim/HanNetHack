@@ -47,7 +47,7 @@ extern const char *const enc_stat[]; /* encumbrance status from botl.c */
 
 /* dknethack: the UI draws a window title (ATR_BOLD) and section headings (any other attribute) in
    their own colours, end-of-game disclosure included; tty keeps NetHack's plain final windows */
-#ifdef __EMSCRIPTEN__
+#ifdef DKNETHACK
 #define DK_TITLE ATR_BOLD
 #define DK_FINAL_HEADING iflags.menu_headings.attr
 #else
