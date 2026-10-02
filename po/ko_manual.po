@@ -12446,7 +12446,7 @@ msgstr "(팁: 함정을 풀 때는 #untrap을 써 보세요.)"
 #: ../src/hack.c:1868
 #, c-format
 msgid "(Tip: use '%s' prefix to step in if you really want to.)"
-msgstr "(팁: 정말 들어가시려면 이동 키 앞에 '%s'를 붙이면 한 칸씩 들어가실 수 있습니다.)"
+msgstr "(팁: {tut:swim})%.0s"
 
 #: ../src/hack.c:1865
 msgid "(Tip: use the #enhance command to advance them.)"
