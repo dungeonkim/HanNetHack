@@ -12441,7 +12441,7 @@ msgstr "(미지불 물건이 %s %d개 더 %s%s.)"
 
 #: ../src/hack.c:1872
 msgid "(Tip: perhaps #untrap would help?)"
-msgstr "(팁: 함정을 풀 때는 #untrap을 써 보세요.)"
+msgstr "(팁: {tut:untrap}.)"
 
 #: ../src/hack.c:1868
 #, c-format
@@ -23801,11 +23801,11 @@ msgstr "몇 층으로 순간이동하겠습니까?"
 # windows.c translations
 #: ../src/windows.c:1735
 msgid "Toggle off 'autopickup' to not pick up anything."
-msgstr "'autopickup'을 끄면 아무것도 줍지 않다."
+msgstr "'autopickup'을 끄면 아무것도 줍지 않는다."
 
 #: ../src/windows.c:1736
 msgid "Toggle on 'autopickup' to automatically pick these things up."
-msgstr "'autopickup'을 켜면 이것들을 자동으로 줍다."
+msgstr "'autopickup'을 켜면 이것들을 자동으로 줍는다."
 
 #: ../src/iactions.c:680
 #, c-format
@@ -24380,55 +24380,55 @@ msgstr "이 캔으로 물건에 기름칠하기"
 
 #: ../src/polyself.c:1059
 msgid "Use the command #monster to emit a mental blast."
-msgstr "정신 폭발을 방출하려면 #monster 명령을 사용하세요."
+msgstr "정신 폭발을 방출하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1045
 msgid "Use the command #monster to gaze at monsters."
-msgstr "몬스터를 응시하려면 #monster 명령을 사용하세요."
+msgstr "몬스터를 응시하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1047
 msgid "Use the command #monster to hide or to spin a web."
-msgstr "숨거나 거미줄을 치려면 #monster 명령을 사용하세요."
+msgstr "숨거나 거미줄을 치려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1049
 msgid "Use the command #monster to hide."
-msgstr "숨으려면 #monster 명령을 사용하세요."
+msgstr "숨으려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1055
 msgid "Use the command #monster to multiply in a fountain."
-msgstr "분수에서 번식하려면 #monster 명령을 사용하세요."
+msgstr "분수에서 번식하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1043
 msgid "Use the command #monster to remove an iron ball."
-msgstr "쇠구슬을 제거하려면 #monster 명령을 사용하세요."
+msgstr "쇠구슬을 제거하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1051
 msgid "Use the command #monster to spin a web."
-msgstr "거미줄을 치려면 #monster 명령을 사용하세요."
+msgstr "거미줄을 치려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1041
 msgid "Use the command #monster to spit venom."
-msgstr "독을 뱉으려면 #monster 명령을 사용하세요."
+msgstr "독을 뱉으려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1053
 msgid "Use the command #monster to summon help."
-msgstr "도움을 소환하려면 #monster 명령을 사용하세요."
+msgstr "도움을 소환하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1039
 msgid "Use the command #monster to use your breath weapon."
-msgstr "브레스 공격을 사용하려면 #monster 명령을 사용하세요."
+msgstr "브레스 공격을 사용하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1057
 msgid "Use the command #monster to use your horn."
-msgstr "뿔을 사용하려면 #monster 명령을 사용하세요."
+msgstr "뿔을 사용하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 #: ../src/polyself.c:1070
 msgid "Use the command #sit to lay an egg."
-msgstr "알을 낳으려면 #sit 명령을 사용하세요."
+msgstr "알을 낳으려면 {tut:act} '그 외의 행동들'에서 '앉기'를 고르세요."
 
 #: ../src/polyself.c:1069
 msgid "Use the command #sit to spawn in the water."
-msgstr "물에서 산란하려면 #sit 명령을 사용하세요."
+msgstr "물에서 산란하려면 {tut:act} '그 외의 행동들'에서 '앉기'를 고르세요."
 
 #: ../src/iactions.c:333
 msgid "Use this kit to tin a corpse"
@@ -59195,10 +59195,10 @@ msgid "Unique items"
 msgstr "고유 물건"
 
 msgid "Use the command #monster to change shape."
-msgstr "변신하려면 #monster 명령을 사용하세요."
+msgstr "변신하려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 msgid "Use the command #monster to shriek."
-msgstr "비명을 지르려면 #monster 명령을 사용하세요."
+msgstr "비명을 지르려면 {tut:act} '몬스터의 능력 사용'을 고르세요."
 
 msgid "VE FORBRYDERNE"
 msgstr "VE FORBRYDERNE"
