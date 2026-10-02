@@ -42694,7 +42694,7 @@ msgstr "채찍을 휘두르기엔 저항이 너무 크다."
 
 #: ../src/lock.c:1297
 msgid "is torn to shreds"
-msgstr "셔츠가 갈기갈기 찢어졌다!"
+msgstr "갈기갈기 찢어졌다"
 
 #: ../src/uhitm.c:2538 ../src/uhitm.c:2597
 msgid "is totally engulfed in flames"
