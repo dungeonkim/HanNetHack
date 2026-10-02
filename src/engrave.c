@@ -116,6 +116,114 @@ static const struct {
                 { '7', "/" },
                 { '8', "3o" } };
 
+/* Korean: a Hangul syllable wears like a letter losing strokes -- its final
+   consonant goes (들 -> 드, 닭 -> 달), or the initial or the vowel turns
+   simpler (ㅊ -> ㅈ, ㅌ -> ㄷ, ㅐ -> ㅏ, ㅑ -> ㅏ).  pick chooses among the
+   possible changes; 0 when nothing is left to wear away. */
+staticfn int
+ko_rubout(int cp, unsigned pick)
+{
+    /* each jamo index -> a simpler one, or -1 */
+    static const signed char initial[19] = {
+        -1, 0, -1, 2, 3, 3, -1, 6, 7, -1, 9, -1, 9, 12, 12, 0, 3, 6, 11
+    };
+    static const signed char vowel[21] = {
+        20, 0, 0, 1, 20, 4, 4, 5, 18, 8, 9, 8, 8, 18, 13, 14, 13, 13, -1, 18, -1
+    };
+    static const signed char final[28] = {
+        -1, 0, 1, 1, 0, 4, 4, 0, 0, 8, 8, 8, 8, 8, 8, 8,
+        0, 0, 17, 0, 19, 0, 19, 22, 1, 7, 17, 21
+    };
+    int s = cp - 0xAC00, l = s / (21 * 28), v = (s / 28) % 21, t = s % 28,
+        opts[3], n = 0;
+
+    if (s < 0 || s >= 19 * 21 * 28)
+        return 0;
+    if (t) /* the final consonant wears first */
+        return 0xAC00 + (l * 21 + v) * 28 + final[t];
+    if (initial[l] >= 0)
+        opts[n++] = 0xAC00 + (initial[l] * 21 + v) * 28;
+    if (vowel[v] >= 0)
+        opts[n++] = 0xAC00 + (l * 21 + vowel[v]) * 28;
+    return n ? opts[pick % n] : 0;
+}
+
+/* wipeout_text() for text with UTF-8 in it, a character at a time (the
+   byte-wise one splits Hangul into broken bytes) */
+staticfn void
+ko_wipeout_text(char *engr, int cnt, unsigned seed)
+{
+    int cps[BUFSZ], n = 0, i, j, nxt, use_rubout;
+    unsigned char *u = (unsigned char *) engr;
+    char *out;
+
+    while (*u && n < BUFSZ) { /* decode */
+        int c = *u++, more = c >= 0xF0 ? 3 : c >= 0xE0 ? 2 : c >= 0xC0 ? 1 : 0;
+
+        if (more)
+            c &= 0x3F >> more;
+        while (more-- && (*u & 0xC0) == 0x80)
+            c = (c << 6) | (*u++ & 0x3F);
+        cps[n++] = c;
+    }
+    while (n && cnt-- > 0) {
+        if (!seed) {
+            nxt = rn2(n);
+            use_rubout = rn2(4);
+            j = rn2(16);
+        } else {
+            nxt = seed % n;
+            seed *= 31, seed %= (BUFSZ - 1);
+            use_rubout = seed & 3;
+            seed *= 31, seed %= (BUFSZ - 1);
+            j = seed % 16;
+        }
+        if (cps[nxt] == ' ')
+            continue;
+        if (cps[nxt] < 0x80 && strchr("?.,'`-|_", cps[nxt])) {
+            cps[nxt] = ' ';
+            continue;
+        }
+        if (!use_rubout) {
+            cps[nxt] = '?';
+        } else if (cps[nxt] < 0x80) {
+            for (i = 0; i < SIZE(rubouts); i++)
+                if (cps[nxt] == rubouts[i].wipefrom) {
+                    cps[nxt] = rubouts[i].wipeto[j % strlen(rubouts[i].wipeto)];
+                    break;
+                }
+            if (i == SIZE(rubouts))
+                cps[nxt] = '?';
+        } else {
+            int r = ko_rubout(cps[nxt], (unsigned) j);
+
+            cps[nxt] = r ? r : '?';
+        }
+    }
+    for (out = engr, i = 0; i < n; i++) { /* encode; never longer */
+        int c = cps[i];
+
+        if (c < 0x80) {
+            *out++ = (char) c;
+        } else if (c < 0x800) {
+            *out++ = (char) (0xC0 | (c >> 6));
+            *out++ = (char) (0x80 | (c & 0x3F));
+        } else if (c < 0x10000) {
+            *out++ = (char) (0xE0 | (c >> 12));
+            *out++ = (char) (0x80 | ((c >> 6) & 0x3F));
+            *out++ = (char) (0x80 | (c & 0x3F));
+        } else {
+            *out++ = (char) (0xF0 | (c >> 18));
+            *out++ = (char) (0x80 | ((c >> 12) & 0x3F));
+            *out++ = (char) (0x80 | ((c >> 6) & 0x3F));
+            *out++ = (char) (0x80 | (c & 0x3F));
+        }
+    }
+    while (out > engr && out[-1] == ' ') /* trim trailing spaces */
+        out--;
+    *out = '\0';
+}
+
 /* degrade some of the characters in a string */
 void
 wipeout_text(
@@ -127,6 +235,11 @@ wipeout_text(
     int i, j, nxt, use_rubout;
     unsigned lth = (unsigned) strlen(engr);
 
+    for (s = engr; *s; s++)
+        if ((uchar) *s >= 0x80) { /* UTF-8: whole characters, not bytes */
+            ko_wipeout_text(engr, cnt, seed);
+            return;
+        }
     if (lth && cnt > 0) {
         while (cnt--) {
             /* pick next character */
