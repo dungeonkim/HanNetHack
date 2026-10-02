@@ -349,7 +349,9 @@ get_localized_filename(const char *fname)
 {
     static char buf[BUFSZ];
 
-    if (!fname || !*fname)
+    /* fname == buf: already localized (e.g. dlb_fopen of our own result);
+       snprintf from buf into buf would garble it */
+    if (!fname || !*fname || fname == buf)
         return fname;
 
 #ifdef ENABLE_NLS
