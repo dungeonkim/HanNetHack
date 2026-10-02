@@ -686,7 +686,7 @@ itemactions(struct obj *otmp)
         ia_addmenu(win, IA_WIELD_OBJ, 'w',
                    _("Wield the tin opener to easily open tins"));
     } else if (korean && is_shield(otmp)) {
-        ; /* Korean: added after 'W' as "무기로 사용하기" */
+        ; /* Korean: added after 'W' as "무기로 사용" */
     } else if (!already_worn) {
         /* originally this was using "hold this item in your hands" but
            there's no concept of "holding an item", plus it unwields
@@ -749,7 +749,7 @@ itemactions(struct obj *otmp)
 
     if (korean && is_shield(otmp) && !already_worn && otmp != uwep
         && !cantwield(gy.youmonst.data))
-        ia_addmenu(win, IA_WIELD_OBJ, 'w', "무기로 사용하기");
+        ia_addmenu(win, IA_WIELD_OBJ, 'w', "무기로 사용");
 
     /* x: Swap main and readied weapon */
     if (otmp == uwep && uswapwep)

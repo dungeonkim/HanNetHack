@@ -25120,12 +25120,12 @@ msgstr "깡통따개 들기 (깡통을 쉽게 연다)"
 #: ../src/iactions.c:612
 #, c-format
 msgid "Wield this %s as your weapon"
-msgstr "무기 장착하기%.0s"
+msgstr "손에 들기%.0s"
 
 #: ../src/iactions.c:622
 #, c-format
 msgid "Wield this %s in your %s"
-msgstr "손에 들기%.0s%.0s"
+msgstr "무기로 사용%.0s%.0s"
 
 #: ../src/invent.c:65
 msgid "Wielded/Readied Weapons"
