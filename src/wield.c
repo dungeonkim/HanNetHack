@@ -761,8 +761,12 @@ can_twoweapon(void)
             You_cant(_("use two weapons in your current form."));
         else
             pline(_("%s aren't able to use two weapons at once."),
-                  makeplural((flags.female && gu.urole.name.f)
-                             ? gu.urole.name.f : gu.urole.name.m));
+                  /* Korean has no plural; the translated role name */
+                  is_korean_locale()
+                      ? _((flags.female && gu.urole.name.f)
+                          ? gu.urole.name.f : gu.urole.name.m)
+                      : makeplural((flags.female && gu.urole.name.f)
+                                   ? gu.urole.name.f : gu.urole.name.m));
     } else if (!uwep || !uswapwep) {
         const char *hand_s = body_part(HAND);
 

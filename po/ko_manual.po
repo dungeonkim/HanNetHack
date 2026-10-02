@@ -471,7 +471,7 @@ msgstr " %s제한됨 "
 #: ../src/insight.c:1442
 #, c-format
 msgid " %slimited by being %s with two weapons"
-msgstr " %s쌍수 무기로 %s에 제한됨"
+msgstr " %s쌍수 전투 스킬이 %s 단계라서 제한된 상태"
 
 #: ../src/options.c:199
 msgid " 'single' for first two, then 'full']"
@@ -1930,7 +1930,7 @@ msgstr " 제한됨: "
 #: ../src/insight.c:1409
 #, c-format
 msgid " limited by being %s with two weapons"
-msgstr " 두 무기로 %s이라 제한됨"
+msgstr " 쌍수 전투 스킬이 %s 단계라서 제한된 상태"
 
 #: ../src/apply.c:1460
 msgid " lit"
@@ -5335,7 +5335,7 @@ msgstr "%s{이/가} 너무 미끄러워서 벗을 수 없어 반지를 낄 수 �
 #: ../src/wield.c:758
 #, c-format
 msgid "%s aren't able to use two weapons at once."
-msgstr "%s{은/는} 한 번에 두 무기를 사용할 수 없다."
+msgstr "%s{은/는} 쌍수 전투를 할 수 없다."
 
 #: ../src/worn.c:1247
 #, c-format
@@ -15705,7 +15705,7 @@ msgstr "발견한 물건"
 #: ../src/o_init.c:785
 #, c-format
 msgid "Discoveries, %s"
-msgstr "발견, %s"
+msgstr "발견 목록: %s"
 
 # ============================================================
 # 전투 메시지 (Combat Messages)
@@ -23974,7 +23974,7 @@ msgstr "같은 층에 분기가 두 갈래?"
 #: ../src/worn.c:467
 #, c-format
 msgid "Two-weapon insanity: %s."
-msgstr "쌍수 무기 처리가 이상하다: %s."
+msgstr "쌍수 전투 처리가 이상하다: %s."
 
 #: ../src/monster_i18n.c:367 ../src/obj_descr_i18n.c:839
 msgid "Twoflower"
@@ -26844,7 +26844,7 @@ msgstr "은이 %s{을/를} 지진다!"
 #: ../src/insight.c:1408 ../src/insight.c:1441
 #, c-format
 msgid "Your skill in %s "
-msgstr "%s 스킬 "
+msgstr "%s 스킬은"
 
 # ============================================================
 # 상태 메시지 (Status Messages)
@@ -26886,7 +26886,7 @@ msgstr "당신의 위산이 얼음을 녹여버립니다!"
 # 쌍수 무기 기술 메시지
 #: ../src/insight.c:1413 ../src/insight.c:1446
 msgid "Your two weapon skill "
-msgstr "쌍수 무기 스킬이"
+msgstr "쌍수 전투 스킬은"
 
 #: ../src/invent.c:4543
 #, c-format
@@ -28236,7 +28236,7 @@ msgstr "사다리"
 
 #: ../src/o_init.c:601
 msgid "alphabetical across all classes"
-msgstr "알파벳 순"
+msgstr "전체 가나다순"
 
 #: ../src/o_init.c:1084
 msgid "alphabetical order"
@@ -28244,7 +28244,7 @@ msgstr "알파벳 순"
 
 #: ../src/o_init.c:600
 msgid "alphabetical within each class"
-msgstr "각 종류 내에서 알파벳순"
+msgstr "분류별 가나다순"
 
 #: ../src/spell.c:1846
 msgid "alphabetically"
@@ -30637,7 +30637,7 @@ msgstr "제자리에서 뒹굴기 시작했다."
 
 #: ../src/wield.c:847
 msgid "begin two-weapon combat."
-msgstr "이도류 전투를 시작한다."
+msgstr "쌍수 전투를 시작한다."
 
 #: ../src/timeout.c:1796
 msgid "begin_burn: can't get obj position"
@@ -32063,7 +32063,7 @@ msgstr "레벨별, 낮은 것부터 높은 것 순"
 
 #: ../src/o_init.c:598
 msgid "by order of discovery within each class"
-msgstr "각 종류 내에서 발견 순서"
+msgstr "분류별 발견 순서"
 
 #: ../src/spell.c:1849
 msgid "by skill group, alphabetized within each group"
@@ -50925,7 +50925,7 @@ msgstr "세트 "
 #: ../src/objnam.c:723
 #, c-format
 msgid "set of %s"
-msgstr "%s 세트"
+msgstr "%s"
 
 #: ../src/apply.c:2576
 msgid "set the figurine beside you"
@@ -52386,7 +52386,7 @@ msgstr "%s순 정렬"
 
 #: ../src/o_init.c:599
 msgid "sortloot order (by class with some sub-class groupings)"
-msgstr "전리품 정렬 순서 (하위 분류 그룹이 있는 종류별)"
+msgstr "소지품 정렬 순서"
 
 #: ../src/timeout.c:1123
 msgid "sounds"
@@ -58061,7 +58061,7 @@ msgstr "꿈틀거리며"
 
 #: ../src/obj_descr_i18n.c:1193
 msgid "wrinkled"
-msgstr "주름졌다"
+msgstr "구겨진"
 
 # C_("condition") 컨텍스트 — 상태 명사
 # potion.c:2590 Blind 시 "wrinkled" → "주름진 상태" (명사형)
@@ -60866,7 +60866,7 @@ msgid "writhe"
 msgstr "뒤틀리다"
 
 msgid "ya"
-msgstr "야(화살)"
+msgstr "야"
 
 msgid "yak"
 msgstr "야크"
@@ -63945,3 +63945,21 @@ msgid "Remove"
 msgstr "걷어내겠습니까"
 
 # 종료 창: 플레이 시간, 능력치 탭 열, 던전 개요 현재 위치
+
+# dknethack: spell list column, known-spells title, two-weapon skill limits as whole sentences (insight.c)
+msgctxt "column"
+msgid "Name"
+msgstr "이름"
+
+msgid "Currently known spells"
+msgstr "알고 있는 주문"
+
+#, c-format
+msgctxt "twoweap_limit"
+msgid " %slimited by being %s with %s"
+msgstr " %1$s%3$s 스킬이 %2$s 단계라서 제한된 상태"
+
+#, c-format
+msgctxt "twoweap_limit"
+msgid " %slimited by having no skill with %s"
+msgstr " %1$s%2$s 스킬이 없어서 제한된 상태"

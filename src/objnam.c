@@ -258,10 +258,14 @@ obj_typename(int otyp)
         return buf;
     case ARMOR_CLASS:
         if (objects[otyp].oc_armcat == ARM_GLOVES
-            || objects[otyp].oc_armcat == ARM_BOOTS)
-            Strcpy(buf, _("pair of "));
-        else if (otyp >= GRAY_DRAGON_SCALES && otyp <= YELLOW_DRAGON_SCALES)
+            || objects[otyp].oc_armcat == ARM_BOOTS) {
+            /* Korean names a pair without a counter: "가죽 장갑" */
+            if (!is_korean_locale())
+                Strcpy(buf, _("pair of "));
+        } else if (otyp >= GRAY_DRAGON_SCALES && otyp <= YELLOW_DRAGON_SCALES
+                   && !is_korean_locale()) {
             Strcpy(buf, _("set of "));
+        }
         FALLTHROUGH;
         /*FALLTHRU*/
     default:
@@ -734,7 +738,7 @@ xname_flags(
     case TOOL_CLASS:
         /* note: lenses or towel prefix would overwrite poisoned weapon
            prefix if both were simultaneously possible, but they aren't */
-        if (typ == LENSES)
+        if (typ == LENSES && !is_korean_locale())
             Strcpy(buf, _("pair of "));
         else if (is_wet_towel(obj))
             Strcpy(buf, (obj->spe < 3) ? _("moist ") : _("wet "));
@@ -766,7 +770,8 @@ xname_flags(
             Sprintf(buf, _("set of %s"), _(actualn));
             break;
         } else if (is_boots(obj) || is_gloves(obj)) {
-            Strcpy(buf, _("pair of "));
+            if (!is_korean_locale())
+                Strcpy(buf, _("pair of "));
             /*FALLTHRU*/
         } else if (is_shield(obj) && !dknown) {
             if (obj->otyp >= ELVEN_SHIELD && obj->otyp <= ORCISH_SHIELD) {

@@ -2017,7 +2017,7 @@ dovspell(void)
     if (spellid(0) == NO_SPELL) {
         You(_("don't know any spells right now."));
     } else {
-        while (dospellmenu("Currently known spells",
+        while (dospellmenu(_("Currently known spells"),
                            SPELLMENU_VIEW, &splnum)) {
             if (splnum == SPELLMENU_SORT) {
                 if (spellsortmenu())
@@ -2092,7 +2092,7 @@ dospellmenu(
     if (!iflags.menu_tab_sep) {
         Sprintf(buf, _("%s%-20s Level %-12s Fail Retention"),
                 splaction == SPELLMENU_DUMP ? "" : "    ",
-                _("Name"),
+                C_("column", "Name"),
                 _("Category"));
         fmt = "%-20s  %2d   %-12s %3d%% %9s";
         sep = ' ';

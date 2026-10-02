@@ -14,6 +14,7 @@ staticfn void shuffle_all(void);
 staticfn int QSORTCALLBACK discovered_cmp(const genericptr, const genericptr);
 staticfn char *sortloot_descr(int, char *);
 staticfn char *disco_typename(int);
+staticfn void ko_disco_look(int, char *);
 staticfn void disco_append_typename(char *, int);
 staticfn void disco_fmt_uniq(int, char *outbuf) NONNULLARG2;
 staticfn void disco_output_sorted(winid, char **, int, boolean);
@@ -670,6 +671,8 @@ disco_typename(int otyp)
                                   magic harp has been 'called' something) */
                                : "harp");
 
+        if (actualn && is_korean_locale())
+            actualn = _(tr_obj_name(actualn));
         if (!actualn) { /* won't happen; used to pacify static analyzer */
             ;
         } else if (strstri(result, " called")) {
@@ -682,7 +685,41 @@ disco_typename(int otyp)
             Sprintf(eos(result), " [%s]", actualn);
         }
     }
+    if (is_korean_locale() && objects[otyp].oc_name_known
+        && OBJ_DESCR(objects[otyp]))
+        ko_disco_look(otyp, result);
     return result;
+}
+
+/* Korean discoveries put the look in front of the name instead of after it
+   in parentheses: "구겨진 천리안 마법책"; a look that is a thing of its own
+   (weapons, armor, tools: "룬 화살") points at the name ("룬 화살 → 엘프 화살"),
+   and a look that is the name itself is not repeated ("거울") */
+staticfn void
+ko_disco_look(int otyp, char *result)
+{
+    char name[BUFSZ], tail[BUFSZ];
+    const char *look = _(tr_obj_name(OBJ_DESCR(objects[otyp])));
+    size_t rlen = strlen(result), tlen;
+
+    Snprintf(tail, sizeof tail, " (%s)", look);
+    tlen = strlen(tail);
+    if (rlen <= tlen || strcmp(result + rlen - tlen, tail))
+        return; /* not the shape obj_typename() makes; leave it */
+    copynchars(name, result, (int) (rlen - tlen));
+    if (!strcmp(name, look))
+        Strcpy(result, name);
+    else
+        switch (objects[otyp].oc_class) {
+        case RING_CLASS: case AMULET_CLASS: case POTION_CLASS:
+        case SCROLL_CLASS: case SPBOOK_CLASS: case WAND_CLASS:
+        case GEM_CLASS:
+            Snprintf(result, BUFSZ, "%s %s", look, name);
+            break;
+        default:
+            Snprintf(result, BUFSZ, "%s \xe2\x86\x92 %s", look, name);
+            break;
+        }
 }
 
 /* append typename(dis) to buf[], possibly truncating in the process;
@@ -782,7 +819,7 @@ dodiscovered(void) /* free after Robert Viduya */
     sortindx = strchr(disco_order_let, flags.discosort) - disco_order_let;
 
     tmpwin = create_nhwindow(NHW_TEXT);
-    Sprintf(buf, _("Discoveries, %s"), disco_orders_descr[sortindx]);
+    Sprintf(buf, _("Discoveries, %s"), _(disco_orders_descr[sortindx]));
     putstr(tmpwin, 0, buf);
     putstr(tmpwin, 0, "");
 

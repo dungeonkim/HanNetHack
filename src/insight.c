@@ -909,12 +909,12 @@ basics_enlightenment(int mode UNUSED, int final)
             enlght_out(buf);
         }
         if (umoney)
-            Sprintf(buf, " 금화 %ld개를 가지고 있다.", umoney);
+            Sprintf(buf, " %ld골드를 가지고 있다.", umoney);
         else
-            Strcpy(buf, " 금화는 가지고 있지 않다.");
+            Strcpy(buf, " 골드는 가지고 있지 않다.");
         enlght_out(buf);
         if (hmoney) {
-            Sprintf(buf, " 가방 속에 금화 %ld개가 더 있다.", hmoney);
+            Sprintf(buf, " 가방 속에 %ld골드가 더 있다.", hmoney);
             enlght_out(buf);
         }
         return;
@@ -1592,19 +1592,23 @@ weapon_insight(int final)
             } else if (twoskl > sklvl) {
                 /* sklvl might be restricted */
                 Strcpy(pfx, _("Your two weapon skill "));
-                Strcpy(sfx, _(" limited by "));
+                /* one format per sentence so a translation can reorder */
                 if (sklvl > P_ISRESTRICTED)
-                    Sprintf(eos(sfx), _("being %s"), sklvlbuf);
+                    Sprintf(sfx, C_("twoweap_limit",
+                                    " %slimited by being %s with %s"),
+                            "", sklvlbuf, skill_name(wtype));
                 else
-                    Sprintf(eos(sfx), _("having no skill"));
-                Sprintf(eos(sfx), _(" with %s"), skill_name(wtype));
+                    Sprintf(sfx, C_("twoweap_limit",
+                                    " %slimited by having no skill with %s"),
+                            "", skill_name(wtype));
                 also2 = _("also ");
             } else {
                 Strcat(buf, C_("skill_twowep", " and two weapons"));
                 also3 = _("also ");
             }
             if (*pfx)
-                enl_msg(pfx, _("is"), _("was"), sfx, "");
+                enl_msg(pfx, C_("copula", "is"), C_("copula", "was"), sfx,
+                        "");
             else if (hav)
                 you_have(buf, "");
             else
@@ -1615,7 +1619,8 @@ weapon_insight(int final)
             if (wtype2 != wtype) {
                 Strcpy(sknambuf2, skill_name(wtype2));
                 (void) lcase(skill_level_name(wtype2, sklvlbuf2));
-                verb_present = _("is"), verb_past = _("was");
+                verb_present = C_("copula", "is"),
+                verb_past = C_("copula", "was");
                 pfx[0] = sfx[0] = buf[0] = '\0';
                 if (twoskl < sklvl2) {
                     /* twoskil is at least unskilled, sklvl2 at least basic */
@@ -1625,12 +1630,14 @@ weapon_insight(int final)
                 } else if (twoskl > sklvl2) {
                     /* sklvl2 might be restricted */
                     Strcpy(pfx, _("Your two weapon skill "));
-                    Sprintf(sfx, _(" %slimited by "), also2);
                     if (sklvl2 > P_ISRESTRICTED)
-                        Sprintf(eos(sfx), _("being %s"), sklvlbuf2);
+                        Sprintf(sfx, C_("twoweap_limit",
+                                        " %slimited by being %s with %s"),
+                                also2, sklvlbuf2, sknambuf2);
                     else
-                        Strcat(eos(sfx), _("having no skill"));
-                    Sprintf(eos(sfx), _(" with %s"), sknambuf2);
+                        Sprintf(sfx, C_("twoweap_limit",
+                                        " %slimited by having no skill with %s"),
+                                also2, sknambuf2);
                 } else {
                     /* equal; two-weapon is at least unskilled, so sklvl2 is
                        too; "you [also] have basic/expert/master/grand-master
