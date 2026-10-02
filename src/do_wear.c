@@ -2269,9 +2269,12 @@ accessory_or_armor_on(struct obj *obj)
                 mask = LEFT_RING;
             } else {
                 do {
-                    Sprintf(qbuf, "Which %s%s, Right or Left?",
-                            humanoid(gy.youmonst.data) ? "ring-" : "",
-                            body_part(FINGER));
+                    if (is_korean_locale()) /* dknethack shows r/l as 오른손/왼손 */
+                        Strcpy(qbuf, "어느 손에 끼겠습니까?");
+                    else
+                        Sprintf(qbuf, "Which %s%s, Right or Left?",
+                                humanoid(gy.youmonst.data) ? "ring-" : "",
+                                body_part(FINGER));
                     answer = yn_function(qbuf, rightleftchars, '\0', TRUE);
                     switch (answer) {
                     case '\0':
