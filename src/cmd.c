@@ -4551,7 +4551,7 @@ there_cmd_menu_self(winid win, coordxy x, coordxy y, int *act UNUSED)
                          _("Attempt to disarm trap")), ++K;
     }
     if (Jumping) {
-        mcmd_addmenu(win, MCMD_JUMP, "Jump"), ++K;
+        mcmd_addmenu(win, MCMD_JUMP, _("Jump")), ++K;
     }
     return K;
 }

@@ -25979,6 +25979,71 @@ msgstr "그것이 준비되어 있다. 대신 장비하시겠습니까?"
 msgid "You have trouble"
 msgstr "어렵게"
 
+#: ../src/cmd.c:4554
+msgid "Jump"
+msgstr "점프하기"
+
+# 짐 무게 (pickup.c): 동사 없이 무게만 말하는 문장, 들기 전 질문은 물건 뒤 전체 문장
+#: ../src/pickup.c
+msgctxt "load_note"
+msgid "You have a little trouble"
+msgstr "짐이 조금 무겁다"
+
+#: ../src/pickup.c
+msgctxt "load_note"
+msgid "You have trouble"
+msgstr "짐이 무겁다"
+
+#: ../src/pickup.c
+msgctxt "load_note"
+msgid "You have much trouble"
+msgstr "짐이 아주 무겁다"
+
+#: ../src/pickup.c
+msgctxt "load_note"
+msgid "You have extreme difficulty"
+msgstr "짐이 너무 무겁다"
+
+#: ../src/pickup.c
+msgctxt "load_ask_lift"
+msgid "You have a little trouble"
+msgstr "{을/를} 들면 짐이 조금 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_lift"
+msgid "You have trouble"
+msgstr "{을/를} 들면 짐이 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_lift"
+msgid "You have much trouble"
+msgstr "{을/를} 들면 짐이 아주 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_lift"
+msgid "You have extreme difficulty"
+msgstr "{을/를} 들면 짐이 너무 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_remove"
+msgid "You have a little trouble"
+msgstr "{을/를} 꺼내면 짐이 조금 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_remove"
+msgid "You have trouble"
+msgstr "{을/를} 꺼내면 짐이 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_remove"
+msgid "You have much trouble"
+msgstr "{을/를} 꺼내면 짐이 아주 무거워집니다. 계속할까요?"
+
+#: ../src/pickup.c
+msgctxt "load_ask_remove"
+msgid "You have extreme difficulty"
+msgstr "{을/를} 꺼내면 짐이 너무 무거워집니다. 계속할까요?"
+
 #: ../src/timeout.c:133
 msgid "You have turned to stone."
 msgstr "돌로 변했다."

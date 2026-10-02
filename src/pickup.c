@@ -1814,16 +1814,26 @@ lift_object(
             } else {
                 char qbuf[BUFSZ];
                 long savequan = obj->quan;
+                const char *pfx = (next_encumbr >= EXT_ENCUMBER) ? overloadpfx
+                                  : (next_encumbr >= HVY_ENCUMBER) ? nearloadpfx
+                                    : (next_encumbr >= MOD_ENCUMBER)
+                                      ? moderateloadpfx : slightloadpfx,
+                           /* the whole question after the object, when a
+                              translation words it its own way ("{을/를}
+                              들면 짐이 조금 무거워집니다. 계속할까요?") */
+                           *ask = C_(container ? "load_ask_remove"
+                                               : "load_ask_lift", pfx);
 
                 obj->quan = *cnt_p;
-                Sprintf(qbuf, "%s %s ",
-                        (next_encumbr >= EXT_ENCUMBER) ? _(overloadpfx)
-                        : (next_encumbr >= HVY_ENCUMBER) ? _(nearloadpfx)
-                          : (next_encumbr >= MOD_ENCUMBER) ? _(moderateloadpfx)
-                            : _(slightloadpfx),
-                        !container ? _("lifting") : _("removing"));
-                (void) safe_qbuf(qbuf, qbuf, ".  Continue?", obj, doname,
-                                 ansimpleoname, something);
+                if (ask != pfx) {
+                    (void) safe_qbuf(qbuf, "", ask, obj, doname,
+                                     ansimpleoname, something);
+                } else {
+                    Sprintf(qbuf, "%s %s ", _(pfx),
+                            !container ? _("lifting") : _("removing"));
+                    (void) safe_qbuf(qbuf, qbuf, ".  Continue?", obj, doname,
+                                     ansimpleoname, something);
+                }
                 obj->quan = savequan;
                 switch (ynq(qbuf)) {
                 case 'q':
@@ -2009,15 +2019,23 @@ pickup_prinv(
     if (nearload == gp.pickup_encumbrance) {
         prefix = (char *) 0;
     } else {
-        prefix = (nearload >= EXT_ENCUMBER) ? _(overloadpfx)
-                 : (nearload >= HVY_ENCUMBER) ? _(nearloadpfx)
-                   : (nearload >= MOD_ENCUMBER) ? _(moderateloadpfx)
-                     : (nearload >= SLT_ENCUMBER) ? _(slightloadpfx)
+        prefix = (nearload >= EXT_ENCUMBER) ? overloadpfx
+                 : (nearload >= HVY_ENCUMBER) ? nearloadpfx
+                   : (nearload >= MOD_ENCUMBER) ? moderateloadpfx
+                     : (nearload >= SLT_ENCUMBER) ? slightloadpfx
                        : (char *) 0;
         gp.pickup_encumbrance = nearload;
     }
-    if (prefix)
-        Sprintf(pbuf, "%s %s", prefix, verb);
+    if (prefix) {
+        /* a translation may say the load on its own, without the verb
+           ("짐이 조금 무겁다"); otherwise "You have a little trouble lifting" */
+        const char *note = C_("load_note", prefix);
+
+        if (note != prefix)
+            Strcpy(pbuf, note);
+        else
+            Sprintf(pbuf, "%s %s", _(prefix), verb);
+    }
 
 #ifdef DKNETHACK
     dknh_event(DKNH_EV_GET, 0, 0); /* dknethack */
