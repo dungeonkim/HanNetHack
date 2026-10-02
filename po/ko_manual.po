@@ -30087,7 +30087,7 @@ msgstr "산사태"
 #: ../src/hack.c:1915
 #, c-format
 msgid "avoid %s into the %s."
-msgstr "%s{을/를} %s 안으로 피했다."
+msgstr "%2$s 안으로 들어가지 않았다.%1$.0s"
 
 #: ../src/polyself.c:1693
 #, c-format
