@@ -4,6 +4,9 @@
 /* NetHack may be freely redistributed.  See license for details. */
 
 #include "hack.h"
+#ifdef DKNETHACK
+#include "dknh.h" /* dknethack: sound hooks */
+#endif
 
 /* Korean prompts name the box first: "잠긴 큰 상자가 있다. …" (no "여기에") */
 #ifdef ENABLE_NLS
@@ -145,6 +148,9 @@ picklock(void)
         return ((gx.xlock.usedtime = 0));
     }
 
+#ifdef DKNETHACK
+    dknh_event(DKNH_EV_UNLOCK, 0, 0); /* dknethack */
+#endif
     You(_("succeed in %s."), lock_action());
     if (gx.xlock.door) {
         if (gx.xlock.door->doormask & D_TRAPPED) {
@@ -257,6 +263,9 @@ forcelock(void)
     if (rn2(100) >= gx.xlock.chance)
         return 1; /* still busy */
 
+#ifdef DKNETHACK
+    dknh_event(DKNH_EV_UNLOCK, 0, 0); /* dknethack */
+#endif
     You(_("succeed in forcing the lock."));
     exercise(gx.xlock.picktyp ? A_DEX : A_STR, TRUE);
     /* breakchestlock() might destroy xlock.box; if so, xlock context will
@@ -893,6 +902,9 @@ doopen_indir(coordxy x, coordxy y)
             pline(_("This door is already open."));
             break;
         default:
+#ifdef DKNETHACK
+            dknh_event(DKNH_EV_DOOR_STUCK, 0, 0); /* dknethack */
+#endif
             pline(_("This door is locked."));
             locked = TRUE;
             break;
@@ -939,6 +951,9 @@ doopen_indir(coordxy x, coordxy y)
         recalc_block_point(cc.x, cc.y); /* vision: new see through there */
     } else {
         exercise(A_STR, TRUE);
+#ifdef DKNETHACK
+        dknh_event(DKNH_EV_DOOR_STUCK, 0, 0); /* dknethack */
+#endif
         set_msg_xy(cc.x, cc.y);
         pline_The(_("door resists!"));
     }

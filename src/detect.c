@@ -10,6 +10,9 @@
 
 #include "hack.h"
 #include "artifact.h"
+#ifdef DKNETHACK
+#include "dknh.h" /* dknethack: sound hooks */
+#endif
 #include "i18n.h"
 
 #ifndef FOUND_FLASH_COUNT
@@ -1658,6 +1661,9 @@ findone(coordxy zx, coordxy zy, genericptr_t whatfound)
         cvt_sdoor_to_door(lev); /* set lev->typ = DOOR */
         recalc_block_point(zx, zy);
         magic_map_background(zx, zy, 0);
+#ifdef DKNETHACK
+        dknh_event(DKNH_EV_FOUND_HIDDEN, 0, 0); /* dknethack */
+#endif
         foundone(zx, zy, back_to_glyph(zx, zy));
         found_p->num_sdoors++;
     } else if (lev->typ == SCORR) {
@@ -1665,6 +1671,9 @@ findone(coordxy zx, coordxy zy, genericptr_t whatfound)
         lev->typ = CORR;
         unblock_point(zx, zy);
         magic_map_background(zx, zy, 0);
+#ifdef DKNETHACK
+        dknh_event(DKNH_EV_FOUND_HIDDEN, 0, 0); /* dknethack */
+#endif
         foundone(zx, zy, cmap_to_glyph(S_corr));
         found_p->num_scorrs++;
     }
@@ -2050,6 +2059,9 @@ dosearch0(int aflag) /* intrinsic autosearch vs explicit searching */
                     exercise(A_WIS, TRUE);
                     nomul(0);
                     feel_location(x, y); /* make sure it shows up */
+#ifdef DKNETHACK
+                    dknh_event(DKNH_EV_FOUND_HIDDEN, 0, 0); /* dknethack */
+#endif
                     set_msg_xy(x, y);
                     You(_("find a hidden door."));
                 } else if (levl[x][y].typ == SCORR) {
@@ -2060,6 +2072,9 @@ dosearch0(int aflag) /* intrinsic autosearch vs explicit searching */
                     exercise(A_WIS, TRUE);
                     nomul(0);
                     feel_newsym(x, y); /* make sure it shows up */
+#ifdef DKNETHACK
+                    dknh_event(DKNH_EV_FOUND_HIDDEN, 0, 0); /* dknethack */
+#endif
                     set_msg_xy(x, y);
                     You(_("find a hidden passage."));
                 } else {
