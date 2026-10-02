@@ -5184,6 +5184,255 @@ readobjnam_postparse3(struct _readobjnam_data *d)
 
 
 /*
+ * Korean wishes.  A wish with Hangul in it is rewritten as the English wish
+ * readobjnam() reads: Korean qualifiers become their English words and the
+ * name is looked up among the Korean object and monster names.  Spaces, and
+ * the particle "의 " of a translated name, may be left out ("치료물약").
+ * Whatever is not recognized is left as typed, so such a wish fails the way
+ * an unknown English name does.
+ */
+static const struct ko_wish_word {
+    const char *ko, *en;
+} ko_wish_words[] = {
+    /* longest first where one is the start of another */
+    { "저주받지않은", "uncursed" }, { "축복받은", "blessed" },
+    { "축복된", "blessed" }, { "저주받은", "cursed" }, { "저주된", "cursed" },
+    { "녹방지", "rustproof" }, { "불방지", "fireproof" },
+    { "부식방지", "corrodeproof" }, { "부패방지", "rotproof" },
+    { "손상방지", "erodeproof" }, { "기름칠한", "greased" },
+    { "독바른", "poisoned" }, { 0, 0 }
+};
+
+staticfn boolean
+ko_has_hangul(const char *s)
+{
+    for (; *s; s++) /* U+AC00..U+D7A3 lead bytes */
+        if ((uchar) *s >= 0xEA && (uchar) *s <= 0xED)
+            return TRUE;
+    return FALSE;
+}
+
+/* the comparison key of a name: no spaces; drop_ui also drops the particle
+   "의 " (with its space) */
+staticfn char *
+ko_wish_key(const char *s, char *out, size_t sz, boolean drop_ui)
+{
+    size_t n = 0;
+
+    while (*s && n + 1 < sz) {
+        if (drop_ui && !strncmp(s, "의 ", sizeof "의 " - 1)) {
+            s += sizeof "의 " - 1;
+            continue;
+        }
+        if (*s != ' ')
+            out[n++] = *s;
+        s++;
+    }
+    out[n] = '\0';
+    return out;
+}
+
+/* does the Korean name ko read as key (a key of the player's text)? */
+staticfn boolean
+ko_wish_same(const char *ko, const char *key)
+{
+    char k[BUFSZ];
+
+    return !strcmp(ko_wish_key(ko, k, sizeof k, FALSE), key)
+           || !strcmp(ko_wish_key(ko, k, sizeof k, TRUE), key);
+}
+
+/* the English and Korean names of object type otyp as a wish names it */
+staticfn const char *
+ko_wish_objnames(int otyp, char *en, size_t sz)
+{
+    const char *n = OBJ_NAME(objects[otyp]), *ko;
+
+    if (!n || !*n)
+        return (const char *) 0;
+    switch (objects[otyp].oc_class) {
+    case POTION_CLASS: Snprintf(en, sz, "potion of %s", n); break;
+    case SCROLL_CLASS: Snprintf(en, sz, "scroll of %s", n); break;
+    case RING_CLASS: Snprintf(en, sz, "ring of %s", n); break;
+    case WAND_CLASS: Snprintf(en, sz, "wand of %s", n); break;
+    case SPBOOK_CLASS:
+        Snprintf(en, sz, objects[otyp].oc_unique ? "%s" : "spellbook of %s",
+                 n);
+        break;
+    default: Snprintf(en, sz, "%s", n); break;
+    }
+    ko = C_("objname", en);
+    if (ko == en || !strcmp(ko, en))
+        ko = _(en); /* "potion of healing" without its own objname entry */
+    return strcmp(ko, en) ? ko : (const char *) 0;
+}
+
+/* the English name of the monster whose Korean name reads as key */
+staticfn const char *
+ko_wish_monster(const char *key)
+{
+    int i, g;
+
+    for (i = LOW_PM; i < NUMMONS; i++)
+        for (g = MALE; g < NUM_MGENDERS; g++)
+            if (mons[i].pmnames[g] && ko_wish_same(_(mons[i].pmnames[g]), key))
+                return mons[i].pmnames[g];
+    return (const char *) 0;
+}
+
+/* skip the count, enchantment and qualifiers at the start of key k, noting
+   them in *cnt and (as English words) quals; returns where the name starts */
+staticfn char *
+ko_wish_quals(char *k, long *cnt, char *quals)
+{
+    char *p;
+    int i;
+
+    quals[0] = '\0';
+    for (;;) {
+        if (digit(*k)) { /* "3개", "3개의", "3" */
+            *cnt = strtol(k, &k, 10);
+            if (!strncmp(k, "개", sizeof "개" - 1))
+                k += sizeof "개" - 1;
+            if (!strncmp(k, "의", sizeof "의" - 1))
+                k += sizeof "의" - 1;
+            continue;
+        }
+        if ((*k == '+' || *k == '-') && digit(k[1])) { /* enchantment */
+            long spe = strtol(k + 1, &p, 10);
+
+            Sprintf(eos(quals), "%c%ld ", *k, spe);
+            k = p;
+            continue;
+        }
+        for (i = 0; ko_wish_words[i].ko; i++)
+            if (!strncmp(k, ko_wish_words[i].ko, strlen(ko_wish_words[i].ko)))
+                break;
+        if (!ko_wish_words[i].ko)
+            break;
+        Sprintf(eos(quals), "%s ", ko_wish_words[i].en);
+        k += strlen(ko_wish_words[i].ko);
+    }
+    return k;
+}
+
+/* rewrite a Korean wish in bp (BUFSZ) as English; FALSE leaves bp alone */
+staticfn boolean
+ko_wish_english(char *bp)
+{
+    char key[BUFSZ], en[BUFSZ], quals[BUFSZ], name[BUFSZ], *k, *p;
+    const char *ko, *mon, *what = 0;
+    long cnt = 0;
+    int i, charges = -1;
+    static const char *const monobj[][2] = {
+        /* Korean word after the monster's name, English pattern */
+        { "corpse", "%s corpse" }, { "statue", "statue of %s" },
+        { "figurine", "figurine of %s" }, { "egg", "%s egg" },
+        { "tin", "tin of %s meat" },
+    };
+
+    if (!bp || !ko_has_hangul(bp))
+        return FALSE;
+    /* charges "(3회)" or "(3)" anywhere */
+    if ((p = strchr(bp, '(')) != 0 && digit(p[1])) {
+        charges = atoi(p + 1);
+        *p = '\0';
+    }
+    k = ko_wish_quals(ko_wish_key(bp, key, sizeof key, FALSE), &cnt, quals);
+    if (!*k)
+        return FALSE;
+
+    if (!ko_has_hangul(k)) { /* an English name after Korean qualifiers */
+        Strcpy(name, k);
+        what = name;
+    }
+    if (!what && (ko_wish_same("성수", k) || ko_wish_same("저주받은 물", k)))
+        what = ko_wish_same("성수", k) ? "holy water" : "unholy water";
+    /* a monster's corpse, statue, figurine, egg or tin */
+    for (i = 0; !what && i < SIZE(monobj); i++) {
+        const char *w = _(monobj[i][0]);
+        size_t wl = strlen(w), kl = strlen(k);
+        char mkey[BUFSZ];
+
+        if (kl <= wl || strcmp(k + kl - wl, w))
+            continue;
+        Strcpy(mkey, k);
+        mkey[kl - wl] = '\0';
+        if (kl - wl > sizeof "의" - 1
+            && !strcmp(mkey + kl - wl - (sizeof "의" - 1), "의"))
+            mkey[kl - wl - (sizeof "의" - 1)] = '\0'; /* "이끼괴물의 사체" */
+        if ((mon = ko_wish_monster(mkey)) != 0) {
+            Snprintf(name, sizeof name, monobj[i][1], mon);
+            what = name;
+        }
+    }
+    for (i = 1; !what && i < NUM_OBJECTS; i++)
+        if ((ko = ko_wish_objnames(i, en, sizeof en)) != 0
+            && ko_wish_same(ko, k)) {
+            Strcpy(name, en);
+            what = name;
+        }
+    if (!what)
+        return FALSE;
+
+    if (cnt > 0)
+        Snprintf(bp, BUFSZ, "%ld %s%s", cnt, quals, what);
+    else
+        Snprintf(bp, BUFSZ, "%s%s", quals, what);
+    if (charges >= 0)
+        Sprintf(eos(bp), " (%d)", charges);
+    return TRUE;
+}
+
+#ifdef DKNETHACK
+/* dknethack: the Korean object names a wish could mean, for the wish prompt's
+   completion: those whose key starts with the key of prefix, one per line */
+const char *
+dknh_wish_names(const char *prefix)
+{
+    static char out[BUFSZ * 8];
+    char key[BUFSZ], k1[BUFSZ], k2[BUFSZ], en[BUFSZ], quals[BUFSZ],
+         typed[BUFSZ], *name;
+    const char *ko, *s;
+    size_t kl, skip;
+    long cnt;
+    int i, n = 0;
+
+    out[0] = '\0';
+    if (!prefix)
+        return out;
+    /* the count and qualifiers stay as typed; only the name is completed */
+    ko_wish_key(prefix, key, sizeof key, FALSE);
+    name = ko_wish_quals(key, &cnt, quals);
+    skip = (size_t) (name - key); /* non-space bytes before the name */
+    for (s = prefix; *s && skip; s++)
+        if (*s != ' ')
+            skip--;
+    while (*s == ' ')
+        s++;
+    Snprintf(typed, sizeof typed, "%.*s", (int) (s - prefix), prefix);
+    if (*typed && typed[strlen(typed) - 1] != ' ')
+        Strcat(typed, " ");
+    memmove(key, name, strlen(name) + 1);
+    kl = strlen(key);
+    if (!kl)
+        return out;
+    for (i = 1; i < NUM_OBJECTS && n < 40; i++) {
+        if (!(ko = ko_wish_objnames(i, en, sizeof en)) || !ko_has_hangul(ko))
+            continue;
+        if (strncmp(ko_wish_key(ko, k1, sizeof k1, FALSE), key, kl)
+            && strncmp(ko_wish_key(ko, k2, sizeof k2, TRUE), key, kl))
+            continue;
+        if (strlen(out) + strlen(typed) + strlen(ko) + 2 >= sizeof out)
+            break;
+        Sprintf(eos(out), "%s%s\n", typed, ko);
+        n++;
+    }
+    return out;
+}
+#endif
+
+/*
  * Return something wished for.  Specifying a null pointer for
  * the user request string results in a random object.  Otherwise,
  * if asking explicitly for "nothing" (or "nil") return no_wish;
@@ -5201,6 +5450,9 @@ readobjnam(char *bp, struct obj *no_wish)
 
     /* first, remove extra whitespace they may have typed */
     (void) mungspaces(bp);
+    /* a wish typed in Korean becomes the English this parser reads */
+    if (ko_wish_english(bp))
+        (void) mungspaces(bp);
     /* allow wishing for "nothing" to preserve wishless conduct...
        [now requires "wand of nothing" if that's what was really wanted] */
     if (!strcmpi(bp, "nothing") || !strcmpi(bp, "nil")
