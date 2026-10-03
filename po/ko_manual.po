@@ -4902,12 +4902,12 @@ msgstr "%s{이/가} %s하고, 배낭을 %s!"
 #: ../src/allmain.c:920
 #, c-format
 msgid "%s %s, the%s, welcome back to NetHack!"
-msgstr "돌아왔구나, %2$s! 네트핵에 다시 온 것을 환영한다.%1$.0s%3$.0s"
+msgstr "돌아오셨군요, %2$s! 네트핵에 다시 오신 것을 환영합니다.%1$.0s%3$.0s"
 
 #: ../src/allmain.c:919
 #, c-format
 msgid "%s %s, welcome to NetHack!  You are a%s."
-msgstr "반갑다, %2$s! 네트핵의 세계에 온 것을 환영한다! 당신은%3$s{이다/다}.%1$.0s"
+msgstr "반갑습니다, %2$s! 네트핵의 세계에 오신 것을 환영합니다! 당신은%3$s입니다.%1$.0s"
 
 #: ../src/attrib.c:664 ../src/dig.c:1307 ../src/dog.c:1336 ../src/dokick.c:212
 #: ../src/dothrow.c:1966 ../src/dothrow.c:2520 ../src/eat.c:3042
@@ -15181,7 +15181,7 @@ msgstr "%s{을/를} 항상 강조할 색상 선택:"
 
 #: ../src/invent.c:2705
 msgid "Choose an item; use ESC to decline."
-msgstr "항목을 선택하세요. 취소하려면 ESC를 누르세요."
+msgstr "물건을 하나 고르거나 그만두세요."
 
 #: ../src/botl.c:4170
 #, c-format
@@ -23935,7 +23935,7 @@ msgstr "약속대로, 오라클이 %s%s: "
 
 #: ../src/read.c:3397
 msgid "Try again (type * for random, ESC to cancel)."
-msgstr "다시 시도하세요 (무작위로 *, 취소하려면 ESC)."
+msgstr "다시 입력하세요. *를 입력하면 무작위입니다."
 
 #: ../src/shk.c:1824
 msgid "Try again..."
@@ -23978,7 +23978,7 @@ msgstr "투플라워"
 
 #: ../src/getpos.c:303
 msgid "Type Space or Escape when you're done."
-msgstr "완료되면 스페이스 또는 Escape를 누르세요."
+msgstr "다 봤으면 이 창을 닫으세요."
 
 #: ../src/getpos.c:280
 #, c-format
@@ -24751,7 +24751,7 @@ msgstr "데이빗의 보물 동물원에 온 것을 환영한다!"
 # role.c - 게임 시작 시 환영 메시지. 단독 문장
 #: ../src/mail.c:495
 msgid "Welcome to NetHack."
-msgstr "네트핵에 온 것을 환영한다."
+msgstr "네트핵에 오신 것을 환영합니다."
 
 #: ../src/vault.c:1000
 msgid "Well, begone."
