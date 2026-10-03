@@ -1,5 +1,4 @@
--- Korean translation of tut-2.lua
--- 튜토리얼 레벨 2 한국어 번역
+-- dknethack's English tutorial level 2 (see locale/en/tut-1.lua)
 
 des.level_init({ style = "solidfill", fg = " " });
 des.level_flags("mazelevel", "noflip",

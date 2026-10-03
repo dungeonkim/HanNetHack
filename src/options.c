@@ -442,9 +442,15 @@ ask_do_tutorial(void)
 
         rc = nh_basename(get_configfile(), TRUE);
         norc = !strcmp(get_configfile(), "/dev/null");
+#ifdef DKNETHACK
+        /* no config file to edit: dknethack's settings menu has the switch */
+        nhUse(norc), nhUse(rc);
+        Strcpy(buf, _("To skip this question, change its setting in the game menu."));
+#else
         Snprintf(buf, sizeof buf,
                  _("Put \"OPTIONS=!tutorial\" in %s to skip this query."),
                  (rc && *rc && !norc) ? rc : _("your configuration file"));
+#endif
         do {
             win = create_nhwindow(NHW_MENU);
             start_menu(win, MENU_BEHAVE_STANDARD);

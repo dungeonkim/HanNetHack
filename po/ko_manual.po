@@ -63967,3 +63967,7 @@ msgstr "%s%s → %s"
 #, c-format
 msgid ", level %d"
 msgstr ", %d층"
+
+# dknethack: the tutorial query points at the settings menu (options.c, DKNETHACK)
+msgid "To skip this question, change its setting in the game menu."
+msgstr "이 질문을 건너뛰려면 메뉴에서 관련 설정을 바꾸세요."

@@ -361,6 +361,14 @@ get_localized_filename(const char *fname)
         snprintf(buf, sizeof(buf), "locale/%s/%s", lang, fname);
         return buf;
     }
+#ifdef DKNETHACK
+    /* dknethack's English tutorial speaks its controls (locale/en/tut-*.lua);
+       only those files: questpgr.c has no fallback to the plain name */
+    if (lang && !strcmp(lang, "en") && !strncmp(fname, "tut-", 4)) {
+        snprintf(buf, sizeof(buf), "locale/en/%s", fname);
+        return buf;
+    }
+#endif
 #endif
     return fname;
 }
