@@ -54947,6 +54947,14 @@ msgstr "목이 졸리고 있다"
 msgid "through"
 msgstr "통과하여"
 
+#: ../src/dokick.c:1977
+msgid "down the stairs"
+msgstr "계단 아래로"
+
+#: ../src/dokick.c:1982
+msgid "down the ladder"
+msgstr "사다리 아래로"
+
 #: ../src/dokick.c:1972
 msgid "through the hole"
 msgstr "구멍을 통해"

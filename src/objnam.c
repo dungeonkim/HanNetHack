@@ -1173,7 +1173,14 @@ mshot_xname(struct obj *obj)
     if (gm.m_shot.n > 1 && gm.m_shot.o == obj->otyp) {
         /* "the Nth arrow"; value will eventually be passed to an() or
            The(), both of which correctly handle this "the " prefix */
-        Sprintf(tmpbuf, "the %d%s ", gm.m_shot.i, ordin(gm.m_shot.i));
+        static const char *const ko_nth[] = { "", "첫", "두", "세", "네" };
+
+        if (is_korean_locale() && gm.m_shot.i < (int) SIZE(ko_nth))
+            Sprintf(tmpbuf, "%s 번째 ", ko_nth[gm.m_shot.i]);
+        else if (is_korean_locale())
+            Sprintf(tmpbuf, "%d번째 ", gm.m_shot.i);
+        else
+            Sprintf(tmpbuf, "the %d%s ", gm.m_shot.i, ordin(gm.m_shot.i));
         onm = strprepend(onm, tmpbuf);
     }
     return onm;

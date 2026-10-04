@@ -1941,7 +1941,17 @@ otransit_msg(struct obj *otmp, boolean nodrop, boolean chainthere, long num)
     }
     Strcpy(obuf, optr);
 
-    if (num || chainthere) {
+    if (is_korean_locale() && (num || chainthere)) {
+        /* the English pieces below ("hit other objects and fall ...")
+           don't compose in Korean word order */
+        if (nodrop)
+            pline("%s{이/가} %s.", obuf,
+                  num ? "다른 물건에 부딪혔다" : "쇠사슬에 부딪혀 덜그럭거렸다");
+        else
+            pline("%s{이/가} %s %s 떨어졌다.", obuf,
+                  num ? "다른 물건에 부딪히고" : "쇠사슬에 부딪혀 덜그럭거리고",
+                  gg.gate_str);
+    } else if (num || chainthere) {
         /* As of 3.6.2: use a separate buffer for the suffix to avoid risk of
            overrunning obuf[] (let pline() handle truncation if necessary) */
         if (num) { /* means: other objects are impacted */
@@ -1974,12 +1984,12 @@ down_gate(coordxy x, coordxy y)
         return MIGR_NOWHERE;
     }
     if (stway && !stway->up && !stway->isladder) {
-        gg.gate_str = "down the stairs";
+        gg.gate_str = _("down the stairs");
         return (stway->tolev.dnum == u.uz.dnum) ? MIGR_STAIRS_UP
                                                 : MIGR_SSTAIRS;
     }
     if (stway && !stway->up && stway->isladder) {
-        gg.gate_str = "down the ladder";
+        gg.gate_str = _("down the ladder");
         return MIGR_LADDER_UP;
     }
     /* hole will always be flagged as seen; trap drop might or might not */
