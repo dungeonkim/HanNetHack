@@ -1302,6 +1302,10 @@ findtravelpath(int mode)
             if (mode == TRAVP_TRAVEL) {
                 u.dx = u.tx - u.ux;
                 u.dy = u.ty - u.uy;
+#ifdef DKNETHACK
+                /* End travel after entering the target, not before its push. */
+                if (!sobj_at(BOULDER, u.tx, u.ty))
+#endif
                 nomul(0);
                 iflags.travelcc.x = iflags.travelcc.y = 0;
             }
@@ -1435,6 +1439,9 @@ findtravelpath(int mode)
                                 u.dy = y - uy;
                                 if (mode == TRAVP_TRAVEL
                                     && ((x == u.tx && y == u.ty)
+#ifdef DKNETHACK
+                                        && !sobj_at(BOULDER, x, y)
+#endif
                                         || visited)) {
                                     nomul(0);
                                     /* reset run so domove run checks work */
