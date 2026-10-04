@@ -6,6 +6,9 @@
 #include "hack.h"
 #include "extern.h"
 #include "i18n.h"
+#ifdef DKNETHACK
+#include "dknh.h"
+#endif
 
 /* #define DEBUG */ /* uncomment for debugging */
 
@@ -378,13 +381,20 @@ moverock_core(coordxy sx, coordxy sy)
 
         rx = u.ux + 2 * u.dx; /* boulder destination position */
         ry = u.uy + 2 * u.dy;
+#ifdef DKNETHACK
+        if (!svc.context.travel)
+#endif
         nomul(0);
 
         /* using m<dir> towards an adjacent boulder steps over/onto it if
            poly'd into a giant or squeezes under/beside it if small/light
            enough but is a no-op in other circumstances unless move attempt
            reveals an unseen boulder or lack of remembered, unseen monster */
-        if (svc.context.nopick) {
+        if (svc.context.nopick
+#ifdef DKNETHACK
+            && !svc.context.travel
+#endif
+            ) {
             int oldglyph = glyph_at(sx, sy); /* before feel_location() */
             int res;
 
@@ -1220,6 +1230,9 @@ test_move(
 
     if (sobj_at(BOULDER, x, y) && (Sokoban || !Passes_walls)) {
         if (mode != TEST_TRAV && svc.context.run >= 2
+#ifdef DKNETHACK
+            && !svc.context.travel
+#endif
             && !(Blind || Hallucination) && !could_move_onto_boulder(x, y)) {
             if (mode == DO_MOVE && flags.mention_walls)
                 pline_dir(xytodir(dx,dy), _("A boulder blocks your path."));
@@ -1234,6 +1247,7 @@ test_move(
             } else if (moverock() < 0)
                 return FALSE;
         } else if (mode == TEST_TRAV) {
+#ifndef DKNETHACK
             struct obj *obj;
 
             /* never travel through boulders in Sokoban */
@@ -1251,6 +1265,7 @@ test_move(
                          && !objects[obj->otyp].oc_name_known))
                     return FALSE;
             }
+#endif
         }
         /* assume you'll be able to push it when you get there... */
     }
@@ -1279,7 +1294,11 @@ findtravelpath(int mode)
         /* handle restricted diagonals */
         && crawl_destination(u.tx, u.ty)) {
         end_running(FALSE);
-        if (test_move(u.ux, u.uy, u.tx - u.ux, u.ty - u.uy, TEST_MOVE)) {
+        if (
+#ifdef DKNETHACK
+            dknh_boulder_step(u.ux, u.uy, u.tx - u.ux, u.ty - u.uy) &&
+#endif
+            test_move(u.ux, u.uy, u.tx - u.ux, u.ty - u.uy, TEST_MOVE)) {
             if (mode == TRAVP_TRAVEL) {
                 u.dx = u.tx - u.ux;
                 u.dy = u.ty - u.uy;
@@ -1377,6 +1396,14 @@ findtravelpath(int mode)
                     if (!isok(nx, ny)
                         || ((mode == TRAVP_GUESS) && !couldsee(nx, ny)))
                         continue;
+#ifdef DKNETHACK
+                    /* Normal travel searches backwards; guess/valid search
+                     * forwards. Check the push in the hero's direction. */
+                    if (!(mode == TRAVP_TRAVEL
+                          ? dknh_boulder_step(nx, ny, x - nx, y - ny)
+                          : dknh_boulder_step(x, y, nx - x, ny - y)))
+                        continue;
+#endif
                     if ((!Passes_walls && !can_ooze(&gy.youmonst)
                          && closed_door(x, y))
                         || (sobj_at(BOULDER, x, y)
@@ -1487,7 +1514,11 @@ findtravelpath(int mode)
                 /* no guesses, just go in the general direction */
                 u.dx = sgn(u.tx - u.ux);
                 u.dy = sgn(u.ty - u.uy);
-                if (test_move(u.ux, u.uy, u.dx, u.dy, TEST_MOVE)) {
+                if (
+#ifdef DKNETHACK
+                    dknh_boulder_step(u.ux, u.uy, u.dx, u.dy) &&
+#endif
+                    test_move(u.ux, u.uy, u.dx, u.dy, TEST_MOVE)) {
                     selection_setpoint(u.ux, u.uy, gt.travelmap, 1);
                     return TRUE;
                 }
